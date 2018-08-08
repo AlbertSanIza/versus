@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import openSocket from 'socket.io-client';
 import logo from './logo.svg'
 import './App.css'
+
+const socket = openSocket('http://localhost:12345')
 
 class App extends Component {
     render() {
