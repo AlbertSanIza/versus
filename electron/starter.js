@@ -2,7 +2,7 @@ const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
 let mainWindow
-function createWindow () {
+app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
@@ -20,14 +20,13 @@ function createWindow () {
     mainWindow.webContents.on('did-finish-load', () => {
         mainWindow.show()
     })
-}
-app.on('ready', createWindow)
-app.on('window-all-closed', function () {
+})
+app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         app.quit()
     }
 })
-app.on('activate', function () {
+app.on('activate', () => {
     if (mainWindow === null) {
         createWindow()
     }
