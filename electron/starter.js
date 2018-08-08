@@ -13,6 +13,9 @@ function createWindow () {
     mainWindow.on('closed', function () {
         mainWindow = null
     })
+    mainWindow.webContents.on('did-finish-load', () => {
+        mainWindow.show()
+    })
 }
 app.on('ready', createWindow)
 app.on('window-all-closed', function () {
