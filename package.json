@@ -6,6 +6,7 @@
     "repository": "https://github.com/BatallaDeMaestros/versus",
     "author": "Albert Sanchez",
     "license": "CC0-1.0",
+    "homepage": "./",
     "private": true,
     "devDependencies": {
         "electron": "^2.0.6"
