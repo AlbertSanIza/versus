@@ -1,7 +1,21 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+const http = require('http')
 const url = require('url')
+var server = http.createServer()
+var io = require('socket.io')(server)
+server.listen(12345)
 let mainWindow
+io.on('connection', client => {
+    client.on('event', data => {
+        console.log("event")
+        console.log(data)
+    })
+    client.on('disconnect',() => {
+        console.log("disconnect")
+    })
+})
+
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 800,
