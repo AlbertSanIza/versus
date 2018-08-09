@@ -3,7 +3,7 @@ import io from 'socket.io-client'
 import logo from './logo.svg'
 import './App.css'
 
-const socket = io('http://localhost:12345')
+const socket = io('http://' + window.location.hostname + ':12345')
 
 class App extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to React</h1>
+                    <h1 className="App-title">Welcome to React: {window.location.hostname}</h1>
                 </header>
                 <p className="App-intro">
                     To get started, edit <code>src/App.js</code> and save to reload.
