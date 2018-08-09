@@ -12,21 +12,19 @@ app.on('ready', () => {
         height: 600,
         show: false
     })
-    mainWindow.loadURL(process.env.ELECTRON_START_URL || url.format({
-        pathname: path.join(__dirname, '/../build/index.html'),
-        protocol: 'file:',
-        slashes: true
-    }))
-    mainWindow.webContents.openDevTools()
+    expressApp.use('/static', express.static(__dirname + '/../build/static'))
+    expressApp.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, '/../build/index.html'))
+    })
+    mainWindow.loadURL(process.env.ELECTRON_START_URL || "http://localhost:12345")
+    if (process.env.ELECTRON_START_URL) {
+        mainWindow.webContents.openDevTools()
+    }
     mainWindow.on('closed', function () {
         mainWindow = null
     })
     mainWindow.webContents.on('did-finish-load', () => {
         mainWindow.show()
-    })
-    expressApp.use('/static', express.static(__dirname + '/../build/static'))
-    expressApp.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, '/../build/index.html'))
     })
     io.on('connection', socket => {
         console.log('User Connected')
