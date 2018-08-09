@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { HashRouter, Route } from 'react-router-dom'
 import io from 'socket.io-client'
 import logo from './logo.svg'
 import './App.css'
@@ -17,17 +18,22 @@ class App extends Component {
     }
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to React: {window.location.hostname}</h1>
-                </header>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
-                <br/>
-                <button onClick={this.handleClick}>TEST</button>
-            </div>
+            <HashRouter>
+                <div>
+                    <div className="App">
+                        <header className="App-header">
+                            <img src={logo} className="App-logo" alt="logo" />
+                            <h1 className="App-title">Welcome to React: {window.location.hostname}</h1>
+                        </header>
+                        <p className="App-intro">
+                            To get started, edit <code>src/App.js</code> and save to reload.
+                        </p>
+                        <br/>
+                        <button onClick={this.handleClick}>TEST</button>
+                    </div>
+                </div>
+            </HashRouter>
+
         )
     }
 }
