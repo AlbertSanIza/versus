@@ -1,21 +1,7 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
-const http = require('http')
 const url = require('url')
-var server = http.createServer()
-var io = require('socket.io')(server)
-server.listen(12345)
 let mainWindow
-io.on('connection', client => {
-    client.on('event', data => {
-        console.log("event")
-        console.log(data)
-    })
-    client.on('disconnect',() => {
-        console.log("disconnect")
-    })
-})
-
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 800,
@@ -44,4 +30,23 @@ app.on('activate', () => {
     if (mainWindow === null) {
         createWindow()
     }
+})
+var express = require('express')()
+var http = require('http').Server(express)
+var io = require('socket.io')(http)
+var port = 12345
+express.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/../build/index.html'))
+})
+io.on('connection', socket => {
+    console.log('a user connected')
+    socket.on('disconnect', () => {
+        console.log('user disconnected')
+    })
+    socket.on('message', msg => {
+        io.emit('message', msg)
+    })
+})
+http.listen(port, () => {
+    console.log('listening on *:' + port)
 })
