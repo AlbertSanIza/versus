@@ -27,10 +27,6 @@ app.on('ready', () => {
         mainWindow.show()
     })
     io.on('connection', socket => {
-        console.log('User Connected')
-        socket.on('disconnect', () => {
-            console.log('User Disconnected')
-        })
         socket.on('message', msg => {
             io.emit('message', msg)
         })
