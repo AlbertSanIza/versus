@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import './visualizer.css'
 
 class Visualizer extends Component {
     render() {
-        return(
-            <div>Visualizer</div>
+        return (
+            <div className="visualizer">Visualizer</div>
         )
     }
 }
