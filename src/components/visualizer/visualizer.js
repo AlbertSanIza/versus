@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 class Visualizer extends Component {
-    render(){
+    render() {
         return(
             <div>Visualizer</div>
         )
