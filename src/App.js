@@ -18,10 +18,10 @@ class App extends Component {
     render() {
         return (
             <HashRouter>
-                <div>
+                <React.Fragment>
                     <Route exact path="/main" component={Main}/>
                     <Route exact path="/" component={Visualizer}/>
-                </div>
+                </React.Fragment>
             </HashRouter>
         )
     }
