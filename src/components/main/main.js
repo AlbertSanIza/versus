@@ -10,7 +10,7 @@ class Main extends Component {
     render() {
         return(
             <div>
-                <AppBar position="static" color="secondary">
+                <AppBar position="static">
                     <Toolbar variant="dense">
                         <IconButton color="inherit" aria-label="Menu">
                             <MenuIcon/>
@@ -18,7 +18,7 @@ class Main extends Component {
                         <Typography variant="title" color="inherit">Versus</Typography>
                     </Toolbar>
                 </AppBar>
-                <Button variant="contained" color="primary">TEST</Button>
+                <Button variant="contained" color="secondary">TEST</Button>
             </div>
         )
     }
