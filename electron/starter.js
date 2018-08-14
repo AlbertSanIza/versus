@@ -10,6 +10,7 @@ app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
+        titleBarStyle: 'hidden',
         show: false
     })
     expressApp.use('/static', express.static(__dirname + '/../build/static'))
