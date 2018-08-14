@@ -1,24 +1,24 @@
 import React, { Component } from 'react'
-import AppBar from '@material-ui/core/AppBar'
+import IconButton from '@material-ui/core/IconButton'
+import Typography from '@material-ui/core/Typography'
 import Toolbar from '@material-ui/core/Toolbar'
 import MenuIcon from '@material-ui/icons/Menu'
-import IconButton from '@material-ui/core/IconButton'
+import AppBar from '@material-ui/core/AppBar'
 import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid'
 
 class Main extends Component {
     render() {
         return(
             <React.Fragment>
-                <AppBar position="static">
-                    <Toolbar variant="dense">
-                        <IconButton color="inherit" aria-label="Menu">
-                            <MenuIcon/>
-                        </IconButton>
+                <AppBar position="static" color="primary">
+                    <Toolbar>
                         <Typography variant="title" color="inherit">Versus</Typography>
                     </Toolbar>
                 </AppBar>
-                <Button variant="contained" color="secondary">TEST</Button>
+                <Grid container spacing={12}>
+                    <Button variant="contained" color="secondary">TEST</Button>
+                </Grid>
             </React.Fragment>
         )
     }
