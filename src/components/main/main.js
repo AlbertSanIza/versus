@@ -8,6 +8,18 @@ import Card from '@material-ui/core/Card'
 import Grid from '@material-ui/core/Grid'
 
 class Main extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            open: false
+        }
+    }
+    handleDrawerOpen = () => {
+        this.setState({ open: true })
+    }
+    handleDrawerClose = () => {
+        this.setState({ open: false })
+    }
     render() {
         return(
             <React.Fragment>
