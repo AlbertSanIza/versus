@@ -17,8 +17,8 @@ class Main extends Component {
                     </Toolbar>
                 </AppBar>
                 <br/>
-                <Grid container spacing={8}>
-                    <Grid item xs={12}>
+                <Grid container spacing={16} style={{ margin: 0, width: '100%'}}>
+                    <Grid item xs={6}>
                         <Button variant="contained" color="secondary">TEST</Button>
                     </Grid>
                 </Grid>
