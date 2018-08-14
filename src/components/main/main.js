@@ -16,7 +16,6 @@ class Main extends Component {
                         <Typography variant="title" color="inherit">Versus</Typography>
                     </Toolbar>
                 </AppBar>
-                <br/>
                 <Grid container spacing={16} style={{ margin: 0, width: '100%'}}>
                     <Grid item xs={4}>
                         <Card>
