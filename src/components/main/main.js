@@ -16,8 +16,11 @@ class Main extends Component {
                         <Typography variant="title" color="inherit">Versus</Typography>
                     </Toolbar>
                 </AppBar>
-                <Grid container spacing={12}>
-                    <Button variant="contained" color="secondary">TEST</Button>
+                <br/>
+                <Grid container spacing={8}>
+                    <Grid item xs={12}>
+                        <Button variant="contained" color="secondary">TEST</Button>
+                    </Grid>
                 </Grid>
             </React.Fragment>
         )
