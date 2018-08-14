@@ -12,7 +12,7 @@ class Main extends Component {
         return(
             <React.Fragment>
                 <AppBar position="static" color="primary">
-                    <Toolbar>
+                    <Toolbar variant="dense">
                         <Typography variant="title" color="inherit">Versus</Typography>
                     </Toolbar>
                 </AppBar>
