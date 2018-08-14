@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography'
 class Main extends Component {
     render() {
         return(
-            <div>
+            <React.Fragment>
                 <AppBar position="static">
                     <Toolbar variant="dense">
                         <IconButton color="inherit" aria-label="Menu">
@@ -19,7 +19,7 @@ class Main extends Component {
                     </Toolbar>
                 </AppBar>
                 <Button variant="contained" color="secondary">TEST</Button>
-            </div>
+            </React.Fragment>
         )
     }
 }
