@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from "react-router-dom"
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import SettingsIcon from '@material-ui/icons/Settings'
@@ -7,30 +8,46 @@ import ListItem from '@material-ui/core/ListItem'
 import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
 
+const styles = {
+    style: {
+        textDecoration: 'none'
+    },
+    activeStyle: {
+        background: '#CFD8DC',
+        pointerEvents: 'none'
+    }
+}
+
 class VersusDrawer extends Component {
     render() {
         return(
             <Drawer variant="permanent" classes={{ paper: this.props.classes.drawerPaper }}>
                 <div className={ this.props.classes.toolbar }/>
-                <ListItem button>
-                    <ListItemIcon>
-                        <PeopleIcon/>
-                    </ListItemIcon>
-                    <ListItemText primary="Eventos"/>
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <PeopleIcon/>
-                    </ListItemIcon>
-                    <ListItemText primary="Competidores"/>
-                </ListItem>
+                <NavLink to="/main/events" style={ styles.style } activeStyle={ styles.activeStyle }>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <PeopleIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary="Eventos"/>
+                    </ListItem>
+                </NavLink>
+                <NavLink to="/main/competitors" style={ styles.style } activeStyle={ styles.activeStyle }>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <PeopleIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary="Competidores"/>
+                    </ListItem>
+                </NavLink>
                 <Divider/>
-                <ListItem button>
-                    <ListItemIcon>
-                        <SettingsIcon/>
-                    </ListItemIcon>
-                    <ListItemText primary="Ajustes"/>
-                </ListItem>
+                <NavLink to="/main/settings" style={ styles.style } activeStyle={ styles.activeStyle }>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <SettingsIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary="Ajustes"/>
+                    </ListItem>
+                </NavLink>
             </Drawer>
         )
     }
