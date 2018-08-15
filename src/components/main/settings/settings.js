@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import Typography from '@material-ui/core/Typography'
 
 class Settings extends Component {
     render() {
         return(
-            <div>SETTINGS VIEW</div>
+            <React.Fragment>
+                <Typography variant="display2" gutterBottom>Settings</Typography>
+            </React.Fragment>
         )
     }
 }

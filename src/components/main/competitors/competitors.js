@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import Typography from '@material-ui/core/Typography'
 
 class Competitors extends Component {
     render() {
         return(
-            <div>Competitors VIEW</div>
+            <React.Fragment>
+                <Typography variant="display2" gutterBottom>Competitors</Typography>
+            </React.Fragment>
         )
     }
 }

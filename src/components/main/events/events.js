@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import Typography from '@material-ui/core/Typography'
 
 class Event extends Component {
     render() {
         return(
-            <div>Event VIEW</div>
+            <React.Fragment>
+                <Typography variant="display2" gutterBottom>Events</Typography>
+            </React.Fragment>
         )
     }
 }
