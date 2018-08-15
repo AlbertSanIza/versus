@@ -64,6 +64,12 @@ class Main extends Component {
                         <ListItemText primary="Competidores"/>
                     </ListItem>
                     <Divider/>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <PeopleIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary="Ajustes"/>
+                    </ListItem>
                 </Drawer>
                 <main className={ this.props.classes.content }>
                     <div className={ this.props.classes.toolbar }/>
