@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import CardContent from '@material-ui/core/CardContent'
@@ -14,6 +15,8 @@ import Drawer from '@material-ui/core/Drawer'
 import Card from '@material-ui/core/Card'
 import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
+import SettingsView from './settings/'
+
 const styles = theme => ({
     root: {
         flexGrow: 1,
@@ -64,6 +67,7 @@ class Main extends Component {
                 </Drawer>
                 <main className={ this.props.classes.content }>
                     <div className={ this.props.classes.toolbar }/>
+                    <Route path="/main/settings" component={ SettingsView }/>
                     <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
                 </main>
             </div>
