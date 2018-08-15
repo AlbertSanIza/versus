@@ -5,7 +5,7 @@ class Competitors extends Component {
     render() {
         return(
             <React.Fragment>
-                <Typography variant="display2" gutterBottom>Competitors</Typography>
+                <Typography variant="display2" gutterBottom>Competidores</Typography>
             </React.Fragment>
         )
     }

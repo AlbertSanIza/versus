@@ -5,7 +5,7 @@ class Settings extends Component {
     render() {
         return(
             <React.Fragment>
-                <Typography variant="display2" gutterBottom>Settings</Typography>
+                <Typography variant="display2" gutterBottom>Ajustes</Typography>
             </React.Fragment>
         )
     }

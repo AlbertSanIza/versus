@@ -5,7 +5,7 @@ class Event extends Component {
     render() {
         return(
             <React.Fragment>
-                <Typography variant="display2" gutterBottom>Events</Typography>
+                <Typography variant="display2" gutterBottom>Eventos</Typography>
             </React.Fragment>
         )
     }
