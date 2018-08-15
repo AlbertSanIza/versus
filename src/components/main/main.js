@@ -3,9 +3,10 @@ import { Route } from 'react-router-dom'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import CardContent from '@material-ui/core/CardContent'
-import PeopleIcon from '@material-ui/icons/People'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
+import PeopleIcon from '@material-ui/icons/People'
+import SettingsIcon from '@material-ui/icons/Settings'
 import ListItem from '@material-ui/core/ListItem'
 import Toolbar from '@material-ui/core/Toolbar'
 import Divider from '@material-ui/core/Divider'
@@ -67,7 +68,7 @@ class Main extends Component {
                     <Divider/>
                     <ListItem button>
                         <ListItemIcon>
-                            <PeopleIcon/>
+                            <SettingsIcon/>
                         </ListItemIcon>
                         <ListItemText primary="Ajustes"/>
                     </ListItem>
