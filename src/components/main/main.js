@@ -17,10 +17,10 @@ const styles = theme => ({
         zIndex: 1,
         overflow: 'hidden',
         position: 'relative',
-        display: 'flex',
+        display: 'flex'
     },
     appBar: {
-        zIndex: theme.zIndex.drawer + 1,
+        zIndex: theme.zIndex.drawer + 1
     },
     appBarTitle: {
         width: '100%',
@@ -28,7 +28,7 @@ const styles = theme => ({
     },
     drawerPaper: {
         position: 'relative',
-        width: 240,
+        width: 200
     },
     content: {
         flexGrow: 1,
