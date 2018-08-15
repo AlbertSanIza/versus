@@ -13,7 +13,7 @@ import List from '@material-ui/core/List'
 const styles = theme => ({
     root: {
         flexGrow: 1,
-        height: 100,
+        flex: 1,
         zIndex: 1,
         overflow: 'hidden',
         position: 'relative',
