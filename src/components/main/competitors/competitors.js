@@ -31,6 +31,27 @@ class Competitors extends Component {
                             </CardContent>
                         </Card>
                     </Grid>
+                    <Grid item sm={ 3 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Lobo Estepario</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 3 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Yoiker</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 3 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Jack Adrenalina</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
                 </Grid>
             </React.Fragment>
         )
