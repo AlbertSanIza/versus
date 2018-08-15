@@ -19,7 +19,7 @@ class App extends Component {
         return (
             <HashRouter>
                 <React.Fragment>
-                    <Route exact path="/main" component={Main}/>
+                    <Route path="/main" component={Main}/>
                     <Route exact path="/" component={Visualizer}/>
                 </React.Fragment>
             </HashRouter>
