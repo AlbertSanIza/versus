@@ -63,6 +63,7 @@ class Main extends Component {
                     <Divider/>
                 </Drawer>
                 <main className={ this.props.classes.content }>
+                    <div className={ this.props.classes.toolbar }/>
                     <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
                 </main>
             </div>
