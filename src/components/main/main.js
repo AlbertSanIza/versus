@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListItemText from '@material-ui/core/ListItemText'
 import CardContent from '@material-ui/core/CardContent'
+import InboxIcon from '@material-ui/icons/MoveToInbox'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
+import ListItem from '@material-ui/core/ListItem'
 import Toolbar from '@material-ui/core/Toolbar'
+import Divider from '@material-ui/core/Divider'
 import AppBar from '@material-ui/core/AppBar'
 import Button from '@material-ui/core/Button'
 import Drawer from '@material-ui/core/Drawer'
 import Card from '@material-ui/core/Card'
 import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
-
 const styles = theme => ({
     root: {
         flexGrow: 1,
@@ -44,11 +48,19 @@ class Main extends Component {
         return(
             <div className={ this.props.classes.root }>
                 <AppBar position="absolute" className={ this.props.classes.appBar }>
-                    <Toolbar variant="dense">
+                    <Toolbar>
                         <Typography variant="title" color="inherit" className={ this.props.classes.appBarTitle }>Versus</Typography>
                     </Toolbar>
                 </AppBar>
                 <Drawer variant="permanent" className="drawerPaper" classes={{ paper: this.props.classes.drawerPaper }}>
+                    <div className={ this.props.classes.toolbar }/>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <InboxIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary="Competidores"/>
+                    </ListItem>
+                    <Divider/>
                 </Drawer>
                 <main className={ this.props.classes.content }>
                     <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
