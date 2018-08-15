@@ -1,21 +1,10 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
-import PeopleIcon from '@material-ui/icons/People'
-import SettingsIcon from '@material-ui/icons/Settings'
-import ListItem from '@material-ui/core/ListItem'
 import Toolbar from '@material-ui/core/Toolbar'
-import Divider from '@material-ui/core/Divider'
 import AppBar from '@material-ui/core/AppBar'
-import Button from '@material-ui/core/Button'
-import Drawer from '@material-ui/core/Drawer'
-import Card from '@material-ui/core/Card'
-import Grid from '@material-ui/core/Grid'
-import List from '@material-ui/core/List'
+import VersusDrawer from './versusDrawer/'
 import EventsView from './events/'
 import CompetitorsView from './competitors/'
 import SettingsView from './settings/'
@@ -58,22 +47,7 @@ class Main extends Component {
                         <Typography variant="title" color="inherit" className={ this.props.classes.appBarTitle }>Versus</Typography>
                     </Toolbar>
                 </AppBar>
-                <Drawer variant="permanent" classes={{ paper: this.props.classes.drawerPaper }}>
-                    <div className={ this.props.classes.toolbar }/>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <PeopleIcon/>
-                        </ListItemIcon>
-                        <ListItemText primary="Competidores"/>
-                    </ListItem>
-                    <Divider/>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <SettingsIcon/>
-                        </ListItemIcon>
-                        <ListItemText primary="Ajustes"/>
-                    </ListItem>
-                </Drawer>
+                <VersusDrawer classes={ this.props.classes }/>
                 <main className={ this.props.classes.content }>
                     <div className={ this.props.classes.toolbar }/>
                     <Route path="/main/events" component={ EventsView }/>
