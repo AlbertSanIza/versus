@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import CardContent from '@material-ui/core/CardContent'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
+import PeopleIcon from '@material-ui/icons/People'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
 import ListItem from '@material-ui/core/ListItem'
@@ -56,7 +56,7 @@ class Main extends Component {
                     <div className={ this.props.classes.toolbar }/>
                     <ListItem button>
                         <ListItemIcon>
-                            <InboxIcon/>
+                            <PeopleIcon/>
                         </ListItemIcon>
                         <ListItemText primary="Competidores"/>
                     </ListItem>
