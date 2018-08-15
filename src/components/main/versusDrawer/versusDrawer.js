@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import SettingsIcon from '@material-ui/icons/Settings'
+import EventIcon from '@material-ui/icons/Event'
 import PeopleIcon from '@material-ui/icons/People'
 import ListItem from '@material-ui/core/ListItem'
 import Divider from '@material-ui/core/Divider'
@@ -26,7 +27,7 @@ class VersusDrawer extends Component {
                 <NavLink to="/main/events" style={ styles.style } activeStyle={ styles.activeStyle }>
                     <ListItem button>
                         <ListItemIcon>
-                            <PeopleIcon/>
+                            <EventIcon/>
                         </ListItemIcon>
                         <ListItemText primary="Eventos"/>
                     </ListItem>
