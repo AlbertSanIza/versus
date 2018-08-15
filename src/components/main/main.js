@@ -58,7 +58,7 @@ class Main extends Component {
                         <Typography variant="title" color="inherit" className={ this.props.classes.appBarTitle }>Versus</Typography>
                     </Toolbar>
                 </AppBar>
-                <Drawer variant="permanent" className="drawerPaper" classes={{ paper: this.props.classes.drawerPaper }}>
+                <Drawer variant="permanent" classes={{ paper: this.props.classes.drawerPaper }}>
                     <div className={ this.props.classes.toolbar }/>
                     <ListItem button>
                         <ListItemIcon>
