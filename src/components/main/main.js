@@ -22,6 +22,10 @@ const styles = theme => ({
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
     },
+    appBarTitle: {
+        width: '100%',
+        textAlign: 'center'
+    },
     drawerPaper: {
         position: 'relative',
         width: 240,
@@ -41,7 +45,7 @@ class Main extends Component {
             <div className={ this.props.classes.root }>
                 <AppBar position="absolute" className={ this.props.classes.appBar }>
                     <Toolbar variant="dense">
-                        <Typography variant="title" color="inherit" noWrap>Versus</Typography>
+                        <Typography variant="title" color="inherit" className={ this.props.classes.appBarTitle }>Versus</Typography>
                     </Toolbar>
                 </AppBar>
                 <Drawer variant="permanent" className="drawerPaper" classes={{ paper: this.props.classes.drawerPaper }}>
