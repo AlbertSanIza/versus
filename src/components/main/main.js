@@ -16,8 +16,9 @@ import Drawer from '@material-ui/core/Drawer'
 import Card from '@material-ui/core/Card'
 import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
-import SettingsView from './settings/'
+import EventsView from './events/'
 import CompetitorsView from './competitors/'
+import SettingsView from './settings/'
 
 const styles = theme => ({
     root: {
@@ -75,6 +76,7 @@ class Main extends Component {
                 </Drawer>
                 <main className={ this.props.classes.content }>
                     <div className={ this.props.classes.toolbar }/>
+                    <Route path="/main/events" component={ EventsView }/>
                     <Route path="/main/competitors" component={ CompetitorsView }/>
                     <Route path="/main/settings" component={ SettingsView }/>
                 </main>
