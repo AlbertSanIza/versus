@@ -40,7 +40,7 @@ class Main extends Component {
         return(
             <div className={ this.props.classes.root }>
                 <AppBar position="absolute" className={ this.props.classes.appBar }>
-                    <Toolbar>
+                    <Toolbar variant="dense">
                         <Typography variant="title" color="inherit" noWrap>Versus</Typography>
                     </Toolbar>
                 </AppBar>
