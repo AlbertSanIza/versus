@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
 import instagramLogo from './instagramLogo.svg'
 import githubLogo from './githubLogo.svg'
 
@@ -8,21 +9,16 @@ class Settings extends Component {
         return (
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Ajustes</Typography>
-                <div>
-                    <hr/>
-                    Creado por
+                <Typography variant="body1" align="center">
+                    <Button href="https://github.com/AlbertSanIza">
+                        Creado por Albert Sanchez
+                    </Button>
                     <a href="https://github.com/AlbertSanIza" target="_blank" rel="noopener noreferrer">Albert Sanchez</a>
-                    <br/>
-                    <a href="https://www.instagram.com/albertsaniza/" target="_blank" rel="noopener noreferrer">
-                        <img className="logo" src={instagramLogo} alt=""/>
-                    </a>
-                    <a href="https://github.com/BatallaDeMaestros" target="_blank" rel="noopener noreferrer">
-                        <img className="logo" src={githubLogo} alt=""/>
-                    </a>
-                </div>
-            </React.Fragment>
-        )
-    }
+                <br/>
+            </Typography>
+        </React.Fragment>
+    )
+}
 }
 
 export default Settings
