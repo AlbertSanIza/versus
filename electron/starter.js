@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, shell } = require('electron')
 const path = require('path')
 const url = require('url')
 let mainWindow
@@ -32,7 +32,7 @@ app.on('ready', () => {
     })
     mainWindow.webContents.on('new-window', (event, url) => {
         event.preventDefault()
-        open(url)
+        shell.openExternal(url)
     })
     io.on('connection', socket => {
         socket.on('message', msg => {
