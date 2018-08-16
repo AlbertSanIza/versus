@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
 import AppBar from '@material-ui/core/AppBar'
 import VersusDrawer from './versusDrawer/'
+import VisualsView from './visuals/'
 import EventsView from './events/'
 import CompetitorsView from './competitors/'
 import SettingsView from './settings/'
@@ -50,6 +51,7 @@ class Main extends Component {
                 <VersusDrawer classes={ this.props.classes }/>
                 <main className={ this.props.classes.content }>
                     <div className={ this.props.classes.toolbar }/>
+                    <Route path="/main/visuals" component={ VisualsView }/>
                     <Route path="/main/events" component={ EventsView }/>
                     <Route path="/main/competitors" component={ CompetitorsView }/>
                     <Route path="/main/settings" component={ SettingsView }/>
