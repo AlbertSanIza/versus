@@ -8,8 +8,11 @@ var http = require('http').Server(expressApp).listen(12345)
 var io = require('socket.io')(http)
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        width: 800,
+        width: 900,
         height: 600,
+        minWidth: 900,
+        minHeight: 600,
+        useContentSize: true,
         titleBarStyle: 'hidden',
         show: false
     })
