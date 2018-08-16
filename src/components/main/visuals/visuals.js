@@ -12,7 +12,22 @@ class Competitors extends Component {
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Visuales</Typography>
-                <VersusViewer></VersusViewer>
+                <Grid container spacing={ 16 }>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title">Controles</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 8 }>
+                        <Card>
+                            <CardContent>
+                                <VersusViewer></VersusViewer>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
             </React.Fragment>
         )
     }
