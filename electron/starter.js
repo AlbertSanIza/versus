@@ -30,6 +30,10 @@ app.on('ready', () => {
     mainWindow.webContents.on('did-finish-load', () => {
         mainWindow.show()
     })
+    mainWindow.webContents.on('new-window', (event, url) => {
+        event.preventDefault()
+        open(url)
+    })
     io.on('connection', socket => {
         socket.on('message', msg => {
             io.emit('message', msg)
