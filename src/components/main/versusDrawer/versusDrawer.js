@@ -5,6 +5,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import SettingsIcon from '@material-ui/icons/Settings'
 import EventIcon from '@material-ui/icons/Event'
 import PeopleIcon from '@material-ui/icons/People'
+import ImageIcon from '@material-ui/icons/Image'
 import ListItem from '@material-ui/core/ListItem'
 import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
@@ -24,6 +25,14 @@ class VersusDrawer extends Component {
         return(
             <Drawer variant="permanent" classes={{ paper: this.props.classes.drawerPaper }}>
                 <div className={ this.props.classes.toolbar }/>
+                <NavLink to="/main/visuals" style={ styles.style } activeStyle={ styles.activeStyle }>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <ImageIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary="Visuales"/>
+                    </ListItem>
+                </NavLink>
                 <NavLink to="/main/events" style={ styles.style } activeStyle={ styles.activeStyle }>
                     <ListItem button>
                         <ListItemIcon>
