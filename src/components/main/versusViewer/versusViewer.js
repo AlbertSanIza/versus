@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './versusViewer.css'
 
 class VersusViewer extends Component {
     render() {
