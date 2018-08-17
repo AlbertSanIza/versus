@@ -9,6 +9,7 @@ import VisualsView from './visuals/'
 import EventsView from './events/'
 import CompetitorsView from './competitors/'
 import SettingsView from './settings/'
+import './main.css'
 
 const styles = theme => ({
     root: {
@@ -30,12 +31,6 @@ const styles = theme => ({
         position: 'relative',
         width: 200
     },
-    content: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.default,
-        padding: theme.spacing.unit * 3,
-        minWidth: 0
-    },
     toolbar: theme.mixins.toolbar,
 })
 
@@ -49,13 +44,14 @@ class Main extends Component {
                     </Toolbar>
                 </AppBar>
                 <VersusDrawer classes={ this.props.classes }/>
-                <main className={ this.props.classes.content }>
-                    <div className={ this.props.classes.toolbar }/>
-                    <Route path="/main/visuals" component={ VisualsView }/>
-                    <Route path="/main/events" component={ EventsView }/>
-                    <Route path="/main/competitors" component={ CompetitorsView }/>
-                    <Route path="/main/settings" component={ SettingsView }/>
-                </main>
+                <div className="main-content-holder">
+                    <div className="main-content">
+                        <Route path="/main/visuals" component={ VisualsView }/>
+                        <Route path="/main/events" component={ EventsView }/>
+                        <Route path="/main/competitors" component={ CompetitorsView }/>
+                        <Route path="/main/settings" component={ SettingsView }/>
+                    </div>
+                </div>
             </div>
         )
     }
