@@ -20,7 +20,7 @@ app.on('ready', () => {
     expressApp.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, '/../build/index.html'))
     })
-    mainWindow.loadURL(process.env.ELECTRON_START_URL || "http://localhost:12345/#/main")
+    mainWindow.loadURL(process.env.ELECTRON_START_URL || "http://localhost:12345/#/main/visuals")
     if (process.env.ELECTRON_START_URL) {
         mainWindow.webContents.openDevTools()
     }
