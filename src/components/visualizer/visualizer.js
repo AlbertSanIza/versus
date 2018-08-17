@@ -6,8 +6,8 @@ import './visualizer.css'
 
 const VisualizerHeader = () => (
     <div className="visualizer-header fade-in">
-    <img className="bdm-logo-sm" src={bdm_logo} alt="LOGO"/>
-    <img className="puma-logo-sm" src={puma_logo} alt="LOGO"/>
+        <img className="bdm-logo-sm" src={bdm_logo} alt="LOGO"/>
+        <img className="puma-logo-sm" src={puma_logo} alt="LOGO"/>
     </div>
 )
 
@@ -26,36 +26,36 @@ class Visualizer extends Component {
     render() {
         return (
             <div className="visualizer flex fade-in">
-            <div id="particles-js" className="particles"></div>
-            {(() => {
-                if(this.state.status === "isSet" || this.state.status === "isStart") {
-                    return (
-                        <VisualizerHeader/>
-                    )
-                } else {
-                    return (
-                        <img className="bdm-logo-center fade-in" src={bdm_logo} alt="LOGO"/>
-                    )
-                }
-            })()}
-            {(() => {
-                if(this.state.status === "isSet" || this.state.status === "isStart") {
-                    return (
-                        <div className="visualizer-countdown fade-in">
-                        {this.state.seconds}
-                        </div>
-                    )
-                }
-            })()}
-            {(() => {
-                if((this.state.status === "isSet" || this.state.status === "isStart") && this.state.text !== "") {
-                    return (
-                        <div className="visualizer-text fade-in">
-                        {this.state.text}
-                        </div>
-                    )
-                }
-            })()}
+                <div id="particles-js" className="particles"></div>
+                {(() => {
+                    if(this.state.status === "isSet" || this.state.status === "isStart") {
+                        return (
+                            <VisualizerHeader/>
+                        )
+                    } else {
+                        return (
+                            <img className="bdm-logo-center fade-in" src={bdm_logo} alt="LOGO"/>
+                        )
+                    }
+                })()}
+                {(() => {
+                    if(this.state.status === "isSet" || this.state.status === "isStart") {
+                        return (
+                            <div className="visualizer-countdown fade-in">
+                                {this.state.seconds}
+                            </div>
+                        )
+                    }
+                })()}
+                {(() => {
+                    if((this.state.status === "isSet" || this.state.status === "isStart") && this.state.text !== "") {
+                        return (
+                            <div className="visualizer-text fade-in">
+                                {this.state.text}
+                            </div>
+                        )
+                    }
+                })()}
             </div>
         )
     }
