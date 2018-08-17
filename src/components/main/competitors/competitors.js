@@ -52,6 +52,286 @@ class Competitors extends Component {
                             </CardContent>
                         </Card>
                     </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Aczino</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Rapder</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Lobo Estepario</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Yoiker</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Jack Adrenalina</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Aczino</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Rapder</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Lobo Estepario</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Yoiker</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Jack Adrenalina</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Aczino</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Rapder</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Lobo Estepario</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Yoiker</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Jack Adrenalina</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Aczino</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Rapder</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Lobo Estepario</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Yoiker</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Jack Adrenalina</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Aczino</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Rapder</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Lobo Estepario</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Yoiker</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Jack Adrenalina</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Aczino</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Rapder</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Lobo Estepario</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Yoiker</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Jack Adrenalina</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Aczino</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Rapder</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Lobo Estepario</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Yoiker</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Jack Adrenalina</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Aczino</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Rapder</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Lobo Estepario</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Yoiker</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item sm={ 4 }>
+                        <Card>
+                            <CardContent>
+                                <Typography variant="title" gutterBottom>Jack Adrenalina</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
                 </Grid>
             </React.Fragment>
         )
