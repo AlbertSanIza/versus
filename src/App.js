@@ -13,14 +13,14 @@ class App extends Component {
         })
     }
     handleClick = () => {
-        socket.emit('message', {message: "test"})
+        socket.emit('message', { message: "test" })
     }
     render() {
         return (
             <HashRouter>
                 <React.Fragment>
-                    <Route path="/main" component={Main}/>
-                    <Route exact path="/" component={Visualizer}/>
+                    <Route path="/main" component={ Main }/>
+                    <Route exact path="/" component={ Visualizer }/>
                 </React.Fragment>
             </HashRouter>
         )
