@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import 'particles.js/particles'
 import puma_logo from "./puma.png"
 import bdm_logo from "./bdm.png"
 import './visualizer.css'
@@ -18,6 +19,9 @@ class Visualizer extends Component {
             seconds: "",
             text: ""
         }
+    }
+    componentDidMount() {
+        window.particlesJS.load('particles-js', 'particles-config.json')
     }
     render() {
         return (
