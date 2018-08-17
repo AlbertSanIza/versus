@@ -9,6 +9,6 @@
 .main-content {
     padding: 24px;
     width: calc(100% - 48px);
-    height: calc(100% + 48px);
+    height: calc(100% - 48px);
     overflow-y: scroll;
 }
