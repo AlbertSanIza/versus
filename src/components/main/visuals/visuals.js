@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
-import VersusViewer from '../versusViewer/'
+import './visuals.css'
 
 class Competitors extends Component {
     render() {
@@ -20,8 +20,8 @@ class Competitors extends Component {
                         </Card>
                     </Grid>
                     <Grid item sm={ 8 }>
-                        <Paper>
-                            <VersusViewer></VersusViewer>
+                        <Paper elevation={ 12 } className="">
+                            <iframe src="#/" frameBorder="0" title="visualizer" className="visuals-iframe"></iframe>
                         </Paper>
                     </Grid>
                 </Grid>
