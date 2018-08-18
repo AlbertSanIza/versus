@@ -20,7 +20,7 @@ class Competitors extends Component {
                         </Card>
                     </Grid>
                     <Grid item sm={ 8 }>
-                        <Paper elevation={ 12 } className="">
+                        <Paper>
                             <iframe src="#/" frameBorder="0" title="visualizer" className="visuals-iframe"></iframe>
                         </Paper>
                     </Grid>
