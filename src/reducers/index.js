@@ -1,23 +1,25 @@
-const Competitors = (state = [], action) => {
-    switch (action.type) {
-        case 'ADD_TODO':
-        return [
-            ...state,
-            {
-                id: action.id,
-                text: action.text,
-                completed: false
-            }
-        ]
-        case 'TOGGLE_TODO':
-        return state.map(todo =>
-            (todo.id === action.id)
-            ? {...todo, completed: !todo.completed}
-            : todo
-        )
+import { combineReducers } from 'redux'
+
+const competitorsInitialState = {
+    competitors: [
+        { name: 'Aczino' },
+        { name: 'Lobo Estepario' }
+    ],
+    searchTerm: ''
+}
+
+const competitors = (state = competitorsInitialState, action) => {
+    switch(action.type) {
+        case 'SEARCH_COMPETITOR':
+        const { searchTerm } = action.payload
+        return {
+            ...state, searchTerm: searchTerm, competitors: searchTerm ? competitorsInitialState.competitors.filter(competitor => competitor.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) : competitorsInitialState.competitors
+        }
         default:
         return state
     }
 }
 
-export default Competitors
+export default combineReducers({
+    competitors
+})
