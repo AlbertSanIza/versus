@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 import Compoetitors from './competitors'
 
-function searchCompetitor(searchTerm) {
+function searchCompetitors(searchTerm) {
     return {
-        type: 'SEARCH_COMPETITOR',
+        type: 'SEARCH_COMPETITORS',
         payload: { searchTerm },
     }
 }
 
 export default connect(store => store.competitors, {
-    searchCompetitor
+    searchCompetitors
 })(Compoetitors)
