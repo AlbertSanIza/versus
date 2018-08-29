@@ -10,7 +10,6 @@ import EventsView from './events/'
 import ThematicsView from './thematics/'
 import CompetitorsView from './competitors/'
 import SettingsView from './settings/'
-import './main.css'
 
 const styles = theme => ({
     root: {
@@ -28,11 +27,27 @@ const styles = theme => ({
         width: '100%',
         textAlign: 'center'
     },
+    toolbar: {
+        height: 48
+    },
     drawerPaper: {
         position: 'relative',
         width: 200
     },
-    toolbar: theme.mixins.toolbar,
+    mainContentHolder: {
+        position: 'absolute',
+        top: 48,
+        bottom: 0,
+        left: 200,
+        right: 0,
+        overflowY: 'hidden'
+    },
+    mainContent: {
+        padding: 24,
+        width: 'calc(100% - 48px)',
+        height: 'calc(100% - 48px)',
+        overflowY: 'scroll'
+    }
 })
 
 class Main extends Component {
@@ -41,13 +56,13 @@ class Main extends Component {
         return(
             <div className={ classes.root }>
                 <AppBar position="absolute" className={ classes.appBar }>
-                    <Toolbar>
+                    <Toolbar variant="dense">
                         <Typography variant="title" color="inherit" className={ classes.appBarTitle }>Versus</Typography>
                     </Toolbar>
                 </AppBar>
                 <VersusDrawer classes={ classes }/>
-                <div className="main-content-holder">
-                    <div className="main-content">
+                <div className={ classes.mainContentHolder }>
+                    <div className={ classes.mainContent }>
                         <Route path="/main/visuals" component={ VisualsView }/>
                         <Route path="/main/events" component={ EventsView }/>
                         <Route path="/main/thematics" component={ ThematicsView }/>
