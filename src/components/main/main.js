@@ -37,14 +37,15 @@ const styles = theme => ({
 
 class Main extends Component {
     render() {
+        const { classes } = this.props
         return(
-            <div className={ this.props.classes.root }>
-                <AppBar position="absolute" className={ this.props.classes.appBar }>
+            <div className={ classes.root }>
+                <AppBar position="absolute" className={ classes.appBar }>
                     <Toolbar>
-                        <Typography variant="title" color="inherit" className={ this.props.classes.appBarTitle }>Versus</Typography>
+                        <Typography variant="title" color="inherit" className={ classes.appBarTitle }>Versus</Typography>
                     </Toolbar>
                 </AppBar>
-                <VersusDrawer classes={ this.props.classes }/>
+                <VersusDrawer classes={ classes }/>
                 <div className="main-content-holder">
                     <div className="main-content">
                         <Route path="/main/visuals" component={ VisualsView }/>
