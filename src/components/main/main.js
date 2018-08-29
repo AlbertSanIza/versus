@@ -7,6 +7,7 @@ import AppBar from '@material-ui/core/AppBar'
 import VersusDrawer from './versusDrawer/'
 import VisualsView from './visuals/'
 import EventsView from './events/'
+import ThematicsView from './thematics/'
 import CompetitorsView from './competitors/'
 import SettingsView from './settings/'
 import './main.css'
@@ -48,6 +49,7 @@ class Main extends Component {
                     <div className="main-content">
                         <Route path="/main/visuals" component={ VisualsView }/>
                         <Route path="/main/events" component={ EventsView }/>
+                        <Route path="/main/thematics" component={ ThematicsView }/>
                         <Route path="/main/competitors" component={ CompetitorsView }/>
                         <Route path="/main/settings" component={ SettingsView }/>
                     </div>

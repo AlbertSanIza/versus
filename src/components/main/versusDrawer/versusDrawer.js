@@ -4,6 +4,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import SettingsIcon from '@material-ui/icons/Settings'
 import EventIcon from '@material-ui/icons/Event'
+import SchoolIcon from '@material-ui/icons/School'
 import PeopleIcon from '@material-ui/icons/People'
 import ImageIcon from '@material-ui/icons/Image'
 import ListItem from '@material-ui/core/ListItem'
@@ -39,6 +40,14 @@ class VersusDrawer extends Component {
                             <EventIcon/>
                         </ListItemIcon>
                         <ListItemText primary="Eventos"/>
+                    </ListItem>
+                </NavLink>
+                <NavLink to="/main/thematics" style={ styles.style } activeStyle={ styles.activeStyle }>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <SchoolIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary="Tematicas"/>
                     </ListItem>
                 </NavLink>
                 <NavLink to="/main/competitors" style={ styles.style } activeStyle={ styles.activeStyle }>
