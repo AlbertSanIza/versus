@@ -27,7 +27,7 @@ class Competitors extends Component {
                         </FormControl>
                     </Grid>
                     { competitors.map((competitor, i) => (
-                        <Grid item xs={ 12 } sm={ 6 } md={ 4 } lg={ 2 } key={ i }>
+                        <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
                             <Card>
                                 <CardMedia className={ classes.media } image={ competitor.photo } title="Contemplative Reptile"/>
                                 <CardContent>
