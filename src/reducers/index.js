@@ -8,6 +8,11 @@ const eventsInitialState = {
 }
 const events = (state = eventsInitialState, action) => {
     switch(action.type) {
+        case 'CREATE_EVENTS':
+        const { event } = action.payload
+        return {
+            ...state, events: eventsInitialState.events.push(event)
+        }
         case 'SEARCH_EVENTS':
         const { searchTerm } = action.payload
         return {
