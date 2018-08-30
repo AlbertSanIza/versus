@@ -42,8 +42,9 @@ const thematics = (state = thematicsInitialState, action) => {
 
 const competitorsInitialState = {
     competitors: [
-        { name: 'Aczino' },
-        { name: 'Lobo Estepario' }
+        { name: 'Wos', photo: './wos.jpg' },
+        { name: 'Aczino', photo: './aczino.jpg' },
+        { name: 'Lobo Estepario', photo: './loboestepario.jpg' }
     ],
     searchTerm: ''
 }
