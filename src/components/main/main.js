@@ -13,12 +13,12 @@ import SettingsView from './settings/'
 
 const styles = theme => ({
     root: {
+        display: 'flex',
         flexGrow: 1,
-        flex: 1,
+        height: '100vh',
         zIndex: 1,
         overflow: 'hidden',
         position: 'relative',
-        display: 'flex'
     },
     appBar: {
         zIndex: theme.zIndex.drawer + 1
