@@ -22,8 +22,8 @@ class Competitors extends Component {
                             <Input placeholder="Busqueda" value={ searchTerm } onChange={ e => searchCompetitors(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
-                    { competitors.map(competitor => (
-                        <Grid item sm={ 4 } key={ competitor.name }>
+                    { competitors.map((competitor, i) => (
+                        <Grid item sm={ 4 } key={ i }>
                             <Card>
                                 <CardContent>
                                     <Typography variant="title" gutterBottom>{ competitor.name }</Typography>
