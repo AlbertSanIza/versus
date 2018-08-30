@@ -6,11 +6,7 @@ import Grid from '@material-ui/core/Grid'
 
 class Event extends Component {
     render() {
-        const {
-            events,
-            searchTerm,
-            searchEvents
-        } = this.props
+        const { events, searchTerm, searchEvents } = this.props
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Eventos</Typography>

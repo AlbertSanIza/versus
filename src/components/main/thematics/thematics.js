@@ -6,11 +6,7 @@ import Grid from '@material-ui/core/Grid'
 
 class Thematics extends Component {
     render() {
-        const {
-            thematics,
-            searchTerm,
-            searchThematics
-        } = this.props
+        const { thematics, searchTerm, searchThematics } = this.props
         return (
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Tematicas</Typography>
