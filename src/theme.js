@@ -7,8 +7,6 @@ export default createMuiTheme({
         primary: {
             main: grey[900]
         },
-        secondary: {
-            main: red[600]
-        }
+        secondary: red
     }
 })
