@@ -8,11 +8,7 @@ import Card from '@material-ui/core/Card'
 
 class Competitors extends Component {
     render() {
-        const {
-            competitors,
-            searchTerm,
-            searchCompetitors
-        } = this.props
+        const { competitors, searchTerm, searchCompetitors } = this.props
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
