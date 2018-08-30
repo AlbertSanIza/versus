@@ -2,13 +2,21 @@ import React, { Component } from 'react'
 import FormControl from '@material-ui/core/FormControl'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
+import { withStyles } from '@material-ui/core/styles'
+import CardMedia from '@material-ui/core/CardMedia'
 import Input from '@material-ui/core/Input'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
 
+const styles = {
+    media: {
+        height: '20vw'
+    }
+}
+
 class Competitors extends Component {
     render() {
-        const { competitors, searchTerm, searchCompetitors } = this.props
+        const { classes, competitors, searchTerm, searchCompetitors } = this.props
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
@@ -21,8 +29,9 @@ class Competitors extends Component {
                     { competitors.map((competitor, i) => (
                         <Grid item sm={ 4 } key={ i }>
                             <Card>
+                                <CardMedia className={ classes.media } image="photo.jpeg" title="Contemplative Reptile"/>
                                 <CardContent>
-                                    <Typography variant="title" gutterBottom>{ competitor.name }</Typography>
+                                    <Typography>{ competitor.name }</Typography>
                                 </CardContent>
                             </Card>
                         </Grid>
@@ -33,4 +42,4 @@ class Competitors extends Component {
     }
 }
 
-export default Competitors
+export default withStyles(styles)(Competitors)
