@@ -44,6 +44,12 @@ const competitorsInitialState = {
     competitors: [
         { name: 'Wos', photo: './wos.jpg' },
         { name: 'Aczino', photo: './aczino.jpg' },
+        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
         { name: 'Lobo Estepario', photo: './loboestepario.jpg' }
     ],
     searchTerm: ''
