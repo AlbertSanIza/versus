@@ -20,6 +20,11 @@ class Thematics extends Component {
                             <Input placeholder="Busqueda" value={ searchTerm } onChange={ e => searchThematics(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
+                    { thematics.map((event, i) => (
+                        <Grid item sm={ 4 } key={ i }>
+                            <Typography variant="title" gutterBottom>{ event.name }</Typography>
+                        </Grid>
+                    )) }
                 </Grid>
             </React.Fragment>
         )

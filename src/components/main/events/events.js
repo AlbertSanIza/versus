@@ -20,6 +20,11 @@ class Event extends Component {
                             <Input placeholder="Busqueda" value={ searchTerm } onChange={ e => searchEvents(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
+                    { events.map((event, i) => (
+                        <Grid item sm={ 4 } key={ i }>
+                            <Typography variant="title" gutterBottom>{ event.name }</Typography>
+                        </Grid>
+                    )) }
                 </Grid>
             </React.Fragment>
         )

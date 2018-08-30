@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Compoetitors from './competitors'
+import Competitors from './competitors'
 
 function searchCompetitors(searchTerm) {
     return {
@@ -10,4 +10,4 @@ function searchCompetitors(searchTerm) {
 
 export default connect(store => store.competitors, {
     searchCompetitors
-})(Compoetitors)
+})(Competitors)
