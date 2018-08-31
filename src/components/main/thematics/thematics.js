@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid'
 import Grow from '@material-ui/core/Grow'
 import Card from '@material-ui/core/Card'
 
-const styles = {
+const styles = theme => ({
     fab: {
         margin: 0,
         top: 'auto',
@@ -19,7 +19,7 @@ const styles = {
         left: 'auto',
         position: 'fixed'
     }
-}
+})
 
 class Thematics extends Component {
     render() {
