@@ -8,6 +8,14 @@ function searchCompetitors(searchTerm) {
     }
 }
 
+function createCompetitor(competitor) {
+    return {
+        type: 'CREATE_COMPETITOR',
+        payload: { competitor }
+    }
+}
+
 export default connect(store => store.competitors, {
-    searchCompetitors
+    searchCompetitors,
+    createCompetitor
 })(Competitors)

@@ -8,6 +8,14 @@ function searchThematics(searchTerm) {
     }
 }
 
+function createThematic(thematic) {
+    return {
+        type: 'CREATE_THEMATIC',
+        payload: { thematic }
+    }
+}
+
 export default connect(store => store.thematics, {
-    searchThematics
+    searchThematics,
+    createThematic
 })(Thematics)

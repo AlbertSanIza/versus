@@ -40,7 +40,7 @@ class Thematics extends Component {
         this.setState({ createName: input })
     }
     handleCreate = () => {
-        // this.props.createEvent({ name: this.state.createName })
+        this.props.createThematic({ name: this.state.createName })
         this.handleCloseCreate()
     }
     render() {

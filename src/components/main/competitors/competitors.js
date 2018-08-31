@@ -48,7 +48,7 @@ class Competitors extends Component {
         this.setState({ createName: input })
     }
     handleCreate = () => {
-        // this.props.createEvent({ name: this.state.createName })
+        this.props.createCompetitor({ name: this.state.createName, photo: '' })
         this.handleCloseCreate()
     }
     render() {
@@ -57,7 +57,7 @@ class Competitors extends Component {
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
                 <Grow in={ true } timeout={ 500 }>
-                    <Button variant="fab" className={ classes.fab } color="secondary">
+                    <Button variant="fab" className={ classes.fab } onClick={ this.handleOpenCreate } color="secondary">
                         <CreateIcon/>
                     </Button>
                 </Grow>

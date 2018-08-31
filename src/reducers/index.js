@@ -75,7 +75,7 @@ const competitors = (state = competitorsInitialState, action) => {
                 searchTerm ? competitorsInitialState.competitors.filter(competitor => competitor.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) : competitorsInitialState.competitors
             )
         }
-        case 'CREATE_COMPETIOTOR':
+        case 'CREATE_COMPETITOR':
         const { competitor } = action.payload
         competitorsInitialState.competitors.push(competitor)
         return {
