@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogActions from '@material-ui/core/DialogActions'
 import FormControl from '@material-ui/core/FormControl'
+import DialogTitle from '@material-ui/core/DialogTitle'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
 import CardMedia from '@material-ui/core/CardMedia'
 import CreateIcon from '@material-ui/icons/Create'
 import Button from '@material-ui/core/Button'
+import Dialog from '@material-ui/core/Dialog'
 import Input from '@material-ui/core/Input'
 import Paper from '@material-ui/core/Paper'
 import Grow  from '@material-ui/core/Grow'
@@ -30,6 +34,23 @@ const styles = theme => ({
 })
 
 class Competitors extends Component {
+    state = {
+        openCreate: false,
+        createName: ''
+    }
+    handleOpenCreate = () => {
+        this.setState({ openCreate: true })
+    }
+    handleCloseCreate = () => {
+        this.setState({ openCreate: false, createName: '' })
+    }
+    createTermChanged = input => {
+        this.setState({ createName: input })
+    }
+    handleCreate = () => {
+        // this.props.createEvent({ name: this.state.createName })
+        this.handleCloseCreate()
+    }
     render() {
         const { classes, competitors, searchTerm, searchCompetitors } = this.props
         return(
@@ -57,6 +78,18 @@ class Competitors extends Component {
                         </Grid>
                     )) }
                 </Grid>
+                <Dialog open={ this.state.openCreate } onClose={ this.handleCloseCreate } scroll="paper">
+                    <DialogTitle>Nuevo Evento</DialogTitle>
+                    <DialogContent>
+                        <FormControl fullWidth>
+                            <Input placeholder="Nombre" value={ this.state.createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
+                        </FormControl>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={ this.handleCloseCreate } color="primary">Cancelar</Button>
+                        <Button variant="contained" onClick={ this.handleCreate } color="primary">Guardar</Button>
+                    </DialogActions>
+                </Dialog>
             </React.Fragment>
         )
     }
