@@ -15,7 +15,7 @@ const events = (state = eventsInitialState, action) => {
                 searchTerm ? eventsInitialState.events.filter(event => event.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) : eventsInitialState.events
             )
         }
-        case 'CREATE_EVENTS':
+        case 'CREATE_EVENT':
         const { event } = action.payload
         return {
             ...state, events: eventsInitialState.events.push(event)
