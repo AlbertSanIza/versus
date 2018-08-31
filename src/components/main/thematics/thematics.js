@@ -6,6 +6,7 @@ import CreateIcon from '@material-ui/icons/Create'
 import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
 import Grid from '@material-ui/core/Grid'
+import Grow from '@material-ui/core/Grow'
 
 const styles = {
     fab: {
@@ -24,9 +25,11 @@ class Thematics extends Component {
         return (
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Tematicas</Typography>
-                <Button variant="fab" className={ classes.fab } color="secondary">
-                    <CreateIcon/>
-                </Button>
+                <Grow  in={ true } timeout={ 500 }>
+                    <Button variant="fab" className={ classes.fab } color="secondary">
+                        <CreateIcon/>
+                    </Button>
+                </Grow>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>

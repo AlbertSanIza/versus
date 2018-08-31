@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
+import Grow  from '@material-ui/core/Grow'
 
 const styles = {
     media: {
@@ -31,9 +32,11 @@ class Competitors extends Component {
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
-                <Button variant="fab" className={ classes.fab } color="secondary">
-                    <CreateIcon/>
-                </Button>
+                <Grow  in={ true } timeout={ 500 }>
+                    <Button variant="fab" className={ classes.fab } color="secondary">
+                        <CreateIcon/>
+                    </Button>
+                </Grow>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
