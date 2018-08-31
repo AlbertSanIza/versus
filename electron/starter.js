@@ -1,11 +1,15 @@
 const { app, BrowserWindow, shell } = require('electron')
 const path = require('path')
 const url = require('url')
+const os = require('os')
 let mainWindow
 var express = require('express')
 var expressApp = express()
 var http = require('http').Server(expressApp).listen(12345)
 var io = require('socket.io')(http)
+var storage = require('electron-json-storage')
+storage.setDataPath(os.tmpdir())
+
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 900,
