@@ -8,17 +8,17 @@ const eventsInitialState = {
 }
 const events = (state = eventsInitialState, action) => {
     switch(action.type) {
-        case 'CREATE_EVENTS':
-        const { event } = action.payload
-        return {
-            ...state, events: eventsInitialState.events.push(event)
-        }
         case 'SEARCH_EVENTS':
         const { searchTerm } = action.payload
         return {
             ...state, searchTerm: searchTerm, events: (
                 searchTerm ? eventsInitialState.events.filter(event => event.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) : eventsInitialState.events
             )
+        }
+        case 'CREATE_EVENTS':
+        const { event } = action.payload
+        return {
+            ...state, events: eventsInitialState.events.push(event)
         }
         default:
         return state
