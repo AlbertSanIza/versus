@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import FormControl from '@material-ui/core/FormControl'
-import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
 import CardMedia from '@material-ui/core/CardMedia'
 import CreateIcon from '@material-ui/icons/Create'
 import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
-import Grid from '@material-ui/core/Grid'
-import Card from '@material-ui/core/Card'
+import Paper from '@material-ui/core/Paper'
 import Grow  from '@material-ui/core/Grow'
+import Grid from '@material-ui/core/Grid'
 
-const styles = {
+const styles = theme => ({
     media: {
         height: 0,
         paddingTop: '80%'
@@ -23,8 +22,12 @@ const styles = {
         bottom: 20,
         left: 'auto',
         position: 'fixed'
+    },
+    paperContent: {
+        padding: 3,
+        textAlign: 'center'
     }
-}
+})
 
 class Competitors extends Component {
     render() {
@@ -45,12 +48,12 @@ class Competitors extends Component {
                     </Grid>
                     { competitors.map((competitor, i) => (
                         <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
-                            <Card>
+                            <Paper elevation={ 1 }>
                                 <CardMedia className={ classes.media } image={ competitor.photo } title="Contemplative Reptile"/>
-                                <CardContent>
-                                    <Typography variant="title" noWrap>{ competitor.name }</Typography>
-                                </CardContent>
-                            </Card>
+                                <div className={ classes.paperContent }>
+                                    <Typography noWrap>{ competitor.name }</Typography>
+                                </div>
+                            </Paper>
                         </Grid>
                     )) }
                 </Grid>
