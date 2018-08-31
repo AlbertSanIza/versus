@@ -38,6 +38,15 @@ app.on('ready', () => {
         socket.on('message', msg => {
             io.emit('message', msg)
         })
+        socket.on('events', msg => {
+            console.log(msg)
+        })
+        socket.on('thematics', msg => {
+            console.log(msg)
+        })
+        socket.on('competitors', msg => {
+            console.log(msg)
+        })
     })
 })
 app.on('window-all-closed', () => {
