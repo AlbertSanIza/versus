@@ -39,7 +39,7 @@ class Event extends Component {
                         </FormControl>
                     </Grid>
                     { events.map((event, i) => (
-                        <Grid xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
+                        <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
                             <Card>
                                 <CardContent>
                                     <Typography variant="title" gutterBottom>{ event.name }</Typography>
