@@ -25,6 +25,7 @@
         "particles.js": "^2.0.0"
     },
     "dependencies": {
+        "electron-json-storage": "^4.1.2",
         "express": "^4.16.3",
         "socket.io": "^2.1.1"
     },
