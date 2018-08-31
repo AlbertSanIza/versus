@@ -1,4 +1,7 @@
 import { combineReducers } from 'redux'
+import io from 'socket.io-client'
+
+const socket = io('http://' + window.location.hostname + ':12345')
 
 const eventsInitialState = {
     events: [
@@ -18,6 +21,7 @@ const events = (state = eventsInitialState, action) => {
         case 'CREATE_EVENT':
         const { event } = action.payload
         eventsInitialState.events.push(event)
+        socket.emit('events', eventsInitialState.events)
         return {
             ...state, events: eventsInitialState.events
         }
@@ -44,6 +48,7 @@ const thematics = (state = thematicsInitialState, action) => {
         case 'CREATE_THEMATIC':
         const { thematic } = action.payload
         thematicsInitialState.thematics.push(thematic)
+        socket.emit('thematics', thematicsInitialState.thematics)
         return {
             ...state, thematics: thematicsInitialState.thematics
         }
@@ -78,6 +83,7 @@ const competitors = (state = competitorsInitialState, action) => {
         case 'CREATE_COMPETITOR':
         const { competitor } = action.payload
         competitorsInitialState.competitors.push(competitor)
+        socket.emit('competitors', competitorsInitialState.competitors)
         return {
             ...state, competitors: competitorsInitialState.competitors
         }
