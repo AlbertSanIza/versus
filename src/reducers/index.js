@@ -23,7 +23,7 @@ const events = (state = eventsInitialState, action) => {
         eventsInitialState.events.push(event)
         socket.emit('events', eventsInitialState.events)
         return {
-            ...state, events: eventsInitialState.events
+            ...state, searchTerm: '', events: eventsInitialState.events
         }
         default:
         return state
@@ -50,7 +50,7 @@ const thematics = (state = thematicsInitialState, action) => {
         thematicsInitialState.thematics.push(thematic)
         socket.emit('thematics', thematicsInitialState.thematics)
         return {
-            ...state, thematics: thematicsInitialState.thematics
+            ...state, searchTerm: '', thematics: thematicsInitialState.thematics
         }
         default:
         return state
@@ -85,7 +85,7 @@ const competitors = (state = competitorsInitialState, action) => {
         competitorsInitialState.competitors.push(competitor)
         socket.emit('competitors', competitorsInitialState.competitors)
         return {
-            ...state, competitors: competitorsInitialState.competitors
+            ...state, searchTerm: '', competitors: competitorsInitialState.competitors
         }
         default:
         return state
