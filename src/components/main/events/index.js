@@ -4,10 +4,18 @@ import Events from './events'
 function searchEvents(searchTerm) {
     return {
         type: 'SEARCH_EVENTS',
-        payload: { searchTerm },
+        payload: { searchTerm }
+    }
+}
+
+function createEvent(event) {
+    return {
+        type: 'CREATE_EVENT',
+        payload: { event }
     }
 }
 
 export default connect(store => store.events, {
-    searchEvents
+    searchEvents,
+    createEvent
 })(Events)
