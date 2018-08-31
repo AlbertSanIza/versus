@@ -17,8 +17,9 @@ const events = (state = eventsInitialState, action) => {
         }
         case 'CREATE_EVENT':
         const { event } = action.payload
+        eventsInitialState.events.push(event)
         return {
-            ...state, events: eventsInitialState.events.push(event)
+            ...state, events: eventsInitialState.events
         }
         default:
         return state
