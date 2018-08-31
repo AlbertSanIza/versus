@@ -43,13 +43,42 @@ app.on('ready', () => {
             io.emit('message', msg)
         })
         socket.on('events', msg => {
-            console.log(msg)
+            switch (msg.type) {
+                case 'get':
+                storage.get('events', (getErrors, data) => {
+                    console.log(data)
+                })
+                break
+                case 'set':
+                storage.set('events', msg.payload)
+                break
+            }
         })
         socket.on('thematics', msg => {
-            console.log(msg)
+            switch (msg.type) {
+                case 'get':
+                storage.get('thematics', (getErrors, data) => {
+                    console.log(data)
+                })
+                break
+                case 'set':
+                storage.set('thematics', msg.payload)
+                break
+            }
         })
         socket.on('competitors', msg => {
-            console.log(msg)
+            storage.set('competitors', msg, setError => {
+                switch (msg.type) {
+                    case 'get':
+                    storage.get('competitors', (getErrors, data) => {
+                        console.log(data)
+                    })
+                    break
+                    case 'set':
+                    storage.set('competitors', msg.payload)
+                    break
+                }
+            })
         })
     })
 })
