@@ -1,2 +1,4 @@
+import { connect } from 'react-redux'
 import Visuals from './visuals'
-export { Visuals as default }
+
+export default connect(store => store)(Visuals)
