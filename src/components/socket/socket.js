@@ -3,7 +3,7 @@ import io from 'socket.io-client'
 
 const socket = io('http://' + window.location.hostname + ':12345')
 
-class Main extends Component {
+class Socket extends Component {
     constructor(props) {
         super(props)
         socket.on('message', msg => {

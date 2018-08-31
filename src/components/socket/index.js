@@ -1,2 +1,2 @@
-import Main from './main'
-export { Main as default }
+import Socket from './socket'
+export { Socket as default }
