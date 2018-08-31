@@ -4,6 +4,8 @@ import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
 import CardMedia from '@material-ui/core/CardMedia'
+import CreateIcon from '@material-ui/icons/Create'
+import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
@@ -12,6 +14,14 @@ const styles = {
     media: {
         height: 0,
         paddingTop: '80%'
+    },
+    fab: {
+        margin: 0,
+        top: 'auto',
+        right: 20,
+        bottom: 20,
+        left: 'auto',
+        position: 'fixed'
     }
 }
 
@@ -21,6 +31,9 @@ class Competitors extends Component {
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
+                <Button variant="fab" className={ classes.fab } color="secondary">
+                    <CreateIcon/>
+                </Button>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
