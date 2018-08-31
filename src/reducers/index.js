@@ -41,6 +41,12 @@ const thematics = (state = thematicsInitialState, action) => {
                 searchTerm ? thematicsInitialState.thematics.filter(thematic => thematic.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) : thematicsInitialState.thematics
             )
         }
+        case 'CREATE_THEMATIC':
+        const { thematic } = action.payload
+        thematicsInitialState.thematics.push(thematic)
+        return {
+            ...state, thematics: thematicsInitialState.thematics
+        }
         default:
         return state
     }
@@ -68,6 +74,12 @@ const competitors = (state = competitorsInitialState, action) => {
             ...state, searchTerm: searchTerm, competitors: (
                 searchTerm ? competitorsInitialState.competitors.filter(competitor => competitor.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) : competitorsInitialState.competitors
             )
+        }
+        case 'CREATE_COMPETIOTOR':
+        const { competitor } = action.payload
+        competitorsInitialState.competitors.push(competitor)
+        return {
+            ...state, competitors: competitorsInitialState.competitors
         }
         default:
         return state
