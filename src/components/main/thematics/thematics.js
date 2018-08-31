@@ -27,7 +27,7 @@ class Thematics extends Component {
         return (
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Tematicas</Typography>
-                <Grow  in={ true } timeout={ 500 }>
+                <Grow in={ true } timeout={ 500 }>
                     <Button variant="fab" className={ classes.fab } color="secondary">
                         <CreateIcon/>
                     </Button>

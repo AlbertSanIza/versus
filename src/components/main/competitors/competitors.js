@@ -32,7 +32,7 @@ class Competitors extends Component {
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
-                <Grow  in={ true } timeout={ 500 }>
+                <Grow in={ true } timeout={ 500 }>
                     <Button variant="fab" className={ classes.fab } color="secondary">
                         <CreateIcon/>
                     </Button>
