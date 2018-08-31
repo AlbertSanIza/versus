@@ -46,7 +46,7 @@ app.on('ready', () => {
             switch (msg.type) {
                 case 'get':
                 storage.get('events', (getErrors, data) => {
-                    console.log(data)
+                    socket.emit('events', data)
                 })
                 break
                 case 'set':
@@ -58,7 +58,7 @@ app.on('ready', () => {
             switch (msg.type) {
                 case 'get':
                 storage.get('thematics', (getErrors, data) => {
-                    console.log(data)
+                    socket.emit('thematics', data)
                 })
                 break
                 case 'set':
@@ -71,7 +71,7 @@ app.on('ready', () => {
                 switch (msg.type) {
                     case 'get':
                     storage.get('competitors', (getErrors, data) => {
-                        console.log(data)
+                        socket.emit('competitors', data)
                     })
                     break
                     case 'set':
