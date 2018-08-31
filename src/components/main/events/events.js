@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogActions from '@material-ui/core/DialogActions'
 import FormControl from '@material-ui/core/FormControl'
 import CardContent from '@material-ui/core/CardContent'
+import DialogTitle from '@material-ui/core/DialogTitle'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
 import CreateIcon from '@material-ui/icons/Create'
 import Button from '@material-ui/core/Button'
+import Dialog from '@material-ui/core/Dialog'
 import Input from '@material-ui/core/Input'
 import Grid from '@material-ui/core/Grid'
 import Grow from '@material-ui/core/Grow'
@@ -22,13 +26,22 @@ const styles = theme => ({
 })
 
 class Event extends Component {
+    state = {
+        openCreate: false
+    }
+    handleOpenCreate = () => {
+        this.setState({ openCreate: true })
+    }
+    handleCloseCreate = () => {
+        this.setState({ openCreate: false })
+    }
     render() {
         const { classes, events, searchTerm, searchEvents } = this.props
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Eventos</Typography>
                 <Grow in={ true } timeout={ 500 }>
-                    <Button variant="fab" className={ classes.fab } color="secondary">
+                    <Button variant="fab" className={ classes.fab } onClick={ this.handleOpenCreate } color="secondary">
                         <CreateIcon/>
                     </Button>
                 </Grow>
@@ -48,6 +61,18 @@ class Event extends Component {
                         </Grid>
                     )) }
                 </Grid>
+                <Dialog open={ this.state.openCreate } onClose={ this.handleCloseCreate } scroll="paper">
+                    <DialogTitle>Nuevo Evento</DialogTitle>
+                    <DialogContent>
+                        <FormControl fullWidth>
+                            <Input placeholder="Nombre"></Input>
+                        </FormControl>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={ this.handleCloseCreate } color="primary">Cancelar</Button>
+                        <Button variant="contained" onClick={ this.handleCloseCreate } color="primary">Guardar</Button>
+                    </DialogActions>
+                </Dialog>
             </React.Fragment>
         )
     }
