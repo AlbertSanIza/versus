@@ -27,13 +27,21 @@ const styles = theme => ({
 
 class Event extends Component {
     state = {
-        openCreate: false
+        openCreate: false,
+        createName: ''
     }
     handleOpenCreate = () => {
         this.setState({ openCreate: true })
     }
     handleCloseCreate = () => {
-        this.setState({ openCreate: false })
+        this.setState({ openCreate: false, createName: '' })
+    }
+    createTermChanged = input => {
+        this.setState({ createName: input })
+    }
+    handleCreate = () => {
+        this.props.createEvent({ name: this.state.createName })
+        this.handleCloseCreate()
     }
     render() {
         const { classes, events, searchTerm, searchEvents } = this.props
@@ -65,12 +73,12 @@ class Event extends Component {
                     <DialogTitle>Nuevo Evento</DialogTitle>
                     <DialogContent>
                         <FormControl fullWidth>
-                            <Input placeholder="Nombre"></Input>
+                            <Input placeholder="Nombre" value={ this.state.createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
                         </FormControl>
                     </DialogContent>
                     <DialogActions>
                         <Button onClick={ this.handleCloseCreate } color="primary">Cancelar</Button>
-                        <Button variant="contained" onClick={ this.handleCloseCreate } color="primary">Guardar</Button>
+                        <Button variant="contained" onClick={ this.handleCreate } color="primary">Guardar</Button>
                     </DialogActions>
                 </Dialog>
             </React.Fragment>
