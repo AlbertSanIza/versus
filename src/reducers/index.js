@@ -21,7 +21,7 @@ const events = (state = eventsInitialState, action) => {
         case 'CREATE_EVENT':
         const { event } = action.payload
         eventsInitialState.events.push(event)
-        socket.emit('events', eventsInitialState.events)
+        socket.emit('events', { type: 'set', payload: eventsInitialState.events })
         return {
             ...state, searchTerm: '', events: eventsInitialState.events
         }
@@ -48,7 +48,7 @@ const thematics = (state = thematicsInitialState, action) => {
         case 'CREATE_THEMATIC':
         const { thematic } = action.payload
         thematicsInitialState.thematics.push(thematic)
-        socket.emit('thematics', thematicsInitialState.thematics)
+        socket.emit('thematics', { type: 'set', payload: thematicsInitialState.thematics })
         return {
             ...state, searchTerm: '', thematics: thematicsInitialState.thematics
         }
@@ -83,7 +83,7 @@ const competitors = (state = competitorsInitialState, action) => {
         case 'CREATE_COMPETITOR':
         const { competitor } = action.payload
         competitorsInitialState.competitors.push(competitor)
-        socket.emit('competitors', competitorsInitialState.competitors)
+        socket.emit('competitors', { type: 'set', payload: competitorsInitialState.competitors })
         return {
             ...state, searchTerm: '', competitors: competitorsInitialState.competitors
         }
