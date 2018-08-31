@@ -79,7 +79,7 @@ class Competitors extends Component {
                     )) }
                 </Grid>
                 <Dialog open={ this.state.openCreate } onClose={ this.handleCloseCreate } scroll="paper">
-                    <DialogTitle>Nuevo Evento</DialogTitle>
+                    <DialogTitle>Nuevo Competidor</DialogTitle>
                     <DialogContent>
                         <FormControl fullWidth>
                             <Input placeholder="Nombre" value={ this.state.createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
