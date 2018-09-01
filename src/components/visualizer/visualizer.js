@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withStyles } from '@material-ui/core/styles'
 import io from 'socket.io-client'
 import Fade from '@material-ui/core/Fade'
 import 'particles.js/particles'
@@ -8,6 +9,10 @@ import bdm_logo from './bdm.png'
 import './visualizer.css'
 
 const socket = io('http://' + window.location.hostname + ':12345')
+
+const styles = theme => {
+    
+}
 
 const VisualizerHeader = () => (
     <Fade in={ true } timeout={ 1000 }>
@@ -69,4 +74,4 @@ class Visualizer extends Component {
     }
 }
 
-export default Visualizer
+export default withStyles(styles)(Visualizer)
