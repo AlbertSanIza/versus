@@ -23,7 +23,7 @@ class Visualizer extends Component {
             text: ""
         }
         socket.on('visualizer', msg => {
-            console.log(this.setState(msg))
+            this.setState(msg)
         })
     }
     componentDidMount() {
