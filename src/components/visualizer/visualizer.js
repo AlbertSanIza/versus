@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import io from 'socket.io-client'
 import 'particles.js/particles'
+import 'typeface-caveat-brush'
 import puma_logo from "./puma.png"
 import bdm_logo from "./bdm.png"
 import './visualizer.css'
