@@ -39,6 +39,10 @@ const styles = theme => ({
         padding: 0,
         margin: 0,
         background: 'black'
+    },
+    countdown: {
+        display: 'none',
+        opacity: 0
     }
 })
 
@@ -92,7 +96,7 @@ class Competitors extends Component {
                         switch (this.state.status) {
                             case 'isStart':
                             return (
-                                <Countdown className="countdown" date={ Date.now() + (this.state.seconds * 1000) } onTick={ this.onTick } onComplete={ this.onComplete } renderer={ props => <React.Fragment>{props.total / 1000}</React.Fragment> }/>
+                                <Countdown date={ Date.now() + (this.state.seconds * 1000) } onTick={ this.onTick } onComplete={ this.onComplete } renderer={ props => <div className={ classes.countdown }>{props.total / 1000}</div> }/>
                             )
                             default:
                             return ''
