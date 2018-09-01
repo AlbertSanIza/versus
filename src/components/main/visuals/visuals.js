@@ -32,7 +32,7 @@ const styles = theme => ({
 
 class Competitors extends Component {
     render() {
-        const { classes } = this.props
+        const { classes, events } = this.props
         return(
             <React.Fragment>
                 <div className={ classes.visualsIframeHolder }>
