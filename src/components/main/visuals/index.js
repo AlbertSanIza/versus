@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 import Visuals from './visuals'
 
-function play() {
+function visualizer(payload) {
     return {
-        type: 'PLAY',
-        payload: 'PLAY'
+        type: 'VISUALIZER',
+        payload: { payload }
     }
 }
 
 export default connect(store => store, {
-    play
+    visualizer
 })(Visuals)
