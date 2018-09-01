@@ -103,73 +103,46 @@ class Competitors extends Component {
                         }
                     })()}
                 </Typography>
-                <Grid container spacing={ 16 }>
-                    <Grid item xs={ 12 }>
-                        <MuiThemeProvider theme={ theme }>
-                            <TextField type="number" label="Tiempo" color="secondary" value={ this.state.seconds } onChange={ this.inputHandleChange } disabled={ this.state.status !== "set" } InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>), endAdornment: (<InputAdornment position="end">Segundos</InputAdornment>) }} fullWidth/>
-                            <TextField label="Tema" color="secondary" value={ this.state.text } onChange={ this.inputTextHandleChange } InputProps={{ startAdornment: (<InputAdornment position="start"><SchoolIcon/></InputAdornment>) }} fullWidth/>
-                        </MuiThemeProvider>
+                <MuiThemeProvider theme={ theme }>
+                    <Grid container spacing={ 16 }>
+                        <Grid item xs={ 12 }>
+                            <TextField type="number" label="Tiempo" value={ this.state.seconds } onChange={ this.inputHandleChange } disabled={ this.state.status !== "set" } InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>), endAdornment: (<InputAdornment position="end">Segundos</InputAdornment>) }} fullWidth/>
+                            <TextField label="Tema" value={ this.state.text } onChange={ this.inputTextHandleChange } InputProps={{ startAdornment: (<InputAdornment position="start"><SchoolIcon/></InputAdornment>) }} fullWidth/>
+                        </Grid>
                     </Grid>
+                </MuiThemeProvider>
+                <Grid container spacing={ 16 }>
+                    {(() => {
+                        switch (this.state.status) {
+                            case "set":
+                            return (
+                                <Grid item xs={ 12 }>
+                                    <Button variant="contained" color="secondary" className={ classes.button } onClick={ this.setButton } disabled={ !this.state.seconds || this.state.seconds < 5 } fullWidth>Mostrar</Button>
+                                </Grid>
+                            )
+                            case "isSet":
+                            case "isPause":
+                            return (
+                                <React.Fragment>
+                                    <Grid item xs={ 6 }>
+                                        <Button variant="contained" onClick={ this.resetButton } fullWidth>Cancelar</Button>
+                                    </Grid>
+                                    <Grid item xs={ 6 }>
+                                        <Button variant="contained" onClick={ this.startButton } fullWidth>Iniciar</Button>
+                                    </Grid>
+                                </React.Fragment>
+                            )
+                            case "isStart":
+                            return (
+                                <Grid item xs={ 12 }>
+                                    <Button variant="contained" onClick={ this.pauseButton } fullWidth>Puasar</Button>
+                                </Grid>
+                            )
+                            default:
+                            return null
+                        }
+                    })()}
                 </Grid>
-                <div className="card border-dark">
-                    <div className="card-header">
-                        <b>
-                            Controles
-                            {(() => {
-                                switch (this.state.status) {
-                                    case "isStart":
-                                    return (
-                                        <React.Fragment>
-                                            <div className="countdown">
-                                                <Countdown date={Date.now() + (this.state.seconds * 1000)} onTick={this.onTick} onComplete={this.onComplete} renderer={props => <React.Fragment>{props.total / 1000}</React.Fragment>}/>
-                                            </div>
-                                        </React.Fragment>
-                                    )
-                                    default:
-                                    return ""
-                                }
-                            })()}
-                        </b>
-                    </div>
-                    <div className="card-body">
-                        <input className="form-control" type="text" placeholder="Tema" disabled={this.state.status !== "set"} value={this.state.text} onChange={this.inputTextHandleChange}/>
-                        <br/>
-                        <div className="input-group input-group-sm mb-3">
-                            <input className="form-control" type="number" placeholder="Tiempo" min="5" disabled={this.state.status !== "set"} value={this.state.seconds} onChange={this.inputHandleChange}/>
-                            <div className="input-group-append">
-                                <span className="input-group-text">Segundos</span>
-                            </div>
-                        </div>
-                        {(() => {
-                            switch (this.state.status) {
-                                case "set":
-                                return (
-                                    <button className="btn btn-outline-primary btn-sm btn-block" type="button" onClick={this.setButton} disabled={!this.state.seconds || this.state.seconds < 5}>Mostrar</button>
-                                )
-                                case "isSet":
-                                case "isPause":
-                                return (
-                                    <div className="row">
-                                        <div className="col">
-                                            <button className="btn btn-outline-danger btn-sm btn-block" type="button" onClick={this.resetButton}>Cancelar</button>
-                                        </div>
-                                        <div className="col">
-                                            <button className="btn btn-outline-success btn-sm btn-block" type="button" onClick={this.startButton}>Iniciar</button>
-                                        </div>
-                                    </div>
-                                )
-                                case "isStart":
-                                return (
-                                    <div>
-                                        <button className="btn btn-outline-warning btn-sm btn-block" type="button" onClick={this.pauseButton}>Puasar</button>
-                                    </div>
-                                )
-                                default:
-                                return null
-                            }
-                        })()}
-                    </div>
-                </div>
                 <Grow in={ true } timeout={ 500 }>
                     <a href="#/" target="_blank" rel="noopener noreferrer">
                         <Button variant="fab" className={ classes.fab } onClick={ this.handleOpenCreate } color="primary">
