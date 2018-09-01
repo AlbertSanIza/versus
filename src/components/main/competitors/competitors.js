@@ -56,11 +56,6 @@ class Competitors extends Component {
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
-                <Grow in={ true } timeout={ 500 }>
-                    <Button variant="fab" className={ classes.fab } onClick={ this.handleOpenCreate } color="secondary">
-                        <CreateIcon/>
-                    </Button>
-                </Grow>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
@@ -78,6 +73,11 @@ class Competitors extends Component {
                         </Grid>
                     )) }
                 </Grid>
+                <Grow in={ true } timeout={ 500 }>
+                    <Button variant="fab" className={ classes.fab } onClick={ this.handleOpenCreate } color="secondary">
+                        <CreateIcon/>
+                    </Button>
+                </Grow>
                 <Dialog open={ this.state.openCreate } onClose={ this.handleCloseCreate } scroll="paper">
                     <DialogTitle>Nuevo Competidor</DialogTitle>
                     <DialogContent>
