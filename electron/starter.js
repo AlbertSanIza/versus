@@ -39,7 +39,7 @@ app.on('ready', () => {
     })
     io.on('connection', socket => {
         socket.on('visualizer', msg => {
-            socket.emmit('visualizer', msg)
+            io.emit('visualizer', msg)
         })
         socket.on('events', (msg, fn) => {
             switch (msg.type) {
