@@ -106,8 +106,8 @@ class Competitors extends Component {
                 <Grid container spacing={ 16 }>
                     <Grid item xs={ 12 }>
                         <MuiThemeProvider theme={ theme }>
-                            <TextField fullWidth label="Tiempo" color="secondary" InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>) }}/>
-                            <TextField fullWidth label="Tema" color="secondary" InputProps={{ startAdornment: (<InputAdornment position="start"><SchoolIcon/></InputAdornment>) }}/>
+                            <TextField type="number" label="Tiempo" color="secondary" value={ this.state.seconds } onChange={ this.inputHandleChange } disabled={ this.state.status !== "set" } InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>), endAdornment: (<InputAdornment position="end">Segundos</InputAdornment>) }} fullWidth/>
+                            <TextField label="Tema" color="secondary" value={ this.state.text } onChange={ this.inputTextHandleChange } InputProps={{ startAdornment: (<InputAdornment position="start"><SchoolIcon/></InputAdornment>) }} fullWidth/>
                         </MuiThemeProvider>
                     </Grid>
                 </Grid>
