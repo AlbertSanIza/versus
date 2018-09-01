@@ -85,6 +85,19 @@ class Competitors extends Component {
                     <iframe src="#/" frameBorder="0" title="visualizer" className={ classes.visualsIframe }></iframe>
                 </div>
                 <br/>
+                <Typography variant="title">
+                    Controles
+                    {(() => {
+                        switch (this.state.status) {
+                            case 'isStart':
+                            return (
+                                <Countdown className="countdown" date={ Date.now() + (this.state.seconds * 1000) } onTick={ this.onTick } onComplete={ this.onComplete } renderer={ props => <React.Fragment>{props.total / 1000}</React.Fragment> }/>
+                            )
+                            default:
+                            return ''
+                        }
+                    })()}
+                </Typography>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 4 }>
                         <Typography variant="title">Controles</Typography>
