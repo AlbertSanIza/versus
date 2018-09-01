@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import { HashRouter, Route } from 'react-router-dom'
 import { Main, Visualizer } from './components'
+import rootReducer from './reducers'
+
+const store = createStore(rootReducer)
 
 class App extends Component {
     render() {
         return (
             <HashRouter>
                 <React.Fragment>
-                    <Route path="/main" component={ Main }/>
+                    <Provider store={ store }>
+                        <Route path="/main" component={ Main }/>
+                    </Provider>
                     <Route exact path="/" component={ Visualizer }/>
                 </React.Fragment>
             </HashRouter>
