@@ -21,7 +21,7 @@ class Visualizer extends Component {
         }
     }
     componentDidMount() {
-        window.particlesJS.load('particles-js', './src/particles-config.json')
+        window.particlesJS.load('particles-js', './assets/particles-config.json')
     }
     render() {
         return (

@@ -21,7 +21,9 @@ const events = (state = eventsInitialState, action) => {
         case 'CREATE_EVENT':
         const { event } = action.payload
         eventsInitialState.events.push(event)
-        socket.emit('events', { type: 'set', payload: eventsInitialState.events })
+        socket.emit('events', { type: 'set', payload: eventsInitialState.events }, function(data) {
+            console.log(data)
+        })
         return {
             ...state, searchTerm: '', events: eventsInitialState.events
         }
@@ -59,15 +61,15 @@ const thematics = (state = thematicsInitialState, action) => {
 
 const competitorsInitialState = {
     competitors: [
-        { name: 'Wos', photo: './src/wos.jpg' },
-        { name: 'Aczino', photo: './src/aczino.jpg' },
-        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' }
+        { name: 'Wos', photo: './assets/competitors/wos.jpg' },
+        { name: 'Aczino', photo: './assets/competitors/aczino.jpg' },
+        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' }
     ],
     searchTerm: ''
 }
