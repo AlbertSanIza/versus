@@ -38,6 +38,9 @@ app.on('ready', () => {
         shell.openExternal(url)
     })
     io.on('connection', socket => {
+        socket.on('visualizer', msg => {
+            socket.emmit('visualizer', msg)
+        })
         socket.on('events', (msg, fn) => {
             switch (msg.type) {
                 case 'get':
