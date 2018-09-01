@@ -38,9 +38,6 @@ app.on('ready', () => {
         shell.openExternal(url)
     })
     io.on('connection', socket => {
-        socket.on('message', msg => {
-            io.emit('message', msg)
-        })
         socket.on('events', msg => {
             switch (msg.type) {
                 case 'get':
