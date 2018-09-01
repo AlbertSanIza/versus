@@ -42,7 +42,9 @@ class Visualizer extends Component {
                         )
                     } else {
                         return (
-                            <img className="bdm-logo-center fade-in" src={bdm_logo} alt="LOGO"/>
+                            <Fade in={ true } timeout={ 1000 }>
+                                <img className="bdm-logo-center fade-in" src={bdm_logo} alt="LOGO"/>
+                            </Fade>
                         )
                     }
                 })() }
