@@ -58,14 +58,18 @@ class Visualizer extends Component {
                 { (() => {
                     if(this.state.status === "isSet" || this.state.status === "isStart") {
                         return (
-                            <div className="visualizer-countdown fade-in">{ this.state.seconds }</div>
+                            <Fade in={ true } timeout={ 2000 }>
+                                <div className="visualizer-countdown fade-in">{ this.state.seconds }</div>
+                            </Fade>
                         )
                     }
                 })() }
                 { (() => {
                     if((this.state.status === "isSet" || this.state.status === "isStart") && this.state.text !== "") {
                         return (
-                            <div className="visualizer-text fade-in">{ this.state.text }</div>
+                            <Fade in={ true } timeout={ 1000 }>
+                                <div className="visualizer-text fade-in">{ this.state.text }</div>
+                            </Fade>
                         )
                     }
                 })() }
