@@ -3,6 +3,16 @@ import io from 'socket.io-client'
 
 const socket = io('http://' + window.location.hostname + ':12345')
 
+const visuals = (state = [], action) => {
+    switch(action.type) {
+        case 'PLAY':
+        console.log('play');
+        break
+        default: break
+    }
+    return state
+}
+
 const eventsInitialState = {
     events: [
         { name: 'BDM Gold Mexico' }
@@ -93,6 +103,7 @@ const competitors = (state = competitorsInitialState, action) => {
 }
 
 export default combineReducers({
+    visuals,
     events,
     thematics,
     competitors
