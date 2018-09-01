@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
+import io from 'socket.io-client'
 import 'particles.js/particles'
 import puma_logo from "./puma.png"
 import bdm_logo from "./bdm.png"
 import './visualizer.css'
+
+const socket = io('http://' + window.location.hostname + ':12345')
 
 const VisualizerHeader = () => (
     <div className="visualizer-header fade-in">
@@ -19,6 +22,9 @@ class Visualizer extends Component {
             seconds: "",
             text: ""
         }
+        socket.on('visualizer', msg => {
+            console.log(this.setState(msg))
+        })
     }
     componentDidMount() {
         window.particlesJS.load('particles-js', './assets/particles-config.json')
