@@ -17,7 +17,6 @@ app.on('ready', () => {
         minWidth: 900,
         minHeight: 600,
         useContentSize: true,
-        titleBarStyle: 'hidden',
         show: false
     })
     expressApp.use('/static', express.static(__dirname + '/../build/static'))
