@@ -1,14 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { MuiThemeProvider } from '@material-ui/core/styles'
 import 'typeface-roboto'
-import './index.css'
-import theme from './theme'
+import Theme from './theme'
 import App from './App'
 
 ReactDOM.render(
-    <MuiThemeProvider theme={ theme }>
+    <Theme>
         <App/>
-    </MuiThemeProvider>,
+    </Theme>,
     document.getElementById('root')
 )
