@@ -4,7 +4,7 @@ import Visuals from './visuals'
 function visualizer(payload) {
     return {
         type: 'VISUALIZER',
-        payload: { payload }
+        payload: payload
     }
 }
 
