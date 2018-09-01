@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import io from 'socket.io-client'
+import Fade from '@material-ui/core/Fade'
 import 'particles.js/particles'
 import 'typeface-caveat-brush'
 import puma_logo from "./puma.png"
