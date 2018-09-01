@@ -59,7 +59,6 @@ app.on('ready', () => {
                 break
                 case 'set':
                 storage.set('thematics', msg.payload)
-                fn('saved')
                 break
             }
         })
