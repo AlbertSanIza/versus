@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 import Typography from '@material-ui/core/Typography'
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
+import red from '@material-ui/core/colors/red'
 import Button from '@material-ui/core/Button'
 import Countdown from 'react-countdown-now'
 import Grid from '@material-ui/core/Grid'
 import Grow from '@material-ui/core/Grow'
+
+const theme = createMuiTheme({
+    palette: {
+        primary: red
+    }
+})
 
 const styles = theme => ({
     fab: {
