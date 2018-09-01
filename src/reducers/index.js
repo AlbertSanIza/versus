@@ -6,7 +6,7 @@ const socket = io('http://' + window.location.hostname + ':12345')
 const visuals = (state = [], action) => {
     switch(action.type) {
         case 'PLAY':
-        console.log('play');
+        console.log('play')
         break
         default: break
     }
