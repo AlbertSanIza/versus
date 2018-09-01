@@ -71,12 +71,6 @@ const competitorsInitialState = {
     competitors: [
         { name: 'Wos', photo: './assets/competitors/wos.jpg' },
         { name: 'Aczino', photo: './assets/competitors/aczino.jpg' },
-        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' },
         { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' }
     ],
     searchTerm: ''
