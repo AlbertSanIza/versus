@@ -6,7 +6,6 @@
     "repository": "https://github.com/BatallaDeMaestros/versus",
     "author": "Albert Sanchez",
     "license": "CC0-1.0",
-    "homepage": "./",
     "private": true,
     "devDependencies": {
         "@material-ui/core": "^1.5.1",
