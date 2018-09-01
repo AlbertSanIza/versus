@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogActions from '@material-ui/core/DialogActions'
 import FormControl from '@material-ui/core/FormControl'
-import CardContent from '@material-ui/core/CardContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
@@ -10,9 +9,9 @@ import CreateIcon from '@material-ui/icons/Create'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
 import Input from '@material-ui/core/Input'
+import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Grow from '@material-ui/core/Grow'
-import Card from '@material-ui/core/Card'
 
 const styles = theme => ({
     fab: {
@@ -22,6 +21,10 @@ const styles = theme => ({
         bottom: 20,
         left: 'auto',
         position: 'fixed'
+    },
+    paperContent: {
+        padding: 3,
+        textAlign: 'center'
     }
 })
 
@@ -61,11 +64,11 @@ class Thematics extends Component {
                     </Grid>
                     { thematics.map((thematic, i) => (
                         <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
-                            <Card>
-                                <CardContent>
-                                    <Typography variant="title" gutterBottom>{ thematic.name }</Typography>
-                                </CardContent>
-                            </Card>
+                            <Paper elevation={ 1 }>
+                                <div className={ classes.paperContent }>
+                                    <Typography noWrap>{ thematic.name }</Typography>
+                                </div>
+                            </Paper>
                         </Grid>
                     )) }
                 </Grid>
