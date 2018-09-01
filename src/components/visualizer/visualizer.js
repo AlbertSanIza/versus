@@ -10,10 +10,12 @@ import './visualizer.css'
 const socket = io('http://' + window.location.hostname + ':12345')
 
 const VisualizerHeader = () => (
-    <div className="visualizer-header fade-in">
-        <img className="bdm-logo-sm" src={ bdm_logo } alt="LOGO"/>
-        <img className="puma-logo-sm" src={ puma_logo } alt="LOGO"/>
-    </div>
+    <Fade in={ true } timeout={ 1000 }>
+        <div className="visualizer-header">
+            <img className="bdm-logo-sm" src={ bdm_logo } alt="LOGO"/>
+            <img className="puma-logo-sm" src={ puma_logo } alt="LOGO"/>
+        </div>
+    </Fade>
 )
 
 class Visualizer extends Component {
