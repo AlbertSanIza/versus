@@ -96,6 +96,16 @@ const competitors = (state = competitorsInitialState, action) => {
     }
 }
 
+socket.emit('events', { type: 'get' }, data => {
+    eventsInitialState.events = data
+})
+socket.emit('thematics', { type: 'get' }, data => {
+    thematicsInitialState.thematics = data
+})
+socket.emit('competitors', { type: 'get' }, data => {
+    competitorsInitialState.competitors = data
+})
+
 export default combineReducers({
     visuals,
     events,
