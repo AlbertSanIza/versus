@@ -38,11 +38,11 @@ app.on('ready', () => {
         shell.openExternal(url)
     })
     io.on('connection', socket => {
-        socket.on('events', msg => {
+        socket.on('events', (msg, fn) => {
             switch (msg.type) {
                 case 'get':
                 storage.get('events', (getErrors, data) => {
-                    socket.emit('events', data)
+                    fn(data)
                 })
                 break
                 case 'set':
@@ -50,24 +50,25 @@ app.on('ready', () => {
                 break
             }
         })
-        socket.on('thematics', msg => {
+        socket.on('thematics', (msg, fn) => {
             switch (msg.type) {
                 case 'get':
                 storage.get('thematics', (getErrors, data) => {
-                    socket.emit('thematics', data)
+                    fn(data)
                 })
                 break
                 case 'set':
                 storage.set('thematics', msg.payload)
+                fn('saved')
                 break
             }
         })
-        socket.on('competitors', msg => {
+        socket.on('competitors', (msg, fn) => {
             storage.set('competitors', msg, setError => {
                 switch (msg.type) {
                     case 'get':
                     storage.get('competitors', (getErrors, data) => {
-                        socket.emit('competitors', data)
+                        fn(data)
                     })
                     break
                     case 'set':
