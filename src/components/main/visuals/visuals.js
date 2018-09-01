@@ -1,14 +1,42 @@
 import React, { Component } from 'react'
 import Typography from '@material-ui/core/Typography'
+import { withStyles } from '@material-ui/core/styles'
+import PlayArrowIcon from '@material-ui/icons/PlayArrow'
+import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
-import './visuals.css'
+import Grow from '@material-ui/core/Grow'
+
+const styles = theme => ({
+    fab: {
+        margin: 0,
+        top: 'auto',
+        right: 20,
+        bottom: 20,
+        left: 'auto',
+        position: 'fixed'
+    },
+    visualsIframeHolder: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: '#262626'
+    },
+    visualsIframe: {
+        width: '44vw',
+        height: '25vw',
+        padding: 0,
+        margin: 0,
+        background: 'black'
+    }
+})
 
 class Competitors extends Component {
     render() {
+        const { classes } = this.props
         return(
             <React.Fragment>
-                <div className="visuals-iframe-holder">
-                    <iframe src="#/" frameBorder="0" title="visualizer" className="visuals-iframe"></iframe>
+                <div className={ classes.visualsIframeHolder }>
+                    <iframe src="#/" frameBorder="0" title="visualizer" className={ classes.visualsIframe }></iframe>
                 </div>
                 <br/>
                 <Grid container spacing={ 16 }>
@@ -16,9 +44,14 @@ class Competitors extends Component {
                         <Typography variant="title">Controles</Typography>
                     </Grid>
                 </Grid>
+                <Grow in={ true } timeout={ 500 }>
+                    <Button variant="fab" className={ classes.fab } onClick={ this.handleOpenCreate } color="secondary">
+                        <PlayArrowIcon/>
+                    </Button>
+                </Grow>
             </React.Fragment>
         )
     }
 }
 
-export default Competitors
+export default withStyles(styles)(Competitors)
