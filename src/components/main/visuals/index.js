@@ -1,4 +1,13 @@
 import { connect } from 'react-redux'
 import Visuals from './visuals'
 
-export default connect(store => store)(Visuals)
+function play() {
+    return {
+        type: 'PLAY',
+        payload: 'PLAY'
+    }
+}
+
+export default connect(store => store, {
+    play
+})(Visuals)
