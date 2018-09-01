@@ -100,8 +100,11 @@ class Competitors extends Component {
                     })()}
                 </Typography>
                 <Grid container spacing={ 16 }>
-                    <Grid item sm={ 4 }>
-                        <Typography variant="title">Controles</Typography>
+                    <Grid item xs={ 12 }>
+                        <MuiThemeProvider theme={ theme }>
+                            <TextField fullWidth label="Tiempo" color="secondary" InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>) }}/>
+                            <TextField fullWidth label="Tema" color="secondary" InputProps={{ startAdornment: (<InputAdornment position="start"><SchoolIcon/></InputAdornment>) }}/>
+                        </MuiThemeProvider>
                     </Grid>
                 </Grid>
                 <div className="card border-dark">
