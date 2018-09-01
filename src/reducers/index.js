@@ -21,9 +21,7 @@ const events = (state = eventsInitialState, action) => {
         case 'CREATE_EVENT':
         const { event } = action.payload
         eventsInitialState.events.push(event)
-        socket.emit('events', { type: 'set', payload: eventsInitialState.events }, function(data) {
-            console.log(data)
-        })
+        socket.emit('events', { type: 'set', payload: eventsInitialState.events })
         return {
             ...state, searchTerm: '', events: eventsInitialState.events
         }
