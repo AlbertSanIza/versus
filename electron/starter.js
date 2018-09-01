@@ -20,6 +20,7 @@ app.on('ready', () => {
         show: false
     })
     expressApp.use('/static', express.static(__dirname + '/../build/static'))
+    expressApp.use('/src', express.static(__dirname + '/../build/src'))
     expressApp.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, '/../build/index.html'))
     })
