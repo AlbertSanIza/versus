@@ -10,9 +10,9 @@ import './visualizer.css'
 
 const socket = io('http://' + window.location.hostname + ':12345')
 
-const styles = theme => {
-    
-}
+const styles = theme => ({
+
+})
 
 const VisualizerHeader = () => (
     <Fade in={ true } timeout={ 1000 }>
