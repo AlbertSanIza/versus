@@ -17,7 +17,7 @@ const theme = createMuiTheme({
 const styles = () => ({
     '@global': {
         body: {
-            background: theme.palette.background.default,
+            background: '#EEEEEE',
             '-webkit-touch-callout': 'none',
             '-webkit-user-select': 'none',
             '-khtml-user-select': 'none',
