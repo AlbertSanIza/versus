@@ -64,18 +64,16 @@ app.on('ready', () => {
             }
         })
         socket.on('competitors', (msg, fn) => {
-            storage.set('competitors', msg, setError => {
-                switch (msg.type) {
-                    case 'get':
-                    storage.get('competitors', (getErrors, data) => {
-                        fn(data)
-                    })
-                    break
-                    case 'set':
-                    storage.set('competitors', msg.payload)
-                    break
-                }
-            })
+            switch (msg.type) {
+                case 'get':
+                storage.get('competitors', (getErrors, data) => {
+                    fn(data)
+                })
+                break
+                case 'set':
+                storage.set('competitors', msg.payload)
+                break
+            }
         })
     })
 })
