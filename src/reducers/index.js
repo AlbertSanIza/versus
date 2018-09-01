@@ -59,15 +59,15 @@ const thematics = (state = thematicsInitialState, action) => {
 
 const competitorsInitialState = {
     competitors: [
-        { name: 'Wos', photo: './wos.jpg' },
-        { name: 'Aczino', photo: './aczino.jpg' },
-        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './loboestepario.jpg' },
-        { name: 'Lobo Estepario', photo: './loboestepario.jpg' }
+        { name: 'Wos', photo: './src/wos.jpg' },
+        { name: 'Aczino', photo: './src/aczino.jpg' },
+        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' },
+        { name: 'Lobo Estepario', photo: './src/loboestepario.jpg' }
     ],
     searchTerm: ''
 }
