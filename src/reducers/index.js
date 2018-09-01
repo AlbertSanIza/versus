@@ -15,7 +15,7 @@ const visuals = (state = [], action) => {
 
 const eventsInitialState = {
     events: [
-        { name: 'BDM Gold Mexico' }
+        { name: 'BDM Gold Mexico 2018' }
     ],
     searchTerm: ''
 }
@@ -69,9 +69,7 @@ const thematics = (state = thematicsInitialState, action) => {
 
 const competitorsInitialState = {
     competitors: [
-        { name: 'Wos', photo: './assets/competitors/wos.jpg' },
-        { name: 'Aczino', photo: './assets/competitors/aczino.jpg' },
-        { name: 'Lobo Estepario', photo: './assets/competitors/loboestepario.jpg' }
+        { name: 'Aczino', photo: './assets/competitors/aczino.jpg' }
     ],
     searchTerm: ''
 }
