@@ -27,15 +27,6 @@ const styles = theme => ({
     }
 })
 
-const VisualizerHeader = () => (
-    <Fade in={ true } timeout={ 1000 }>
-        <div className="visualizer-header">
-            <img className="bdm-logo-sm" src={ bdm_logo } alt="LOGO"/>
-            <img className="puma-logo-sm" src={ puma_logo } alt="LOGO"/>
-        </div>
-    </Fade>
-)
-
 class Visualizer extends Component {
     constructor(props) {
         super(props)
@@ -58,7 +49,12 @@ class Visualizer extends Component {
                 { (() => {
                     if(this.state.status === "isSet" || this.state.status === "isStart") {
                         return (
-                            <VisualizerHeader/>
+                            <Fade in={ true } timeout={ 1000 }>
+                                <div className="visualizer-header">
+                                    <img className={ classes.bdmLogo } src={ bdm_logo } alt="LOGO"/>
+                                    <img className={ classes.pumaLogo } src={ puma_logo } alt="LOGO"/>
+                                </div>
+                            </Fade>
                         )
                     } else {
                         return (
