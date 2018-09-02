@@ -70,14 +70,6 @@ class Competitors extends Component {
         this.setState({ status: 'isStart' })
         this.props.visualizer({ status: 'isStart', seconds: this.state.seconds, text: this.state.text })
     }
-    pauseButton = () => {
-        this.setState({ status: 'isSet' })
-        this.props.visualizer({ status: 'isPause', seconds: this.state.seconds, text: this.state.text })
-    }
-    resetButton = () => {
-        this.setState({ status: 'set', seconds: '', text: '' })
-        this.props.visualizer({ status: 'isReset', seconds: '0', text: this.state.text })
-    }
     onTick = () => {
         this.setState({ seconds: this.state.seconds - 1 })
         this.props.visualizer({ seconds: this.state.seconds, text: this.state.text })
