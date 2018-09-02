@@ -48,7 +48,7 @@ const styles = theme => ({
 
 class Competitors extends Component {
     state = {
-        status: 'set',
+        status: '',
         seconds: '',
         text: ''
     }
