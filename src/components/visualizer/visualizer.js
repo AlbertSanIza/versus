@@ -126,7 +126,7 @@ class Visualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if((this.state.status === 'isSet' || this.state.status === 'isStart') && this.state.text !== '') {
+                    if(this.state.status !== '' && this.state.text !== '') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.thematic }>{ this.state.text }</div>
