@@ -39,6 +39,11 @@ const styles = theme => ({
         zIndex: 0,
         overflow: 'hidden'
     },
+    logoCenter: {
+        maxWidth: '80%',
+        maxHeight: '80%',
+        zIndex: 1
+    },
     bdmLogo: {
         float: 'left',
         marginTop: '3%',
@@ -88,7 +93,7 @@ class Visualizer extends Component {
                     } else {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <img className="bdm-logo-center" src={bdm_logo} alt="LOGO"/>
+                                <img className={ classes.logoCenter } src={bdm_logo} alt="LOGO"/>
                             </Fade>
                         )
                     }
