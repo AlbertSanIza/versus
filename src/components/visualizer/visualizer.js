@@ -119,7 +119,7 @@ class Visualizer extends Component {
                 { (() => {
                     if(this.state.status === 'isSet' || this.state.status === 'isStart') {
                         return (
-                            <Fade in={ true } timeout={ 2000 }>
+                            <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.countDown }>{ this.state.seconds }</div>
                             </Fade>
                         )
