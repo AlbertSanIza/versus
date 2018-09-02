@@ -53,7 +53,7 @@ class Visualizer extends Component {
     }
     render() {
         return (
-            <div className="visualizer flex fade-in">
+            <div className="visualizer flex">
                 <div id="particles-js" className="particles"></div>
                 { (() => {
                     if(this.state.status === "isSet" || this.state.status === "isStart") {
@@ -63,7 +63,7 @@ class Visualizer extends Component {
                     } else {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <img className="bdm-logo-center fade-in" src={bdm_logo} alt="LOGO"/>
+                                <img className="bdm-logo-center" src={bdm_logo} alt="LOGO"/>
                             </Fade>
                         )
                     }
@@ -72,7 +72,7 @@ class Visualizer extends Component {
                     if(this.state.status === "isSet" || this.state.status === "isStart") {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
-                                <div className="visualizer-countdown fade-in">{ this.state.seconds }</div>
+                                <div className="visualizer-countdown">{ this.state.seconds }</div>
                             </Fade>
                         )
                     }
@@ -81,7 +81,7 @@ class Visualizer extends Component {
                     if((this.state.status === "isSet" || this.state.status === "isStart") && this.state.text !== "") {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className="visualizer-text fade-in">{ this.state.text }</div>
+                                <div className="visualizer-text">{ this.state.text }</div>
                             </Fade>
                         )
                     }
