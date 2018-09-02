@@ -30,6 +30,13 @@ const styles = theme => ({
         height: '30%',
         zIndex: 1
     },
+    countDown: {
+        fontFamily: 'Caveat Brush',
+        fontSize: '40vh',
+        color: '#eceff1',
+        textShadow: '0px 0px 0px red',
+        zIndex: 1
+    },
     particles: {
         position: 'absolute',
         width: '100%',
@@ -102,7 +109,7 @@ class Visualizer extends Component {
                     if(this.state.status === "isSet" || this.state.status === "isStart") {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
-                                <div className="visualizer-countdown">{ this.state.seconds }</div>
+                                <div className={ classes.countDown }>{ this.state.seconds }</div>
                             </Fade>
                         )
                     }
