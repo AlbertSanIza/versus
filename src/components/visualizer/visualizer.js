@@ -11,7 +11,20 @@ import './visualizer.css'
 const socket = io('http://' + window.location.hostname + ':12345')
 
 const styles = theme => ({
-
+    bdmLogo: {
+        float: 'left',
+        marginTop: '3%',
+        marginLeft: 70,
+        height: '100%'
+    },
+    pumaLogo: {
+        position: 'relative',
+        float: 'right',
+        marginTop: 'calc(3% + 10px)',
+        marginRight: 70,
+        height: '90%',
+        filter: 'invert(100%)'
+    }
 })
 
 const VisualizerHeader = () => (

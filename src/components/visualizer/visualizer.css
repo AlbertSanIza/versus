@@ -33,20 +33,6 @@
     z-index: 1;
     text-align: center;
 }
-.bdm-logo-sm {
-    float: left;
-    margin-top: 3%;
-    margin-left: 70px;
-    height: 100%;
-}
-.puma-logo-sm {
-    position: relative;
-    float: right;
-    margin-top: calc(3% + 10px);
-    margin-right: 70px;
-    height: 90%;
-    filter: invert(100%);
-}
 .bdm-logo-center {
     max-width: 80%;
     max-height: 80%;
