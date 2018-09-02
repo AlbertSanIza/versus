@@ -43,6 +43,7 @@ class Visualizer extends Component {
         window.particlesJS.load('particles-js', './assets/particles-config.json')
     }
     render() {
+        const { classes } = this.props
         return (
             <div className="visualizer flex">
                 <div id="particles-js" className="particles"></div>
