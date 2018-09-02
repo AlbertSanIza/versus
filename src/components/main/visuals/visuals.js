@@ -75,8 +75,8 @@ class Competitors extends Component {
         this.props.visualizer({ seconds: this.state.seconds, text: this.state.text })
     }
     onComplete = () => {
-        this.setState({ status: 'set', seconds: '' })
-        this.props.visualizer({ status: 'isReset', seconds: '0' })
+        this.setState({ status: '', seconds: '', text: '' })
+        this.props.visualizer({ status: '', seconds: '', text: '' })
     }
     render() {
         const { classes } = this.props
