@@ -76,7 +76,7 @@ class Competitors extends Component {
     }
     onTick = () => {
         this.setState({ seconds: this.state.seconds - 1 })
-        this.props.visualizer({ status: 'isStart', seconds: this.state.seconds, text: this.state.text })
+        this.props.visualizer({ seconds: this.state.seconds, text: this.state.text })
     }
     onComplete = () => {
         this.setState({ status: 'set', seconds: '' })
