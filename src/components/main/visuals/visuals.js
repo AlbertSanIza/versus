@@ -125,17 +125,19 @@ class Competitors extends Component {
                             return (
                                 <React.Fragment>
                                     <Grid item xs={ 6 }>
-                                        <Button variant="contained" onClick={ this.resetButton } fullWidth>Cancelar</Button>
+                                        <Button variant="contained" color="primary" onClick={ this.resetButton } fullWidth>Cancelar</Button>
                                     </Grid>
                                     <Grid item xs={ 6 }>
-                                        <Button variant="contained" onClick={ this.startButton } fullWidth>Iniciar</Button>
+                                        <MuiThemeProvider theme={ theme }>
+                                            <Button variant="contained" color="primary" onClick={ this.startButton } fullWidth>Iniciar</Button>
+                                        </MuiThemeProvider>
                                     </Grid>
                                 </React.Fragment>
                             )
                             case "isStart":
                             return (
                                 <Grid item xs={ 12 }>
-                                    <Button variant="contained" onClick={ this.pauseButton } fullWidth>Puasar</Button>
+                                    <Button variant="contained" color="primary" onClick={ this.pauseButton } fullWidth>Puasar</Button>
                                 </Grid>
                             )
                             default:
