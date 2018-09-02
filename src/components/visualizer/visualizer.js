@@ -31,7 +31,7 @@ const styles = theme => ({
     },
     countDown: {
         fontFamily: 'Caveat Brush',
-        fontSize: '40vh',
+        fontSize: '50vh',
         color: '#eceff1',
         textShadow: '0px 0px 0px red',
         zIndex: 1
