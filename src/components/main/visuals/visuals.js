@@ -110,30 +110,27 @@ class Competitors extends Component {
                 <Grid container spacing={ 16 }>
                     {(() => {
                         switch (this.state.status) {
-                            case "set":
+                            case '':
                             return (
                                 <Grid item xs={ 12 }>
                                     <Button variant="contained" color="secondary" className={ classes.button } onClick={ this.setButton } disabled={ !this.state.seconds || this.state.seconds < 5 } fullWidth>Mostrar</Button>
                                 </Grid>
                             )
-                            case "isSet":
-                            case "isPause":
+                            case 'isSet':
                             return (
                                 <React.Fragment>
                                     <Grid item xs={ 6 }>
                                         <Button variant="contained" color="primary" onClick={ this.resetButton } fullWidth>Cancelar</Button>
                                     </Grid>
                                     <Grid item xs={ 6 }>
-                                        <MuiThemeProvider theme={ theme }>
-                                            <Button variant="contained" color="primary" onClick={ this.startButton } fullWidth>Iniciar</Button>
-                                        </MuiThemeProvider>
+                                        <Button variant="contained" color="secondary" onClick={ this.startButton } fullWidth>Iniciar</Button>
                                     </Grid>
                                 </React.Fragment>
                             )
-                            case "isStart":
+                            case 'isStart':
                             return (
                                 <Grid item xs={ 12 }>
-                                    <Button variant="contained" color="primary" onClick={ this.pauseButton } fullWidth>Puasar</Button>
+                                    <Button variant="contained" color="primary" onClick={ this.setButton } fullWidth>Puasar</Button>
                                 </Grid>
                             )
                             default:
