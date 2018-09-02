@@ -31,9 +31,9 @@ class Visualizer extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            status: "set",
-            seconds: "",
-            text: ""
+            status: '',
+            seconds: '',
+            text: ''
         }
         socket.on('visualizer', msg => {
             this.setState(msg)
