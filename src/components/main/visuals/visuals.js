@@ -62,6 +62,10 @@ class Competitors extends Component {
         this.setState({ status: 'isSet' })
         this.props.visualizer({ status: 'isSet', seconds: this.state.seconds, text: this.state.text })
     }
+    resetButton = () => {
+        this.setState({ status: '', seconds: '', text: '' })
+        this.props.visualizer({ status: '', seconds: '', text: '' })
+    }
     startButton = () => {
         this.setState({ status: 'isStart' })
         this.props.visualizer({ status: 'isStart', seconds: this.state.seconds, text: this.state.text })
