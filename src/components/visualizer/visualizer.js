@@ -11,6 +11,18 @@ import './visualizer.css'
 const socket = io('http://' + window.location.hostname + ':12345')
 
 const styles = theme => ({
+    visualizer: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        left: 0,
+        background: 'black',
+        color: 'white',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
     particles: {
         position: 'absolute',
         width: '100%',
@@ -54,7 +66,7 @@ class Visualizer extends Component {
     render() {
         const { classes } = this.props
         return (
-            <div className="visualizer flex">
+            <div className={ classes.visualizer }>
                 <div id="particles-js" className={ classes.particles }/>
                 { (() => {
                     if(this.state.status === "isSet" || this.state.status === "isStart") {
