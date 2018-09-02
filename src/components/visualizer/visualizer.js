@@ -99,7 +99,7 @@ class Visualizer extends Component {
             <div className={ classes.visualizer }>
                 <div id="particles-js" className={ classes.particles }/>
                 { (() => {
-                    if(this.state.status !== '') {
+                    if(this.state.status !== '' && this.state.status !== 'isPaused') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.header }>
@@ -111,7 +111,7 @@ class Visualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if(this.state.status === '') {
+                    if(this.state.status === '' || this.state.status === 'isPaused') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <img className={ classes.logoCenter } src={ bdm_logo } alt="LOGO"/>
@@ -129,7 +129,7 @@ class Visualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if(this.state.status !== '' && this.state.text !== '') {
+                    if(this.state.status !== '' && this.state.status !== 'isPaused' && this.state.text !== '') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.thematic }>{ this.state.text }</div>
