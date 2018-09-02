@@ -11,6 +11,15 @@ import './visualizer.css'
 const socket = io('http://' + window.location.hostname + ':12345')
 
 const styles = theme => ({
+    particles: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        left: 0,
+        zIndex: 0,
+        overflow: 'hidden'
+    },
     bdmLogo: {
         float: 'left',
         marginTop: '3%',
@@ -46,7 +55,7 @@ class Visualizer extends Component {
         const { classes } = this.props
         return (
             <div className="visualizer flex">
-                <div id="particles-js" className="particles"></div>
+                <div id="particles-js" className={ classes.particles }/>
                 { (() => {
                     if(this.state.status === "isSet" || this.state.status === "isStart") {
                         return (
