@@ -99,7 +99,7 @@ class Visualizer extends Component {
             <div className={ classes.visualizer }>
                 <div id="particles-js" className={ classes.particles }/>
                 { (() => {
-                    if(this.state.status === 'isSet' || this.state.status === 'isStart') {
+                    if(this.state.status !== '') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.header }>
@@ -108,7 +108,9 @@ class Visualizer extends Component {
                                 </div>
                             </Fade>
                         )
-                    } else {
+                    }
+                })() }
+                { (() => {
                     if(this.state.status === '') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
