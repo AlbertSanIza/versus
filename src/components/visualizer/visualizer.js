@@ -112,7 +112,7 @@ class Visualizer extends Component {
                     if(this.state.status === '') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <img className={ classes.logoCenter } src={bdm_logo} alt="LOGO"/>
+                                <img className={ classes.logoCenter } src={ bdm_logo } alt="LOGO"/>
                             </Fade>
                         )
                     }
