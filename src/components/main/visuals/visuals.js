@@ -70,6 +70,10 @@ class Competitors extends Component {
         this.setState({ status: 'isStart' })
         this.props.visualizer({ status: 'isStart', seconds: this.state.seconds, text: this.state.text })
     }
+    pauseButton = () => {
+        this.setState({ status: 'isPaused' })
+        this.props.visualizer({ status: 'isPaused'})
+    }
     onTick = () => {
         this.setState({ seconds: this.state.seconds - 1 })
         this.props.visualizer({ seconds: this.state.seconds, text: this.state.text })
@@ -117,6 +121,7 @@ class Competitors extends Component {
                                 </Grid>
                             )
                             case 'isSet':
+                            case 'isPaused':
                             return (
                                 <React.Fragment>
                                     <Grid item xs={ 6 }>
@@ -130,7 +135,7 @@ class Competitors extends Component {
                             case 'isStart':
                             return (
                                 <Grid item xs={ 12 }>
-                                    <Button variant="contained" color="primary" onClick={ this.setButton } fullWidth>Puasar</Button>
+                                    <Button variant="contained" color="primary" onClick={ this.pauseButton } fullWidth>Puasar</Button>
                                 </Grid>
                             )
                             default:
