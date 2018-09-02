@@ -6,7 +6,6 @@ import 'particles.js/particles'
 import 'typeface-caveat-brush'
 import puma_logo from './puma.png'
 import bdm_logo from './bdm.png'
-import './visualizer.css'
 
 const socket = io('http://' + window.location.hostname + ':12345')
 
@@ -36,6 +35,18 @@ const styles = theme => ({
         color: '#eceff1',
         textShadow: '0px 0px 0px red',
         zIndex: 1
+    },
+    thematic: {
+        position: 'absolute',
+        bottom: '3%',
+        left: 0,
+        width: '100%',
+        fontFamily: 'Caveat Brush',
+        fontSize: '12vh',
+        color: '#eceff1',
+        textShadow: '0px 0px 0px red',
+        zIndex: 1,
+        textAlign: 'center'
     },
     particles: {
         position: 'absolute',
@@ -118,7 +129,7 @@ class Visualizer extends Component {
                     if((this.state.status === "isSet" || this.state.status === "isStart") && this.state.text !== "") {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className="visualizer-text">{ this.state.text }</div>
+                                <div className={ classes.thematic }>{ this.state.text }</div>
                             </Fade>
                         )
                     }
