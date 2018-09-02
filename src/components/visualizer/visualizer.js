@@ -23,6 +23,13 @@ const styles = theme => ({
         alignItems: 'center',
         justifyContent: 'center'
     },
+    header: {
+        position: 'absolute',
+        top: 0,
+        width: '100%',
+        height: '30%',
+        zIndex: 1
+    },
     particles: {
         position: 'absolute',
         width: '100%',
@@ -72,7 +79,7 @@ class Visualizer extends Component {
                     if(this.state.status === "isSet" || this.state.status === "isStart") {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className="visualizer-header">
+                                <div className={ classes.header }>
                                     <img className={ classes.bdmLogo } src={ bdm_logo } alt="BDM Logo"/>
                                     <img className={ classes.pumaLogo } src={ puma_logo } alt="Puma Logo"/>
                                 </div>
