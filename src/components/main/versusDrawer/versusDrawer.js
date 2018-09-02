@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import { NavLink } from "react-router-dom"
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import SettingsIcon from '@material-ui/icons/Settings'
-import EventIcon from '@material-ui/icons/Event'
 import SchoolIcon from '@material-ui/icons/School'
 import PeopleIcon from '@material-ui/icons/People'
-import ImageIcon from '@material-ui/icons/Image'
 import ListItem from '@material-ui/core/ListItem'
+import EventIcon from '@material-ui/icons/Event'
+import ImageIcon from '@material-ui/icons/Image'
 import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
+import { NavLink } from "react-router-dom"
 
 const styles = {
     style: {

@@ -99,7 +99,7 @@ class Visualizer extends Component {
             <div className={ classes.visualizer }>
                 <div id="particles-js" className={ classes.particles }/>
                 { (() => {
-                    if(this.state.status === "isSet" || this.state.status === "isStart") {
+                    if(this.state.status === 'isSet' || this.state.status === 'isStart') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.header }>
@@ -117,7 +117,7 @@ class Visualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if(this.state.status === "isSet" || this.state.status === "isStart") {
+                    if(this.state.status === 'isSet' || this.state.status === 'isStart') {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
                                 <div className={ classes.countDown }>{ this.state.seconds }</div>
@@ -126,7 +126,7 @@ class Visualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if((this.state.status === "isSet" || this.state.status === "isStart") && this.state.text !== "") {
+                    if((this.state.status === 'isSet' || this.state.status === 'isStart') && this.state.text !== '') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.thematic }>{ this.state.text }</div>

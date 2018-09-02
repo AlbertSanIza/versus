@@ -52,9 +52,7 @@ const styles = () => ({
 class Theme extends Component {
     render() {
         return (
-            <MuiThemeProvider theme={ theme }>
-                { this.props.children }
-            </MuiThemeProvider>
+            <MuiThemeProvider theme={ theme }>{ this.props.children }</MuiThemeProvider>
         )
     }
 }

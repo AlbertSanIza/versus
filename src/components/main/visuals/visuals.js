@@ -48,9 +48,9 @@ const styles = theme => ({
 
 class Competitors extends Component {
     state = {
-        status: "set",
-        seconds: "",
-        text: ""
+        status: 'set',
+        seconds: '',
+        text: ''
     }
     inputHandleChange = e => {
         this.setState({ seconds: e.target.value })
@@ -59,28 +59,28 @@ class Competitors extends Component {
         this.setState({ text: e.target.value })
     }
     setButton = () => {
-        this.setState({ status: "isSet" })
-        this.props.visualizer({ status: "isSet", seconds: this.state.seconds, text: this.state.text })
+        this.setState({ status: 'isSet' })
+        this.props.visualizer({ status: 'isSet', seconds: this.state.seconds, text: this.state.text })
     }
     startButton = () => {
-        this.setState({status: "isStart"})
-        this.props.visualizer({ status: "isStart", seconds: this.state.seconds, text: this.state.text})
+        this.setState({ status: 'isStart' })
+        this.props.visualizer({ status: 'isStart', seconds: this.state.seconds, text: this.state.text })
     }
     pauseButton = () => {
-        this.setState({status: "isSet"})
-        this.props.visualizer({ status: "isPause", seconds: this.state.seconds, text: this.state.text})
+        this.setState({ status: 'isSet' })
+        this.props.visualizer({ status: 'isPause', seconds: this.state.seconds, text: this.state.text })
     }
     resetButton = () => {
-        this.setState({status: "set", seconds: "", text: ""})
-        this.props.visualizer({ status: "isReset", seconds: "0", text: this.state.text})
+        this.setState({ status: 'set', seconds: '', text: '' })
+        this.props.visualizer({ status: 'isReset', seconds: '0', text: this.state.text })
     }
     onTick = () => {
-        this.setState({seconds: this.state.seconds - 1})
-        this.props.visualizer({ status: "isStart", seconds: this.state.seconds, text: this.state.text})
+        this.setState({ seconds: this.state.seconds - 1 })
+        this.props.visualizer({ status: 'isStart', seconds: this.state.seconds, text: this.state.text })
     }
     onComplete = () => {
-        this.setState({status: "set", seconds: ""})
-        this.props.visualizer({ status: "isReset", seconds: "0"})
+        this.setState({ status: 'set', seconds: '' })
+        this.props.visualizer({ status: 'isReset', seconds: '0' })
     }
     render() {
         const { classes } = this.props
@@ -96,7 +96,7 @@ class Competitors extends Component {
                         switch (this.state.status) {
                             case 'isStart':
                             return (
-                                <Countdown date={ Date.now() + (this.state.seconds * 1000) } onTick={ this.onTick } onComplete={ this.onComplete } renderer={ props => <div className={ classes.countdown }>{props.total / 1000}</div> }/>
+                                <Countdown date={ Date.now() + (this.state.seconds * 1000) } onTick={ this.onTick } onComplete={ this.onComplete } renderer={ props => <div className={ classes.countdown }>{ props.total / 1000 }</div> }/>
                             )
                             default:
                             return ''
@@ -106,7 +106,7 @@ class Competitors extends Component {
                 <MuiThemeProvider theme={ theme }>
                     <Grid container spacing={ 16 }>
                         <Grid item xs={ 12 }>
-                            <TextField type="number" label="Tiempo" value={ this.state.seconds } onChange={ this.inputHandleChange } disabled={ this.state.status !== "set" } InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>), endAdornment: (<InputAdornment position="end">Segundos</InputAdornment>) }} fullWidth/>
+                            <TextField type="number" label="Tiempo" value={ this.state.seconds } onChange={ this.inputHandleChange } disabled={ this.state.status !== 'set' } InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>), endAdornment: (<InputAdornment position="end">Segundos</InputAdornment>) }} fullWidth/>
                             <TextField label="Tema" value={ this.state.text } onChange={ this.inputTextHandleChange } InputProps={{ startAdornment: (<InputAdornment position="start"><SchoolIcon/></InputAdornment>) }} fullWidth/>
                         </Grid>
                     </Grid>

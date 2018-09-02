@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import { HashRouter, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import { HashRouter, Route } from 'react-router-dom'
 import { Main, Visualizer } from './components'
 import rootReducer from './reducers'
 
