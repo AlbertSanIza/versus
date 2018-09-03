@@ -47,6 +47,7 @@ class Competitors extends Component {
         openCreate: false,
         showSnackbar: false,
         createName: '',
+        createImage: {  }
     }
     handleOpenCreate = () => {
         this.setState({ openCreate: true })
@@ -110,7 +111,7 @@ class Competitors extends Component {
                                 </Grid>
                             </Grid>
                             <br/>
-                            <ImageDropZone anySize width={ 312 } height={ 250 } imagePicked={ image => console.log(image) }/>
+                            <ImageDropZone anySize showButton width={ 312 } height={ 250 } imagePicked={ image => console.log(image) }/>
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseCreate }>Cancelar</Button>
