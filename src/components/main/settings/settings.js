@@ -21,18 +21,18 @@ const styles = theme => ({
 
 class Settings extends Component {
     render() {
-        const { classes } = this.props
+        const { classes, tempDir, openTempDir } = this.props
         return (
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Ajustes</Typography>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 9 }>
                         <FormControl fullWidth>
-                            <Input placeholder="Carpeta Temporal" disabled></Input>
+                            <Input placeholder="Carpeta Temporal" value={ tempDir } disabled></Input>
                         </FormControl>
                     </Grid>
                     <Grid sm={ 3 } item>
-                        <Button variant="contained" color="primary" fullWidth>Mostrar</Button>
+                        <Button variant="contained" color="primary" onClick={ openTempDir } fullWidth>Mostrar</Button>
                     </Grid>
                 </Grid>
                 <br/><br/><br/>
