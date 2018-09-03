@@ -58,8 +58,18 @@ class Competitors extends Component {
         this.setState({ createName: input })
     }
     handleCreate = () => {
-        this.props.createCompetitor({ name: this.state.createName, photo: '' })
-        this.handleCloseCreate()
+        var canCreate = true
+        for(var i = 0; i < this.props.competitors.length; i++) {
+            if(this.props.competitors[i].name.toLowerCase() === this.state.createName.toLowerCase()) {
+                canCreate = false
+            }
+        }
+        if(canCreate) {
+            // this.props.createCompetitor({ name: this.state.createName, photo: '' })
+            this.handleCloseCreate()
+        } else {
+            this.setState({ showSnackbar: true })
+        }
     }
     render() {
         const { classes, competitors, searchTerm, searchCompetitors } = this.props
