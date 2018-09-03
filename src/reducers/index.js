@@ -100,7 +100,7 @@ const settingsInitialState = {
 const settings = (state = settingsInitialState, action) => {
     switch(action.type) {
         case 'OPEN_TEMP_DIR':
-        socket.emit('openTempDir', { })
+        socket.emit('settings', { type: 'openTempDir' })
         return state
         default:
         return state
