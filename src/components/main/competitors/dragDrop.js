@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
 import './dragDrop.css'
 
 const style = {
@@ -45,7 +44,12 @@ class ImageDropZone extends Component {
 
     constructor(props) {
         super(props)
-        this.state = { image: null, error: '', over: false, deleted: false }
+        this.state = {
+            image: null,
+            error: '',
+            over: false,
+            deleted: false
+        }
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -53,7 +57,6 @@ class ImageDropZone extends Component {
         if (state.deleted) {
             return null
         }
-
         // set image default
         if (!state.image && props.imageDefault) {
             return { image: props.imageDefault }
@@ -121,13 +124,12 @@ class ImageDropZone extends Component {
     }
 
     render() {
-        const { image, error, over, deleted } = this.state
+        const { image, error, over } = this.state
         const {
             width,
             height,
             imageWidth,
             imageHeight,
-            imageDefault,
             anySize,
             showButton,
             showDeleteButton,
