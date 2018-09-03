@@ -94,6 +94,19 @@ const competitors = (state = competitorsInitialState, action) => {
     }
 }
 
+const settingsInitialState = {
+    tempFolder: ''
+}
+const settings = (state = settingsInitialState, action) => {
+    switch(action.type) {
+        case 'OPEN_TEMP_FOLDER':
+        socket.emit('openTempDir', { })
+        return state
+        default:
+        return state
+    }
+}
+
 socket.emit('events', { type: 'get' }, data => {
     eventsInitialState.events = data
 })
@@ -103,10 +116,14 @@ socket.emit('thematics', { type: 'get' }, data => {
 socket.emit('competitors', { type: 'get' }, data => {
     competitorsInitialState.competitors = data
 })
+socket.emit('settings', { type: 'get' }, data => {
+    settingsInitialState.tempFolder = data.tempFolder
+})
 
 export default combineReducers({
     visuals,
     events,
     thematics,
-    competitors
+    competitors,
+    settings
 })
