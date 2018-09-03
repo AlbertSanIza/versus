@@ -78,8 +78,15 @@ app.on('ready', () => {
                 break
             }
         })
-        socket.on('openTempDir', () => {
-            shell.openItem(tempDir)
+        socket.on('settings', (msg, fn) => {
+            switch (msg.type) {
+                case 'get':
+                fn({ tempDir: tempDir })
+                break
+                case 'openTempDir':
+                shell.openItem(tempDir)
+                break
+            }
         })
     })
 })
