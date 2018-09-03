@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
+import FormControl from '@material-ui/core/FormControl'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
+import Input from '@material-ui/core/Input'
+import Grid from '@material-ui/core/Grid'
 import instagramLogo from './instagramLogo.svg'
 import githubLogo from './githubLogo.svg'
 
@@ -21,6 +25,17 @@ class Settings extends Component {
         return (
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Ajustes</Typography>
+                <Grid container spacing={ 16 }>
+                    <Grid item sm={ 9 }>
+                        <FormControl fullWidth>
+                            <Input placeholder="Carpeta Temporal" disabled></Input>
+                        </FormControl>
+                    </Grid>
+                    <Grid sm={ 3 } item>
+                        <Button variant="contained" color="primary" fullWidth>Mostrar</Button>
+                    </Grid>
+                </Grid>
+                <br/><br/><br/>
                 <Typography variant="body1" align="center">Creado por Albert Sanchez</Typography>
                 <Typography variant="body1" align="center">
                     <a href="https://www.instagram.com/albertsaniza/" target="_blank" rel="noopener noreferrer">
