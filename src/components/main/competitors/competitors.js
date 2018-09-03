@@ -111,7 +111,7 @@ class Competitors extends Component {
                                 </Grid>
                             </Grid>
                             <br/>
-                            <ImageDropZone anySize showButton width={ 312 } height={ 250 } imagePicked={ image => console.log(image) }/>
+                            <ImageDropZone anySize showButton width={ 312 } height={ 250 } imagePicked={ image => this.setImage({ createImage: image }) }/>
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseCreate }>Cancelar</Button>
