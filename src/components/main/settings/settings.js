@@ -17,6 +17,7 @@ const styles = theme => ({
 
 class Settings extends Component {
     render() {
+        const { classes } = this.props
         return (
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Ajustes</Typography>
