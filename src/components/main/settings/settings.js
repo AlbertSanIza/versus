@@ -1,8 +1,19 @@
 import React, { Component } from 'react'
+import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import instagramLogo from './instagramLogo.svg'
 import githubLogo from './githubLogo.svg'
-import './settings.css'
+
+const styles = theme => ({
+    settingsInstagramLogo: {
+        height: 38,
+        paddingTop: 6
+    },
+    settingsGithubLogo: {
+        height: 36,
+        paddingBottom: 2
+    }
+})
 
 class Settings extends Component {
     render() {
@@ -23,4 +34,4 @@ class Settings extends Component {
     }
 }
 
-export default Settings
+export default withStyles(styles)(Settings)
