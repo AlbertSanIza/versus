@@ -30,7 +30,6 @@ class ImageDropZone extends Component {
     static propTypes = {
         anySize: PropTypes.bool,
         showButton: PropTypes.bool,
-        showDeleteButton: PropTypes.bool,
         imageWidth: PropTypes.number,
         imageHeight: PropTypes.number,
         imageIndex: PropTypes.number,
@@ -41,7 +40,6 @@ class ImageDropZone extends Component {
         imagePicked: PropTypes.func,
         imageDeleted: PropTypes.func
     }
-
     constructor(props) {
         super(props)
         this.state = {
@@ -51,7 +49,6 @@ class ImageDropZone extends Component {
             deleted: false
         }
     }
-
     static getDerivedStateFromProps(props, state) {
         // if deleted the don't reset to image default
         if (state.deleted) {
@@ -64,55 +61,40 @@ class ImageDropZone extends Component {
             return null
         }
     }
-
     handleFile = event => {
         const { imagePicked } = this.props
-
         let image = URL.createObjectURL(event.target.files[0])
         let file = event.target.files[0]
         this.setState({ file, image })
         imagePicked({ index: this.props.imageIndex, file, image })
     }
-
     deleteFile = event => {
         const { imageDeleted, imagePicked } = this.props
-
         imagePicked({ index: this.props.imageIndex, file: null, image: null })
         if (imageDeleted) {
             imageDeleted(this.props)
         }
-
         this.setState({ image: null, deleted: true })
     }
-
     onDragOver = event => {
         event.preventDefault()
     }
-
     onDragEnter = event => {
         this.setState({ over: true })
     }
-
     onDragLeave = event => {
         this.setState({ over: false })
     }
-
     onDrop = event => {
         event.preventDefault()
         let file = event.dataTransfer.files[0]
         let image = URL.createObjectURL(file)
-
-        this.setState({
-            image,
-            over: false
-        })
+        this.setState({ image, over: false })
         this.props.imagePicked({ index: this.props.imageIndex, file, image })
     }
-
     onLoad = event => {
         const { naturalWidth, naturalHeight } = event.target
         const { imageWidth, imageHeight, anySize } = this.props
-
         if (!anySize && ((imageWidth && imageWidth !== naturalWidth) || (imageHeight && imageHeight !== naturalHeight))) {
             this.setState({
                 error: `Wrong image dimensions ${naturalWidth}x${naturalHeight}`,
@@ -122,76 +104,40 @@ class ImageDropZone extends Component {
             this.setState({ error: '' })
         }
     }
-
     render() {
         const { image, error, over } = this.state
-        const {
-            width,
-            height,
-            imageWidth,
-            imageHeight,
-            anySize,
-            showButton,
-            showDeleteButton,
-            fontSize
-        } = this.props
-
+        const { width, height, showButton, fontSize } = this.props
         return (
             <div>
-                <div
-                    onDrop={this.onDrop}
-                    onDragOver={this.onDragOver}
-                    onDragLeave={this.onDragLeave}
-                    onDragEnter={this.onDragEnter}
-                    style={Object.assign(
-                        {},
-                        {
-                            width: `${width}px`,
-                            height: `${height}px`,
-                            backgroundImage: `url(${image ? image : ''})`,
-                            backgroundRepeat: 'no-repeat',
-                            backgroundPosition: 'center',
-                            backgroundSize: 'contain'
-                        },
-                        style.frame,
-                        over ? style.enter : style.leave
-                    )}>
-                    {image !== null ? (
-                        <img onLoad={this.onLoad} src={image} alt={image} width={0} height={0} />
+                <div onDrop={ this.onDrop } onDragOver={ this.onDragOver }onDragLeave={ this.onDragLeave } onDragEnter={ this.onDragEnter }
+                    style={ Object.assign({  }, {
+                        width: `${ width }px`,
+                        height: `${ height }px`,
+                        backgroundImage: `url(${ image ? image : '' })`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center',
+                        backgroundSize: 'contain'
+                    }, style.frame, over ? style.enter : style.leave)}>
+                    { image !== null ? (
+                        <img onLoad={ this.onLoad } src={ image } alt={ image } width={ 0 } height={ 0 }/>
                     ) : (
                         <div style={{ pointerEvents: 'none' }}>
-                            <div style={{ ...style.label, fontSize: fontSize ? `${fontSize}px` : '34px' }}>
-                                {!anySize ? (
-                                    <div>
-                                        {imageWidth} x {imageHeight}
-                                    </div>
-                                ) : (
-                                    'Drop Here'
-                                )}
-                                <div>{error}</div>
+                            <div style={{ ...style.label, fontSize: fontSize ? `${ fontSize }px` : '34px' }}>
+                                Imagen
+                                <div>{ error }</div>
                             </div>
                         </div>
                     )}
                 </div>
-
                 <div style={{ display: 'flex' }}>
-                    {showButton ? (
+                    { showButton ? (
                         <div className="button-container">
                             <label className="button">
-                                Choose File
-                                <input style={{ display: 'none' }} type="file" value="" onChange={this.handleFile} />
+                                Escoger Imagen
+                                <input style={{ display: 'none' }} type="file" value="" onChange={ this.handleFile }/>
                             </label>
                         </div>
-                    ) : null}
-
-                    {showDeleteButton ? (
-                        <div className="button-container">
-                            <label className="button">
-                                Delete
-                                <button style={{ display: 'none' }} type="button" onClick={this.deleteFile} />
-                            </label>
-                        </div>
-                    ) : null}
+                    ) : null }
                 </div>
             </div>
         )
