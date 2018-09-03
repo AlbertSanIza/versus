@@ -14,6 +14,7 @@ import Input from '@material-ui/core/Input'
 import Paper from '@material-ui/core/Paper'
 import Grow  from '@material-ui/core/Grow'
 import Grid from '@material-ui/core/Grid'
+import ImageDropZone from './dragDrop'
 
 const theme = createMuiTheme({
     palette: {
@@ -89,9 +90,15 @@ class Competitors extends Component {
                     <Dialog open={ this.state.openCreate } onClose={ this.handleCloseCreate } scroll="paper">
                         <DialogTitle>Nuevo Competidor</DialogTitle>
                         <DialogContent>
-                            <FormControl fullWidth>
-                                <Input placeholder="Nombre" value={ this.state.createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
-                            </FormControl>
+                            <Grid container spacing={ 16 }>
+                                <Grid item sm={ 12 }>
+                                    <FormControl fullWidth>
+                                        <Input placeholder="Nombre" value={ this.state.createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
+                                    </FormControl>
+                                </Grid>
+                            </Grid>
+                            <br/>
+                            <ImageDropZone anySize width={ 312 } height={ 250 } imagePicked={ image => console.log(image) }/>
                         </DialogContent>
                         <DialogActions>
                             <Button onClick={ this.handleCloseCreate } color="primary">Cancelar</Button>
