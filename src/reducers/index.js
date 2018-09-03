@@ -95,7 +95,7 @@ const competitors = (state = competitorsInitialState, action) => {
 }
 
 const settingsInitialState = {
-    tempFolder: ''
+    tempDir: ''
 }
 const settings = (state = settingsInitialState, action) => {
     switch(action.type) {
@@ -117,7 +117,7 @@ socket.emit('competitors', { type: 'get' }, data => {
     competitorsInitialState.competitors = data
 })
 socket.emit('settings', { type: 'get' }, data => {
-    settingsInitialState.tempFolder = data.tempFolder
+    settingsInitialState.tempDir = data.tempDir
 })
 
 export default combineReducers({
