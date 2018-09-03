@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FormControl from '@material-ui/core/FormControl'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
+import InputLabel from '@material-ui/core/InputLabel'
 import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
 import Grid from '@material-ui/core/Grid'
@@ -26,13 +27,14 @@ class Settings extends Component {
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Ajustes</Typography>
                 <Grid container spacing={ 16 }>
-                    <Grid item sm={ 9 }>
+                    <Grid item sm={ 12 }>
                         <FormControl fullWidth>
+                            <InputLabel>Carpeta Temporal</InputLabel>
                             <Input placeholder="Carpeta Temporal" value={ tempDir } disabled></Input>
                         </FormControl>
                     </Grid>
-                    <Grid sm={ 3 } item>
-                        <Button variant="contained" color="primary" onClick={ openTempDir } fullWidth>Mostrar</Button>
+                    <Grid sm={ 12 } style={{ textAlign: 'right' }} item>
+                        <Button variant="contained" color="primary" onClick={ openTempDir }>Mostrar</Button>
                     </Grid>
                 </Grid>
                 <br/><br/><br/>
