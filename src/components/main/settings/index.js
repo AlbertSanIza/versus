@@ -1,12 +1,12 @@
 import { connect } from 'react-redux'
 import Settings from './settings'
 
-function openTempFolder() {
+function openTempDir() {
     return {
-        type: 'OPEN_TEMP_FOLDER'
+        type: 'OPEN_TEMP_DIR'
     }
 }
 
 export default connect(store => store.settings, {
-    openTempFolder
+    openTempDir
 })(Settings)
