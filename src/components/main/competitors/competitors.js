@@ -113,8 +113,8 @@ class Competitors extends Component {
                             <ImageDropZone anySize width={ 312 } height={ 250 } imagePicked={ image => console.log(image) }/>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={ this.handleCloseCreate } color="primary">Cancelar</Button>
-                            <Button variant="contained" onClick={ this.handleCreate } color="primary">Guardar</Button>
+                            <Button color="primary" onClick={ this.handleCloseCreate }>Cancelar</Button>
+                            <Button variant="contained" color="primary" onClick={ this.handleCreate } disabled={ this.state.createName === '' }>Guardar</Button>
                         </DialogActions>
                     </Dialog>
                 </MuiThemeProvider>
