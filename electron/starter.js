@@ -78,6 +78,9 @@ app.on('ready', () => {
                 break
             }
         })
+        socket.on('openTempDir', () => {
+            shell.openItem(tempDir)
+        })
     })
 })
 app.on('window-all-closed', () => {
