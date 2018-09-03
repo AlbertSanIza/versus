@@ -23,10 +23,10 @@ class Settings extends Component {
                 <Typography variant="body1" align="center">Creado por Albert Sanchez</Typography>
                 <Typography variant="body1" align="center">
                     <a href="https://www.instagram.com/albertsaniza/" target="_blank" rel="noopener noreferrer">
-                        <img className="settings-instagram-logo" src={ instagramLogo } alt=""/>
+                        <img className={ classes.settingsInstagramLogo } src={ instagramLogo } alt=""/>
                     </a>
                     <a href="https://github.com/BatallaDeMaestros" target="_blank" rel="noopener noreferrer">
-                        <img className="settings-github-logo" src={ githubLogo } alt=""/>
+                        <img className={ classes.settingsGithubLogo } src={ githubLogo } alt=""/>
                     </a>
                 </Typography>
             </React.Fragment>
