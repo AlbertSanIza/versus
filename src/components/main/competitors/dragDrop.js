@@ -78,7 +78,7 @@ class ImageDropZone extends Component {
         const { width, height, showButton, fontSize } = this.props
         return (
             <div>
-                <div onDrop={ this.onDrop } onDragOver={ this.onDragOver }onDragLeave={ this.onDragLeave } onDragEnter={ this.onDragEnter }
+                <div onDrop={ this.onDrop } onDragOver={ this.onDragOver } onDragLeave={ this.onDragLeave } onDragEnter={ this.onDragEnter }
                     style={ Object.assign({  }, {
                         width: `${ width }px`,
                         height: `${ height }px`,
