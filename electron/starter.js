@@ -8,7 +8,7 @@ var expressApp = express()
 var http = require('http').Server(expressApp).listen(12345)
 var io = require('socket.io')(http)
 var storage = require('electron-json-storage')
-var tempDir = os.tmpdir() + '/versus'
+var tempDir = os.tmpdir() + (process.platform === 'win32' ? '\\' : '/') + 'versus'
 storage.setDataPath(tempDir)
 
 app.on('ready', () => {
