@@ -24,7 +24,6 @@ const style = {
 
 class ImageDropZone extends Component {
     static propTypes = {
-        anySize: PropTypes.bool,
         showButton: PropTypes.bool,
         imageWidth: PropTypes.number,
         imageHeight: PropTypes.number,
