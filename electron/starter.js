@@ -46,7 +46,9 @@ app.on('ready', () => {
             switch (msg.type) {
                 case 'get':
                 storage.get('events', (getErrors, data) => {
-                    fn(data)
+                    if(!getErrors && data.length > 0) {
+                        fn(data)
+                    }
                 })
                 break
                 case 'set':
@@ -58,7 +60,9 @@ app.on('ready', () => {
             switch (msg.type) {
                 case 'get':
                 storage.get('thematics', (getErrors, data) => {
-                    fn(data)
+                    if(!getErrors && data.length > 0) {
+                        fn(data)
+                    }
                 })
                 break
                 case 'set':
@@ -70,7 +74,9 @@ app.on('ready', () => {
             switch (msg.type) {
                 case 'get':
                 storage.get('competitors', (getErrors, data) => {
-                    fn(data)
+                    if(!getErrors && data.length > 0) {
+                        fn(data)
+                    }
                 })
                 break
                 case 'set':
