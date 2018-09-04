@@ -34,22 +34,16 @@ class ImageDropZone extends Component {
         width: PropTypes.number.isRequired,
         height: PropTypes.number.isRequired,
         imagePicked: PropTypes.func,
-        imageDeleted: PropTypes.func
     }
     constructor(props) {
         super(props)
         this.state = {
             image: null,
             error: '',
-            over: false,
-            deleted: false
+            over: false
         }
     }
     static getDerivedStateFromProps(props, state) {
-        // if deleted the don't reset to image default
-        if (state.deleted) {
-            return null
-        }
         // set image default
         if (!state.image && props.imageDefault) {
             return { image: props.imageDefault }
@@ -63,14 +57,6 @@ class ImageDropZone extends Component {
         let file = event.target.files[0]
         this.setState({ file, image })
         imagePicked({ index: this.props.imageIndex, file, image })
-    }
-    deleteFile = event => {
-        const { imageDeleted, imagePicked } = this.props
-        imagePicked({ index: this.props.imageIndex, file: null, image: null })
-        if (imageDeleted) {
-            imageDeleted(this.props)
-        }
-        this.setState({ image: null, deleted: true })
     }
     onDragOver = event => {
         event.preventDefault()
