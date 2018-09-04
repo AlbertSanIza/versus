@@ -14,9 +14,7 @@ const visuals = (state = [], action) => {
 }
 
 const eventsInitialState = {
-    events: [
-        { name: 'BDM Gold Mexico 2018' }
-    ],
+    events: [ ],
     searchTerm: ''
 }
 const events = (state = eventsInitialState, action) => {
@@ -41,9 +39,7 @@ const events = (state = eventsInitialState, action) => {
 }
 
 const thematicsInitialState = {
-    thematics: [
-        { name: 'Madera' }
-    ],
+    thematics: [ ],
     searchTerm: ''
 }
 const thematics = (state = thematicsInitialState, action) => {
@@ -68,9 +64,7 @@ const thematics = (state = thematicsInitialState, action) => {
 }
 
 const competitorsInitialState = {
-    competitors: [
-        { name: 'Aczino', photo: './assets/competitors/aczino.jpg' }
-    ],
+    competitors: [ ],
     searchTerm: ''
 }
 const competitors = (state = competitorsInitialState, action) => {
