@@ -61,7 +61,7 @@ class ImageDropZone extends Component {
         const { image, over } = this.state
         const { width, height, showButton } = this.props
         return (
-            <div>
+            <React.Fragment>
                 <div onDrop={ this.onDrop } onDragOver={ this.onDragOver } onDragLeave={ this.onDragLeave } onDragEnter={ this.onDragEnter }
                     style={ Object.assign({  }, {
                         width: `${ width }px`,
@@ -89,7 +89,7 @@ class ImageDropZone extends Component {
                         </div>
                     ) : null }
                 </div>
-            </div>
+            </React.Fragment>
         )
     }
 }
