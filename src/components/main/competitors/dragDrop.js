@@ -7,22 +7,18 @@ const style = {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center',
-        color: 'rgb(128,128,128)'
+        alignItems: 'center'
     },
     label: {
         textAlign: 'center',
         fontSize: '48px'
     },
     leave: {
-        border: '2px solid grey',
-        backgroundColor: 'rgb(230,230,230)',
-        color: 'rgb(128,128,128)'
+        border: '1px solid grey'
     },
     enter: {
-        border: '2px dashed grey',
-        backgroundColor: 'rgb(200,200,200)',
-        color: 'rgb(64,64,64)'
+        border: '1px dashed grey',
+        backgroundColor: 'rgb(240, 240, 240)',
     }
 }
 
