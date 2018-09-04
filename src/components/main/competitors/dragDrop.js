@@ -26,11 +26,7 @@ const style = {
 class ImageDropZone extends Component {
     static propTypes = {
         showButton: PropTypes.bool,
-        imageWidth: PropTypes.number,
-        imageHeight: PropTypes.number,
         imageIndex: PropTypes.number,
-        fontSize: PropTypes.number,
-        imageDefault: PropTypes.string,
         width: PropTypes.number.isRequired,
         height: PropTypes.number.isRequired,
         imagePicked: PropTypes.func,
@@ -39,16 +35,7 @@ class ImageDropZone extends Component {
         super(props)
         this.state = {
             image: null,
-            error: '',
             over: false
-        }
-    }
-    static getDerivedStateFromProps(props, state) {
-        // set image default
-        if (!state.image && props.imageDefault) {
-            return { image: props.imageDefault }
-        } else {
-            return null
         }
     }
     handleFile = e => {
@@ -75,8 +62,8 @@ class ImageDropZone extends Component {
         this.props.imagePicked({ index: this.props.imageIndex, file, image })
     }
     render() {
-        const { image, error, over } = this.state
-        const { width, height, showButton, fontSize } = this.props
+        const { image, over } = this.state
+        const { width, height, showButton } = this.props
         return (
             <div>
                 <div onDrop={ this.onDrop } onDragOver={ this.onDragOver } onDragLeave={ this.onDragLeave } onDragEnter={ this.onDragEnter }
@@ -86,16 +73,13 @@ class ImageDropZone extends Component {
                         backgroundImage: `url(${ image ? image : '' })`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
-                        backgroundSize: 'contain'
+                        backgroundSize: 'cover'
                     }, style.frame, over ? style.enter : style.leave)}>
                     { image !== null ? (
                         <img src={ image } alt={ image } width={ 0 } height={ 0 }/>
                     ) : (
                         <div style={{ pointerEvents: 'none' }}>
-                            <div style={{ ...style.label, fontSize: fontSize ? `${ fontSize }px` : '34px' }}>
-                                Imagen
-                                <div>{ error }</div>
-                            </div>
+                            <div style={ style.label }>Imagen</div>
                         </div>
                     )}
                 </div>
