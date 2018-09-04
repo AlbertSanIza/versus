@@ -104,7 +104,7 @@ class Competitors extends Component {
                         <DialogTitle>Nuevo Competidor</DialogTitle>
                         <DialogContent>
                             <Grid container spacing={ 16 }>
-                                <Grid item sm={ 12 }>
+                                <Grid item xs={ 12 }>
                                     <FormControl fullWidth>
                                         <Input placeholder="Nombre" value={ this.state.createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
                                     </FormControl>
