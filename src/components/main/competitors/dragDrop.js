@@ -51,25 +51,25 @@ class ImageDropZone extends Component {
             return null
         }
     }
-    handleFile = event => {
+    handleFile = e => {
         const { imagePicked } = this.props
-        let image = URL.createObjectURL(event.target.files[0])
-        let file = event.target.files[0]
+        let image = URL.createObjectURL(e.target.files[0])
+        let file = e.target.files[0]
         this.setState({ file, image })
         imagePicked({ index: this.props.imageIndex, file, image })
     }
-    onDragOver = event => {
-        event.preventDefault()
+    onDragOver = e => {
+        e.preventDefault()
     }
-    onDragEnter = event => {
+    onDragEnter = () => {
         this.setState({ over: true })
     }
-    onDragLeave = event => {
+    onDragLeave = () => {
         this.setState({ over: false })
     }
-    onDrop = event => {
-        event.preventDefault()
-        let file = event.dataTransfer.files[0]
+    onDrop = e => {
+        e.preventDefault()
+        let file = e.dataTransfer.files[0]
         let image = URL.createObjectURL(file)
         this.setState({ image, over: false })
         this.props.imagePicked({ index: this.props.imageIndex, file, image })
