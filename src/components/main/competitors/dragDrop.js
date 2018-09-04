@@ -46,6 +46,12 @@ class ImageDropZone extends Component {
     onDragLeave = () => {
         this.setState({ over: false })
     }
+    handleFile = e => {
+        let image = URL.createObjectURL(e.target.files[0])
+        let file = e.target.files[0]
+        this.setState({ file, image })
+        this.props.imagePicked({ index: this.props.imageIndex, file, image })
+    }
     onDrop = e => {
         e.preventDefault()
         let file = e.dataTransfer.files[0]
@@ -83,7 +89,7 @@ class ImageDropZone extends Component {
                         <div className="button-container">
                             <label className="button">
                                 Escoger Imagen
-                                <input type="file" value="" accept="image/png" style={{ display: 'none' }}/>
+                                <input type="file" value="" accept="image/png" style={{ display: 'none' }} onChange={ this.handleFile }/>
                             </label>
                         </div>
                     ) : null }
