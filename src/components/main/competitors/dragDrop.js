@@ -134,7 +134,7 @@ class ImageDropZone extends Component {
                         <div className="button-container">
                             <label className="button">
                                 Escoger Imagen
-                                <input style={{ display: 'none' }} type="file" value="" onChange={ this.handleFile }/>
+                                <input type="file" value="" accept="image/png" style={{ display: 'none' }} onChange={ this.handleFile }/>
                             </label>
                         </div>
                     ) : null }
