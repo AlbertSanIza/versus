@@ -70,7 +70,7 @@ class ImageDropZone extends Component {
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
                         backgroundSize: 'cover'
-                    }, style.frame, over ? style.enter : style.leave)}>
+                    }, style.frame, over ? style.enter : style.leave) }>
                     { image !== null ? (
                         <img src={ image } alt={ image } width={ 0 } height={ 0 }/>
                     ) : (
