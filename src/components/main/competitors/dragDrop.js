@@ -74,18 +74,6 @@ class ImageDropZone extends Component {
         this.setState({ image, over: false })
         this.props.imagePicked({ index: this.props.imageIndex, file, image })
     }
-    onLoad = event => {
-        const { naturalWidth, naturalHeight } = event.target
-        const { imageWidth, imageHeight, anySize } = this.props
-        if (!anySize && ((imageWidth && imageWidth !== naturalWidth) || (imageHeight && imageHeight !== naturalHeight))) {
-            this.setState({
-                error: `Wrong image dimensions ${naturalWidth}x${naturalHeight}`,
-                image: null
-            })
-        } else {
-            this.setState({ error: '' })
-        }
-    }
     render() {
         const { image, error, over } = this.state
         const { width, height, showButton, fontSize } = this.props
@@ -101,7 +89,7 @@ class ImageDropZone extends Component {
                         backgroundSize: 'contain'
                     }, style.frame, over ? style.enter : style.leave)}>
                     { image !== null ? (
-                        <img onLoad={ this.onLoad } src={ image } alt={ image } width={ 0 } height={ 0 }/>
+                        <img src={ image } alt={ image } width={ 0 } height={ 0 }/>
                     ) : (
                         <div style={{ pointerEvents: 'none' }}>
                             <div style={{ ...style.label, fontSize: fontSize ? `${ fontSize }px` : '34px' }}>
