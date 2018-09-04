@@ -66,7 +66,7 @@ class Competitors extends Component {
             }
         }
         if(canCreate) {
-            this.props.createCompetitor({ name: this.state.createName, photo: './assets/competitors/' + this.props.createImage.file.name.toLowerCase() })
+            this.props.createCompetitor({ name: this.state.createName, photo: './assets/competitors/' + this.state.createName.toLowerCase() + '.' + this.props.createImage.file.type.split('/').pop() })
             this.handleCloseCreate()
         } else {
             this.setState({ showSnackbar: true })
