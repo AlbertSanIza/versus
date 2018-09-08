@@ -8,7 +8,7 @@ var expressApp = express()
 var http = require('http').Server(expressApp).listen(12345)
 var io = require('socket.io')(http)
 var storage = require('electron-json-storage')
-var tempDir = os.tmpdir() + '/versus'
+var tempDir = os.tmpdir() + (process.platform === 'win32' ? '\\' : '/') + 'versus'
 storage.setDataPath(tempDir)
 
 app.on('ready', () => {
@@ -46,7 +46,9 @@ app.on('ready', () => {
             switch (msg.type) {
                 case 'get':
                 storage.get('events', (getErrors, data) => {
-                    fn(data)
+                    if(!getErrors && data.length > 0) {
+                        fn(data)
+                    }
                 })
                 break
                 case 'set':
@@ -58,7 +60,9 @@ app.on('ready', () => {
             switch (msg.type) {
                 case 'get':
                 storage.get('thematics', (getErrors, data) => {
-                    fn(data)
+                    if(!getErrors && data.length > 0) {
+                        fn(data)
+                    }
                 })
                 break
                 case 'set':
@@ -70,7 +74,9 @@ app.on('ready', () => {
             switch (msg.type) {
                 case 'get':
                 storage.get('competitors', (getErrors, data) => {
-                    fn(data)
+                    if(!getErrors && data.length > 0) {
+                        fn(data)
+                    }
                 })
                 break
                 case 'set':
