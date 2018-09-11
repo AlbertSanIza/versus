@@ -4,12 +4,13 @@ import { withStyles } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
 import AppBar from '@material-ui/core/AppBar'
 import { Route } from 'react-router-dom'
+
+import CompetitorsView from './competitors/'
 import VersusDrawer from './versusDrawer/'
+import ThematicsView from './thematics/'
+import SettingsView from './settings/'
 import VisualsView from './visuals/'
 import EventsView from './events/'
-import ThematicsView from './thematics/'
-import CompetitorsView from './competitors/'
-import SettingsView from './settings/'
 
 const styles = theme => ({
     root: {
