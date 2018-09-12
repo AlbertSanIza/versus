@@ -13,31 +13,6 @@ const visuals = (state = [], action) => {
     return state
 }
 
-const thematicsInitialState = {
-    thematics: [ ],
-    searchTerm: ''
-}
-const thematics = (state = thematicsInitialState, action) => {
-    switch(action.type) {
-        case 'SEARCH_THEMATICS':
-        const { searchTerm } = action.payload
-        return {
-            ...state, searchTerm: searchTerm, thematics: (
-                searchTerm ? thematicsInitialState.thematics.filter(thematic => thematic.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) : thematicsInitialState.thematics
-            )
-        }
-        case 'CREATE_THEMATIC':
-        const { thematic } = action.payload
-        thematicsInitialState.thematics.push(thematic)
-        socket.emit('thematics', { type: 'set', payload: thematicsInitialState.thematics })
-        return {
-            ...state, searchTerm: '', thematics: thematicsInitialState.thematics
-        }
-        default:
-        return state
-    }
-}
-
 const competitorsInitialState = {
     competitors: [ ],
     searchTerm: ''
@@ -63,15 +38,11 @@ const competitors = (state = competitorsInitialState, action) => {
     }
 }
 
-socket.emit('thematics', { type: 'get' }, data => {
-    thematicsInitialState.thematics = data
-})
 socket.emit('competitors', { type: 'get' }, data => {
     competitorsInitialState.competitors = data
 })
 
 export default combineReducers({
     visuals,
-    thematics,
     competitors
 })
