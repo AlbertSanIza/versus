@@ -45,6 +45,21 @@ class SocketIOProvider extends Component {
             this.setState({ settings: { ...this.state.settings, tempDir: data.tempDir } })
         })
     }
+    searchEvents = e => {
+        this.setState({ events: { ...this.state.events, searchTerm: e } })
+    }
+    createEvent = e => {
+    }
+    searchThematics = e => {
+        this.setState({ thematics: { ...this.state.thematics, searchTerm: e } })
+    }
+    createEvent = e => {
+    }
+    searchCompetitors = e => {
+        this.setState({ competitors: { ...this.state.competitors, searchTerm: e } })
+    }
+    createCompetitor = e => {
+    }
     render() {
         return (
             <SocketIOContext.Provider value={ this.state }>
