@@ -6,7 +6,9 @@ import InputLabel from '@material-ui/core/InputLabel'
 import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
 import Grid from '@material-ui/core/Grid'
+
 import instagramLogo from './instagramLogo.svg'
+import { withSocketIO } from '../../../context'
 import githubLogo from './githubLogo.svg'
 
 const styles = theme => ({
@@ -22,7 +24,7 @@ const styles = theme => ({
 
 class Settings extends Component {
     render() {
-        const { classes, tempDir, openTempDir } = this.props
+        const { classes, SocketIO } = this.props
         return (
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Ajustes</Typography>
@@ -30,11 +32,11 @@ class Settings extends Component {
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
                             <InputLabel>Carpeta Temporal</InputLabel>
-                            <Input placeholder="Carpeta Temporal" value={ tempDir } disabled></Input>
+                            <Input placeholder="Carpeta Temporal" value={ SocketIO.settings.tempDir } disabled></Input>
                         </FormControl>
                     </Grid>
                     <Grid sm={ 12 } style={{ textAlign: 'right' }} item>
-                        <Button variant="contained" color="primary" onClick={ openTempDir }>Mostrar</Button>
+                        <Button variant="contained" color="primary" onClick={ () => SocketIO.settings.openTempDir() }>Mostrar</Button>
                     </Grid>
                 </Grid>
                 <br/><br/><br/>
@@ -52,4 +54,4 @@ class Settings extends Component {
     }
 }
 
-export default withStyles(styles)(Settings)
+export default withSocketIO(withStyles(styles)(Settings))
