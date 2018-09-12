@@ -49,16 +49,28 @@ class SocketIOProvider extends Component {
         this.setState({ events: { ...this.state.events, searchTerm: e } })
     }
     createEvent = e => {
+        var events = this.state.events.events
+        events.push(e)
+        socket.emit('events', { type: 'set', payload: events })
+        this.setState({ events: { ...this.state.events, events: events } })
     }
     searchThematics = e => {
         this.setState({ thematics: { ...this.state.thematics, searchTerm: e } })
     }
     createThematic = e => {
+        var thematics = this.state.thematics.thematics
+        thematics.push(e)
+        socket.emit('thematics', { type: 'set', payload: thematics })
+        this.setState({ thematics: { ...this.state.thematics, thematics: thematics } })
     }
     searchCompetitors = e => {
         this.setState({ competitors: { ...this.state.competitors, searchTerm: e } })
     }
     createCompetitor = e => {
+        var competitors = this.state.competitors.competitors
+        competitors.push(e)
+        socket.emit('competitors', { type: 'set', payload: competitors })
+        this.setState({ competitors: { ...this.state.competitors, competitors: competitors } })
     }
     render() {
         return (
