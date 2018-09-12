@@ -14,6 +14,8 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Grow from '@material-ui/core/Grow'
 
+import { withSocketIO } from '../../../context'
+
 const theme = createMuiTheme({
     palette: {
         primary: red
@@ -50,21 +52,21 @@ class Thematics extends Component {
         this.setState({ createName: input })
     }
     handleCreate = () => {
-        this.props.createThematic({ name: this.state.createName })
+        this.props.SocketIO.thematics.createThematic({ name: this.state.createName })
         this.handleCloseCreate()
     }
     render() {
-        const { classes, thematics, searchTerm, searchThematics } = this.props
+        const { classes, SocketIO } = this.props
         return (
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Tematicas</Typography>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <Input placeholder="Busqueda" value={ searchTerm } onChange={ e => searchThematics(e.target.value) }></Input>
+                            <Input placeholder="Busqueda" value={ SocketIO.thematics.earchTerm } onChange={ e => SocketIO.thematics.searchThematics(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
-                    { thematics.map((thematic, i) => (
+                    { SocketIO.thematics.thematics.map((thematic, i) => (
                         <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
                             <Paper elevation={ 1 }>
                                 <div className={ classes.paperContent }>
@@ -98,4 +100,4 @@ class Thematics extends Component {
     }
 }
 
-export default withStyles(styles)(Thematics)
+export default withSocketIO(withStyles(styles)(Thematics))
