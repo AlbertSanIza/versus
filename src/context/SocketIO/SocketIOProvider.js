@@ -9,6 +9,18 @@ class SocketIOProvider extends Component {
     constructor() {
         super()
         this.state = {
+            events: {
+                events: [ ],
+                searchTerm: ''
+            },
+            thematics: {
+                thematics: [ ],
+                searchTerm: ''
+            },
+            competitors: {
+                competitors: [ ],
+                searchTerm: ''    
+            },
             settings: {
                 tempDir: '',
                 openTempDir: () => socket.emit('settings', { type: 'openTempDir' })
