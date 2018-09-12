@@ -14,12 +14,13 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Grow from '@material-ui/core/Grow'
 
+import { withSocketIO } from '../../../context'
+
 const theme = createMuiTheme({
     palette: {
         primary: red
     }
 })
-
 const styles = theme => ({
     fab: {
         margin: 0,
@@ -50,21 +51,21 @@ class Event extends Component {
         this.setState({ createName: input })
     }
     handleCreate = () => {
-        this.props.createEvent({ name: this.state.createName })
+        this.props.SocketIO.events.createEvent({ name: this.state.createName })
         this.handleCloseCreate()
     }
     render() {
-        const { classes, events, searchTerm, searchEvents } = this.props
+        const { classes, SocketIO } = this.props
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Eventos</Typography>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <Input placeholder="Busqueda" value={ searchTerm } onChange={ e => searchEvents(e.target.value) }></Input>
+                            <Input placeholder="Busqueda" value={ SocketIO.events.searchTerm } onChange={ e => SocketIO.events.searchEvents(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
-                    { events.map((event, i) => (
+                    { SocketIO.events.events.map((event, i) => (
                         <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
                             <Paper elevation={ 1 }>
                                 <div className={ classes.paperContent }>
@@ -98,4 +99,4 @@ class Event extends Component {
     }
 }
 
-export default withStyles(styles)(Event)
+export default withSocketIO(withStyles(styles)(Event))
