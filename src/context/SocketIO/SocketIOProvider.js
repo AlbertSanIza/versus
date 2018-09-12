@@ -9,7 +9,10 @@ class SocketIOProvider extends Component {
     constructor() {
         super()
         this.state = {
-            test: { }
+            settings: {
+                tempDir: '',
+                openTempDir: () => socket.emit('settings', { type: 'openTempDir' })
+            }
         }
         socket.on('show', msg => {
         })
