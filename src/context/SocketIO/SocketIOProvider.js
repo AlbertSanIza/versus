@@ -19,13 +19,22 @@ class SocketIOProvider extends Component {
             },
             competitors: {
                 competitors: [ ],
-                searchTerm: ''    
+                searchTerm: ''
             },
             settings: {
                 tempDir: '',
                 openTempDir: () => socket.emit('settings', { type: 'openTempDir' })
             }
         }
+        socket.emit('events', { type: 'get' }, data => {
+            this.setState({ events: { ...this.state.events, events: data } })
+        })
+        socket.emit('thematics', { type: 'get' }, data => {
+            this.setState({ thematics: { ...this.state.thematics, thematics: data } })
+        })
+        socket.emit('competitors', { type: 'get' }, data => {
+            this.setState({ competitors: { ...this.state.competitors, competitors: data } })
+        })
         socket.emit('settings', { type: 'get' }, data => {
             this.setState({ settings: { ...this.state.settings, tempDir: data.tempDir } })
         })
