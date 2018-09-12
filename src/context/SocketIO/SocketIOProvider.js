@@ -14,7 +14,8 @@ class SocketIOProvider extends Component {
                 openTempDir: () => socket.emit('settings', { type: 'openTempDir' })
             }
         }
-        socket.on('show', msg => {
+        socket.emit('settings', { type: 'get' }, data => {
+            this.setState({ settings: { ...this.state.settings, tempDir: data.tempDir } })
         })
     }
     render() {
