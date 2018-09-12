@@ -53,7 +53,7 @@ class SocketIOProvider extends Component {
     searchThematics = e => {
         this.setState({ thematics: { ...this.state.thematics, searchTerm: e } })
     }
-    createEvent = e => {
+    createThematic = e => {
     }
     searchCompetitors = e => {
         this.setState({ competitors: { ...this.state.competitors, searchTerm: e } })
