@@ -12,6 +12,8 @@ import Countdown from 'react-countdown-now'
 import Grid from '@material-ui/core/Grid'
 import Grow from '@material-ui/core/Grow'
 
+import { withSocketIO } from '../../../context'
+
 const theme = createMuiTheme({
     palette: {
         primary: red
@@ -60,27 +62,27 @@ class Competitors extends Component {
     }
     setButton = () => {
         this.setState({ status: 'isSet' })
-        this.props.visualizer({ status: 'isSet', seconds: this.state.seconds, text: this.state.text })
+        this.props.SocketIO.visualizer({ status: 'isSet', seconds: this.state.seconds, text: this.state.text })
     }
     resetButton = () => {
         this.setState({ status: '', seconds: '', text: '' })
-        this.props.visualizer({ status: '', seconds: '', text: '' })
+        this.props.SocketIO.visualizer({ status: '', seconds: '', text: '' })
     }
     startButton = () => {
         this.setState({ status: 'isStart' })
-        this.props.visualizer({ status: 'isStart', seconds: this.state.seconds, text: this.state.text })
+        this.props.SocketIO.visualizer({ status: 'isStart', seconds: this.state.seconds, text: this.state.text })
     }
     pauseButton = () => {
         this.setState({ status: 'isPaused' })
-        this.props.visualizer({ status: 'isPaused'})
+        this.props.SocketIO.visualizer({ status: 'isPaused'})
     }
     onTick = () => {
         this.setState({ seconds: this.state.seconds - 1 })
-        this.props.visualizer({ seconds: this.state.seconds, text: this.state.text })
+        this.props.SocketIO.visualizer({ seconds: this.state.seconds, text: this.state.text })
     }
     onComplete = () => {
         this.setState({ status: '', seconds: '', text: '' })
-        this.props.visualizer({ status: '', seconds: '', text: '' })
+        this.props.SocketIO.visualizer({ status: '', seconds: '', text: '' })
     }
     render() {
         const { classes } = this.props
@@ -155,4 +157,4 @@ class Competitors extends Component {
     }
 }
 
-export default withStyles(styles)(Competitors)
+export default withSocketIO(withStyles(styles)(Competitors))

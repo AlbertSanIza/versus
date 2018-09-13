@@ -3,16 +3,6 @@ import io from 'socket.io-client'
 
 const socket = io('http://' + window.location.hostname + ':12345')
 
-const visuals = (state = [], action) => {
-    switch(action.type) {
-        case 'VISUALIZER':
-        socket.emit('visualizer', action.payload)
-        break
-        default: break
-    }
-    return state
-}
-
 const competitorsInitialState = {
     competitors: [ ],
     searchTerm: ''
@@ -43,6 +33,5 @@ socket.emit('competitors', { type: 'get' }, data => {
 })
 
 export default combineReducers({
-    visuals,
     competitors
 })

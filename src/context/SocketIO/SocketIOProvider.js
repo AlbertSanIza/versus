@@ -9,6 +9,7 @@ class SocketIOProvider extends Component {
     constructor() {
         super()
         this.state = {
+            visualizer: e => socket.emit('visualizer', e),
             events: {
                 events: [ ],
                 searchTerm: '',
