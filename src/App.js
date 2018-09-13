@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 import { HashRouter, Route } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import { Main, Visualizer } from './components'
-import rootReducer from './reducers'
 
+import { Main, Visualizer } from './components'
 import { SocketIOProvider } from './context'
-const store = createStore(rootReducer)
 
 class App extends Component {
     render() {
@@ -14,9 +10,7 @@ class App extends Component {
             <HashRouter>
                 <React.Fragment>
                     <SocketIOProvider>
-                        <Provider store={ store }>
-                            <Route path="/main" component={ Main }/>
-                        </Provider>
+                        <Route path="/main" component={ Main }/>
                     </SocketIOProvider>
                     <Route exact path="/" component={ Visualizer }/>
                 </React.Fragment>

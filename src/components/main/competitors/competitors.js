@@ -15,6 +15,8 @@ import Input from '@material-ui/core/Input'
 import Paper from '@material-ui/core/Paper'
 import Grow  from '@material-ui/core/Grow'
 import Grid from '@material-ui/core/Grid'
+
+import { withSocketIO } from '../../../context'
 import ImageDropZone from './dragDrop'
 
 const theme = createMuiTheme({
@@ -22,7 +24,6 @@ const theme = createMuiTheme({
         primary: red
     }
 })
-
 const styles = theme => ({
     media: {
         height: 0,
@@ -73,17 +74,17 @@ class Competitors extends Component {
         }
     }
     render() {
-        const { classes, competitors, searchTerm, searchCompetitors } = this.props
+        const { classes, SocketIO } = this.props
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <Input placeholder="Busqueda" value={ searchTerm } onChange={ e => searchCompetitors(e.target.value) }></Input>
+                            <Input placeholder="Busqueda" value={ SocketIO.competitors.searchTerm } onChange={ e => SocketIO.competitors.searchCompetitors(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
-                    { competitors.map((competitor, i) => (
+                    { SocketIO.competitors.competitors.map((competitor, i) => (
                         <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
                             <Paper elevation={ 1 }>
                                 <CardMedia className={ classes.media } image={ competitor.photo } title="Contemplative Reptile"/>
@@ -125,4 +126,4 @@ class Competitors extends Component {
         }
     }
 
-    export default withStyles(styles)(Competitors)
+    export default withSocketIO(withStyles(styles)(Competitors))
