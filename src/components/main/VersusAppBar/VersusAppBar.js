@@ -25,7 +25,6 @@ const styles = theme => ({
 class VersusAppBar extends Component {
     render() {
         const { classes, Versus } = this.props
-        console.log(this.props)
         return (
             <React.Fragment>
                 <AppBar>
