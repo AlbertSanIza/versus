@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { HashRouter, Route } from 'react-router-dom'
 
-import { Main, Visualizer } from './components'
+import { Main, VersusVisualizer } from './components'
 import { SocketIOProvider } from './context'
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
                     <SocketIOProvider>
                         <Route path="/main" component={ Main }/>
                     </SocketIOProvider>
-                    <Route exact path="/" component={ Visualizer }/>
+                    <Route exact path="/" component={ VersusVisualizer }/>
                 </React.Fragment>
             </HashRouter>
         )
