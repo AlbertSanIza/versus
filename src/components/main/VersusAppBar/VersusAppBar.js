@@ -22,7 +22,7 @@ const styles = theme => ({
     }
 })
 
-class CoreAppBar extends Component {
+class VersusAppBar extends Component {
     render() {
         const { classes } = this.props
         return (
@@ -41,4 +41,4 @@ class CoreAppBar extends Component {
     }
 }
 
-export default withSocketIO(withStyles(styles)(CoreAppBar))
+export default withSocketIO(withStyles(styles)(VersusAppBar))
