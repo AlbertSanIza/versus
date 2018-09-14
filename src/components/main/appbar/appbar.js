@@ -18,7 +18,7 @@ const styles = theme => ({
         marginRight: 20
     },
     topPadding: {
-        minHeight: 56
+        minHeight: 48
     }
 })
 
