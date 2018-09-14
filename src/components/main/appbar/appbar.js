@@ -5,7 +5,6 @@ import { withStyles } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
 import MenuIcon from '@material-ui/icons/Menu'
 import AppBar from '@material-ui/core/AppBar'
-import PropTypes from 'prop-types'
 
 import { withSocketIO } from '../../../context'
 
