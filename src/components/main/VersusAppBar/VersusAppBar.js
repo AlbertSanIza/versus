@@ -6,7 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import MenuIcon from '@material-ui/icons/Menu'
 import AppBar from '@material-ui/core/AppBar'
 
-import { withSocketIO } from '../../../context'
+import { withVersus } from '../../../context'
 
 const styles = theme => ({
     title: {
@@ -24,12 +24,13 @@ const styles = theme => ({
 
 class VersusAppBar extends Component {
     render() {
-        const { classes } = this.props
+        const { classes, Versus } = this.props
+        console.log(this.props)
         return (
             <React.Fragment>
                 <AppBar>
                     <Toolbar color="inherit" variant="dense">
-                        <IconButton className={ classes.menuButton } color="inherit">
+                        <IconButton className={ classes.menuButton } color="inherit" onClick={ () => Versus.handleDrawer() }>
                             <MenuIcon/>
                         </IconButton>
                         <Typography className={ classes.title } variant="title" color="inherit">Versus</Typography>
@@ -41,4 +42,4 @@ class VersusAppBar extends Component {
     }
 }
 
-export default withSocketIO(withStyles(styles)(VersusAppBar))
+export default withVersus(withStyles(styles)(VersusAppBar))
