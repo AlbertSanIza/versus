@@ -6,8 +6,12 @@ class VersusProvider extends Component {
     constructor() {
         super()
         this.state = {
-            VersusDrawer: true
+            drawer: true,
+            handleDrawer: () => this.handleDrawer()
         }
+    }
+    handleDrawer = () => {
+        this.setState({ drawer: !this.state.drawer })
     }
     render() {
         return (
