@@ -28,7 +28,7 @@ const styles = theme => ({
     scrollContent: {
         position: 'relative',
         height: '100%',
-        padding: 24,
+        padding: 16,
         overflowY: 'scroll'
     },
     icon: {
