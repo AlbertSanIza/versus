@@ -26,7 +26,6 @@ class VersusDrawer extends Component {
         const { classes } = this.props
         return(
             <Drawer variant="permanent" classes={{ paper: classes.drawerPaper }}>
-                <div className={ classes.toolbar }/>
                 <NavLink to="/main/visuals" style={ styles.style } activeStyle={ styles.activeStyle }>
                     <ListItem button>
                         <ListItemIcon>
