@@ -38,7 +38,6 @@ const styles = theme => ({
         verticalAlign: 'middle'
     }
 })
-
 const style = {
     style: {
         textDecoration: 'none'
