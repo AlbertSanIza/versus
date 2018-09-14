@@ -12,6 +12,8 @@ import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
 import { NavLink } from "react-router-dom"
 
+import { withVersus } from '../../../context'
+
 const styles = theme => ({
     root: {
         display: 'flex',
@@ -19,7 +21,16 @@ const styles = theme => ({
         overflow: 'hidden'
     },
     drawerPaper: {
-        position: 'relative'
+        position: 'relative',
+        whiteSpace: 'nowrap'
+    },
+    drawerPaperClose: {
+        position: 'relative',
+        overflowX: 'hidden',
+        width: theme.spacing.unit * 7,
+        [theme.breakpoints.up('sm')]: {
+            width: theme.spacing.unit * 9
+        }
     },
     content: {
         position: 'relative',
@@ -50,11 +61,11 @@ const style = {
 
 class VersusDrawer extends Component {
     render() {
-        const { classes } = this.props
+        const { classes, Versus } = this.props
         return(
             <React.Fragment>
                 <div className={ classes.root }>
-                    <Drawer variant="permanent" classes={{ paper: classes.drawerPaper }}>
+                    <Drawer variant="permanent" classes={{ paper: Versus.drawer ? classes.drawerPaperClose : classes.drawerPaper }}>
                         <NavLink to="/main/visuals" style={ style.style } activeStyle={ style.activeStyle }>
                             <ListItem button>
                                 <ListItemIcon>
@@ -108,4 +119,4 @@ class VersusDrawer extends Component {
     }
 }
 
-export default withStyles(styles)(VersusDrawer)
+export default withVersus(withStyles(styles)(VersusDrawer))
