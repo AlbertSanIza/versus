@@ -31,9 +31,9 @@ class VersusAppBar extends Component {
                 <AppBar>
                     <Toolbar color="inherit" variant="dense">
                         <IconButton className={ classes.menuButton } color="inherit" onClick={ () => Versus.handleDrawer() }>
-                          { (() => {
-                            return Versus.drawer ? (<MoreVertIcon/>) : (<MoreHorizIcon/>)
-                          })() }
+                            { (() => {
+                                return Versus.drawer ? (<MoreVertIcon/>) : (<MoreHorizIcon/>)
+                            })() }
                         </IconButton>
                         <Typography className={ classes.title } variant="title" color="inherit">Versus</Typography>
                     </Toolbar>
