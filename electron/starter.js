@@ -33,6 +33,9 @@ app.on('ready', () => {
     expressApp.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, '/../build/index.html'))
     })
+    expressApp.get('/img/:path*', (req, res) => {
+        res.sendFile(tempImg + '/' + req.params.path + req.params[0])
+    })
     mainWindow.loadURL(process.env.ELECTRON_START_URL || "http://localhost:12345/#/main/visuals")
     if (process.env.ELECTRON_START_URL) {
         mainWindow.webContents.openDevTools()
