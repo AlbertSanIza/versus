@@ -9,8 +9,16 @@ var expressApp = express()
 var http = require('http').Server(expressApp).listen(12345)
 var io = require('socket.io')(http)
 var storage = require('electron-json-storage')
-var tempDir = os.tmpdir() + (process.platform === 'win32' ? '\\' : '/') + 'versus'
+var tempDir = path.join(os.tmpdir(), '/versus')
+var tempImg = path.join(tempDir, '/img')
 storage.setDataPath(tempDir)
+
+if(!fs.existsSync(tempDir)) {
+    fs.mkdirSync(tempDir)
+}
+if(!fs.existsSync(tempImg)) {
+    fs.mkdirSync(tempImg)
+}
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
