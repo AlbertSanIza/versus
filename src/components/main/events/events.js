@@ -53,8 +53,15 @@ class Event extends Component {
         this.setState({ createName: input })
     }
     handleCreate = () => {
-        this.props.SocketIO.events.createEvent({ name: this.state.createName })
-        this.handleCloseCreate()
+        var canCreate = this.props.SocketIO.events.events.every(z => {
+            return z.name.toLowerCase() !== this.state.createName.toLowerCase()
+        })
+        if(canCreate) {
+            this.props.SocketIO.events.createEvent({ name: this.state.createName })
+            this.handleCloseCreate()
+        } else {
+            this.setState({ showSnackbar: true })
+        }
     }
     render() {
         const { classes, SocketIO } = this.props
