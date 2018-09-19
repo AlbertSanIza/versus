@@ -2,6 +2,7 @@ const { app, BrowserWindow, shell } = require('electron')
 const path = require('path')
 const url = require('url')
 const os = require('os')
+const fs = require('fs')
 let mainWindow
 var express = require('express')
 var expressApp = express()
