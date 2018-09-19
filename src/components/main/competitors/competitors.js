@@ -65,8 +65,7 @@ class Competitors extends Component {
             return z.name.toLowerCase() !== createName.toLowerCase()
         })
         if(canCreate) {
-            console.log(createImage)
-            this.props.SocketIO.competitor.create({ name: createName, photo: '.' + createImage.file.type.split('/').pop() })
+            this.props.SocketIO.competitors.create({ name: createName, photo: '.' + createImage.file.type.split('/').pop(), file: createImage.file })
             this.handleCloseCreate()
         } else {
             this.setState({ showSnackbar: true })
