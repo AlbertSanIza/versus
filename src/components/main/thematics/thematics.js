@@ -58,7 +58,7 @@ class Thematics extends Component {
             return z.name.toLowerCase() !== this.state.createName.toLowerCase()
         })
         if(canCreate) {
-            this.props.SocketIO.thematics.createThematic({ name: this.state.createName })
+            this.props.SocketIO.thematics.create({ name: this.state.createName })
             this.handleCloseCreate()
         } else {
             this.setState({ showSnackbar: true })
@@ -72,7 +72,7 @@ class Thematics extends Component {
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <Input placeholder="Busqueda" value={ SocketIO.thematics.earchTerm } onChange={ e => SocketIO.thematics.searchThematics(e.target.value) }></Input>
+                            <Input placeholder="Busqueda" value={ SocketIO.thematics.earchTerm } onChange={ e => SocketIO.thematics.search(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
                     { SocketIO.thematics.thematics.filter(z => {

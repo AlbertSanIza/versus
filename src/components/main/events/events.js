@@ -57,7 +57,7 @@ class Event extends Component {
             return z.name.toLowerCase() !== this.state.createName.toLowerCase()
         })
         if(canCreate) {
-            this.props.SocketIO.events.createEvent({ name: this.state.createName })
+            this.props.SocketIO.events.create({ name: this.state.createName })
             this.handleCloseCreate()
         } else {
             this.setState({ showSnackbar: true })
@@ -71,7 +71,7 @@ class Event extends Component {
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <Input placeholder="Busqueda" value={ SocketIO.events.searchTerm } onChange={ e => SocketIO.events.searchEvents(e.target.value) }></Input>
+                            <Input placeholder="Busqueda" value={ SocketIO.events.searchTerm } onChange={ e => SocketIO.events.search(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
                     { SocketIO.events.events.filter(z => {

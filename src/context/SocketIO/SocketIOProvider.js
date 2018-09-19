@@ -13,20 +13,20 @@ class SocketIOProvider extends Component {
             events: {
                 events: [ ],
                 searchTerm: '',
-                searchEvents: e => this.searchEvents(e),
-                createEvent: e => this.createEvent(e)
+                search: e => this.searchEvents(e),
+                create: e => this.createEvent(e)
             },
             thematics: {
                 thematics: [ ],
                 searchTerm: '',
-                searchThematics: e => this.searchThematics(e),
-                createThematic: e => this.createThematic(e)
+                search: e => this.searchThematics(e),
+                create: e => this.createThematic(e)
             },
             competitors: {
                 competitors: [ ],
                 searchTerm: '',
-                searchCompetitors: e => this.searchCompetitors(e),
-                createCompetitor: e => this.createCompetitor(e)
+                search: e => this.searchCompetitors(e),
+                create: e => this.createCompetitor(e)
             },
             settings: {
                 tempDir: '',

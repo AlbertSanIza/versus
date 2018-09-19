@@ -65,7 +65,7 @@ class Competitors extends Component {
         })
         if(canCreate) {
             console.log(this.state.createImage)
-            this.props.createCompetitor({ name: this.state.createName, photo: this.state.createName.toLowerCase() + '.' + this.state.createImage.file.type.split('/').pop() })
+            this.props.SocketIO.competitor.create({ name: this.state.createName, photo: '.' + this.state.createImage.file.type.split('/').pop() })
             this.handleCloseCreate()
         } else {
             this.setState({ showSnackbar: true })
@@ -79,7 +79,7 @@ class Competitors extends Component {
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <Input placeholder="Busqueda" value={ SocketIO.competitors.searchTerm } onChange={ e => SocketIO.competitors.searchCompetitors(e.target.value) }></Input>
+                            <Input placeholder="Busqueda" value={ SocketIO.competitors.searchTerm } onChange={ e => SocketIO.competitors.search(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
                     { SocketIO.competitors.competitors.filter(z => {
