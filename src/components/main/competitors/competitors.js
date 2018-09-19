@@ -84,7 +84,9 @@ class Competitors extends Component {
                             <Input placeholder="Busqueda" value={ SocketIO.competitors.searchTerm } onChange={ e => SocketIO.competitors.searchCompetitors(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
-                    { SocketIO.competitors.competitors.map((competitor, i) => (
+                    { SocketIO.competitors.competitors.filter(z => {
+                        return z.name.toLowerCase().includes(SocketIO.competitors.searchTerm.toLowerCase())
+                    }).map((competitor, i) => (
                         <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
                             <Paper elevation={ 1 }>
                                 <CardMedia className={ classes.media } image={ competitor.photo } title="Contemplative Reptile"/>

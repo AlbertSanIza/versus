@@ -66,7 +66,9 @@ class Thematics extends Component {
                             <Input placeholder="Busqueda" value={ SocketIO.thematics.earchTerm } onChange={ e => SocketIO.thematics.searchThematics(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
-                    { SocketIO.thematics.thematics.map((thematic, i) => (
+                    { SocketIO.thematics.thematics.filter(z => {
+                        return z.name.toLowerCase().includes(SocketIO.thematics.searchTerm.toLowerCase())
+                    }).map((thematic, i) => (
                         <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
                             <Paper elevation={ 1 }>
                                 <div className={ classes.paperContent }>

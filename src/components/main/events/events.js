@@ -65,7 +65,9 @@ class Event extends Component {
                             <Input placeholder="Busqueda" value={ SocketIO.events.searchTerm } onChange={ e => SocketIO.events.searchEvents(e.target.value) }></Input>
                         </FormControl>
                     </Grid>
-                    { SocketIO.events.events.map((event, i) => (
+                    { SocketIO.events.events.filter(z => {
+                        return z.name.toLowerCase().includes(SocketIO.events.searchTerm.toLowerCase())
+                    }).map((event, i) => (
                         <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
                             <Paper elevation={ 1 }>
                                 <div className={ classes.paperContent }>
