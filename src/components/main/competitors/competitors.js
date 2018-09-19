@@ -64,7 +64,8 @@ class Competitors extends Component {
             return z.name.toLowerCase() !== this.state.createName.toLowerCase()
         })
         if(canCreate) {
-            this.props.createCompetitor({ name: this.state.createName, photo: './assets/competitors/' + this.state.createName.toLowerCase() + '.' + this.props.createImage.file.type.split('/').pop() })
+            console.log(this.state.createImage)
+            this.props.createCompetitor({ name: this.state.createName, photo: this.state.createName.toLowerCase() + '.' + this.state.createImage.file.type.split('/').pop() })
             this.handleCloseCreate()
         } else {
             this.setState({ showSnackbar: true })
