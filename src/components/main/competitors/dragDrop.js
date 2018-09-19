@@ -24,10 +24,9 @@ const style = {
 
 class ImageDropZone extends Component {
     static propTypes = {
-        imageIndex: PropTypes.number,
         width: PropTypes.number.isRequired,
         height: PropTypes.number.isRequired,
-        imagePicked: PropTypes.func,
+        imagePicked: PropTypes.func
     }
     constructor(props) {
         super(props)
@@ -49,7 +48,7 @@ class ImageDropZone extends Component {
         let image = URL.createObjectURL(e.target.files[0])
         let file = e.target.files[0]
         this.setState({ file, image })
-        this.props.imagePicked({ index: this.props.imageIndex, file, image })
+        this.props.imagePicked({ file, image })
     }
     onDrop = e => {
         e.preventDefault()
@@ -57,7 +56,7 @@ class ImageDropZone extends Component {
         if(file.type === 'image/png') {
             let image = URL.createObjectURL(file)
             this.setState({ image })
-            this.props.imagePicked({ index: this.props.imageIndex, file, image })
+            this.props.imagePicked({ file, image })
         }
         this.setState({ over: false })
     }
