@@ -24,7 +24,6 @@ const style = {
 
 class ImageDropZone extends Component {
     static propTypes = {
-        showButton: PropTypes.bool,
         imageIndex: PropTypes.number,
         width: PropTypes.number.isRequired,
         height: PropTypes.number.isRequired,
@@ -64,37 +63,26 @@ class ImageDropZone extends Component {
     }
     render() {
         const { image, over } = this.state
-        const { width, height, showButton } = this.props
+        const { width, height } = this.props
         return (
-            <React.Fragment>
-                <div onDrop={ this.onDrop } onDragOver={ this.onDragOver } onDragLeave={ this.onDragLeave } onDragEnter={ this.onDragEnter }
-                    style={ Object.assign({  }, {
-                        width: `${ width }px`,
-                        height: `${ height }px`,
-                        backgroundImage: `url(${ image ? image : '' })`,
-                        backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'center',
-                        backgroundSize: 'cover'
-                    }, style.frame, over ? style.enter : style.leave) }>
-                    { image !== null ? (
-                        <img src={ image } alt={ image } width={ 0 } height={ 0 }/>
-                    ) : (
-                        <div style={{ pointerEvents: 'none' }}>
-                            <div style={ style.label }>Imagen</div>
-                        </div>
-                    )}
-                </div>
-                <div style={{ display: 'flex' }}>
-                    { showButton ? (
-                        <div className="button-container">
-                            <label className="button">
-                                Escoger Imagen
-                                <input type="file" value="" accept="image/png" style={{ display: 'none' }} onChange={ this.handleFile }/>
-                            </label>
-                        </div>
-                    ) : null }
-                </div>
-            </React.Fragment>
+            <div onDrop={ this.onDrop } onDragOver={ this.onDragOver } onDragLeave={ this.onDragLeave } onDragEnter={ this.onDragEnter }
+                style={ Object.assign({  }, {
+                    width: `${ width }px`,
+                    height: `${ height }px`,
+                    backgroundImage: `url(${ image ? image : '' })`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover'
+                }, style.frame, over ? style.enter : style.leave) }>
+                { image !== null ? (
+                    <img src={ image } alt={ image } width={ 0 } height={ 0 }/>
+                ) : (
+                    <label>
+                        Escoger Imagen
+                        <input type="file" value="" accept="image/png" style={{ display: 'none' }} onChange={ this.handleFile }/>
+                    </label>
+                )}
+            </div>
         )
     }
 }
