@@ -54,11 +54,12 @@ class Thematics extends Component {
         this.setState({ createName: input })
     }
     handleCreate = () => {
+        const { createName } = this.state
         var canCreate = this.props.SocketIO.thematics.thematics.every(z => {
-            return z.name.toLowerCase() !== this.state.createName.toLowerCase()
+            return z.name.toLowerCase() !== createName.toLowerCase()
         })
         if(canCreate) {
-            this.props.SocketIO.thematics.create({ name: this.state.createName })
+            this.props.SocketIO.thematics.create({ name: createName })
             this.handleCloseCreate()
         } else {
             this.setState({ showSnackbar: true })
@@ -66,6 +67,7 @@ class Thematics extends Component {
     }
     render() {
         const { classes, SocketIO } = this.props
+        const { openCreate, showSnackbar, createName } = this.state
         return (
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Tematicas</Typography>
@@ -93,20 +95,20 @@ class Thematics extends Component {
                             <CreateIcon/>
                         </Button>
                     </Grow>
-                    <Dialog open={ this.state.openCreate } onClose={ this.handleCloseCreate } scroll="paper">
+                    <Dialog open={ openCreate } onClose={ this.handleCloseCreate } scroll="paper">
                         <DialogTitle>Nueva Tematica</DialogTitle>
                         <DialogContent>
                             <FormControl fullWidth>
-                                <Input placeholder="Nombre" value={ this.state.createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
+                                <Input placeholder="Nombre" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
                             </FormControl>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={ this.handleCloseCreate } color="primary">Cancelar</Button>
-                            <Button variant="contained" onClick={ this.handleCreate } color="primary">Guardar</Button>
+                            <Button color="primary" onClick={ this.handleCloseCreate }>Cancelar</Button>
+                            <Button variant="contained" color="primary" onClick={ this.handleCreate } disabled={ !createName }>Guardar</Button>
                         </DialogActions>
                     </Dialog>
                 </MuiThemeProvider>
-                <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={ this.state.showSnackbar } onClose={ () => this.setState({ showSnackbar: false }) } autoHideDuration={ 3000 } message={ 'Tematica: "' + this.state.createName + '" ya existe' }/>
+                <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={ showSnackbar } onClose={ () => this.setState({ showSnackbar: false }) } autoHideDuration={ 3000 } message={ 'Tematica: "' + createName + '" ya existe' }/>
             </React.Fragment>
         )
     }

@@ -60,12 +60,13 @@ class Competitors extends Component {
         this.setState({ createName: input })
     }
     handleCreate = () => {
+        const { createName, createImage } = this.state
         var canCreate = this.props.SocketIO.competitors.competitors.every(z => {
-            return z.name.toLowerCase() !== this.state.createName.toLowerCase()
+            return z.name.toLowerCase() !== createName.toLowerCase()
         })
         if(canCreate) {
-            console.log(this.state.createImage)
-            this.props.SocketIO.competitor.create({ name: this.state.createName, photo: '.' + this.state.createImage.file.type.split('/').pop() })
+            console.log(createImage)
+            this.props.SocketIO.competitor.create({ name: createName, photo: '.' + createImage.file.type.split('/').pop() })
             this.handleCloseCreate()
         } else {
             this.setState({ showSnackbar: true })
@@ -73,6 +74,7 @@ class Competitors extends Component {
     }
     render() {
         const { classes, SocketIO } = this.props
+        const { openCreate, showSnackbar, createName } = this.state
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
@@ -101,13 +103,13 @@ class Competitors extends Component {
                             <CreateIcon/>
                         </Button>
                     </Grow>
-                    <Dialog open={ this.state.openCreate } onClose={ this.handleCloseCreate } scroll="paper">
+                    <Dialog open={ openCreate } onClose={ this.handleCloseCreate } scroll="paper">
                         <DialogTitle>Nuevo Competidor</DialogTitle>
                         <DialogContent>
                             <Grid container spacing={ 16 }>
                                 <Grid item xs={ 12 }>
                                     <FormControl fullWidth>
-                                        <Input placeholder="Nombre" value={ this.state.createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
+                                        <Input placeholder="Nombre" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
                                     </FormControl>
                                 </Grid>
                             </Grid>
@@ -116,11 +118,11 @@ class Competitors extends Component {
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseCreate }>Cancelar</Button>
-                            <Button variant="contained" color="primary" onClick={ this.handleCreate } disabled={ this.state.createName === '' }>Guardar</Button>
+                            <Button variant="contained" color="primary" onClick={ this.handleCreate } disabled={ !createName }>Guardar</Button>
                         </DialogActions>
                     </Dialog>
                 </MuiThemeProvider>
-                <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={ this.state.showSnackbar } onClose={ () => this.setState({ showSnackbar: false }) } autoHideDuration={ 3000 } message={ 'Competidor: ' + this.state.createName + ' ya existe' }/>
+                <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={ showSnackbar } onClose={ () => this.setState({ showSnackbar: false }) } autoHideDuration={ 3000 } message={ 'Competidor: ' + createName + ' ya existe' }/>
                 </React.Fragment>
             )
         }
