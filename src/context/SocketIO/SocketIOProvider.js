@@ -72,7 +72,7 @@ class SocketIOProvider extends Component {
         var competitors = this.state.competitors.competitors
         competitors.push({ name, photo })
         socket.emit('competitors', { type: 'set', payload: competitors })
-        socket.emit('competitors', { type: 'iamge', payload: file })
+        socket.emit('competitors', { type: 'image', payload: file })
         this.setState({ competitors: { ...this.state.competitors, competitors: competitors } })
     }
     render() {
