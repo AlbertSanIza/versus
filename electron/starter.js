@@ -91,6 +91,11 @@ app.on('ready', () => {
                 case 'set':
                 storage.set('competitors', msg.payload)
                 break
+                case 'image':
+                fs.writeFile(path.join(tempImg, msg.payload.name.toLowerCase().replace(/[\W_]+/g, '_') + msg.payload.photo), msg.payload.file, 'binary', err => {
+                    fn(true)
+                })
+                break
             }
         })
         socket.on('settings', (msg, fn) => {
