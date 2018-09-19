@@ -6,6 +6,7 @@ import FormControl from '@material-ui/core/FormControl'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import Typography from '@material-ui/core/Typography'
 import CreateIcon from '@material-ui/icons/Create'
+import Snackbar from '@material-ui/core/Snackbar'
 import red from '@material-ui/core/colors/red'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
@@ -40,6 +41,7 @@ const styles = theme => ({
 class Thematics extends Component {
     state = {
         openCreate: false,
+        showSnackbar: false,
         createName: ''
     }
     handleOpenCreate = () => {
@@ -97,6 +99,7 @@ class Thematics extends Component {
                         </DialogActions>
                     </Dialog>
                 </MuiThemeProvider>
+                <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={ this.state.showSnackbar } onClose={ () => this.setState({ showSnackbar: false }) } autoHideDuration={ 3000 } message={ 'Tematica: "' + this.state.createName + '" ya existe' }/>
             </React.Fragment>
         )
     }
