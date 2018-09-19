@@ -60,12 +60,9 @@ class Competitors extends Component {
         this.setState({ createName: input })
     }
     handleCreate = () => {
-        var canCreate = true
-        for(var i = 0; i < this.props.competitors.length; i++) {
-            if(this.props.competitors[i].name.toLowerCase() === this.state.createName.toLowerCase()) {
-                canCreate = false
-            }
-        }
+        var canCreate = this.props.SocketIO.competitors.competitors.every(z => {
+            return z.name.toLowerCase() !== this.state.createName.toLowerCase()
+        })
         if(canCreate) {
             this.props.createCompetitor({ name: this.state.createName, photo: './assets/competitors/' + this.state.createName.toLowerCase() + '.' + this.props.createImage.file.type.split('/').pop() })
             this.handleCloseCreate()
