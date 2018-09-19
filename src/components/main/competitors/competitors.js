@@ -74,7 +74,7 @@ class Competitors extends Component {
     }
     render() {
         const { classes, SocketIO } = this.props
-        const { openCreate, showSnackbar, createName } = this.state
+        const { openCreate, showSnackbar, createName, createImage } = this.state
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
@@ -118,7 +118,7 @@ class Competitors extends Component {
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseCreate }>Cancelar</Button>
-                            <Button variant="contained" color="primary" onClick={ this.handleCreate } disabled={ !createName }>Guardar</Button>
+                            <Button variant="contained" color="primary" onClick={ this.handleCreate } disabled={ !createName || !createImage.file }>Guardar</Button>
                         </DialogActions>
                     </Dialog>
                 </MuiThemeProvider>
