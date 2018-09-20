@@ -96,7 +96,7 @@ class Competitors extends Component {
                     }).map((competitor, i) => (
                         <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
                             <Paper elevation={ 1 }>
-                                <CardMedia title="Contemplative Reptile"
+                                <CardMedia title={ competitor.name }
                                     className={ classes.media }
                                     image={ 'http://' + window.location.hostname + ':12345/img/' + competitor.photo }/>
                                 <div className={ classes.paperContent }>
