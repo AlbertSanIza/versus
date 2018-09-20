@@ -132,7 +132,7 @@ class Competitors extends Component {
                             <Button variant="contained" color="primary" onClick={ this.handleCreate } disabled={ !createName || !createImage.file }>Guardar</Button>
                         </DialogActions>
                     </Dialog>
-                    <Dialog open={ openEdit } onClose={ this.handleCloseCreate } scroll="paper">
+                    <Dialog open={ openEdit } onClose={ this.handleCloseEdit } scroll="paper">
                         <DialogTitle>Editar Competidor</DialogTitle>
                         <DialogContent>
                             <Grid container spacing={ 16 }>
