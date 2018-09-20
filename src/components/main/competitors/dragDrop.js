@@ -45,10 +45,12 @@ class ImageDropZone extends Component {
         this.setState({ over: false })
     }
     handleFile = e => {
-        let image = URL.createObjectURL(e.target.files[0])
         let file = e.target.files[0]
-        this.setState({ file, image })
-        this.props.imagePicked({ file, image })
+        if(file.type === 'image/png') {
+          let image = URL.createObjectURL(file)
+          this.setState({ image })
+          this.props.imagePicked({ file, image })
+        }
     }
     onDrop = e => {
         e.preventDefault()
