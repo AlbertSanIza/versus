@@ -35,6 +35,13 @@ class ImageDropZone extends Component {
             over: false
         }
     }
+    static getDerivedStateFromProps(props, state) {
+        if (!state.image && props.imageDefault) {
+            return { image: props.imageDefault }
+        } else {
+            return null
+        }
+    }
     onDragOver = e => {
         e.preventDefault()
     }
