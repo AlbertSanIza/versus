@@ -62,8 +62,8 @@ class Competitors extends Component {
     createTermChanged = input => {
         this.setState({ createName: input })
     }
-    handleOpenEdit = editName => {
-      this.setState({ openEdit: true, editName })
+    handleOpenEdit = (editName, editPhoto) => {
+      this.setState({ openEdit: true, editName, editPhoto })
     }
     handleCloseEdit = () => {
       this.setState({ openEdit: false })
