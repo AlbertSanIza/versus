@@ -46,9 +46,11 @@ const styles = theme => ({
 class Competitors extends Component {
     state = {
         openCreate: false,
+        openEdit: false,
         showSnackbar: false,
         createName: '',
-        createImage: {  }
+        createImage: { },
+        editName: ''
     }
     handleOpenCreate = () => {
         this.setState({ openCreate: true })
