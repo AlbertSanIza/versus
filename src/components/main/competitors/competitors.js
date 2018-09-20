@@ -81,7 +81,7 @@ class Competitors extends Component {
     }
     render() {
         const { classes, SocketIO } = this.props
-        const { openCreate, showSnackbar, createName, createImage } = this.state
+        const { openCreate, openEdit, showSnackbar, createName, editName, createImage } = this.state
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
@@ -128,6 +128,24 @@ class Competitors extends Component {
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseCreate }>Cancelar</Button>
+                            <Button variant="contained" color="primary" onClick={ this.handleCreate } disabled={ !createName || !createImage.file }>Guardar</Button>
+                        </DialogActions>
+                    </Dialog>
+                    <Dialog open={ openEdit } onClose={ this.handleCloseCreate } scroll="paper">
+                        <DialogTitle>Editar Competidor</DialogTitle>
+                        <DialogContent>
+                            <Grid container spacing={ 16 }>
+                                <Grid item xs={ 12 }>
+                                    <FormControl fullWidth>
+                                        <Input placeholder="Nombre" value={ editName } disabled></Input>
+                                    </FormControl>
+                                </Grid>
+                            </Grid>
+                            <br/>
+                            <ImageDropZone anySize showButton width={ 312 } height={ 250 } imagePicked={ image => this.setState({ createImage: image }) }/>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button color="primary" onClick={ this.handleCloseEdit }>Cancelar</Button>
                             <Button variant="contained" color="primary" onClick={ this.handleCreate } disabled={ !createName || !createImage.file }>Guardar</Button>
                         </DialogActions>
                     </Dialog>
