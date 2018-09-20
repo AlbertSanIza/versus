@@ -90,7 +90,7 @@ class Competitors extends Component {
                             <Paper elevation={ 1 }>
                                 <CardMedia title="Contemplative Reptile"
                                     className={ classes.media }
-                                    image={ 'http//' + window.location.hostname + ':12345/img/' + competitor.photo }/>
+                                    image={ 'http://' + window.location.hostname + ':12345/img/' + competitor.photo }/>
                                 <div className={ classes.paperContent }>
                                     <Typography noWrap>{ competitor.name }</Typography>
                                 </div>
