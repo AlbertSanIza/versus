@@ -100,7 +100,7 @@ class Competitors extends Component {
                                 <CardMedia title={ competitor.name }
                                     className={ classes.media }
                                     image={ 'http://' + window.location.hostname + ':12345/img/' + competitor.photo }
-                                    onClick={ () => this.handleOpenEdit(competitor.name) }/>
+                                    onClick={ () => this.handleOpenEdit(competitor.name, competitor.photo) }/>
                                 <div className={ classes.paperContent }>
                                     <Typography noWrap>{ competitor.name }</Typography>
                                 </div>
