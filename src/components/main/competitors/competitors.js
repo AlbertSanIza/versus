@@ -82,7 +82,7 @@ class Competitors extends Component {
     }
     render() {
         const { classes, SocketIO } = this.props
-        const { openCreate, openEdit, showSnackbar, createName, editName, createImage } = this.state
+        const { openCreate, openEdit, showSnackbar, createName, createImage, editName, editPhoto } = this.state
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
@@ -143,7 +143,7 @@ class Competitors extends Component {
                                 </Grid>
                             </Grid>
                             <br/>
-                            <ImageDropZone anySize showButton width={ 312 } height={ 250 } imagePicked={ image => this.setState({ createImage: image }) }/>
+                            <ImageDropZone anySize showButton width={ 312 } height={ 250 } imagePicked={ image => this.setState({ createImage: image }) } imageDefault={ 'http://' + window.location.hostname + ':12345/img/' + editPhoto }/>
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseEdit }>Cancelar</Button>
