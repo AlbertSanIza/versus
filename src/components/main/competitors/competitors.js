@@ -61,6 +61,12 @@ class Competitors extends Component {
     createTermChanged = input => {
         this.setState({ createName: input })
     }
+    handleOpenEdit = editName => {
+      this.setState({ openEdit: true, editName })
+    }
+    handleCloseEdit = () => {
+      this.setState({ openEdit: false })
+    }
     handleCreate = () => {
         const { createName, createImage } = this.state
         var canCreate = this.props.SocketIO.competitors.competitors.every(z => {
