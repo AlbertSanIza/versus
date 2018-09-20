@@ -50,7 +50,8 @@ class Competitors extends Component {
         showSnackbar: false,
         createName: '',
         createImage: { },
-        editName: ''
+        editName: '',
+        editPhoto: ''
     }
     handleOpenCreate = () => {
         this.setState({ openCreate: true })
