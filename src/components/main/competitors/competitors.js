@@ -54,7 +54,7 @@ class Competitors extends Component {
         this.setState({ openCreate: true })
     }
     handleCloseCreate = () => {
-        this.setState({ openCreate: false, createName: '' })
+        this.setState({ openCreate: false, createName: '', createImage: { } })
     }
     createTermChanged = input => {
         this.setState({ createName: input })
