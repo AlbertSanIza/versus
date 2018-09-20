@@ -95,9 +95,7 @@ app.on('ready', () => {
                 storage.set('competitors', msg.payload)
                 break
                 case 'image':
-                fs.writeFile(path.join(tempImg, msg.payload.photo), msg.payload.file, 'binary', err => {
-                    fn(true)
-                })
+                fn(fs.writeFileSync(path.join(tempImg, msg.payload.photo), msg.payload.file, 'binary'))
                 break
             }
         })
