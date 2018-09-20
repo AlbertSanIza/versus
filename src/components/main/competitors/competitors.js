@@ -51,7 +51,8 @@ class Competitors extends Component {
         createName: '',
         createImage: { },
         editName: '',
-        editPhoto: ''
+        editPhoto: '',
+        editImage: { }
     }
     handleOpenCreate = () => {
         this.setState({ openCreate: true })
@@ -82,7 +83,7 @@ class Competitors extends Component {
     }
     render() {
         const { classes, SocketIO } = this.props
-        const { openCreate, openEdit, showSnackbar, createName, createImage, editName, editPhoto } = this.state
+        const { openCreate, openEdit, showSnackbar, createName, createImage, editName, editPhoto, editImage } = this.state
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Competidores</Typography>
@@ -143,11 +144,11 @@ class Competitors extends Component {
                                 </Grid>
                             </Grid>
                             <br/>
-                            <ImageDropZone anySize showButton width={ 312 } height={ 250 } imagePicked={ image => this.setState({ createImage: image }) } imageDefault={ 'http://' + window.location.hostname + ':12345/img/' + editPhoto }/>
+                            <ImageDropZone anySize showButton width={ 312 } height={ 250 } imagePicked={ image => this.setState({ editImage: image }) } imageDefault={ 'http://' + window.location.hostname + ':12345/img/' + editPhoto }/>
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseEdit }>Cancelar</Button>
-                            <Button variant="contained" color="primary" onClick={ this.handleCreate } disabled={ !createName || !createImage.file }>Guardar</Button>
+                            <Button variant="contained" color="primary" onClick={ this.handleEdit } disabled={ !editName || !editImage.file }>Guardar</Button>
                         </DialogActions>
                     </Dialog>
                 </MuiThemeProvider>
