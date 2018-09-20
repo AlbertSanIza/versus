@@ -81,6 +81,9 @@ class Competitors extends Component {
             this.setState({ showSnackbar: true })
         }
     }
+    handleEdit = () => {
+        this.handleCloseEdit()
+    }
     render() {
         const { classes, SocketIO } = this.props
         const { openCreate, openEdit, showSnackbar, createName, createImage, editName, editPhoto, editImage } = this.state
