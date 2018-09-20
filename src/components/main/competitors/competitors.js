@@ -67,7 +67,7 @@ class Competitors extends Component {
       this.setState({ openEdit: true, editName, editPhoto })
     }
     handleCloseEdit = () => {
-      this.setState({ openEdit: false })
+      this.setState({ openEdit: false, editName: '', editImage: { } })
     }
     handleCreate = () => {
         const { createName, createImage } = this.state
