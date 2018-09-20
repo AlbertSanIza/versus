@@ -19,6 +19,10 @@ const style = {
     enter: {
         border: '1px dashed grey',
         backgroundColor: 'rgb(220, 220, 220)',
+    },
+    picker: {
+        textAlign: 'center',
+        width: '100%'
     }
 }
 
@@ -73,24 +77,25 @@ class ImageDropZone extends Component {
         const { image, over } = this.state
         const { width, height } = this.props
         return (
-            <div onDrop={ this.onDrop } onDragOver={ this.onDragOver } onDragLeave={ this.onDragLeave } onDragEnter={ this.onDragEnter }
-                style={ Object.assign({  }, {
-                    width: `${ width }px`,
-                    height: `${ height }px`,
-                    backgroundImage: `url(${ image ? image : '' })`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover'
-                }, style.frame, over ? style.enter : style.leave) }>
-                { image !== null ? (
-                    <img src={ image } alt={ image } width={ 0 } height={ 0 }/>
-                ) : (
+            <React.Fragment>
+                <div onDrop={ this.onDrop } onDragOver={ this.onDragOver } onDragLeave={ this.onDragLeave } onDragEnter={ this.onDragEnter }
+                    style={ Object.assign({  }, {
+                        width: `${ width }px`,
+                        height: `${ height }px`,
+                        backgroundImage: `url(${ image ? image : '' })`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover'
+                    }, style.frame, over ? style.enter : style.leave) }>
+                </div>
+                <div style={ style.picker }>
                     <label>
-                        Escoger Imagen
+                        Seleccionar Imagen
                         <input type="file" value="" accept="image/png" style={{ display: 'none' }} onChange={ this.handleFile }/>
                     </label>
-                )}
-            </div>
+                </div>
+            </React.Fragment>
+
         )
     }
 }
