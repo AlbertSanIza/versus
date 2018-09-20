@@ -89,7 +89,7 @@ class ImageDropZone extends Component {
                     }, style.frame, over ? style.enter : style.leave) }>
                 </div>
                 <div style={ style.picker }>
-                    <label>
+                    <label style={{ cursor: 'pointer' }}>
                         Seleccionar Imagen
                         <input type="file" value="" accept="image/png" style={{ display: 'none' }} onChange={ this.handleFile }/>
                     </label>
