@@ -5,6 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions'
 import FormControl from '@material-ui/core/FormControl'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import Typography from '@material-ui/core/Typography'
+import TextField from '@material-ui/core/TextField'
 import CreateIcon from '@material-ui/icons/Create'
 import Snackbar from '@material-ui/core/Snackbar'
 import red from '@material-ui/core/colors/red'
@@ -70,11 +71,11 @@ class Thematics extends Component {
         const { openCreate, showSnackbar, createName } = this.state
         return (
             <React.Fragment>
-                <Typography variant="display2" gutterBottom>Tematicas</Typography>
+                <Typography variant="display2">Tematicas</Typography>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <Input placeholder="Busqueda" value={ SocketIO.thematics.earchTerm } onChange={ e => SocketIO.thematics.search(e.target.value) }></Input>
+                            <TextField label="Busqueda" margin="normal" variant="outlined" value={ SocketIO.thematics.searchTerm } onChange={ e => SocketIO.thematics.search(e.target.value) }/>
                         </FormControl>
                     </Grid>
                     { SocketIO.thematics.thematics.filter(z => {
@@ -97,9 +98,9 @@ class Thematics extends Component {
                     </Grow>
                     <Dialog open={ openCreate } onClose={ this.handleCloseCreate } scroll="paper">
                         <DialogTitle>Nueva Tematica</DialogTitle>
-                        <DialogContent>
+                        <DialogContent style={{ width: 300 }}>
                             <FormControl fullWidth>
-                                <Input placeholder="Nombre" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
+                                <TextField label="Nombre" margin="normal" variant="outlined" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }/>
                             </FormControl>
                         </DialogContent>
                         <DialogActions>

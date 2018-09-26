@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import FormControl from '@material-ui/core/FormControl'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import InputLabel from '@material-ui/core/InputLabel'
+import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import Input from '@material-ui/core/Input'
 import Grid from '@material-ui/core/Grid'
 
 import instagramLogo from './instagramLogo.svg'
@@ -31,8 +30,7 @@ class Settings extends Component {
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <InputLabel>Carpeta Temporal</InputLabel>
-                            <Input placeholder="Carpeta Temporal" value={ SocketIO.settings.tempDir } disabled></Input>
+                            <TextField label="Carpeta Temporal" margin="normal" variant="outlined" value={ SocketIO.settings.tempDir } disabled/>
                         </FormControl>
                     </Grid>
                     <Grid sm={ 12 } style={{ textAlign: 'right' }} item>

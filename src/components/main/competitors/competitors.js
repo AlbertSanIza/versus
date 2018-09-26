@@ -6,12 +6,12 @@ import FormControl from '@material-ui/core/FormControl'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import Typography from '@material-ui/core/Typography'
 import CardMedia from '@material-ui/core/CardMedia'
+import TextField from '@material-ui/core/TextField'
 import CreateIcon from '@material-ui/icons/Create'
 import Snackbar from '@material-ui/core/Snackbar'
 import red from '@material-ui/core/colors/red'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
-import Input from '@material-ui/core/Input'
 import Paper from '@material-ui/core/Paper'
 import Grow  from '@material-ui/core/Grow'
 import Grid from '@material-ui/core/Grid'
@@ -88,11 +88,11 @@ class Competitors extends Component {
         const { openCreate, openEdit, showSnackbar, createName, createImage, editName, editPhoto, editImage } = this.state
         return(
             <React.Fragment>
-                <Typography variant="display2" gutterBottom>Competidores</Typography>
+                <Typography variant="display2">Competidores</Typography>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <Input placeholder="Busqueda" value={ SocketIO.competitors.searchTerm } onChange={ e => SocketIO.competitors.search(e.target.value) }></Input>
+                            <TextField label="Busqueda" margin="normal" variant="outlined" value={ SocketIO.competitors.searchTerm } onChange={ e => SocketIO.competitors.search(e.target.value) }/>
                         </FormControl>
                     </Grid>
                     { SocketIO.competitors.competitors.filter(z => {
@@ -123,7 +123,7 @@ class Competitors extends Component {
                             <Grid container spacing={ 16 }>
                                 <Grid item xs={ 12 }>
                                     <FormControl fullWidth>
-                                        <Input placeholder="Nombre" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
+                                        <TextField label="Nombre" margin="normal" variant="outlined" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }/>
                                     </FormControl>
                                 </Grid>
                             </Grid>
@@ -141,7 +141,7 @@ class Competitors extends Component {
                             <Grid container spacing={ 16 }>
                                 <Grid item xs={ 12 }>
                                     <FormControl fullWidth>
-                                        <Input placeholder="Nombre" value={ editName } disabled></Input>
+                                        <TextField label="Nombre" margin="normal" variant="outlined" value={ editName } disabled/>
                                     </FormControl>
                                 </Grid>
                             </Grid>

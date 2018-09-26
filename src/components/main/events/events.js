@@ -72,11 +72,11 @@ class Event extends Component {
         const { openCreate, showSnackbar, createName, createDescription } = this.state
         return(
             <React.Fragment>
-                <Typography variant="display2" gutterBottom>Eventos</Typography>
+                <Typography variant="display2">Eventos</Typography>
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <Input placeholder="Busqueda" value={ SocketIO.events.searchTerm } onChange={ e => SocketIO.events.search(e.target.value) }></Input>
+                            <TextField label="Busqueda" margin="normal" variant="outlined" value={ SocketIO.events.searchTerm } onChange={ e => SocketIO.events.search(e.target.value) }/>
                         </FormControl>
                     </Grid>
                     { SocketIO.events.events.filter(z => {
