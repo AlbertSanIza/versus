@@ -93,7 +93,7 @@ class Event extends Component {
     }
     render() {
         const { classes, SocketIO } = this.props
-        const { openCreate, openEdit, showSnackbar, createName, createDescription, editName, editDescription, columns } = this.state
+        const { openCreate, openEdit, showSnackbar, createName, createDescription, editName, editDescription, editSelected, columns } = this.state
         return(
             <React.Fragment>
                 <Typography variant="display2">Eventos</Typography>
@@ -144,7 +144,7 @@ class Event extends Component {
                                 <TextField label="Nombre" margin="normal" variant="outlined" value={ editName } disabled/>
                                 <TextField label="Descripcion" margin="normal" variant="outlined" rowsMax="4" value={ editDescription } onChange={ e => this.editDescriptionChanged(e.target.value) } multiline/>
                             </FormControl>
-                            <VersusTable id="name" columns={ columns } data={ SocketIO.competitors.competitors } onSelect={ this.handleEditSelect } multiSelect hover/>
+                            <VersusTable id="name" columns={ columns } data={ SocketIO.competitors.competitors } selected={ editSelected } onSelect={ this.handleEditSelect } multiSelect hover/>
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseEdit }>Cancelar</Button>

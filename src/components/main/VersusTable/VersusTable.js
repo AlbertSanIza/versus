@@ -14,7 +14,6 @@ const getSorting = (order, orderBy) => order === 'desc' ? (a, b) => desc(a, b, o
 
 class VersusTable extends Component {
   state = {
-    selected: [],
     order: 'asc',
     orderBy: ''
   }
@@ -26,19 +25,16 @@ class VersusTable extends Component {
     })
     return stabilizedThis.map(el => el[0])
   }
-  isSelected = id => this.state.selected.indexOf(id) !== -1
+  isSelected = id => this.props.selected.indexOf(id) !== -1
   handleSelectAll = event => {
-    this.setState({ selected: event.target.checked ? this.props.data.map(row => row[this.props.id]) : [] })
-    if(this.props.onSelect) {
-        this.props.onSelect({ selected: event.target.checked ? this.props.data.map(row => row[this.props.id]) : [] })
-    }
+    this.props.onSelect({ selected: event.target.checked ? this.props.data.map(row => row[this.props.id]) : [] })
   }
   handleOnSort = orderBy => {
     this.setState({ order: this.state.orderBy === orderBy && this.state.order === 'desc' ? 'asc' : 'desc', orderBy })
   }
   handleClick = key => {
     if(this.props.multiSelect) {
-      const { selected } = this.state
+      const { selected } = this.props
       const selectedIndex = selected.indexOf(key)
       let newSelected = []
       if (selectedIndex === -1) {
@@ -54,15 +50,12 @@ class VersusTable extends Component {
         // Somewhere in the middle of selected, remove
         newSelected = newSelected.concat(selected.slice(0, selectedIndex), selected.slice(selectedIndex + 1))
       }
-      this.setState({ selected: newSelected })
-      if(this.props.onSelect) {
-          this.props.onSelect({ selected: newSelected })
-      }
+      this.props.onSelect({ selected: newSelected })
     }
   }
   render() {
-    const { id, columns, data, customToolbar, multiSelect, hover } = this.props
-    const { selected, order, orderBy } = this.state
+    const { id, columns, data, customToolbar, selected, multiSelect, hover } = this.props
+    const { order, orderBy } = this.state
     return (
       <React.Fragment>
         { (() => {
@@ -127,8 +120,8 @@ VersusTable.propTypes = {
   id: PropTypes.string.isRequired,
   columns: PropTypes.array.isRequired,
   data: PropTypes.array.isRequired,
+  onSelect: PropTypes.func.isRequired,
   customToolbar: PropTypes.func,
-  onSelect: PropTypes.func,
   multiSelect: PropTypes.bool,
   hover: PropTypes.bool
 }
