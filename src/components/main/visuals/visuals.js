@@ -180,9 +180,14 @@ class Competitors extends Component {
                             )
                             case 'isMessage':
                             return (
-                                <Grid item xs={ 12 }>
-                                    <Button variant="contained" color="primary" onClick={ this.resetButton } fullWidth>Cancelar</Button>
-                                </Grid>
+                                <React.Fragment>
+                                    <Grid item xs={ 6 }>
+                                        <Button variant="contained" color="primary" onClick={ this.resetButton } fullWidth>Cancelar</Button>
+                                    </Grid>
+                                    <Grid item xs={ 6 }>
+                                        <Button variant="contained" color="secondary" className={ classes.button } onClick={ this.setButton } disabled={ !this.state.seconds || this.state.seconds < 5 } fullWidth>Mostrar</Button>
+                                    </Grid>
+                                </React.Fragment>
                             )
                             default:
                             return null
