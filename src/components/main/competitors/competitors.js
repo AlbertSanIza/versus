@@ -79,7 +79,9 @@ class Competitors extends Component {
         }
     }
     handleEdit = () => {
-        this.handleCloseEdit()
+      const { editName, editImage } = this.state
+      this.props.SocketIO.competitors.edit({ name: editName, photo: editName.toLowerCase().replace(/[\W_]+/g, '_') + '.' + editImage.file.type.split('/').pop(), file: editImage.file })
+      this.handleCloseEdit()
     }
     render() {
         const { classes, SocketIO } = this.props
