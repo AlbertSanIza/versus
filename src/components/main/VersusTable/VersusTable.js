@@ -29,6 +29,9 @@ class VersusTable extends Component {
   isSelected = id => this.state.selected.indexOf(id) !== -1
   handleSelectAll = event => {
     this.setState({ selected: event.target.checked ? this.props.data.map(row => row[this.props.id]) : [] })
+    if(this.props.onSelect) {
+        this.props.onSelect({ selected: event.target.checked ? this.props.data.map(row => row[this.props.id]) : [] })
+    }
   }
   handleOnSort = orderBy => {
     this.setState({ order: this.state.orderBy === orderBy && this.state.order === 'desc' ? 'asc' : 'desc', orderBy })
@@ -52,6 +55,9 @@ class VersusTable extends Component {
         newSelected = newSelected.concat(selected.slice(0, selectedIndex), selected.slice(selectedIndex + 1))
       }
       this.setState({ selected: newSelected })
+      if(this.props.onSelect) {
+          this.props.onSelect({ selected: newSelected })
+      }
     }
   }
   render() {
@@ -122,6 +128,7 @@ VersusTable.propTypes = {
   columns: PropTypes.array.isRequired,
   data: PropTypes.array.isRequired,
   customToolbar: PropTypes.func,
+  onSelect: PropTypes.func,
   multiSelect: PropTypes.bool,
   hover: PropTypes.bool
 }
