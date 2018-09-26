@@ -79,13 +79,14 @@ class Competitors extends Component {
         this.setState({ status: 'isPaused' })
         this.props.SocketIO.visualizer({ status: 'isPaused'})
     }
-    roundButton = round => {
+    roundButton = () => {
+        const { round } = this.state
         this.setState({ status: 'isMessage' })
-        console.log('round', round)
+        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Round #' + round })
     }
     replicaButton = () => {
         this.setState({ status: 'isMessage' })
-        console.log('replica')
+        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Replica!' })
     }
     onTick = () => {
         this.setState({ seconds: this.state.seconds - 1 })
@@ -198,7 +199,7 @@ class Competitors extends Component {
                             <option>2</option>
                             <option>3</option>
                         </TextField>
-                        <Button variant="contained" color="primary" onClick={ () => this.roundButton(1) } fullWidth>Round</Button>
+                        <Button variant="contained" color="primary" onClick={ this.roundButton } fullWidth>Round</Button>
                     </Grid>
                     <Grid item xs={ 12 }>
                         <Button variant="contained" color="primary" onClick={ this.replicaButton } fullWidth>Replica</Button>
