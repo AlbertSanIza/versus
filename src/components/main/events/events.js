@@ -83,12 +83,12 @@ class Event extends Component {
             this.setState({ showSnackbar: true })
         }
     }
-    handleEditSelect = selected => {
+    handleEditSelect = ({ selected }) => {
         this.setState({ editSelected: selected })
     }
     handleEdit = () => {
         const { editName, editDescription, editSelected } = this.state
-        this.props.SocketIO.events.create({ name: editName, description: editDescription, editSelected })
+        this.props.SocketIO.events.create({ name: editName, description: editDescription, selected: editSelected })
         this.handleCloseEdit()
     }
     render() {
