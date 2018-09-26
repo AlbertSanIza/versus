@@ -84,7 +84,8 @@ class VersusVisualizer extends Component {
         this.state = {
             status: '',
             seconds: '',
-            text: ''
+            text: '',
+            message: ''
         }
         socket.on('visualizer', msg => {
             this.setState(msg)
@@ -115,6 +116,17 @@ class VersusVisualizer extends Component {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <img className={ classes.logoCenter } src={ bdm_logo } alt="LOGO"/>
+                            </Fade>
+                        )
+                    }
+                })() }
+                { (() => {
+                    if(this.state.status !== '' || this.state.status === 'isMessage') {
+                        return (
+                            <Fade in={ true } timeout={ 1000 }>
+                                <div>
+                                    { this.state.message }
+                                </div>
                             </Fade>
                         )
                     }
