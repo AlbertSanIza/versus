@@ -118,9 +118,6 @@ class Competitors extends Component {
                 <MuiThemeProvider theme={ theme }>
                     <Grid container spacing={ 16 }>
                         <Grid item xs={ 12 }>
-
-                        </Grid>
-                        <Grid item xs={ 12 }>
                             <TextField
                                 type="number"
                                 label="Tiempo"
