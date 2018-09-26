@@ -98,7 +98,11 @@ class Competitors extends Component {
                         switch (this.state.status) {
                             case 'isStart':
                             return (
-                                <Countdown date={ Date.now() + (this.state.seconds * 1000) } onTick={ this.onTick } onComplete={ this.onComplete } renderer={ props => <div className={ classes.countdown }>{ props.total / 1000 }</div> }/>
+                                <Countdown
+                                    date={ Date.now() + (this.state.seconds * 1000) }
+                                    onTick={ this.onTick }
+                                    onComplete={ this.onComplete }
+                                    renderer={ props => <div className={ classes.countdown }>{ props.total / 1000 }</div> }/>
                             )
                             default:
                             return ''
@@ -108,8 +112,23 @@ class Competitors extends Component {
                 <MuiThemeProvider theme={ theme }>
                     <Grid container spacing={ 16 }>
                         <Grid item xs={ 12 }>
-                            <TextField type="number" label="Tiempo" value={ this.state.seconds } onChange={ this.inputHandleChange } disabled={ this.state.status !== '' } InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>), endAdornment: (<InputAdornment position="end">Segundos</InputAdornment>) }} fullWidth/>
-                            <TextField label="Tema" value={ this.state.text } onChange={ this.inputTextHandleChange } InputProps={{ startAdornment: (<InputAdornment position="start"><SchoolIcon/></InputAdornment>) }} fullWidth/>
+
+                        </Grid>
+                        <Grid item xs={ 12 }>
+                            <TextField
+                                type="number"
+                                label="Tiempo"
+                                value={ this.state.seconds }
+                                onChange={ this.inputHandleChange }
+                                disabled={ this.state.status !== '' }
+                                InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>), endAdornment: (<InputAdornment position="end">Segundos</InputAdornment>) }}
+                                fullWidth/>
+                            <TextField
+                                label="Tema"
+                                value={ this.state.text }
+                                onChange={ this.inputTextHandleChange }
+                                InputProps={{ startAdornment: (<InputAdornment position="start"><SchoolIcon/></InputAdornment>) }}
+                                fullWidth/>
                         </Grid>
                     </Grid>
                 </MuiThemeProvider>
