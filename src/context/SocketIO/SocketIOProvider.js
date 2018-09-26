@@ -70,9 +70,7 @@ class SocketIOProvider extends Component {
     }
     createEditCompetitor = e => {
         const { name, photo } = e
-        var competitors = this.state.competitors.competitors.slice().filter(z => {
-          return z.name != name
-        })
+        var competitors = this.state.competitors.competitors.slice().filter(z => z.name != name)
         competitors.push({ name, photo })
         socket.emit('competitors', { type: 'set', payload: competitors })
         socket.emit('competitors', { type: 'image', payload: e }, data => {
