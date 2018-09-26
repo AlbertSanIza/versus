@@ -4,7 +4,6 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
-import SchoolIcon from '@material-ui/icons/School'
 import red from '@material-ui/core/colors/red'
 import Button from '@material-ui/core/Button'
 import Timer from '@material-ui/icons/Timer'
@@ -52,7 +51,7 @@ class Competitors extends Component {
     state = {
         status: '',
         seconds: '',
-        text: '',
+        text: 'NULO',
         round: 1
     }
     inputHandleChange = e => {
@@ -97,7 +96,7 @@ class Competitors extends Component {
         this.props.SocketIO.visualizer({ status: '', seconds: '', text: '' })
     }
     render() {
-        const { classes } = this.props
+        const { classes, SocketIO } = this.props
         return(
             <React.Fragment>
                 <div className={ classes.visualsIframeHolder }>
@@ -136,8 +135,17 @@ class Competitors extends Component {
                                 label="Tema"
                                 value={ this.state.text }
                                 onChange={ this.inputTextHandleChange }
-                                InputProps={{ startAdornment: (<InputAdornment position="start"><SchoolIcon/></InputAdornment>) }}
-                                fullWidth/>
+                                SelectProps={{ native: true }}
+                                margin="normal"
+                                variant="outlined"
+                                select fullWidth>
+                                <option value="NULO">Ninguno</option>
+                                { SocketIO.thematics.thematics.map(option => (
+                                    <option key={ option.name } value={ option.value }>
+                                        { option.name }
+                                    </option>
+                                )) }
+                            </TextField>
                         </Grid>
                     </Grid>
                 </MuiThemeProvider>
