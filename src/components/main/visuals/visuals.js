@@ -59,6 +59,7 @@ class Competitors extends Component {
     }
     inputTextHandleChange = e => {
         this.setState({ text: e.target.value })
+        this.props.SocketIO.visualizer({ text: '' })
     }
     inputRoundHandleChange = e => {
         this.setState({ round: e.target.value })
