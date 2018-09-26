@@ -84,8 +84,8 @@ class Event extends Component {
         }
     }
     handleEdit = () => {
-        const { editName, editDescription } = this.state
-        this.props.SocketIO.events.create({ name: editName, description: editDescription })
+        const { editName, editDescription, editSelected } = this.state
+        this.props.SocketIO.events.create({ name: editName, description: editDescription, editSelected })
         this.handleCloseEdit()
     }
     render() {
