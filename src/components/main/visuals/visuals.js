@@ -205,10 +205,10 @@ class Competitors extends Component {
                             <option>2</option>
                             <option>3</option>
                         </TextField>
-                        <Button variant="contained" color="primary" onClick={ this.roundButton } fullWidth>Round</Button>
+                        <Button variant="contained" color="primary" onClick={ this.roundButton } disabled={ this.state.status === 'isMessage' } fullWidth>Round</Button>
                     </Grid>
                     <Grid item xs={ 12 }>
-                        <Button variant="contained" color="primary" onClick={ this.replicaButton } fullWidth>Replica</Button>
+                        <Button variant="contained" color="primary" onClick={ this.replicaButton } disabled={ this.state.status === 'isMessage' } fullWidth>Replica</Button>
                     </Grid>
                 </Grid>
                 <Grow in={ true } timeout={ 500 }>
