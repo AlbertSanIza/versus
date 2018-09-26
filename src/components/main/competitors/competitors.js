@@ -120,14 +120,9 @@ class Competitors extends Component {
                     <Dialog open={ openCreate } onClose={ this.handleCloseCreate } scroll="paper">
                         <DialogTitle>Nuevo Competidor</DialogTitle>
                         <DialogContent>
-                            <Grid container spacing={ 16 }>
-                                <Grid item xs={ 12 }>
-                                    <FormControl fullWidth>
-                                        <TextField label="Nombre" margin="normal" variant="outlined" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }/>
-                                    </FormControl>
-                                </Grid>
-                            </Grid>
-                            <br/>
+                            <FormControl fullWidth>
+                                <TextField label="Nombre" margin="normal" variant="outlined" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }/>
+                            </FormControl>
                             <ImageDropZone anySize showButton width={ 312 } height={ 250 } imagePicked={ image => this.setState({ createImage: image }) }/>
                         </DialogContent>
                         <DialogActions>
@@ -138,14 +133,9 @@ class Competitors extends Component {
                     <Dialog open={ openEdit } onClose={ this.handleCloseEdit } scroll="paper">
                         <DialogTitle>Editar Competidor</DialogTitle>
                         <DialogContent>
-                            <Grid container spacing={ 16 }>
-                                <Grid item xs={ 12 }>
-                                    <FormControl fullWidth>
-                                        <TextField label="Nombre" margin="normal" variant="outlined" value={ editName } disabled/>
-                                    </FormControl>
-                                </Grid>
-                            </Grid>
-                            <br/>
+                            <FormControl fullWidth>
+                                <TextField label="Nombre" margin="normal" variant="outlined" value={ editName } disabled/>
+                            </FormControl>
                             <ImageDropZone anySize showButton width={ 312 } height={ 250 } imagePicked={ image => this.setState({ editImage: image }) } imageDefault={ 'http://' + window.location.hostname + ':12345/img/' + editPhoto }/>
                         </DialogContent>
                         <DialogActions>
