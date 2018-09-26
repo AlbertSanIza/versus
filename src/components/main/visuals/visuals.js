@@ -177,6 +177,12 @@ class Competitors extends Component {
                                     <Button variant="contained" color="primary" onClick={ this.pauseButton } fullWidth>Puasar</Button>
                                 </Grid>
                             )
+                            case 'isMessage':
+                            return (
+                                <Grid item xs={ 12 }>
+                                    <Button variant="contained" color="primary" onClick={ this.resetButton } fullWidth>Cancelar</Button>
+                                </Grid>
+                            )
                             default:
                             return null
                         }
