@@ -83,6 +83,9 @@ class Event extends Component {
             this.setState({ showSnackbar: true })
         }
     }
+    handleEditSelect = selected => {
+        this.setState({ editSelected: selected })
+    }
     handleEdit = () => {
         const { editName, editDescription, editSelected } = this.state
         this.props.SocketIO.events.create({ name: editName, description: editDescription, editSelected })
@@ -141,7 +144,7 @@ class Event extends Component {
                                 <TextField label="Nombre" margin="normal" variant="outlined" value={ editName } disabled/>
                                 <TextField label="Descripcion" margin="normal" variant="outlined" rowsMax="4" value={ editDescription } onChange={ e => this.editDescriptionChanged(e.target.value) } multiline/>
                             </FormControl>
-                            <VersusTable id="name" columns={ columns } data={ SocketIO.competitors.competitors } multiSelect hover/>
+                            <VersusTable id="name" columns={ columns } data={ SocketIO.competitors.competitors } onSelect={ this.handleEditSelect } multiSelect hover/>
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseEdit }>Cancelar</Button>
