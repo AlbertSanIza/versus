@@ -26,7 +26,8 @@ class SocketIOProvider extends Component {
                 competitors: [ ],
                 searchTerm: '',
                 search: e => this.searchCompetitors(e),
-                create: e => this.createCompetitor(e)
+                create: e => this.createCompetitor(e),
+                edit: e => this.editCompetitor(e)
             },
             settings: {
                 tempDir: '',
@@ -75,6 +76,11 @@ class SocketIOProvider extends Component {
         socket.emit('competitors', { type: 'image', payload: e }, data => {
             this.setState({ competitors: { ...this.state.competitors, competitors: competitors } })
         })
+    }
+    editCompetitor = e => {
+      socket.emit('competitors', { type: 'image', payload: e }, data => {
+        this.setState({ competitors: { ...this.state.competitors } })
+      })
     }
     render() {
         return (
