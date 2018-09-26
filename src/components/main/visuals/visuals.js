@@ -68,8 +68,8 @@ class Competitors extends Component {
         this.props.SocketIO.visualizer({ status: 'isSet', seconds: this.state.seconds, text: this.state.text })
     }
     resetButton = () => {
-        this.setState({ status: '', seconds: '', text: '' })
-        this.props.SocketIO.visualizer({ status: '', seconds: '', text: '' })
+        this.setState({ status: '', seconds: '', text: 'NULO' })
+        this.props.SocketIO.visualizer({ status: '', seconds: '', text: 'NULO' })
     }
     startButton = () => {
         this.setState({ status: 'isStart' })
