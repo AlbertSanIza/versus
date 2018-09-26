@@ -31,7 +31,7 @@ class VersusTableToolbar extends Component {
       <Toolbar variant="dense" className={ selected.length > 0 ? classes.highlight : classes.normal}>
         { customToolbar ? customToolbar({ selected, classes }) : (
           <div className={ classes.title }>
-            <Typography color="inherit">{ selected.length } Compoetidores Seleccionados</Typography>
+            <Typography color="inherit">{ selected.length } Competidores Seleccionados</Typography>
           </div>
         )}
       </Toolbar>
