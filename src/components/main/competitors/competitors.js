@@ -71,10 +71,7 @@ class Competitors extends Component {
     }
     handleCreate = () => {
         const { createName, createImage } = this.state
-        var canCreate = this.props.SocketIO.competitors.competitors.every(z => {
-            return z.name.toLowerCase() !== createName.toLowerCase()
-        })
-        if(canCreate) {
+        if(this.props.SocketIO.competitors.competitors.every(z => z.name.toLowerCase() !== createName.toLowerCase())) {
             this.props.SocketIO.competitors.create({ name: createName, photo: createName.toLowerCase().replace(/[\W_]+/g, '_') + '.' + createImage.file.type.split('/').pop(), file: createImage.file })
             this.handleCloseCreate()
         } else {
