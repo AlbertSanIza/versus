@@ -57,6 +57,9 @@ class Event extends Component {
     createDescriptionChanged = input => {
         this.setState({ createDescription: input })
     }
+    editDescriptionChanged = input => {
+        this.setState({ editDescription: input })
+    }
     handleOpenEdit = (editName, editDescription) => {
       this.setState({ openEdit: true, editName, editDescription })
     }
@@ -76,7 +79,9 @@ class Event extends Component {
         }
     }
     handleEdit = () => {
-        console.log('edit')
+        const { editName, editDescription } = this.state
+        this.props.SocketIO.events.create({ name: editName, description: editDescription })
+        this.handleCloseEdit()
     }
     render() {
         const { classes, SocketIO } = this.props
@@ -129,12 +134,12 @@ class Event extends Component {
                         <DialogContent style={{ width: 300 }}>
                             <FormControl fullWidth>
                                 <TextField label="Nombre" margin="normal" variant="outlined" value={ editName } disabled/>
-                                <TextField label="Descripcion" margin="normal" variant="outlined" rowsMax="4" value={ editDescription } multiline/>
+                                <TextField label="Descripcion" margin="normal" variant="outlined" rowsMax="4" value={ editDescription } onChange={ e => this.editDescriptionChanged(e.target.value) } multiline/>
                             </FormControl>
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseEdit }>Cancelar</Button>
-                            <Button variant="contained" color="primary" onClick={ this.handleEdit } disabled>Guardar</Button>
+                            <Button variant="contained" color="primary" onClick={ this.handleEdit } disabled={ !editName }>Guardar</Button>
                         </DialogActions>
                     </Dialog>
                 </MuiThemeProvider>
