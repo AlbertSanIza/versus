@@ -51,7 +51,7 @@ class SocketIOProvider extends Component {
         this.setState({ events: { ...this.state.events, searchTerm: e } })
     }
     createEvent = e => {
-        var events = this.state.events.events
+        var events = this.state.events.events.slice()
         events.push(e)
         socket.emit('events', { type: 'set', payload: events })
         this.setState({ events: { ...this.state.events, events: events } })
@@ -60,7 +60,7 @@ class SocketIOProvider extends Component {
         this.setState({ thematics: { ...this.state.thematics, searchTerm: e } })
     }
     createThematic = e => {
-        var thematics = this.state.thematics.thematics
+        var thematics = this.state.thematics.thematics.slice()
         thematics.push(e)
         socket.emit('thematics', { type: 'set', payload: thematics })
         this.setState({ thematics: { ...this.state.thematics, thematics: thematics } })
