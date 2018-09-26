@@ -76,6 +76,12 @@ class Competitors extends Component {
         this.setState({ status: 'isPaused' })
         this.props.SocketIO.visualizer({ status: 'isPaused'})
     }
+    roundButton = round => {
+        console.log('round', round)
+    }
+    replicaButton = () => {
+        console.log('replica')
+    }
     onTick = () => {
         this.setState({ seconds: this.state.seconds - 1 })
         this.props.SocketIO.visualizer({ seconds: this.state.seconds, text: this.state.text })
@@ -163,6 +169,17 @@ class Competitors extends Component {
                             return null
                         }
                     })()}
+                </Grid>
+                <br/>
+                <br/>
+                <br/>
+                <Grid container spacing={ 16 }>
+                    <Grid item xs={ 8 }>
+                        <Button variant="contained" color="primary" onClick={ () => this.roundButton(1) } fullWidth>Round 1</Button>
+                    </Grid>
+                    <Grid item xs={ 4 }>
+                        <Button variant="contained" color="primary" onClick={ this.replicaButton } fullWidth>Replica</Button>
+                    </Grid>
                 </Grid>
                 <Grow in={ true } timeout={ 500 }>
                     <a href="#/" target="_blank" rel="noopener noreferrer">
