@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { withStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
+import CardActionArea from '@material-ui/core/CardActionArea'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogActions from '@material-ui/core/DialogActions'
 import FormControl from '@material-ui/core/FormControl'
 import DialogTitle from '@material-ui/core/DialogTitle'
+import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import CreateIcon from '@material-ui/icons/Create'
 import Snackbar from '@material-ui/core/Snackbar'
@@ -11,9 +13,9 @@ import red from '@material-ui/core/colors/red'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
 import Input from '@material-ui/core/Input'
-import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Grow from '@material-ui/core/Grow'
+import Card from '@material-ui/core/Card'
 
 import { withSocketIO } from '../../../context'
 
@@ -79,12 +81,15 @@ class Event extends Component {
                     { SocketIO.events.events.filter(z => {
                         return z.name.toLowerCase().includes(SocketIO.events.searchTerm.toLowerCase())
                     }).map((event, i) => (
-                        <Grid item xs={ 12 } sm={ 4 } md={ 3 } lg={ 2 } key={ i }>
-                            <Paper elevation={ 1 }>
-                                <div className={ classes.paperContent }>
-                                    <Typography noWrap>{ event.name }</Typography>
-                                </div>
-                            </Paper>
+                        <Grid item xs={ 12 } key={ i }>
+                            <Card>
+                                <CardActionArea>
+                                    <CardContent>
+                                        <Typography gutterBottom variant="headline" component="h2">{ event.name }</Typography>
+                                        <Typography component="p">{ event.description }</Typography>
+                                    </CardContent>
+                                </CardActionArea>
+                            </Card>
                         </Grid>
                     )) }
                 </Grid>
