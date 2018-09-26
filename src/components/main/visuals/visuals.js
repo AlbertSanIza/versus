@@ -102,7 +102,7 @@ class Competitors extends Component {
         return(
             <React.Fragment>
                 <div className={ classes.visualsIframeHolder }>
-                    <iframe src="#/" frameBorder="0" title="visualizer" className={ classes.visualsIframe }></iframe>
+                    <iframe src="#/?animation" frameBorder="0" title="visualizer" className={ classes.visualsIframe }></iframe>
                 </div>
                 <br/>
                 <Typography variant="title">

@@ -98,7 +98,10 @@ class VersusVisualizer extends Component {
         })
     }
     componentDidMount() {
-        window.particlesJS.load('particles-js', './assets/particles-config.json')
+        var param = window.location.href.split('?')
+        if(param.length < 2) {
+            window.particlesJS.load('particles-js', './assets/particles-config.json')
+        }
     }
     render() {
         const { classes } = this.props
