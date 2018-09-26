@@ -127,7 +127,7 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if(this.state.status !== '' || this.state.status === 'isMessage') {
+                    if(this.state.status === 'isMessage') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.message }>{ this.state.message }</div>
