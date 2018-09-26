@@ -129,7 +129,7 @@ class Competitors extends Component {
                                 label="Tiempo"
                                 value={ this.state.seconds }
                                 onChange={ this.inputHandleChange }
-                                disabled={ this.state.status !== '' }
+                                disabled={ this.state.status !== '' && this.state.status !== 'isMessage' }
                                 InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>), endAdornment: (<InputAdornment position="end">Segundos</InputAdornment>) }}
                                 fullWidth/>
                             <TextField
