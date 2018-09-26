@@ -102,11 +102,12 @@ class VersusVisualizer extends Component {
     }
     render() {
         const { classes } = this.props
+        const { status, seconds, text, message } = this.state
         return (
             <div className={ classes.visualizer }>
                 <div id="particles-js" className={ classes.particles }/>
                 { (() => {
-                    if(this.state.status !== '' && this.state.status !== 'isPaused' && this.state.status !== 'isMessage') {
+                    if(status !== '' && status !== 'isPaused' && status !== 'isMessage') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.header }>
@@ -118,7 +119,7 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if(this.state.status === '' || this.state.status === 'isPaused') {
+                    if(status === '' || status === 'isPaused') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <img className={ classes.logoCenter } src={ bdm_logo } alt="LOGO"/>
@@ -127,28 +128,28 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if(this.state.status === 'isMessage') {
+                    if(status === 'isMessage') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className={ classes.message }>{ this.state.message }</div>
+                                <div className={ classes.message }>{ message }</div>
                             </Fade>
                         )
                     }
                 })() }
                 { (() => {
-                    if(this.state.status === 'isSet' || this.state.status === 'isStart') {
+                    if(status === 'isSet' || status === 'isStart') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className={ classes.countDown }>{ this.state.seconds }</div>
+                                <div className={ classes.countDown }>{ seconds }</div>
                             </Fade>
                         )
                     }
                 })() }
                 { (() => {
-                    if(this.state.status !== '' && this.state.status !== 'isPaused' && this.state.text !== '' && this.state.text !== 'NULO') {
+                    if(status !== '' && status !== 'isPaused' && text !== '' && text !== 'NULO') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className={ classes.thematic }>{ this.state.text }</div>
+                                <div className={ classes.thematic }>{ text }</div>
                             </Fade>
                         )
                     }
