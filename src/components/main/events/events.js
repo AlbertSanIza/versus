@@ -132,7 +132,7 @@ class Event extends Component {
                     </Dialog>
                     <Dialog open={ openEdit } onClose={ this.handleCloseEdit } scroll="paper">
                         <DialogTitle>Editar Evento</DialogTitle>
-                        <DialogContent style={{ width: 300 }}>
+                        <DialogContent style={{ width: 400 }}>
                             <FormControl fullWidth>
                                 <TextField label="Nombre" margin="normal" variant="outlined" value={ editName } disabled/>
                                 <TextField label="Descripcion" margin="normal" variant="outlined" rowsMax="4" value={ editDescription } onChange={ e => this.editDescriptionChanged(e.target.value) } multiline/>
