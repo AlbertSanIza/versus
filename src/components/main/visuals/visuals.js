@@ -77,9 +77,11 @@ class Competitors extends Component {
         this.props.SocketIO.visualizer({ status: 'isPaused'})
     }
     roundButton = round => {
+        this.setState({ status: 'isMessage' })
         console.log('round', round)
     }
     replicaButton = () => {
+        this.setState({ status: 'isMessage' })
         console.log('replica')
     }
     onTick = () => {
