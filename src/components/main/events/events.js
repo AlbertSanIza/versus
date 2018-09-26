@@ -38,9 +38,12 @@ const styles = theme => ({
 class Event extends Component {
     state = {
         openCreate: false,
+        openEdit: false,
         showSnackbar: false,
         createName: '',
-        createDescription: ''
+        createDescription: '',
+        editName: '',
+        editDescription: ''
     }
     handleOpenCreate = () => {
         this.setState({ openCreate: true })
@@ -54,6 +57,12 @@ class Event extends Component {
     createDescriptionChanged = input => {
         this.setState({ createDescription: input })
     }
+    handleOpenEdit = (editName, editDescription) => {
+      this.setState({ openEdit: true, editName, editDescription })
+    }
+    handleCloseEdit = () => {
+      this.setState({ openEdit: false })
+    }
     handleCreate = () => {
         const { createName, createDescription } = this.state
         var canCreate = this.props.SocketIO.events.events.every(z => {
@@ -66,9 +75,12 @@ class Event extends Component {
             this.setState({ showSnackbar: true })
         }
     }
+    handleEdit = () => {
+        console.log('edit')
+    }
     render() {
         const { classes, SocketIO } = this.props
-        const { openCreate, showSnackbar, createName, createDescription } = this.state
+        const { openCreate, openEdit, showSnackbar, createName, createDescription, editName, editDescription } = this.state
         return(
             <React.Fragment>
                 <Typography variant="display2">Eventos</Typography>
@@ -83,7 +95,7 @@ class Event extends Component {
                     }).map((event, i) => (
                         <Grid item xs={ 12 } key={ i }>
                             <Card>
-                                <CardActionArea style={{ width: '100%' }}>
+                                <CardActionArea style={{ width: '100%' }} onClick={ () => this.handleOpenEdit(event.name, event.description) }>
                                     <CardContent>
                                         <Typography gutterBottom variant="headline" component="h2">{ event.name }</Typography>
                                         <Typography component="p">{ event.description }</Typography>
@@ -110,6 +122,19 @@ class Event extends Component {
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseCreate }>Cancelar</Button>
                             <Button variant="contained" color="primary" onClick={ this.handleCreate } disabled={ !createName }>Guardar</Button>
+                        </DialogActions>
+                    </Dialog>
+                    <Dialog open={ openEdit } onClose={ this.handleCloseEdit } scroll="paper">
+                        <DialogTitle>Editar Evento</DialogTitle>
+                        <DialogContent style={{ width: 300 }}>
+                            <FormControl fullWidth>
+                                <TextField label="Nombre" margin="normal" variant="outlined" value={ editName } disabled/>
+                                <TextField label="Descripcion" margin="normal" variant="outlined" rowsMax="4" value={ editDescription } multiline/>
+                            </FormControl>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button color="primary" onClick={ this.handleCloseEdit }>Cancelar</Button>
+                            <Button variant="contained" color="primary" onClick={ this.handleEdit } disabled>Guardar</Button>
                         </DialogActions>
                     </Dialog>
                 </MuiThemeProvider>
