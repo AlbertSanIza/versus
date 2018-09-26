@@ -36,6 +36,13 @@ const styles = theme => ({
         textShadow: '0px 0px 0px red',
         zIndex: 1
     },
+    message: {
+        fontFamily: 'Caveat Brush',
+        fontSize: '40vh',
+        color: '#eceff1',
+        textShadow: '0px 0px 0px red',
+        zIndex: 1
+    },
     thematic: {
         position: 'absolute',
         bottom: '3%',
@@ -124,9 +131,7 @@ class VersusVisualizer extends Component {
                     if(this.state.status !== '' || this.state.status === 'isMessage') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div>
-                                    { this.state.message }
-                                </div>
+                                <div className={ classes.message }>{ this.state.message }</div>
                             </Fade>
                         )
                     }
