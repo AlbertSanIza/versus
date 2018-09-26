@@ -44,7 +44,11 @@ class Event extends Component {
         createName: '',
         createDescription: '',
         editName: '',
-        editDescription: ''
+        editDescription: '',
+        editSelected: [],
+        columns: [
+            { id: 'name', numeric: false, disablePadding: false, label: 'Nombre' }
+        ]
     }
     handleOpenCreate = () => {
         this.setState({ openCreate: true })
@@ -62,10 +66,10 @@ class Event extends Component {
         this.setState({ editDescription: input })
     }
     handleOpenEdit = (editName, editDescription) => {
-      this.setState({ openEdit: true, editName, editDescription })
+        this.setState({ openEdit: true, editName, editDescription })
     }
     handleCloseEdit = () => {
-      this.setState({ openEdit: false, editName: '', editDescription: '' })
+        this.setState({ openEdit: false, editName: '', editDescription: '' })
     }
     handleCreate = () => {
         const { createName, createDescription } = this.state
@@ -86,7 +90,7 @@ class Event extends Component {
     }
     render() {
         const { classes, SocketIO } = this.props
-        const { openCreate, openEdit, showSnackbar, createName, createDescription, editName, editDescription } = this.state
+        const { openCreate, openEdit, showSnackbar, createName, createDescription, editName, editDescription, columns } = this.state
         return(
             <React.Fragment>
                 <Typography variant="display2">Eventos</Typography>
