@@ -129,7 +129,7 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if(this.state.status !== '' && this.state.status !== 'isPaused' && this.state.text !== '') {
+                    if(this.state.status !== '' && this.state.status !== 'isPaused' && this.state.text !== '' && this.state.text !== 'NULO') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.thematic }>{ this.state.text }</div>
