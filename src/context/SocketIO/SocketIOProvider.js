@@ -14,7 +14,8 @@ class SocketIOProvider extends Component {
                 events: [ ],
                 searchTerm: '',
                 search: e => this.searchEvents(e),
-                create: e => this.createEvent(e)
+                create: e => this.createEditEvent(e),
+                edit: e => this.createEditEvent(e)
             },
             thematics: {
                 thematics: [ ],
@@ -50,8 +51,9 @@ class SocketIOProvider extends Component {
     searchEvents = e => {
         this.setState({ events: { ...this.state.events, searchTerm: e } })
     }
-    createEvent = e => {
-        var events = this.state.events.events.slice()
+    createEditEvent = e => {
+        const { name } = e
+        var events = this.state.events.events.slice().filter(z => z.name !== name)
         events.push(e)
         socket.emit('events', { type: 'set', payload: events })
         this.setState({ events: { ...this.state.events, events: events } })
