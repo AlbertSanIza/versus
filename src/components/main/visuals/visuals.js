@@ -177,7 +177,7 @@ class Competitors extends Component {
                 <br/>
                 <br/>
                 <Grid container spacing={ 16 }>
-                    <Grid item xs={ 8 }>
+                    <Grid item xs={ 12 }>
                         <TextField
                             label="Round"
                             value={ this.state.round }
@@ -190,9 +190,9 @@ class Competitors extends Component {
                             <option>2</option>
                             <option>3</option>
                         </TextField>
-                        <Button variant="contained" color="primary" onClick={ () => this.roundButton(1) }>Round</Button>
+                        <Button variant="contained" color="primary" onClick={ () => this.roundButton(1) } fullWidth>Round</Button>
                     </Grid>
-                    <Grid item xs={ 4 }>
+                    <Grid item xs={ 12 }>
                         <Button variant="contained" color="primary" onClick={ this.replicaButton } fullWidth>Replica</Button>
                     </Grid>
                 </Grid>
