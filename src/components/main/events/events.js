@@ -18,6 +18,7 @@ import Grow from '@material-ui/core/Grow'
 import Card from '@material-ui/core/Card'
 
 import { withSocketIO } from '../../../context'
+import VersusTable from '../VersusTable'
 
 const theme = createMuiTheme({
     palette: {
@@ -136,6 +137,7 @@ class Event extends Component {
                                 <TextField label="Nombre" margin="normal" variant="outlined" value={ editName } disabled/>
                                 <TextField label="Descripcion" margin="normal" variant="outlined" rowsMax="4" value={ editDescription } onChange={ e => this.editDescriptionChanged(e.target.value) } multiline/>
                             </FormControl>
+                            <VersusTable id="name" columns={ columns } data={ SocketIO.competitors.competitors } multiSelect hover/>
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseEdit }>Cancelar</Button>
