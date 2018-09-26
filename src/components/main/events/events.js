@@ -65,8 +65,8 @@ class Event extends Component {
     editDescriptionChanged = input => {
         this.setState({ editDescription: input })
     }
-    handleOpenEdit = (editName, editDescription) => {
-        this.setState({ openEdit: true, editName, editDescription })
+    handleOpenEdit = (editName, editDescription, editSelected) => {
+        this.setState({ openEdit: true, editName, editDescription, editSelected })
     }
     handleCloseEdit = () => {
         this.setState({ openEdit: false, editName: '', editDescription: '' })
@@ -105,7 +105,7 @@ class Event extends Component {
                     }).map((event, i) => (
                         <Grid item xs={ 12 } key={ i }>
                             <Card>
-                                <CardActionArea style={{ width: '100%' }} onClick={ () => this.handleOpenEdit(event.name, event.description) }>
+                                <CardActionArea style={{ width: '100%' }} onClick={ () => this.handleOpenEdit(event.name, event.description, event.selected) }>
                                     <CardContent>
                                         <Typography gutterBottom variant="headline" component="h2">{ event.name }</Typography>
                                         <Typography component="p">{ event.description }</Typography>
