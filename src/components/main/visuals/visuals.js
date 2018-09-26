@@ -52,13 +52,17 @@ class Competitors extends Component {
     state = {
         status: '',
         seconds: '',
-        text: ''
+        text: '',
+        round: 1
     }
     inputHandleChange = e => {
         this.setState({ seconds: e.target.value })
     }
     inputTextHandleChange = e => {
         this.setState({ text: e.target.value })
+    }
+    inputRoundHandleChange = e => {
+        this.setState({ round: e.target.value })
     }
     setButton = () => {
         this.setState({ status: 'isSet' })
@@ -174,7 +178,19 @@ class Competitors extends Component {
                 <br/>
                 <Grid container spacing={ 16 }>
                     <Grid item xs={ 8 }>
-                        <Button variant="contained" color="primary" onClick={ () => this.roundButton(1) } fullWidth>Round 1</Button>
+                        <TextField
+                            label="Round"
+                            value={ this.state.round }
+                            onChange={ this.inputRoundHandleChange }
+                            SelectProps={{ native: true }}
+                            margin="normal"
+                            variant="outlined"
+                            select fullWidth>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </TextField>
+                        <Button variant="contained" color="primary" onClick={ () => this.roundButton(1) }>Round</Button>
                     </Grid>
                     <Grid item xs={ 4 }>
                         <Button variant="contained" color="primary" onClick={ this.replicaButton } fullWidth>Replica</Button>
