@@ -7,6 +7,7 @@ import FormControl from '@material-ui/core/FormControl'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
+import TextField from '@material-ui/core/TextField'
 import CreateIcon from '@material-ui/icons/Create'
 import Snackbar from '@material-ui/core/Snackbar'
 import red from '@material-ui/core/colors/red'
@@ -32,10 +33,6 @@ const styles = theme => ({
         bottom: 20,
         left: 'auto',
         position: 'fixed'
-    },
-    paperContent: {
-        padding: 3,
-        textAlign: 'center'
     }
 })
 
@@ -43,16 +40,20 @@ class Event extends Component {
     state = {
         openCreate: false,
         showSnackbar: false,
-        createName: ''
+        createName: '',
+        createDescription: ''
     }
     handleOpenCreate = () => {
         this.setState({ openCreate: true })
     }
     handleCloseCreate = () => {
-        this.setState({ openCreate: false, createName: '' })
+        this.setState({ openCreate: false, createName: '', createDescription: '' })
     }
-    createTermChanged = input => {
+    createNameChanged = input => {
         this.setState({ createName: input })
+    }
+    createDescriptionChanged = input => {
+        this.setState({ createDescription: input })
     }
     handleCreate = () => {
         const { createName } = this.state
@@ -68,7 +69,7 @@ class Event extends Component {
     }
     render() {
         const { classes, SocketIO } = this.props
-        const { openCreate, showSnackbar, createName } = this.state
+        const { openCreate, showSnackbar, createName, createDescription } = this.state
         return(
             <React.Fragment>
                 <Typography variant="display2" gutterBottom>Eventos</Typography>
@@ -101,9 +102,10 @@ class Event extends Component {
                     </Grow>
                     <Dialog open={ openCreate } onClose={ this.handleCloseCreate } scroll="paper">
                         <DialogTitle>Nuevo Evento</DialogTitle>
-                        <DialogContent>
+                        <DialogContent style={{ width: 300 }}>
                             <FormControl fullWidth>
-                                <Input placeholder="Nombre" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }></Input>
+                                <TextField label="Nombre" margin="normal" variant="outlined" value={ createName } onChange={ e => this.createNameChanged(e.target.value) }/>
+                                <TextField label="Descripcion" margin="normal" variant="outlined" value={ createDescription } onChange={ e => this.createDescriptionChanged(e.target.value) }/>
                             </FormControl>
                         </DialogContent>
                         <DialogActions>
