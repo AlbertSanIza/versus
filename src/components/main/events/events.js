@@ -105,7 +105,7 @@ class Event extends Component {
                         <DialogContent style={{ width: 300 }}>
                             <FormControl fullWidth>
                                 <TextField label="Nombre" margin="normal" variant="outlined" value={ createName } onChange={ e => this.createNameChanged(e.target.value) }/>
-                                <TextField label="Descripcion" margin="normal" variant="outlined" value={ createDescription } onChange={ e => this.createDescriptionChanged(e.target.value) }/>
+                                <TextField label="Descripcion" margin="normal" variant="outlined" rowsMax="4" value={ createDescription } onChange={ e => this.createDescriptionChanged(e.target.value) } multiline/>
                             </FormControl>
                         </DialogContent>
                         <DialogActions>
