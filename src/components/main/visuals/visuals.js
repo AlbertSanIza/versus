@@ -201,6 +201,7 @@ class Competitors extends Component {
                             SelectProps={{ native: true }}
                             margin="normal"
                             variant="outlined"
+                            disabled={ this.state.status === 'isMessage' }
                             select fullWidth>
                             <option>1</option>
                             <option>2</option>
