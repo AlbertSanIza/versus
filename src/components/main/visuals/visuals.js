@@ -152,6 +152,26 @@ class Competitors extends Component {
                                 )) }
                             </TextField>
                         </Grid>
+                        <Grid item xs={ 6 }>
+                            <TextField
+                                label="Round"
+                                value={ this.state.round }
+                                onChange={ this.inputRoundHandleChange }
+                                SelectProps={{ native: true }}
+                                variant="outlined"
+                                disabled={ this.state.status === 'isMessage' }
+                                select fullWidth>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </TextField>
+                        </Grid>
+                        <Grid item xs={ 3 }>
+                            <Button variant="contained" color="primary" size="large" style={{ marginTop: 8 }} onClick={ this.roundButton } disabled={ this.state.status === 'isMessage' } fullWidth>Round</Button>
+                        </Grid>
+                        <Grid item xs={ 3 }>
+                            <Button variant="contained" color="primary" size="large" style={{ marginTop: 8 }} onClick={ this.replicaButton } disabled={ this.state.status === 'isMessage' } fullWidth>Replica</Button>
+                        </Grid>
                     </Grid>
                 </MuiThemeProvider>
                 <Grid container spacing={ 16 }>
@@ -197,32 +217,6 @@ class Competitors extends Component {
                         }
                     })()}
                 </Grid>
-                <br/>
-                <br/>
-                <br/>
-                <Grid container spacing={ 16 }>
-                    <Grid item xs={ 12 }>
-                        <TextField
-                            label="Round"
-                            value={ this.state.round }
-                            onChange={ this.inputRoundHandleChange }
-                            SelectProps={{ native: true }}
-                            margin="normal"
-                            variant="outlined"
-                            disabled={ this.state.status === 'isMessage' }
-                            select fullWidth>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </TextField>
-                        <Button variant="contained" color="primary" onClick={ this.roundButton } disabled={ this.state.status === 'isMessage' } fullWidth>Round</Button>
-                    </Grid>
-                    <Grid item xs={ 12 }>
-                        <Button variant="contained" color="primary" onClick={ this.replicaButton } disabled={ this.state.status === 'isMessage' } fullWidth>Replica</Button>
-                    </Grid>
-                </Grid>
-                <br/>
-                <br/>
                 <Grow in={ true } timeout={ 500 }>
                     <a href="#/" target="_blank" rel="noopener noreferrer">
                         <Button variant="fab" className={ classes.fab } onClick={ this.handleOpenCreate } color="primary">
