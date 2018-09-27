@@ -69,6 +69,15 @@ class Competitors extends Component {
     }
     inputEventHandleChange = e => {
         this.setState({ event: e.target.value })
+        if(e.target.value === 'NULO') {
+            this.setState({ competitorONE: 'NULO', competitorTWO: 'NULO' })
+        }
+    }
+    inputCompetitorONEHandleChange = e => {
+        this.setState({ competitorONE: e.target.value })
+    }
+    inputCompetitorTWOHandleChange = e => {
+        this.setState({ competitorTWO: e.target.value })
     }
     setButton = () => {
         this.setState({ status: 'isSet' })
