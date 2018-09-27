@@ -52,7 +52,10 @@ class Competitors extends Component {
         status: '',
         seconds: '',
         text: 'NULO',
-        round: 1
+        round: 1,
+        event: 'NULO',
+        competitorONE: 'NULO',
+        competitorTWO: 'NULO'
     }
     inputHandleChange = e => {
         this.setState({ seconds: e.target.value })
