@@ -227,15 +227,49 @@ class Competitors extends Component {
                                         <Button variant="contained" color="primary" onClick={ this.resetButton } fullWidth>Cancelar</Button>
                                     </Grid>
                                     <Grid item xs={ 6 }>
+                        {(() => {
+                            switch (this.state.status) {
+                                case '':
+                                return (
+                                    <Grid item xs={ 12 }>
                                         <Button variant="contained" color="secondary" className={ classes.button } onClick={ this.setButton } disabled={ !this.state.seconds || this.state.seconds < 5 } fullWidth>Mostrar</Button>
                                     </Grid>
-                                </React.Fragment>
-                            )
-                            default:
-                            return null
-                        }
-                    })()}
-                </Grid>
+                                )
+                                case 'isSet':
+                                case 'isPaused':
+                                return (
+                                    <React.Fragment>
+                                        <Grid item xs={ 6 }>
+                                            <Button variant="contained" color="primary" onClick={ this.resetButton } fullWidth>Cancelar</Button>
+                                        </Grid>
+                                        <Grid item xs={ 6 }>
+                                            <Button variant="contained" color="secondary" onClick={ this.startButton } fullWidth>Iniciar</Button>
+                                        </Grid>
+                                    </React.Fragment>
+                                )
+                                case 'isStart':
+                                return (
+                                    <Grid item xs={ 12 }>
+                                        <Button variant="contained" color="primary" onClick={ this.pauseButton } fullWidth>Puasar</Button>
+                                    </Grid>
+                                )
+                                case 'isMessage':
+                                return (
+                                    <React.Fragment>
+                                        <Grid item xs={ 6 }>
+                                            <Button variant="contained" color="primary" onClick={ this.resetButton } fullWidth>Cancelar</Button>
+                                        </Grid>
+                                        <Grid item xs={ 6 }>
+                                            <Button variant="contained" color="secondary" className={ classes.button } onClick={ this.setButton } disabled={ !this.state.seconds || this.state.seconds < 5 } fullWidth>Mostrar</Button>
+                                        </Grid>
+                                    </React.Fragment>
+                                )
+                                default:
+                                return null
+                            }
+                        })() }
+                    </Grid>
+                </MuiThemeProvider>
                 <Grow in={ true } timeout={ 500 }>
                     <a href="#/" target="_blank" rel="noopener noreferrer">
                         <Button variant="fab" className={ classes.fab } onClick={ this.handleOpenCreate } color="primary">
