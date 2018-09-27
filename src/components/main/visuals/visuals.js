@@ -67,6 +67,9 @@ class Competitors extends Component {
     inputRoundHandleChange = e => {
         this.setState({ round: e.target.value })
     }
+    inputEventHandleChange = e => {
+        this.setState({ event: e.target.value })
+    }
     setButton = () => {
         this.setState({ status: 'isSet' })
         this.props.SocketIO.visualizer({ status: 'isSet', seconds: this.state.seconds, text: this.state.text })
@@ -191,24 +194,25 @@ class Competitors extends Component {
                                 Replica
                             </Button>
                         </Grid>
-                    </Grid>
-                </MuiThemeProvider>
-                <Grid container spacing={ 16 }>
-                    {(() => {
-                        switch (this.state.status) {
-                            case '':
-                            return (
-                                <Grid item xs={ 12 }>
-                                    <Button variant="contained" color="secondary" className={ classes.button } onClick={ this.setButton } disabled={ !this.state.seconds || this.state.seconds < 5 } fullWidth>Mostrar</Button>
-                                </Grid>
-                            )
-                            case 'isSet':
-                            case 'isPaused':
-                            return (
-                                <React.Fragment>
-                                    <Grid item xs={ 6 }>
-                                        <Button variant="contained" color="primary" onClick={ this.resetButton } fullWidth>Cancelar</Button>
-                                    </Grid>
+                        <Grid item xs={ 12 }>
+                            <TextField
+                                label="Evento"
+                                variant="outlined"
+                                value={ this.state.event }
+                                SelectProps={{ native: true }}
+                                onChange={ this.inputEventHandleChange }
+                                select fullWidth>
+                                <option value="NULO">Ninguno</option>
+                                { SocketIO.events.events.map(option => (
+                                    <option key={ option.name } value={ option.value }>
+                                        { option.name }
+                                    </option>
+                                )) }
+                            </TextField>
+                        </Grid>
+                        {(() => {
+                            if(this.state.event !== 'NULO') {
+                                return (
                                     <Grid item xs={ 6 }>
                                         <Button variant="contained" color="secondary" onClick={ this.startButton } fullWidth>Iniciar</Button>
                                     </Grid>
