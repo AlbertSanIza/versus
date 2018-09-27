@@ -59,7 +59,7 @@ class Competitors extends Component {
     }
     inputTextHandleChange = e => {
         this.setState({ text: e.target.value })
-        this.props.SocketIO.visualizer({ text: '' })
+        this.props.SocketIO.visualizer({ text: 'NULO' })
     }
     inputRoundHandleChange = e => {
         this.setState({ round: e.target.value })
@@ -83,19 +83,19 @@ class Competitors extends Component {
     roundButton = () => {
         const { round } = this.state
         this.setState({ status: 'isMessage' })
-        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Round #' + round, text: '' })
+        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Round #' + round })
     }
     replicaButton = () => {
         this.setState({ status: 'isMessage' })
-        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Replica!', text: '' })
+        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Replica!' })
     }
     onTick = () => {
         this.setState({ seconds: this.state.seconds - 1 })
         this.props.SocketIO.visualizer({ seconds: this.state.seconds, text: this.state.text })
     }
     onComplete = () => {
-        this.setState({ status: '', seconds: '', text: '' })
-        this.props.SocketIO.visualizer({ status: '', seconds: '', text: '' })
+        this.setState({ status: '', seconds: '', text: 'NULO' })
+        this.props.SocketIO.visualizer({ status: '', seconds: '', text: 'NULO' })
     }
     render() {
         const { classes, SocketIO } = this.props
