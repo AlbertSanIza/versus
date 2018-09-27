@@ -218,6 +218,8 @@ class Competitors extends Component {
                         <Button variant="contained" color="primary" onClick={ this.replicaButton } disabled={ this.state.status === 'isMessage' } fullWidth>Replica</Button>
                     </Grid>
                 </Grid>
+                <br/>
+                <br/>
                 <Grow in={ true } timeout={ 500 }>
                     <a href="#/" target="_blank" rel="noopener noreferrer">
                         <Button variant="fab" className={ classes.fab } onClick={ this.handleOpenCreate } color="primary">
