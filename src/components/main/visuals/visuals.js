@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { withStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
+import Checkbox from '@material-ui/core/Checkbox'
 import red from '@material-ui/core/colors/red'
 import Button from '@material-ui/core/Button'
 import Timer from '@material-ui/icons/Timer'
@@ -203,7 +205,7 @@ class Competitors extends Component {
                                 Replica
                             </Button>
                         </Grid>
-                        <Grid item xs={ 12 }>
+                        <Grid item xs={ 8 }>
                             <TextField
                                 label="Evento"
                                 variant="outlined"
@@ -218,6 +220,12 @@ class Competitors extends Component {
                                     </option>
                                 )) }
                             </TextField>
+                        </Grid>
+                        <Grid item xs={ 4 }>
+                            <FormControlLabel
+                                style={{ marginTop: 5 }}
+                                label="Mostrar Competidores"
+                                control={ <Checkbox value="checkedA" checked={ this.state.checkedA }/> }/>
                         </Grid>
                         {(() => {
                             if(this.state.event !== 'NULO') {
