@@ -128,7 +128,6 @@ class Competitors extends Component {
                             <TextField
                                 type="number"
                                 label="Tiempo"
-                                margin="normal"
                                 value={ this.state.seconds }
                                 onChange={ this.inputHandleChange }
                                 disabled={ this.state.status !== '' && this.state.status !== 'isMessage' }
@@ -138,7 +137,6 @@ class Competitors extends Component {
                         <Grid item xs={ 6 }>
                             <TextField
                                 label="Tema"
-                                margin="normal"
                                 variant="outlined"
                                 value={ this.state.text }
                                 onChange={ this.inputTextHandleChange }
@@ -167,10 +165,10 @@ class Competitors extends Component {
                             </TextField>
                         </Grid>
                         <Grid item xs={ 3 }>
-                            <Button variant="contained" color="primary" size="large" style={{ marginTop: 8 }} onClick={ this.roundButton } disabled={ this.state.status === 'isMessage' } fullWidth>Round</Button>
+                            <Button variant="contained" color="primary" size="large" style={{ marginTop: 7 }} onClick={ this.roundButton } disabled={ this.state.status === 'isMessage' } fullWidth>Round</Button>
                         </Grid>
                         <Grid item xs={ 3 }>
-                            <Button variant="contained" color="primary" size="large" style={{ marginTop: 8 }} onClick={ this.replicaButton } disabled={ this.state.status === 'isMessage' } fullWidth>Replica</Button>
+                            <Button variant="contained" color="primary" size="large" style={{ marginTop: 7 }} onClick={ this.replicaButton } disabled={ this.state.status === 'isMessage' } fullWidth>Replica</Button>
                         </Grid>
                     </Grid>
                 </MuiThemeProvider>
