@@ -66,7 +66,7 @@ class Event extends Component {
         this.setState({ editDescription: input })
     }
     handleOpenEdit = (editName, editDescription, editSelected) => {
-        this.setState({ openEdit: true, editName, editDescription, editSelected })
+        this.setState({ openEdit: true, editName, editDescription, editSelected: editSelected ? editSelected : [] })
     }
     handleCloseEdit = () => {
         this.setState({ openEdit: false, editName: '', editDescription: '', editSelected: [] })
