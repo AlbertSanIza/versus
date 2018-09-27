@@ -166,9 +166,9 @@ class Competitors extends Component {
                         </Grid>
                         <Grid item xs={ 3 }>
                             <Button
-                                variant="contained"
-                                color="primary"
                                 size="large"
+                                color="primary"
+                                variant="contained"
                                 style={{ marginTop: 7 }}
                                 onClick={ this.roundButton }
                                 disabled={ this.state.status === 'isMessage' }
@@ -178,9 +178,9 @@ class Competitors extends Component {
                         </Grid>
                         <Grid item xs={ 3 }>
                             <Button
-                                variant="contained"
-                                color="primary"
                                 size="large"
+                                color="primary"
+                                variant="contained"
                                 style={{ marginTop: 7 }}
                                 onClick={ this.replicaButton }
                                 disabled={ this.state.status === 'isMessage' }
