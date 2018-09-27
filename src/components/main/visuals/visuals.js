@@ -124,22 +124,25 @@ class Competitors extends Component {
                 </Typography>
                 <MuiThemeProvider theme={ theme }>
                     <Grid container spacing={ 16 }>
-                        <Grid item xs={ 12 }>
+                        <Grid item xs={ 6 }>
                             <TextField
                                 type="number"
                                 label="Tiempo"
+                                margin="normal"
                                 value={ this.state.seconds }
                                 onChange={ this.inputHandleChange }
                                 disabled={ this.state.status !== '' && this.state.status !== 'isMessage' }
                                 InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>), endAdornment: (<InputAdornment position="end">Segundos</InputAdornment>) }}
                                 fullWidth/>
+                        </Grid>
+                        <Grid item xs={ 6 }>
                             <TextField
                                 label="Tema"
+                                margin="normal"
+                                variant="outlined"
                                 value={ this.state.text }
                                 onChange={ this.inputTextHandleChange }
                                 SelectProps={{ native: true }}
-                                margin="normal"
-                                variant="outlined"
                                 select fullWidth>
                                 <option value="NULO">Ninguno</option>
                                 { SocketIO.thematics.thematics.map(option => (
