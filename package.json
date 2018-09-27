@@ -10,8 +10,8 @@
     "devDependencies": {
         "@material-ui/core": "^3.1.1",
         "@material-ui/icons": "^3.0.1",
-        "ajv": "^6.5.3",
-        "electron": "^2.0.8",
+        "ajv": "^6.5.4",
+        "electron": "^2.0.10",
         "foreman": "^3.0.1",
         "particles.js": "^2.0.0",
         "react": "^16.5.2",
