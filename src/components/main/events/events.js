@@ -77,7 +77,7 @@ class Event extends Component {
             return z.name.toLowerCase() !== createName.toLowerCase()
         })
         if(canCreate) {
-            this.props.SocketIO.events.create({ name: createName, description: createDescription })
+            this.props.SocketIO.events.create({ name: createName, description: createDescription, selected: [] })
             this.handleCloseCreate()
         } else {
             this.setState({ showSnackbar: true })
