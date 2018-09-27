@@ -223,23 +223,56 @@ class Competitors extends Component {
                             if(this.state.event !== 'NULO') {
                                 return (
                                     <Grid item xs={ 6 }>
-                                        <Button variant="contained" color="secondary" onClick={ this.startButton } fullWidth>Iniciar</Button>
+                                        <TextField
+                                            label="Competidor #1"
+                                            variant="outlined"
+                                            SelectProps={{ native: true }}
+                                            value={ this.state.competitorONE }
+                                            disabled={ this.state.event === 'NULO' }
+                                            onChange={ this.inputCompetitorONEHandleChange }
+                                            select fullWidth>
+                                            <option value="NULO">Ninguno</option>
+                                            { SocketIO.events.events.filter(event => {
+                                                return event.name === this.state.event
+                                            })[0].selected.filter(name => {
+                                                return name !== this.state.competitorTWO
+                                            }).map((option, index) => (
+                                                <option key={ index } value={ option }>
+                                                    { option }
+                                                </option>
+                                            )) }
+                                        </TextField>
                                     </Grid>
-                                </React.Fragment>
-                            )
-                            case 'isStart':
-                            return (
-                                <Grid item xs={ 12 }>
-                                    <Button variant="contained" color="primary" onClick={ this.pauseButton } fullWidth>Puasar</Button>
-                                </Grid>
-                            )
-                            case 'isMessage':
-                            return (
-                                <React.Fragment>
+                                )
+                            }
+                        })() }
+                        {(() => {
+                            if(this.state.event !== 'NULO') {
+                                return (
                                     <Grid item xs={ 6 }>
-                                        <Button variant="contained" color="primary" onClick={ this.resetButton } fullWidth>Cancelar</Button>
+                                        <TextField
+                                            label="Competidor #2"
+                                            variant="outlined"
+                                            SelectProps={{ native: true }}
+                                            value={ this.state.competitorTWO }
+                                            disabled={ this.state.event === 'NULO' }
+                                            onChange={ this.inputCompetitorTWOHandleChange }
+                                            select fullWidth>
+                                            <option value="NULO">Ninguno</option>
+                                            { SocketIO.events.events.filter(event => {
+                                                return event.name === this.state.event
+                                            })[0].selected.filter(name => {
+                                                return name !== this.state.competitorONE
+                                            }).map((option, index) => (
+                                                <option key={ index } value={ option }>
+                                                    { option }
+                                                </option>
+                                            )) }
+                                        </TextField>
                                     </Grid>
-                                    <Grid item xs={ 6 }>
+                                )
+                            }
+                        })() }
                         {(() => {
                             switch (this.state.status) {
                                 case '':
