@@ -153,10 +153,10 @@ class Competitors extends Component {
                         <Grid item xs={ 6 }>
                             <TextField
                                 label="Round"
-                                value={ this.state.round }
-                                onChange={ this.inputRoundHandleChange }
-                                SelectProps={{ native: true }}
                                 variant="outlined"
+                                value={ this.state.round }
+                                SelectProps={{ native: true }}
+                                onChange={ this.inputRoundHandleChange }
                                 disabled={ this.state.status === 'isMessage' }
                                 select fullWidth>
                                 <option>1</option>
@@ -165,10 +165,28 @@ class Competitors extends Component {
                             </TextField>
                         </Grid>
                         <Grid item xs={ 3 }>
-                            <Button variant="contained" color="primary" size="large" style={{ marginTop: 7 }} onClick={ this.roundButton } disabled={ this.state.status === 'isMessage' } fullWidth>Round</Button>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                size="large"
+                                style={{ marginTop: 7 }}
+                                onClick={ this.roundButton }
+                                disabled={ this.state.status === 'isMessage' }
+                                fullWidth>
+                                Round
+                            </Button>
                         </Grid>
                         <Grid item xs={ 3 }>
-                            <Button variant="contained" color="primary" size="large" style={{ marginTop: 7 }} onClick={ this.replicaButton } disabled={ this.state.status === 'isMessage' } fullWidth>Replica</Button>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                size="large"
+                                style={{ marginTop: 7 }}
+                                onClick={ this.replicaButton }
+                                disabled={ this.state.status === 'isMessage' }
+                                fullWidth>
+                                Replica
+                            </Button>
                         </Grid>
                     </Grid>
                 </MuiThemeProvider>
