@@ -74,7 +74,7 @@ class Thematics extends Component {
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <TextField label="Busqueda" margin="normal" variant="outlined" value={ SocketIO.thematics.searchTerm } onChange={ e => SocketIO.thematics.search(e.target.value) }/>
+                            <TextField id="Busqueda" label="Busqueda" margin="normal" variant="outlined" value={ SocketIO.thematics.searchTerm } onChange={ e => SocketIO.thematics.search(e.target.value) }/>
                         </FormControl>
                     </Grid>
                     { SocketIO.thematics.thematics.filter(z => {
@@ -99,7 +99,7 @@ class Thematics extends Component {
                         <DialogTitle>Nueva Tematica</DialogTitle>
                         <DialogContent style={{ width: 300 }}>
                             <FormControl fullWidth>
-                                <TextField label="Nombre" margin="normal" variant="outlined" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }/>
+                                <TextField id="Nombre" label="Nombre" margin="normal" variant="outlined" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }/>
                             </FormControl>
                         </DialogContent>
                         <DialogActions>

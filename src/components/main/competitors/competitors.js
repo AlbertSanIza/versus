@@ -92,7 +92,7 @@ class Competitors extends Component {
                 <Grid container spacing={ 16 }>
                     <Grid item sm={ 12 }>
                         <FormControl fullWidth>
-                            <TextField label="Busqueda" margin="normal" variant="outlined" value={ SocketIO.competitors.searchTerm } onChange={ e => SocketIO.competitors.search(e.target.value) }/>
+                            <TextField id="Busqueda" label="Busqueda" margin="normal" variant="outlined" value={ SocketIO.competitors.searchTerm } onChange={ e => SocketIO.competitors.search(e.target.value) }/>
                         </FormControl>
                     </Grid>
                     { SocketIO.competitors.competitors.filter(z => {
@@ -121,7 +121,7 @@ class Competitors extends Component {
                         <DialogTitle>Nuevo Competidor</DialogTitle>
                         <DialogContent>
                             <FormControl fullWidth>
-                                <TextField label="Nombre" margin="normal" variant="outlined" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }/>
+                                <TextField id="Nombre" label="Nombre" margin="normal" variant="outlined" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }/>
                             </FormControl>
                             <ImageDropZone anySize showButton width={ 312 } height={ 250 } imagePicked={ image => this.setState({ createImage: image }) }/>
                         </DialogContent>
