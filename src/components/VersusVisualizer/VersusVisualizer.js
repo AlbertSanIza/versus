@@ -19,7 +19,8 @@ const styles = theme => ({
         color: 'white',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        overflow: 'hidden'
     },
     header: {
         position: 'absolute',
