@@ -57,7 +57,9 @@ class Competitors extends Component {
         round: 1,
         event: 'NULO',
         competitorONE: 'NULO',
-        competitorTWO: 'NULO'
+        competitorTWO: 'NULO',
+        competitorONEObject: { },
+        competitorTWOObject: { }
     }
     inputHandleChange = e => {
         this.setState({ seconds: e.target.value })
@@ -76,10 +78,16 @@ class Competitors extends Component {
         }
     }
     inputCompetitorONEHandleChange = e => {
-        this.setState({ competitorONE: e.target.value })
+        this.setState({
+            competitorONE: e.target.value,
+            competitorONEObject: this.props.SocketIO.competitors.competitors.filter(competitor => competitor.name === e.target.value)[0]
+        })
     }
     inputCompetitorTWOHandleChange = e => {
-        this.setState({ competitorTWO: e.target.value })
+        this.setState({
+            competitorTWO: e.target.value,
+            competitorONEObject: this.props.SocketIO.competitors.competitors.filter(competitor => competitor.name === e.target.value)[0]
+        })
     }
     setButton = () => {
         this.setState({ status: 'isSet' })
