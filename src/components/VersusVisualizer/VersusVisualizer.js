@@ -103,10 +103,16 @@ const style = {
     competitor: {
         position: 'absolute',
         width: '50%',
-        height: '100%',
+        height: '100%'
+    },
+    competitorImage: {
+        position: 'relative',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        backgroundSize: 'cover'
+        backgroundSize: 'cover',
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'blue'
     }
 }
 
@@ -194,12 +200,12 @@ class VersusVisualizer extends Component {
                         )
                     }
                 })() }
-                <div style={ Object.assign({ }, { left: 'calc(0px - 10%)',
-                    background: 'url(http://localhost:12345/img/aczino1538112562133.png), linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1))'
-                }, style.competitor) }/>
-                <div style={ Object.assign({ }, { right: 'calc(0px - 10%)',
-                    backgroundImage: `url(http://localhost:12345/img/aczino1538112562133.png)`,
-                }, style.competitor) }/>
+                <div style={ Object.assign({}, { left: 'calc(0px - 10%)', WebkitMaskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 60%)' }, style.competitor) }>
+                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://localhost:12345/img/albert1537927244686.png)` }) }/>
+                </div>
+                <div style={ Object.assign({}, { right: 'calc(0px - 10%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 60%)' }, style.competitor) }>
+                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://localhost:12345/img/albert1537927244686.png)` }) }/>
+                </div>
             </div>
         )
     }
