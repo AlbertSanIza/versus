@@ -23,9 +23,9 @@ if(!fs.existsSync(tempImg)) {
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 900,
-        height: 600,
+        height: 680,
         minWidth: 900,
-        minHeight: 600,
+        minHeight: 680,
         useContentSize: true,
         show: false
     })
