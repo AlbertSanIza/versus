@@ -99,6 +99,17 @@ const styles = theme => ({
     }
 })
 
+const style = {
+    competitor: {
+        position: 'absolute',
+        width: '50%',
+        height: '100%',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+    }
+}
+
 class VersusVisualizer extends Component {
     constructor(props) {
         super(props)
@@ -183,6 +194,12 @@ class VersusVisualizer extends Component {
                         )
                     }
                 })() }
+                <div style={ Object.assign({ }, { left: 'calc(0px - 10%)',
+                    background: 'url(http://localhost:12345/img/aczino1538112562133.png), linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1))'
+                }, style.competitor) }/>
+                <div style={ Object.assign({ }, { right: 'calc(0px - 10%)',
+                    backgroundImage: `url(http://localhost:12345/img/aczino1538112562133.png)`,
+                }, style.competitor) }/>
             </div>
         )
     }
