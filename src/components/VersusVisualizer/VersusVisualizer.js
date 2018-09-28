@@ -68,6 +68,20 @@ const styles = theme => ({
         maxHeight: '80%',
         zIndex: 1
     },
+    logoCenterBigContainer: {
+        position: 'absolute',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        height: '100%'
+    },
+    logoCenterBig: {
+        maxWidth: '99%',
+        maxHeight: '99%',
+        zIndex: 1,
+        opacity: 0.1
+    },
     bdmLogo: {
         float: 'left',
         marginTop: '3%',
@@ -126,6 +140,17 @@ class VersusVisualizer extends Component {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <img className={ classes.logoCenter } src={ bdm_logo } alt="LOGO"/>
+                            </Fade>
+                        )
+                    }
+                })() }
+                { (() => {
+                    if(status !== '' && status !== 'isPaused') {
+                        return (
+                            <Fade in={ true } timeout={ 1000 }>
+                                <div className={ classes.logoCenterBigContainer }>
+                                    <img className={ classes.logoCenterBig } src={ bdm_logo } alt="LOGO"/>
+                                </div>
                             </Fade>
                         )
                     }
