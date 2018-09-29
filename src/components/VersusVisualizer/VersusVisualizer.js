@@ -146,7 +146,9 @@ class VersusVisualizer extends Component {
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.header }>
                                     <img className={ classes.bdmLogo } src={ bdm_logo } alt="BDM Logo"/>
-                                    <img className={ classes.pumaLogo } src={ puma_logo } alt="Puma Logo"/>
+                                    { /*
+                                        <img className={ classes.pumaLogo } src={ puma_logo } alt="Puma Logo"/>
+                                    */ }
                                 </div>
                             </Fade>
                         )
