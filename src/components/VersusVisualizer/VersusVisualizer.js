@@ -65,8 +65,8 @@ const styles = theme => ({
         overflow: 'hidden'
     },
     logoCenter: {
-        maxWidth: '80%',
-        maxHeight: '80%',
+        maxWidth: '99%',
+        maxHeight: '99%',
         zIndex: 1
     },
     logoCenterBigContainer: {
@@ -164,7 +164,7 @@ class VersusVisualizer extends Component {
                 { (() => {
                     if(status !== '' && status !== 'isPaused') {
                         return (
-                            <Fade in={ true } timeout={ 1000 }>
+                            <Fade in={ true } timeout={ 1500 }>
                                 <div className={ classes.logoCenterBigContainer }>
                                     <img className={ classes.logoCenterBig } src={ bdm_logo } alt="LOGO"/>
                                 </div>
