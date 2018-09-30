@@ -50,7 +50,7 @@ const styles = theme => ({
     },
     thematic: {
         position: 'absolute',
-        bottom: '3%',
+        bottom: '1%',
         left: 0,
         width: '100%',
         fontFamily: 'Caveat Brush',
@@ -58,7 +58,8 @@ const styles = theme => ({
         color: '#eceff1',
         textShadow: '0px 0px 0px red',
         zIndex: 1,
-        textAlign: 'center'
+        textAlign: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)'
     },
     particles: {
         position: 'absolute',
