@@ -172,17 +172,6 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if(status !== '' && status !== 'isPaused') {
-                        return (
-                            <Fade in={ true } timeout={ 1500 }>
-                                <div className={ classes.logoCenterBigContainer }>
-                                    <img className={ classes.logoCenterBig } src={ bdm_logo } alt="LOGO"/>
-                                </div>
-                            </Fade>
-                        )
-                    }
-                })() }
-                { (() => {
                     if(status === 'isMessage') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
