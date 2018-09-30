@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Fade from '@material-ui/core/Fade'
 import io from 'socket.io-client'
 import 'particles.js/particles'
-import puma_logo from './puma.png'
+// import puma_logo from './puma.png'
 import bdm_logo from './bdm-min.png'
 
 const socket = io('http://' + window.location.hostname + ':12345')
