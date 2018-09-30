@@ -122,7 +122,9 @@ class VersusVisualizer extends Component {
             status: '',
             seconds: '',
             text: '',
-            message: ''
+            message: '',
+            competitorONEObject: {},
+            competitorTWOObject: {}
         }
         socket.on('visualizer', msg => {
             this.setState(msg)
