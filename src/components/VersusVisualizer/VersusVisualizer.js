@@ -201,16 +201,28 @@ class VersusVisualizer extends Component {
                         )
                     }
                 })() }
-                <Fade in={ true } timeout={ 2000 }>
-                    <div style={ Object.assign({}, { left: 'calc(0px - 10%)', WebkitMaskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 60%)' }, style.competitor) }>
-                        <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://localhost:12345/img/albert1537927244686.png)` }) }/>
-                    </div>
-                </Fade>
-                <Fade in={ true } timeout={ 2000 }>
-                    <div style={ Object.assign({}, { right: 'calc(0px - 10%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 60%)' }, style.competitor) }>
-                        <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://localhost:12345/img/albert1537927244686.png)` }) }/>
-                    </div>
-                </Fade>
+                { (() => {
+                    if(status === 'isSet' || status === 'isStart') {
+                        return (
+                            <Fade in={ true } timeout={ 2000 }>
+                                <div style={ Object.assign({}, { left: 'calc(0px - 10%)', WebkitMaskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 60%)' }, style.competitor) }>
+                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://localhost:12345/img/albert1537927244686.png)` }) }/>
+                                </div>
+                            </Fade>
+                        )
+                    }
+                })() }
+                { (() => {
+                    if(status === 'isSet' || status === 'isStart') {
+                        return (
+                            <Fade in={ true } timeout={ 2000 }>
+                                <div style={ Object.assign({}, { right: 'calc(0px - 10%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 60%)' }, style.competitor) }>
+                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://localhost:12345/img/albert1537927244686.png)` }) }/>
+                                </div>
+                            </Fade>
+                        )
+                    }
+                })() }
             </div>
         )
     }
