@@ -79,15 +79,17 @@ class Competitors extends Component {
         }
     }
     inputCompetitorONEHandleChange = e => {
+        var competidor = this.props.SocketIO.competitors.competitors.filter(competitor => competitor.name === e.target.value)
         this.setState({
             competitorONE: e.target.value,
-            competitorONEObject: this.props.SocketIO.competitors.competitors.filter(competitor => competitor.name === e.target.value)[0]
+            competitorONEObject: competidor.length > 0 ? competidor[0] : { }
         })
     }
     inputCompetitorTWOHandleChange = e => {
+        var competidor = this.props.SocketIO.competitors.competitors.filter(competitor => competitor.name === e.target.value)
         this.setState({
             competitorTWO: e.target.value,
-            competitorTWOObject: this.props.SocketIO.competitors.competitors.filter(competitor => competitor.name === e.target.value)[0]
+            competitorTWOObject: competidor.length > 0 ? competidor[0] : { }
         })
     }
     setButton = () => {
