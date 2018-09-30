@@ -26,10 +26,14 @@ const styles = theme => ({
         position: 'absolute',
         top: 0,
         width: '100%',
-        height: '30%',
-        zIndex: 1
+        height: '40%',
+        zIndex: 1,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     countDown: {
+        paddingTop: '10%',
         fontFamily: 'Caveat Brush',
         fontSize: '50vh',
         color: '#eceff1',
@@ -37,6 +41,7 @@ const styles = theme => ({
         zIndex: 1
     },
     message: {
+        paddingTop: '10%',
         fontFamily: 'Caveat Brush',
         fontSize: '40vh',
         color: '#eceff1',
@@ -84,9 +89,10 @@ const styles = theme => ({
         opacity: 0.1
     },
     bdmLogo: {
-        float: 'left',
-        marginTop: '3%',
-        marginLeft: 70,
+        // float: 'left',
+        // marginTop: '3%',
+        // marginLeft: 70,
+        paddingTop: '10%',
         height: '100%'
     },
     pumaLogo: {
@@ -143,7 +149,7 @@ class VersusVisualizer extends Component {
             <div className={ classes.visualizer }>
                 <div id="particles-js" className={ classes.particles }/>
                 { (() => {
-                    if(status !== '' && status !== 'isPaused' && status !== 'isMessage') {
+                    if(status !== '' && status !== 'isPaused' && status === 'isMessage') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.header }>
