@@ -149,7 +149,7 @@ class VersusVisualizer extends Component {
             <div className={ classes.visualizer }>
                 <div id="particles-js" className={ classes.particles }/>
                 { (() => {
-                    if(status !== '' && status !== 'isPaused' && status === 'isMessage') {
+                    if(status !== '' && status !== 'isPaused' || status === 'isMessage') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.header }>
