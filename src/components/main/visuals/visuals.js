@@ -93,6 +93,11 @@ class Competitors extends Component {
     setButton = () => {
         this.setState({ status: 'isSet' })
         this.props.SocketIO.visualizer({ status: 'isSet', seconds: this.state.seconds, text: this.state.text })
+        if(this.state.checkedA === true) {
+            this.props.SocketIO.visualizer({ competitorONEObject: this.state.competitorONEObject, competitorTWOObject: this.state.competitorTWOObject })
+        } else {
+            this.props.SocketIO.visualizer({ competitorONEObject: { }, competitorTWOObject: { } })
+        }
     }
     resetButton = () => {
         this.setState({ status: '', seconds: '', text: 'NULO' })
