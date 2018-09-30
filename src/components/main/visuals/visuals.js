@@ -86,7 +86,7 @@ class Competitors extends Component {
     inputCompetitorTWOHandleChange = e => {
         this.setState({
             competitorTWO: e.target.value,
-            competitorONEObject: this.props.SocketIO.competitors.competitors.filter(competitor => competitor.name === e.target.value)[0]
+            competitorTWOObject: this.props.SocketIO.competitors.competitors.filter(competitor => competitor.name === e.target.value)[0]
         })
     }
     setButton = () => {
