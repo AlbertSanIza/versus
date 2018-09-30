@@ -93,7 +93,7 @@ class Competitors extends Component {
     setButton = () => {
         this.setState({ status: 'isSet' })
         this.props.SocketIO.visualizer({ status: 'isSet', seconds: this.state.seconds, text: this.state.text })
-        if(this.state.checkedA === true) {
+        if(this.state.checkedA === true && this.state.competitorONEObject.name && this.state.competitorTWOObject.name) {
             this.props.SocketIO.visualizer({ competitorONEObject: this.state.competitorONEObject, competitorTWOObject: this.state.competitorTWOObject })
         } else {
             this.props.SocketIO.visualizer({ competitorONEObject: { }, competitorTWOObject: { } })
@@ -106,7 +106,7 @@ class Competitors extends Component {
     startButton = () => {
         this.setState({ status: 'isStart' })
         this.props.SocketIO.visualizer({ status: 'isStart', seconds: this.state.seconds, text: this.state.text })
-        if(this.state.checkedA === true) {
+        if(this.state.checkedA === true && this.state.competitorONEObject.name && this.state.competitorTWOObject.name) {
             this.props.SocketIO.visualizer({ competitorONEObject: this.state.competitorONEObject, competitorTWOObject: this.state.competitorTWOObject })
         } else {
             this.props.SocketIO.visualizer({ competitorONEObject: { }, competitorTWOObject: { } })
@@ -128,7 +128,7 @@ class Competitors extends Component {
     onTick = () => {
         this.setState({ seconds: this.state.seconds - 1 })
         this.props.SocketIO.visualizer({ seconds: this.state.seconds, text: this.state.text })
-        if(this.state.checkedA === true) {
+        if(this.state.checkedA === true && this.state.competitorONEObject.name && this.state.competitorTWOObject.name) {
             this.props.SocketIO.visualizer({ competitorONEObject: this.state.competitorONEObject, competitorTWOObject: this.state.competitorTWOObject })
         } else {
             this.props.SocketIO.visualizer({ competitorONEObject: { }, competitorTWOObject: { } })
