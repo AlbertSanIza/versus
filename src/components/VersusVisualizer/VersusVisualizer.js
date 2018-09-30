@@ -26,7 +26,7 @@ const styles = theme => ({
         position: 'absolute',
         top: 0,
         width: '100%',
-        height: '40%',
+        height: '36%',
         zIndex: 1,
         display: 'flex',
         alignItems: 'center',
@@ -37,7 +37,7 @@ const styles = theme => ({
         fontFamily: 'Caveat Brush',
         fontSize: '50vh',
         color: '#eceff1',
-        textShadow: '0px 0px 0px red',
+        textShadow: '5px 5px 5px black',
         zIndex: 1
     },
     message: {
@@ -45,7 +45,7 @@ const styles = theme => ({
         fontFamily: 'Caveat Brush',
         fontSize: '40vh',
         color: '#eceff1',
-        textShadow: '0px 0px 0px red',
+        textShadow: '5px 5px 5px black',
         zIndex: 1
     },
     thematic: {
@@ -92,7 +92,7 @@ const styles = theme => ({
         // float: 'left',
         // marginTop: '3%',
         // marginLeft: 70,
-        paddingTop: '10%',
+        paddingTop: '5%',
         height: '100%'
     },
     pumaLogo: {
