@@ -138,7 +138,7 @@ class VersusVisualizer extends Component {
     }
     render() {
         const { classes } = this.props
-        const { status, seconds, text, message } = this.state
+        const { status, seconds, text, message, competitorONEObject, competitorTWOObject } = this.state
         return (
             <div className={ classes.visualizer }>
                 <div id="particles-js" className={ classes.particles }/>
