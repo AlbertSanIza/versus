@@ -111,6 +111,8 @@ class Competitors extends Component {
                         </Grid>
                     )) }
                 </Grid>
+                <br/>
+                <br/>
                 <MuiThemeProvider theme={ theme }>
                     <Grow in={ true } timeout={ 500 }>
                         <Button variant="fab" className={ classes.fab } onClick={ this.handleOpenCreate } color="primary">
