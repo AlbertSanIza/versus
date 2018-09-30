@@ -204,11 +204,10 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    console.log(competitorONEObject)
                     if((status === 'isSet' || status === 'isStart') && competitorONEObject.name) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
-                                <div style={ Object.assign({}, { left: 'calc(0px - 10%)', WebkitMaskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 60%)' }, style.competitor) }>
+                                <div style={ Object.assign({}, { left: 'calc(0px - 15%)', WebkitMaskImage: 'linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 60%)' }, style.competitor) }>
                                     <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://localhost:12345/img/${ competitorONEObject.photo })` }) }/>
                                 </div>
                             </Fade>
@@ -216,11 +215,10 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    console.log(competitorTWOObject)
                     if((status === 'isSet' || status === 'isStart') && competitorTWOObject.name) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
-                                <div style={ Object.assign({}, { right: 'calc(0px - 10%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 60%)' }, style.competitor) }>
+                                <div style={ Object.assign({}, { right: 'calc(0px - 15%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 60%)' }, style.competitor) }>
                                     <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://localhost:12345/img/${ competitorTWOObject.photo })` }) }/>
                                 </div>
                             </Fade>
