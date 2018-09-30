@@ -59,7 +59,8 @@ class Competitors extends Component {
         competitorONE: 'NULO',
         competitorTWO: 'NULO',
         competitorONEObject: { },
-        competitorTWOObject: { }
+        competitorTWOObject: { },
+        checkedA: false
     }
     inputHandleChange = e => {
         this.setState({ seconds: e.target.value })
@@ -233,7 +234,7 @@ class Competitors extends Component {
                             <FormControlLabel
                                 style={{ marginTop: 5 }}
                                 label="Mostrar Competidores"
-                                control={ <Checkbox value="checkedA" checked={ this.state.checkedA }/> }/>
+                                control={ <Checkbox value="checkedA" checked={ this.state.checkedA } onChange={ e => this.setState({ checkedA: e.target.checked }) }/> }/>
                         </Grid>
                         {(() => {
                             if(this.state.event !== 'NULO') {
