@@ -101,6 +101,11 @@ class Competitors extends Component {
     startButton = () => {
         this.setState({ status: 'isStart' })
         this.props.SocketIO.visualizer({ status: 'isStart', seconds: this.state.seconds, text: this.state.text })
+        if(this.state.checkedA === true) {
+            this.props.SocketIO.visualizer({ competitorONEObject: this.state.competitorONEObject, competitorTWOObject: this.state.competitorTWOObject })
+        } else {
+            this.props.SocketIO.visualizer({ competitorONEObject: { }, competitorTWOObject: { } })
+        }
     }
     pauseButton = () => {
         this.setState({ status: 'isPaused' })
@@ -118,6 +123,11 @@ class Competitors extends Component {
     onTick = () => {
         this.setState({ seconds: this.state.seconds - 1 })
         this.props.SocketIO.visualizer({ seconds: this.state.seconds, text: this.state.text })
+        if(this.state.checkedA === true) {
+            this.props.SocketIO.visualizer({ competitorONEObject: this.state.competitorONEObject, competitorTWOObject: this.state.competitorTWOObject })
+        } else {
+            this.props.SocketIO.visualizer({ competitorONEObject: { }, competitorTWOObject: { } })
+        }
     }
     onComplete = () => {
         this.setState({ status: '', seconds: '', text: 'NULO' })
