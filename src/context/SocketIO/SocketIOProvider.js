@@ -53,7 +53,7 @@ class SocketIOProvider extends Component {
     }
     createEditEvent = e => {
         const { name } = e
-        var events = this.state.events.events.slice().filter(z => z.name !== name)
+        var events = this.state.events.events.slice().filter(z => z.name.toLowerCase() !== name.toLowerCase())
         events.push(e)
         socket.emit('events', { type: 'set', payload: events })
         this.setState({ events: { ...this.state.events, events: events } })
@@ -72,7 +72,7 @@ class SocketIOProvider extends Component {
     }
     createEditCompetitor = e => {
         const { name, photo } = e
-        var competitors = this.state.competitors.competitors.slice().filter(z => z.name !== name)
+        var competitors = this.state.competitors.competitors.slice().filter(z => z.name.toLowerCase() !== name.toLowerCase())
         competitors.push({ name, photo })
         socket.emit('competitors', { type: 'set', payload: competitors })
         socket.emit('competitors', { type: 'image', payload: e }, data => {
