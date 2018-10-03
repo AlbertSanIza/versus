@@ -145,21 +145,21 @@ class VersusVisualizer extends Component {
             <div className={ classes.visualizer }>
                 <div id="particles-js" className={ classes.particles }/>
                 { (() => {
+                    if(status === '' || status === 'isPaused') {
+                        return (
+                            <Fade in={ true } timeout={ 1000 }>
+                                <img className={ classes.logoCenter } src={ bdm_gold_logo } alt="LOGO"/>
+                            </Fade>
+                        )
+                    }
+                })() }
+                { (() => {
                     if((status !== '' && status !== 'isPaused') || status === 'isMessage') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.header }>
                                     <img className={ classes.bdmLogoSmall } src={ bdm_gold_logo } alt="BDM Logo"/>
                                 </div>
-                            </Fade>
-                        )
-                    }
-                })() }
-                { (() => {
-                    if(status === '' || status === 'isPaused') {
-                        return (
-                            <Fade in={ true } timeout={ 1000 }>
-                                <img className={ classes.logoCenter } src={ bdm_gold_logo } alt="LOGO"/>
                             </Fade>
                         )
                     }
