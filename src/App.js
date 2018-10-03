@@ -12,7 +12,7 @@ class App extends Component {
                     <VersusProvider>
                         <SocketIOProvider>
                             <Route path="/main" component={ VersusMain }/>
-                            <Route path="/upload" component={ VersusUpload }/>
+                            <Route exact path="/upload" component={ VersusUpload }/>
                         </SocketIOProvider>
                     </VersusProvider>
                     <Route exact path="/" component={ VersusVisualizer }/>
