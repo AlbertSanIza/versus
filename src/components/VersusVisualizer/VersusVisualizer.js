@@ -38,13 +38,27 @@ const styles = theme => ({
         maxHeight: '90%',
         zIndex: 1
     },
+    logoTopHolder: {
+        position: 'absolute',
+        top: 0,
+        width: '100%',
+        height: '40%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 1
+    },
+    logoTop: {
+        maxHeight: '100%',
+        zIndex: 1
+    },
     countDown: {
-        paddingTop: '10%',
-        fontSize: '40vh',
+        paddingTop: '5%',
+        fontSize: '50vh',
         zIndex: 1
     },
     message: {
-        paddingTop: '10%',
+        paddingTop: '5%',
         fontSize: '40vh',
         zIndex: 1
     },
@@ -57,35 +71,6 @@ const styles = theme => ({
         zIndex: 1,
         textAlign: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.5)'
-    },
-
-    bdmLogoSmall: {
-        paddingTop: '5%',
-        height: '100%'
-    },
-    header: {
-        position: 'absolute',
-        top: 0,
-        width: '100%',
-        height: '36%',
-        zIndex: 1,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    logoCenterBigContainer: {
-        position: 'absolute',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: '100%'
-    },
-    logoCenterBig: {
-        maxWidth: '99%',
-        maxHeight: '99%',
-        zIndex: 1,
-        opacity: 0.1
     }
 })
 
@@ -145,8 +130,8 @@ class VersusVisualizer extends Component {
                     if((status !== '' && status !== 'isPaused') || status === 'isMessage') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className={ classes.header }>
-                                    <img className={ classes.bdmLogoSmall } src={ bdm_gold_logo } alt="BDM Logo"/>
+                                <div className={ classes.logoTopHolder }>
+                                    <img className={ classes.logoTop } src={ bdm_gold_logo } alt="BDM Logo"/>
                                 </div>
                             </Fade>
                         )
