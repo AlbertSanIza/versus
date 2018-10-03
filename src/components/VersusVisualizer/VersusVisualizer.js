@@ -39,6 +39,16 @@ const styles = theme => ({
         fontSize: '40vh',
         zIndex: 1
     },
+    thematic: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        width: '100%',
+        fontSize: '10vh',
+        zIndex: 1,
+        textAlign: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    },
     bdmLogoSmall: {
         paddingTop: '5%',
         height: '100%'
@@ -52,19 +62,6 @@ const styles = theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    thematic: {
-        position: 'absolute',
-        bottom: '1%',
-        left: 0,
-        width: '100%',
-        fontFamily: 'Caveat Brush',
-        fontSize: '12vh',
-        color: '#eceff1',
-        textShadow: '0px 0px 0px red',
-        zIndex: 1,
-        textAlign: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)'
     },
     particles: {
         position: 'absolute',
