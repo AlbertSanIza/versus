@@ -125,7 +125,7 @@ class Competitors extends Component {
                             <FormControl fullWidth>
                                 <TextField id="Nombre" label="Nombre" margin="normal" variant="outlined" value={ createName } onChange={ e => this.createTermChanged(e.target.value) }/>
                             </FormControl>
-                            <VersusDragNDrop anySize showButton width={ 312 } height={ 250 } imagePicked={ image => this.setState({ createImage: image }) }/>
+                            <VersusDragNDrop anySize showButton width={ '312px' } height={ '250px' } imagePicked={ image => this.setState({ createImage: image }) }/>
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseCreate }>Cancelar</Button>
@@ -138,7 +138,7 @@ class Competitors extends Component {
                             <FormControl fullWidth>
                                 <TextField label="Nombre" margin="normal" variant="outlined" value={ editName } disabled/>
                             </FormControl>
-                            <VersusDragNDrop anySize showButton width={ 312 } height={ 250 } imagePicked={ image => this.setState({ editImage: image }) } imageDefault={ 'http://' + window.location.hostname + ':12345/img/' + editPhoto }/>
+                            <VersusDragNDrop anySize showButton width={ '312px' } height={ '250px' } imagePicked={ image => this.setState({ editImage: image }) } imageDefault={ 'http://' + window.location.hostname + ':12345/img/' + editPhoto }/>
                         </DialogContent>
                         <DialogActions>
                             <Button color="primary" onClick={ this.handleCloseEdit }>Cancelar</Button>
