@@ -9,6 +9,15 @@ import bdm_gold_logo from './bdmgold-min.png'
 const socket = io('http://' + window.location.hostname + ':12345')
 
 const styles = theme => ({
+    particles: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        left: 0,
+        zIndex: 0,
+        overflow: 'hidden'
+    },
     visualizer: {
         position: 'absolute',
         width: '100%',
@@ -49,6 +58,7 @@ const styles = theme => ({
         textAlign: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.5)'
     },
+
     bdmLogoSmall: {
         paddingTop: '5%',
         height: '100%'
@@ -63,15 +73,6 @@ const styles = theme => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    particles: {
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        top: 0,
-        left: 0,
-        zIndex: 0,
-        overflow: 'hidden'
-    },
     logoCenterBigContainer: {
         position: 'absolute',
         display: 'flex',
@@ -85,14 +86,6 @@ const styles = theme => ({
         maxHeight: '99%',
         zIndex: 1,
         opacity: 0.1
-    },
-    pumaLogo: {
-        position: 'relative',
-        float: 'right',
-        marginTop: 'calc(3% + 10px)',
-        marginRight: 70,
-        height: '90%',
-        filter: 'invert(100%)'
     }
 })
 
