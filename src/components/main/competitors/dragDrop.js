@@ -57,7 +57,7 @@ class ImageDropZone extends Component {
     }
     handleFile = e => {
         let file = e.target.files[0]
-        if(file.type === 'image/png') {
+        if(file.type === 'image/png' || file.type === 'image/jpeg') {
             let image = URL.createObjectURL(file)
             this.setState({ image })
             this.props.imagePicked({ file, image })
@@ -66,7 +66,7 @@ class ImageDropZone extends Component {
     onDrop = e => {
         e.preventDefault()
         let file = e.dataTransfer.files[0]
-        if(file.type === 'image/png') {
+        if(file.type === 'image/png' || file.type === 'image/jpeg') {
             let image = URL.createObjectURL(file)
             this.setState({ image })
             this.props.imagePicked({ file, image })
@@ -91,7 +91,7 @@ class ImageDropZone extends Component {
                 <div style={ style.picker }>
                     <label style={{ cursor: 'pointer' }}>
                         Seleccionar Imagen
-                        <input type="file" value="" accept="image/png" style={{ display: 'none' }} onChange={ this.handleFile }/>
+                        <input type="file" value="" accept="image/png; image/jpeg;" style={{ display: 'none' }} onChange={ this.handleFile }/>
                     </label>
                 </div>
             </React.Fragment>
