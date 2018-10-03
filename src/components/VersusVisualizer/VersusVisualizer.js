@@ -15,7 +15,7 @@ const styles = theme => ({
         height: '100%',
         top: 0,
         left: 0,
-        background: 'black',
+        background: '#1a1a1a',
         color: 'white',
         display: 'flex',
         alignItems: 'center',
