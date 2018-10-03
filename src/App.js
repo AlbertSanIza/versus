@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { HashRouter, Route } from 'react-router-dom'
 
+import { VersusMain, VersusUpload, VersusVisualizer } from './components'
 import { VersusProvider, SocketIOProvider } from './context'
-import { VersusMain, VersusVisualizer } from './components'
 
 class App extends Component {
     render() {
@@ -12,6 +12,7 @@ class App extends Component {
                     <VersusProvider>
                         <SocketIOProvider>
                             <Route path="/main" component={ VersusMain }/>
+                            <Route path="/upload" component={ VersusUpload }/>
                         </SocketIOProvider>
                     </VersusProvider>
                     <Route exact path="/" component={ VersusVisualizer }/>
