@@ -40,7 +40,7 @@ const styles = theme => ({
     },
     countDown: {
         paddingTop: '10%',
-        fontSize: '50vh',
+        fontSize: '40vh',
         zIndex: 1
     },
     message: {
