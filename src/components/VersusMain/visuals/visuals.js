@@ -34,14 +34,14 @@ const styles = theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#262626'
+        background: 'black'
     },
     visualsIframe: {
         width: '44vw',
         height: '25vw',
         padding: 0,
         margin: 0,
-        background: 'black'
+        background: '#1a1a1a'
     },
     countdown: {
         display: 'none',
