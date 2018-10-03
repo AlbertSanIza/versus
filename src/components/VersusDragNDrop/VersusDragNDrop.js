@@ -26,7 +26,7 @@ const style = {
     }
 }
 
-class ImageDropZone extends Component {
+class VersusDragNDrop extends Component {
     static propTypes = {
         width: PropTypes.number.isRequired,
         height: PropTypes.number.isRequired,
@@ -100,4 +100,4 @@ class ImageDropZone extends Component {
     }
 }
 
-export default ImageDropZone
+export default VersusDragNDrop
