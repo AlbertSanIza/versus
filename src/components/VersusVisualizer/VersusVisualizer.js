@@ -53,12 +53,12 @@ const styles = theme => ({
         zIndex: 1
     },
     countDown: {
-        paddingTop: '5%',
-        fontSize: '50vh',
+        paddingTop: '7%',
+        fontSize: '56vh',
         zIndex: 1
     },
     message: {
-        paddingTop: '5%',
+        paddingTop: '7%',
         fontSize: '40vh',
         zIndex: 1
     },
