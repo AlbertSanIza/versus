@@ -22,6 +22,11 @@ const styles = theme => ({
         justifyContent: 'center',
         overflow: 'hidden'
     },
+    logoCenter: {
+        maxWidth: '90%',
+        maxHeight: '90%',
+        zIndex: 1
+    },
     bdmLogoSmall: {
         paddingTop: '5%',
         height: '100%'
@@ -40,7 +45,6 @@ const styles = theme => ({
         paddingTop: '10%',
         fontFamily: 'Caveat Brush',
         fontSize: '50vh',
-        color: '#eceff1',
         textShadow: '5px 5px 5px black',
         zIndex: 1
     },
@@ -48,7 +52,6 @@ const styles = theme => ({
         paddingTop: '10%',
         fontFamily: 'Caveat Brush',
         fontSize: '40vh',
-        color: '#eceff1',
         textShadow: '5px 5px 5px black',
         zIndex: 1
     },
@@ -73,11 +76,6 @@ const styles = theme => ({
         left: 0,
         zIndex: 0,
         overflow: 'hidden'
-    },
-    logoCenter: {
-        maxWidth: '99%',
-        maxHeight: '99%',
-        zIndex: 1
     },
     logoCenterBigContainer: {
         position: 'absolute',
