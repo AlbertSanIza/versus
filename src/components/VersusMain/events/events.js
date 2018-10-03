@@ -18,7 +18,7 @@ import Grow from '@material-ui/core/Grow'
 import Card from '@material-ui/core/Card'
 
 import { withSocketIO } from '../../../context'
-import VersusTable from '../VersusTable'
+import VersusTable from '../../VersusTable'
 
 const theme = createMuiTheme({
     palette: {

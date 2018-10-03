@@ -12,7 +12,7 @@ import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
 import { NavLink } from "react-router-dom"
 
-import { withVersus } from '../../../context'
+import { withVersus } from '../../context'
 
 const styles = theme => ({
     root: {

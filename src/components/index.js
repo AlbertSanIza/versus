@@ -1,2 +1,2 @@
-export { default as Main } from './main'
+export { default as VersusMain } from './VersusMain'
 export { default as VersusVisualizer } from './VersusVisualizer'

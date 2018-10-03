@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
 import AppBar from '@material-ui/core/AppBar'
 
-import { withVersus } from '../../../context'
+import { withVersus } from '../../context'
 
 const styles = theme => ({
     title: {

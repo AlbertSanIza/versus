@@ -13,6 +13,7 @@ const theme = createMuiTheme({
         secondary: red
     }
 })
+
 const styles = () => ({
     '@global': {
         body: {
