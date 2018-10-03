@@ -25,7 +25,7 @@ const styles = theme => ({
         top: 0,
         left: 0,
         background: '#1a1a1a',
-        color: '#FFF8F0',
+        color: '#f2f2f2',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -70,7 +70,7 @@ const styles = theme => ({
         fontSize: '10vh',
         zIndex: 1,
         textAlign: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+        backgroundColor: 'rgba(0, 0, 0, 0.2)'
     }
 })
 
