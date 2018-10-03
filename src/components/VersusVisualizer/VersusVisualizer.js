@@ -20,11 +20,18 @@ const styles = theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        fontFamily: 'Caveat Brush',
+        textShadow: '5px 5px 5px black',
     },
     logoCenter: {
         maxWidth: '90%',
         maxHeight: '90%',
+        zIndex: 1
+    },
+    countDown: {
+        paddingTop: '10%',
+        fontSize: '50vh',
         zIndex: 1
     },
     bdmLogoSmall: {
@@ -40,13 +47,6 @@ const styles = theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    countDown: {
-        paddingTop: '10%',
-        fontFamily: 'Caveat Brush',
-        fontSize: '50vh',
-        textShadow: '5px 5px 5px black',
-        zIndex: 1
     },
     message: {
         paddingTop: '10%',
