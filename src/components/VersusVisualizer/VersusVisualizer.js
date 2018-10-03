@@ -34,6 +34,11 @@ const styles = theme => ({
         fontSize: '50vh',
         zIndex: 1
     },
+    message: {
+        paddingTop: '10%',
+        fontSize: '40vh',
+        zIndex: 1
+    },
     bdmLogoSmall: {
         paddingTop: '5%',
         height: '100%'
@@ -47,13 +52,6 @@ const styles = theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    message: {
-        paddingTop: '10%',
-        fontFamily: 'Caveat Brush',
-        fontSize: '40vh',
-        textShadow: '5px 5px 5px black',
-        zIndex: 1
     },
     thematic: {
         position: 'absolute',
