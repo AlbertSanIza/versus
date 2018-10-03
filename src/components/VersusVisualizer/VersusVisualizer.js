@@ -3,8 +3,8 @@ import { withStyles } from '@material-ui/core/styles'
 import Fade from '@material-ui/core/Fade'
 import io from 'socket.io-client'
 import 'particles.js/particles'
-// import puma_logo from './puma.png'
-import bdm_logo from './bdmgold.png'
+
+import bdm_gold_logo from './bdmgold-min.png'
 
 const socket = io('http://' + window.location.hostname + ':12345')
 
@@ -21,6 +21,10 @@ const styles = theme => ({
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden'
+    },
+    bdmLogoSmall: {
+        paddingTop: '5%',
+        height: '100%'
     },
     header: {
         position: 'absolute',
@@ -89,13 +93,6 @@ const styles = theme => ({
         zIndex: 1,
         opacity: 0.1
     },
-    bdmLogo: {
-        // float: 'left',
-        // marginTop: '3%',
-        // marginLeft: 70,
-        paddingTop: '5%',
-        height: '100%'
-    },
     pumaLogo: {
         position: 'relative',
         float: 'right',
@@ -154,10 +151,7 @@ class VersusVisualizer extends Component {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.header }>
-                                    <img className={ classes.bdmLogo } src={ bdm_logo } alt="BDM Logo"/>
-                                    { /*
-                                        <img className={ classes.pumaLogo } src={ puma_logo } alt="Puma Logo"/>
-                                    */ }
+                                    <img className={ classes.bdmLogoSmall } src={ bdm_gold_logo } alt="BDM Logo"/>
                                 </div>
                             </Fade>
                         )
@@ -167,7 +161,7 @@ class VersusVisualizer extends Component {
                     if(status === '' || status === 'isPaused') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <img className={ classes.logoCenter } src={ bdm_logo } alt="LOGO"/>
+                                <img className={ classes.logoCenter } src={ bdm_gold_logo } alt="LOGO"/>
                             </Fade>
                         )
                     }
