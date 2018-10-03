@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 const style = {
     frame: {
+        position: 'relative',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
@@ -28,8 +29,8 @@ const style = {
 
 class VersusDragNDrop extends Component {
     static propTypes = {
-        width: PropTypes.number.isRequired,
-        height: PropTypes.number.isRequired,
+        width: PropTypes.string.isRequired,
+        height: PropTypes.string.isRequired,
         imagePicked: PropTypes.func
     }
     constructor(props) {
@@ -80,8 +81,8 @@ class VersusDragNDrop extends Component {
             <React.Fragment>
                 <div onDrop={ this.onDrop } onDragOver={ this.onDragOver } onDragLeave={ this.onDragLeave } onDragEnter={ this.onDragEnter }
                     style={ Object.assign({  }, {
-                        width: `${ width }px`,
-                        height: `${ height }px`,
+                        width: width,
+                        height: height,
                         backgroundImage: `url(${ image ? image : '' })`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
