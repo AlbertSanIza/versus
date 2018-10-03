@@ -16,7 +16,7 @@ const styles = theme => ({
         top: 0,
         left: 0,
         background: '#1a1a1a',
-        color: 'white',
+        color: '#FFF8F0',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
