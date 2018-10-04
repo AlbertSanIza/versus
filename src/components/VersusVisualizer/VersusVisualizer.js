@@ -35,13 +35,13 @@ const styles = theme => ({
         color: 'white'
     },
     background: {
-        backgroundImage:'url(' + window.location.origin + '/assets/patterns/black.jpg)',
+        backgroundImage:'url(' + window.location.origin + '/assets/patterns/head.jpg)',
         position: 'absolute',
         width: '100%',
         height: '100%',
         top: 0,
         left: 0,
-        opacity: 0.1,
+        opacity: 0.5,
         filter: 'blur(4px)'
     },
     logoCenter: {
