@@ -35,8 +35,8 @@ const styles = theme => ({
         color: 'white'
     },
     logoCenter: {
-        maxWidth: '90%',
-        maxHeight: '90%',
+        maxWidth: '99%',
+        maxHeight: '99%',
         zIndex: 1
     },
     logoTopHolder: {
