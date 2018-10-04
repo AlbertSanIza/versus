@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import AssignmentIcon from '@material-ui/icons/Assignment'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import SettingsIcon from '@material-ui/icons/Settings'
@@ -88,6 +89,14 @@ class VersusDrawer extends Component {
                                     <SchoolIcon/>
                                 </ListItemIcon>
                                 <ListItemText primary="Tematicas"/>
+                            </ListItem>
+                        </NavLink>
+                        <NavLink to="/main/formats" style={ style.style } activeStyle={ style.activeStyle }>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <AssignmentIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="Formatos"/>
                             </ListItem>
                         </NavLink>
                         <NavLink to="/main/competitors" style={ style.style } activeStyle={ style.activeStyle }>
