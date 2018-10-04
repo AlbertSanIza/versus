@@ -32,6 +32,7 @@ const styles = theme => ({
         overflow: 'hidden',
         fontFamily: 'Caveat Brush',
         textShadow: '3px 3px 50px #cccc00',
+        color: 'white'
     },
     logoCenter: {
         maxWidth: '90%',
@@ -54,12 +55,19 @@ const styles = theme => ({
     },
     thematic: {
         position: 'absolute',
-        bottom: 0,
+        bottom: '1%',
         maxWidth: '60%',
-        fontSize: '7vh',
+        fontSize: '8vh',
         zIndex: 1,
-        textAlign: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.2)'
+        textAlign: 'center'
+    },
+    format: {
+        position: 'absolute',
+        bottom: '9vh',
+        maxWidth: '60%',
+        fontSize: '6vh',
+        zIndex: 1,
+        textAlign: 'center'
     }
 })
 
@@ -85,6 +93,7 @@ class VersusVisualizer extends Component {
         this.state = {
             status: '',
             seconds: '',
+            format: '',
             text: '',
             message: '',
             competitorONEObject: {},
@@ -102,7 +111,7 @@ class VersusVisualizer extends Component {
     }
     render() {
         const { classes } = this.props
-        const { status, seconds, text, message, competitorONEObject, competitorTWOObject } = this.state
+        const { status, seconds, format, text, message, competitorONEObject, competitorTWOObject } = this.state
         return (
             <div className={ classes.visualizer }>
                 <div id="particles-js" className={ classes.particles }/>
@@ -140,6 +149,15 @@ class VersusVisualizer extends Component {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className="glitch" data-text={ seconds } style={{ fontSize: '56vh' }}>{ seconds }</div>
+                            </Fade>
+                        )
+                    }
+                })() }
+                { (() => {
+                    if(status !== '' && status !== 'isPaused' && text !== '' && text !== 'NULO') {
+                        return (
+                            <Fade in={ true } timeout={ 1000 }>
+                                <div className={ classes.format }>{ format }</div>
                             </Fade>
                         )
                     }
