@@ -154,7 +154,7 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if(status !== '' && status !== 'isPaused' && text !== '' && text !== 'NULO') {
+                    if(status !== '' && status !== 'isPaused' && format !== '' && format !== 'NULO') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className={ classes.format }>{ format }</div>
