@@ -5,6 +5,7 @@ import io from 'socket.io-client'
 import 'particles.js/particles'
 
 import bdm_gold_logo from './bdmgold-min.png'
+import './glitch.css'
 
 const socket = io('http://' + window.location.hostname + ':12345')
 
@@ -50,16 +51,6 @@ const styles = theme => ({
     },
     logoTop: {
         maxHeight: '100%',
-        zIndex: 1
-    },
-    countDown: {
-        paddingTop: '7%',
-        fontSize: '56vh',
-        zIndex: 1
-    },
-    message: {
-        paddingTop: '7%',
-        fontSize: '40vh',
         zIndex: 1
     },
     thematic: {
@@ -141,7 +132,7 @@ class VersusVisualizer extends Component {
                     if(status === 'isMessage') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className={ classes.message }>{ message }</div>
+                                <div className="glitch" data-text={ message } style={{ fontSize: '40vh' }}>{ message }</div>
                             </Fade>
                         )
                     }
@@ -150,7 +141,7 @@ class VersusVisualizer extends Component {
                     if(status === 'isSet' || status === 'isStart') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className={ classes.countDown }>{ seconds }</div>
+                                <div className="glitch" data-text={ seconds } style={{ fontSize: '56vh' }}>{ seconds }</div>
                             </Fade>
                         )
                     }
