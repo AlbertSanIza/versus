@@ -41,12 +41,12 @@ const styles = theme => ({
         height: '100%',
         top: 0,
         left: 0,
-        opacity: 0.5,
+        opacity: 0.4,
         filter: 'blur(4px)'
     },
     logoCenter: {
-        maxWidth: '99%',
-        maxHeight: '99%',
+        maxWidth: '100%',
+        maxHeight: '100%',
         zIndex: 1
     },
     logoTopHolder: {
