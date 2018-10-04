@@ -22,24 +22,17 @@ if(!fs.existsSync(tempImg)) {
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        width: 900,
-        height: 680,
-        minWidth: 900,
-        minHeight: 680,
-        useContentSize: true,
+        width: 300,
+        height: 310,
+        minWidth: 300,
+        minHeight: 310,
+        resizable: true,
         show: false
     })
-    expressApp.use('/', express.static(__dirname + '/../build'))
-    expressApp.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, '/../build/index.html'))
-    })
+    mainWindow.loadURL(path.join(__dirname, 'app/index.html'))
     expressApp.get('/img/:path*', (req, res) => {
         res.sendFile(tempImg + '/' + req.params.path + req.params[0])
     })
-    mainWindow.loadURL(process.env.ELECTRON_START_URL || "http://localhost:12345/#/main/visuals")
-    if (process.env.ELECTRON_START_URL) {
-        mainWindow.webContents.openDevTools()
-    }
     mainWindow.on('closed', function () {
         mainWindow = null
     })
