@@ -121,7 +121,7 @@ class Competitors extends Component {
     roundButton = () => {
         const { round } = this.state
         this.setState({ status: 'isMessage' })
-        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Round #' + round, text: 'NULO' })
+        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Round.#' + round, text: 'NULO' })
     }
     replicaButton = () => {
         this.setState({ status: 'isMessage' })
