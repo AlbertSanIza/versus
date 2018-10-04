@@ -3,6 +3,7 @@ const path = require('path')
 const url = require('url')
 const os = require('os')
 const fs = require('fs')
+const ip = require('ip')
 let mainWindow
 var express = require('express')
 var expressApp = express()
@@ -114,6 +115,12 @@ app.on('ready', () => {
                 case 'openTempDir':
                 shell.openItem(tempDir)
                 break
+            }
+        })
+        socket.on('ip', (msg, fn) => {
+            switch (msg.type) {
+                case 'get':
+                fn({ ip: ip.address() })
             }
         })
     })
