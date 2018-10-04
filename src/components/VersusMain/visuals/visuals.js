@@ -70,7 +70,6 @@ class Competitors extends Component {
     }
     inputTextHandleChange = e => {
         this.setState({ text: e.target.value })
-        this.props.SocketIO.visualizer({ text: 'NULO' })
     }
     inputRoundHandleChange = e => {
         this.setState({ round: e.target.value })
