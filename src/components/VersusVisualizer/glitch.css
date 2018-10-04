@@ -78,7 +78,7 @@
     background: transparent;
     overflow: hidden;
     clip: rect(0, 9999px, 0, 0);
-    animation: noise-anim 2s infinite linear alternate-reverse;
+    animation: noise-anim 2.2s infinite linear alternate-reverse;
 }
 
 @keyframes noise-anim-2 {
@@ -156,5 +156,5 @@
     background: transparent;
     overflow: hidden;
     clip: rect(0, 9999px, 0, 0);
-    animation: noise-anim-2 3s infinite linear alternate-reverse;
+    animation: noise-anim-2 2.8s infinite linear alternate-reverse;
 }
