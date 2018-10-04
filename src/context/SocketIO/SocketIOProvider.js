@@ -23,6 +23,12 @@ class SocketIOProvider extends Component {
                 search: e => this.searchThematics(e),
                 create: e => this.createThematic(e)
             },
+            formats: {
+                formats: [ ],
+                searchTerm: '',
+                search: e => this.searchFormats(e),
+                create: e => this.createFormat(e)
+            },
             competitors: {
                 competitors: [ ],
                 searchTerm: '',
@@ -66,6 +72,15 @@ class SocketIOProvider extends Component {
         thematics.push(e)
         socket.emit('thematics', { type: 'set', payload: thematics })
         this.setState({ thematics: { ...this.state.thematics, thematics: thematics } })
+    }
+    searchFormats = e => {
+        this.setState({ formats: { ...this.state.formats, searchTerm: e } })
+    }
+    createFormat = e => {
+        var formats = this.state.formats.formats.slice()
+        formats.push(e)
+        socket.emit('formats', { type: 'set', payload: formats })
+        this.setState({ formats: { ...this.state.formats, formats: formats } })
     }
     searchCompetitors = e => {
         this.setState({ competitors: { ...this.state.competitors, searchTerm: e } })
