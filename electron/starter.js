@@ -82,6 +82,20 @@ app.on('ready', () => {
                 break
             }
         })
+        socket.on('formats', (msg, fn) => {
+            switch (msg.type) {
+                case 'get':
+                storage.get('formats', (getErrors, data) => {
+                    if(!getErrors && data.length > 0) {
+                        fn(data)
+                    }
+                })
+                break
+                case 'set':
+                storage.set('formats', msg.payload)
+                break
+            }
+        })
         socket.on('competitors', (msg, fn) => {
             switch (msg.type) {
                 case 'get':
