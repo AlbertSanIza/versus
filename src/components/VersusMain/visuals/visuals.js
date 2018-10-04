@@ -169,7 +169,7 @@ class Competitors extends Component {
                 </Typography>
                 <MuiThemeProvider theme={ theme }>
                     <Grid container spacing={ 16 }>
-                        <Grid item xs={ 6 }>
+                        <Grid item xs={ 4 }>
                             <TextField
                                 type="number"
                                 label="Tiempo"
@@ -179,7 +179,23 @@ class Competitors extends Component {
                                 InputProps={{ startAdornment: (<InputAdornment position="start"><Timer/></InputAdornment>), endAdornment: (<InputAdornment position="end">Segundos</InputAdornment>) }}
                                 fullWidth/>
                         </Grid>
-                        <Grid item xs={ 6 }>
+                        <Grid item xs={ 4 }>
+                            <TextField
+                                label="Formato"
+                                variant="outlined"
+                                value={ this.state.format }
+                                onChange={ this.inputFormatHandleChange }
+                                SelectProps={{ native: true }}
+                                select fullWidth>
+                                <option value="NULO">Ninguno</option>
+                                { SocketIO.formats.formats.map(option => (
+                                    <option key={ option.name } value={ option.value }>
+                                        { option.name }
+                                    </option>
+                                )) }
+                            </TextField>
+                        </Grid>
+                        <Grid item xs={ 4 }>
                             <TextField
                                 label="Tema"
                                 variant="outlined"
