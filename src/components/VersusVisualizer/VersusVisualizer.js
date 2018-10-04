@@ -34,6 +34,16 @@ const styles = theme => ({
         textShadow: '3px 3px 50px #cccc00',
         color: 'white'
     },
+    background: {
+        backgroundImage:'url(' + window.location.origin + '/assets/patterns/black.jpg)',
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        left: 0,
+        opacity: 0.1,
+        filter: 'blur(4px)'
+    },
     logoCenter: {
         maxWidth: '99%',
         maxHeight: '99%',
