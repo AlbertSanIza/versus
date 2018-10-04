@@ -73,7 +73,7 @@
     content: attr(data-text);
     position: absolute;
     left: 3px;
-    text-shadow: -2px 0 red;
+    text-shadow: -4px 0 red;
     top: 0;
     color: white;
     background: transparent;
@@ -151,7 +151,7 @@
     content: attr(data-text);
     position: absolute;
     left: -3px;
-    text-shadow: 3px 0 blue;
+    text-shadow: 4px 0 blue;
     top: 0;
     color: white;
     background: transparent;
