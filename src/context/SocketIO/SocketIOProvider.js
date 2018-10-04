@@ -47,6 +47,9 @@ class SocketIOProvider extends Component {
         socket.emit('thematics', { type: 'get' }, data => {
             this.setState({ thematics: { ...this.state.thematics, thematics: data } })
         })
+        socket.emit('formats', { type: 'get' }, data => {
+            this.setState({ formats: { ...this.state.formats, formats: data } })
+        })
         socket.emit('competitors', { type: 'get' }, data => {
             this.setState({ competitors: { ...this.state.competitors, competitors: data } })
         })
