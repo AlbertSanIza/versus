@@ -39,7 +39,8 @@ class SocketIOProvider extends Component {
             settings: {
                 tempDir: '',
                 openTempDir: () => socket.emit('settings', { type: 'openTempDir' })
-            }
+            },
+            ip: ''
         }
         socket.emit('events', { type: 'get' }, data => {
             this.setState({ events: { ...this.state.events, events: data } })
@@ -55,6 +56,9 @@ class SocketIOProvider extends Component {
         })
         socket.emit('settings', { type: 'get' }, data => {
             this.setState({ settings: { ...this.state.settings, tempDir: data.tempDir } })
+        })
+        socket.emit('ip', { type: 'get' }, data => {
+            this.setState(data)
         })
     }
     searchEvents = e => {
