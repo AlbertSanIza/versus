@@ -26,7 +26,7 @@ app.on('ready', () => {
         height: 310,
         minWidth: 300,
         minHeight: 310,
-        resizable: true,
+        resizable: false,
         show: false
     })
     mainWindow.loadURL(path.join(__dirname, 'app/index.html'))
