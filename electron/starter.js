@@ -24,12 +24,13 @@ if(!fs.existsSync(tempImg)) {
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 300,
-        height: 310,
+        height: 290,
         minWidth: 300,
-        minHeight: 310,
+        minHeight: 290,
         resizable: false,
         show: false
     })
+    mainWindow.setMenu(null)
     mainWindow.loadURL(path.join(__dirname, 'app/index.html'))
     expressApp.get('/img/:path*', (req, res) => {
         res.sendFile(tempImg + '/' + req.params.path + req.params[0])
