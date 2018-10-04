@@ -66,6 +66,9 @@ class Competitors extends Component {
         this.setState({ seconds: e.target.value })
     }
     inputTextHandleChange = e => {
+        this.setState({ format: e.target.value })
+    }
+    inputTextHandleChange = e => {
         this.setState({ text: e.target.value })
         this.props.SocketIO.visualizer({ text: 'NULO' })
     }
