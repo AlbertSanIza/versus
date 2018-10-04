@@ -56,9 +56,8 @@ const styles = theme => ({
     thematic: {
         position: 'absolute',
         bottom: 0,
-        left: 0,
-        width: '100%',
-        fontSize: '10vh',
+        maxWidth: '60%',
+        fontSize: '7vh',
         zIndex: 1,
         textAlign: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.2)'
