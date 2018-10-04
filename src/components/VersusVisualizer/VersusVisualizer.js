@@ -114,6 +114,7 @@ class VersusVisualizer extends Component {
         const { status, seconds, format, text, message, competitorONEObject, competitorTWOObject } = this.state
         return (
             <div className={ classes.visualizer }>
+                <div className={ classes.background }/>
                 <div id="particles-js" className={ classes.particles }/>
                 { (() => {
                     if(status === '' || status === 'isPaused') {
