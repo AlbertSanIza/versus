@@ -54,22 +54,6 @@ const styles = theme => ({
     logoTop: {
         maxHeight: '100%',
         zIndex: 1
-    },
-    thematic: {
-        position: 'absolute',
-        bottom: '1%',
-        maxWidth: '60%',
-        fontSize: '8vh',
-        zIndex: 1,
-        textAlign: 'center'
-    },
-    format: {
-        position: 'absolute',
-        bottom: '9vh',
-        maxWidth: '60%',
-        fontSize: '6vh',
-        zIndex: 1,
-        textAlign: 'center'
     }
 })
 
@@ -155,7 +139,7 @@ class VersusVisualizer extends Component {
                     if(status !== '' && status !== 'isPaused' && format !== '' && format !== 'NULO') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className={ classes.format }>{ format }</div>
+                                <div className="format">{ format }</div>
                             </Fade>
                         )
                     }
@@ -164,7 +148,7 @@ class VersusVisualizer extends Component {
                     if(status !== '' && status !== 'isPaused' && text !== '' && text !== 'NULO') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className={ classes.thematic }>{ text }</div>
+                                <div className="thematic">{ text }</div>
                             </Fade>
                         )
                     }

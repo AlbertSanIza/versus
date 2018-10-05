@@ -7,6 +7,22 @@
     z-index: 0px;
     overflow: hidden;
 }
+.thematic {
+    position: absolute;
+    bottom: 1%;
+    max-width: 60%;
+    font-size: 8vh;
+    z-index: 1;
+    text-align: center;
+}
+.format {
+    position: absolute;
+    bottom: 9vh;
+    max-width: 60%;
+    font-size: 6vh;
+    z-index: 1;
+    text-align: 'center';
+}
 .competitor {
     position: absolute;
     width: 32%;
