@@ -186,8 +186,8 @@ class VersusVisualizer extends Component {
                     if((status === 'isSet' || status === 'isStart') && competitorONEObject.name) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
-                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(${ window.location.hostname }:12345/img/${ competitorONEObject.photo })` }) }/>
                                 <div style={ Object.assign({}, { left: 'calc(0px + 2%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 71%)' }, style.competitor) }>
+                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${ window.location.hostname }:12345/img/${ competitorONEObject.photo })` }) }/>
                                 </div>
                             </Fade>
                         )
@@ -197,8 +197,8 @@ class VersusVisualizer extends Component {
                     if((status === 'isSet' || status === 'isStart') && competitorTWOObject.name) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
-                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(${ window.location.hostname }:12345/img/${ competitorTWOObject.photo })` }) }/>
                                 <div style={ Object.assign({}, { right: 'calc(0px + 2%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 71%)' }, style.competitor) }>
+                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${ window.location.hostname }:12345/img/${ competitorTWOObject.photo })` }) }/>
                                 </div>
                             </Fade>
                         )
