@@ -92,7 +92,9 @@ class VersusVisualizer extends Component {
                             url:`http://${ window.location.hostname }:12345/img/${ msg.competitorONEObject.photo }`,
                             responseType:'blob'
                         }).then(response => {
-                            this.setState({ competitorONEPhoto: window.URL.createObjectURL(response.data) })
+                            setTimeout(() => {
+                                this.setState({ competitorONEPhoto: window.URL.createObjectURL(response.data) })
+                            }, 500)
                         }).catch(error => {
                             this.setState({ competitorONEPhoto: null })
                         })
@@ -101,7 +103,9 @@ class VersusVisualizer extends Component {
                             url:`http://${ window.location.hostname }:12345/img/${ msg.competitorTWOObject.photo }`,
                             responseType:'blob'
                         }).then(response => {
-                            this.setState({ competitorTWOPhoto: window.URL.createObjectURL(response.data) })
+                            setTimeout(() => {
+                                this.setState({ competitorTWOPhoto: window.URL.createObjectURL(response.data) })
+                            }, 500)
                         }).catch(error => {
                             this.setState({ competitorTWOPhoto: null })
                         })
