@@ -5,6 +5,7 @@ import io from 'socket.io-client'
 import 'particles.js/particles'
 
 import bdm_gold_logo from './bdmgold-min.png'
+import './VersusVisualizer.css'
 import './glitch.css'
 
 const socket = io('http://' + window.location.hostname + ':12345')
