@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Fade from '@material-ui/core/Fade'
 import io from 'socket.io-client'
 import 'particles.js/particles'
+import axios from 'axios'
 
 import bdm_gold_logo from './bdmgold-min.png'
 import './VersusVisualizer.css'
@@ -78,12 +79,36 @@ class VersusVisualizer extends Component {
             text: '',
             message: '',
             competitorONEObject: {},
-            competitorTWOObject: {}
+            competitorTWOObject: {},
+            competitorONEPhoto: null,
+            competitorTWOPhoto: null
         }
         socket.on('visualizer', msg => {
             if(msg.competitorONEObject && msg.competitorTWOObject) {
                 if((JSON.stringify(this.state.competitorONEObject) !== JSON.stringify(msg.competitorONEObject)) && (JSON.stringify(this.state.competitorTWOObject) !== JSON.stringify(msg.competitorTWOObject))) {
-                    this.setState(msg)
+                    if(msg.competitorONEObject.photo && msg.competitorTWOObject.photo) {
+                        axios({
+                            method:'get',
+                            url:`http://${ window.location.hostname }:12345/img/${ msg.competitorONEObject.photo }`,
+                            responseType:'blob'
+                        }).then(response => {
+                            this.setState({ competitorONEPhoto: window.URL.createObjectURL(response.data) })
+                        }).catch(error => {
+                            this.setState({ competitorONEPhoto: null })
+                        })
+                        axios({
+                            method:'get',
+                            url:`http://${ window.location.hostname }:12345/img/${ msg.competitorTWOObject.photo }`,
+                            responseType:'blob'
+                        }).then(response => {
+                            this.setState({ competitorTWOPhoto: window.URL.createObjectURL(response.data) })
+                        }).catch(error => {
+                            this.setState({ competitorTWOPhoto: null })
+                        })
+                        this.setState(msg)
+                    } else {
+                        this.setState({ competitorONEObject: {}, competitorTWOObject: {}, competitorONEPhoto: null, competitorTWOPhoto: null })
+                    }
                 }
             } else {
                 this.setState(msg)
@@ -98,7 +123,7 @@ class VersusVisualizer extends Component {
     }
     render() {
         const { classes } = this.props
-        const { status, seconds, format, text, message, competitorONEObject, competitorTWOObject } = this.state
+        const { status, seconds, format, text, message, competitorONEObject, competitorTWOObject, competitorONEPhoto, competitorTWOPhoto } = this.state
         return (
             <div className={ classes.visualizer }>
                 <div className={ classes.background }/>
@@ -160,7 +185,7 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if((status === 'isSet' || status === 'isStart') && competitorONEObject.name) {
+                    if((status === 'isSet' || status === 'isStart') && competitorONEObject.name && competitorONEPhoto !== null && competitorTWOPhoto !== null) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
                                 <div className="competitor competitorLeft">
@@ -171,7 +196,7 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if((status === 'isSet' || status === 'isStart') && competitorTWOObject.name) {
+                    if((status === 'isSet' || status === 'isStart') && competitorTWOObject.name && competitorTWOPhoto !== null && competitorONEPhoto !== null) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
                                 <div className="competitor competitorRight">
@@ -182,7 +207,7 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if((status === 'isSet' || status === 'isStart') && competitorONEObject.name) {
+                    if((status === 'isSet' || status === 'isStart') && competitorONEObject.name && competitorONEPhoto !== null && competitorTWOPhoto !== null) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
                                 <div className="competitorName competitorLeft">{ competitorONEObject.name }</div>
@@ -191,7 +216,7 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if((status === 'isSet' || status === 'isStart') && competitorTWOObject.name) {
+                    if((status === 'isSet' || status === 'isStart') && competitorTWOObject.name && competitorTWOPhoto !== null && competitorONEPhoto !== null) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
                                 <div className="competitorName competitorRight">{ competitorTWOObject.name }</div>
