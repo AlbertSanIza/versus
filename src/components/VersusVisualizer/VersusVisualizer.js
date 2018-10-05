@@ -193,7 +193,7 @@ class VersusVisualizer extends Component {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
                                 <div className="competitor competitorLeft">
-                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${ window.location.hostname }:12345/img/${ competitorONEObject.photo })` }) }/>
+                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(${ competitorONEPhoto }` }) }/>
                                 </div>
                             </Fade>
                         )
@@ -204,7 +204,7 @@ class VersusVisualizer extends Component {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
                                 <div className="competitor competitorRight">
-                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${ window.location.hostname }:12345/img/${ competitorTWOObject.photo })` }) }/>
+                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(${ competitorTWOPhoto })` }) }/>
                                 </div>
                             </Fade>
                         )
