@@ -112,7 +112,7 @@ class VersusVisualizer extends Component {
         return (
             <div className={ classes.visualizer }>
                 <div className={ classes.background }/>
-                <div id="particles-js" className={ classes.particles }/>
+                <div id="particles-js" className="particles"/>
                 { (() => {
                     if(status === '' || status === 'isPaused') {
                         return (
