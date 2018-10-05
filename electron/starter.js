@@ -32,6 +32,11 @@ app.on('ready', () => {
     })
     mainWindow.setMenu(null)
     mainWindow.loadFile(path.join(__dirname, 'app/index.html'))
+    expressApp.use((req, res, next) => {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next()
+    })
     expressApp.get('/img/:path*', (req, res) => {
         res.sendFile(tempImg + '/' + req.params.path + req.params[0])
     })
