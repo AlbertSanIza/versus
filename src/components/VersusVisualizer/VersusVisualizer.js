@@ -81,7 +81,13 @@ class VersusVisualizer extends Component {
             competitorTWOObject: {}
         }
         socket.on('visualizer', msg => {
-            this.setState(msg)
+            if(msg.competitorONEObject && msg.competitorTWOObject) {
+                if((JSON.stringify(this.state.competitorONEObject) !== JSON.stringify(msg.competitorONEObject)) && (JSON.stringify(this.state.competitorTWOObject) !== JSON.stringify(msg.competitorTWOObject))) {
+                    this.setState(msg)
+                }
+            } else {
+                this.setState(msg)
+            }
         })
     }
     componentDidMount() {
