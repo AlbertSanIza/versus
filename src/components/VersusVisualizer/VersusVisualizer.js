@@ -195,7 +195,7 @@ class VersusVisualizer extends Component {
                     if((status === 'isSet' || status === 'isStart') && competitorONEObject.name) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
-                                <div className="competitorName" style={{ left: 'calc(0px + 2%)' }}>{ competitorONEObject.name }</div>
+                                <div className="competitorName competitorLeft">{ competitorONEObject.name }</div>
                             </Fade>
                         )
                     }
@@ -204,7 +204,7 @@ class VersusVisualizer extends Component {
                     if((status === 'isSet' || status === 'isStart') && competitorTWOObject.name) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
-                                <div className="competitorName" style={{ right: 'calc(0px + 2%)' }}>{ competitorTWOObject.name }</div>
+                                <div className="competitorName competitorRight">{ competitorTWOObject.name }</div>
                             </Fade>
                         )
                     }
