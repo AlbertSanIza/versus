@@ -31,7 +31,7 @@ app.on('ready', () => {
         show: false
     })
     mainWindow.setMenu(null)
-    mainWindow.loadURL(path.join(__dirname, 'app/index.html'))
+    mainWindow.loadFile(path.join(__dirname, 'app/index.html'))
     expressApp.get('/img/:path*', (req, res) => {
         res.sendFile(tempImg + '/' + req.params.path + req.params[0])
     })
