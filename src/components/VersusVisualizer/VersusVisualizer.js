@@ -73,11 +73,6 @@ const styles = theme => ({
 })
 
 const style = {
-    competitor: {
-        position: 'absolute',
-        width: '32%',
-        height: '90%'
-    },
     competitorImage: {
         position: 'relative',
         backgroundRepeat: 'no-repeat',

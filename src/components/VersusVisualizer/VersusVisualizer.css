@@ -7,6 +7,18 @@
     z-index: 0px;
     overflow: hidden;
 }
+.competitor {
+    position: absolute;
+    width: 32%;
+    height: 90%;
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 71%);
+}
+.competitorLeft {
+    left: calc(0px + 2%);
+}
+.competitorRight {
+    right: calc(0px + 2%);
+}
 .competitorName {
     position: absolute;
     bottom: 10%;
