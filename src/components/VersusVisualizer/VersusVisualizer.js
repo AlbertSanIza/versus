@@ -85,14 +85,6 @@ const style = {
         backgroundSize: 'cover',
         width: '100%',
         height: '100%'
-    },
-    competitorName: {
-        position: 'absolute',
-        bottom: '10%',
-        width: '32%',
-        fontSize: '10vh',
-        textAlign: 'center',
-        textShadow: '3px 3px 50px #cccc00'
     }
 }
 
