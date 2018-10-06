@@ -37,11 +37,6 @@ const styles = theme => ({
         opacity: 0.4,
         filter: 'blur(4px)'
     },
-    logoCenter: {
-        maxWidth: '100%',
-        maxHeight: '100%',
-        zIndex: 1
-    },
     logoTopHolder: {
         position: 'absolute',
         top: 0,
@@ -136,7 +131,7 @@ class VersusVisualizer extends Component {
                     if(status === '' || status === 'isPaused') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <img className={ classes.logoCenter } src={ bdm_gold_logo } alt="LOGO"/>
+                                <img className="logoCenter" src={ bdm_gold_logo } alt="LOGO"/>
                             </Fade>
                         )
                     }
