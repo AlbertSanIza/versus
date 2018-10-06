@@ -19,7 +19,7 @@ const styles = theme => ({
         height: '100%',
         top: 0,
         left: 0,
-        opacity: 0.9,
+        opacity: 0.8,
         filter: 'blur(1px)',
         backgroundSize: 'cover'
     }
