@@ -37,16 +37,6 @@ const styles = theme => ({
         opacity: 0.4,
         filter: 'blur(4px)'
     },
-    logoTopHolder: {
-        position: 'absolute',
-        top: 0,
-        width: '100%',
-        height: '40%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 1
-    },
     logoTop: {
         maxHeight: '100%',
         zIndex: 1
@@ -140,7 +130,7 @@ class VersusVisualizer extends Component {
                     if((status !== '' && status !== 'isPaused') || status === 'isMessage') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className={ classes.logoTopHolder }>
+                                <div className="logoTopHolder">
                                     <img className={ classes.logoTop } src={ bdm_gold_logo } alt="BDM Logo"/>
                                 </div>
                             </Fade>
