@@ -73,7 +73,6 @@ class Competitors extends Component {
         this.setState({ text: e.target.value })
     }
     inputEntryHandleChange = e => {
-        console.log(e)
         this.setState({ entry: e.target.value })
     }
     inputRoundHandleChange = e => {
