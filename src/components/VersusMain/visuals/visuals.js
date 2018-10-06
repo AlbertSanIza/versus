@@ -54,6 +54,7 @@ class Competitors extends Component {
         status: '',
         seconds: '',
         format: 'NULO',
+        entry: 'NULO',
         text: 'NULO',
         round: 1,
         event: 'NULO',
@@ -100,7 +101,7 @@ class Competitors extends Component {
     }
     setButton = () => {
         this.setState({ status: 'isSet' })
-        this.props.SocketIO.visualizer({ status: 'isSet', seconds: this.state.seconds, format: this.state.format, text: this.state.text })
+        this.props.SocketIO.visualizer({ status: 'isSet', seconds: this.state.seconds, format: this.state.format, text: this.state.text, entry: this.state.entry })
         if(this.state.checkedA === true && this.state.competitorONEObject.name && this.state.competitorTWOObject.name) {
             this.props.SocketIO.visualizer({ competitorONEObject: this.state.competitorONEObject, competitorTWOObject: this.state.competitorTWOObject })
         } else {
@@ -108,12 +109,12 @@ class Competitors extends Component {
         }
     }
     resetButton = () => {
-        this.setState({ status: '', seconds: '', format: 'NULO', text: 'NULO' })
-        this.props.SocketIO.visualizer({ status: '', seconds: '', format: 'NULO', text: 'NULO' })
+        this.setState({ status: '', seconds: '', format: 'NULO', text: 'NULO', format: 'NULO' })
+        this.props.SocketIO.visualizer({ status: '', seconds: '', format: 'NULO', text: 'NULO', format: 'NULO' })
     }
     startButton = () => {
         this.setState({ status: 'isStart' })
-        this.props.SocketIO.visualizer({ status: 'isStart', seconds: this.state.seconds, format: this.state.format, text: this.state.text })
+        this.props.SocketIO.visualizer({ status: 'isStart', seconds: this.state.seconds, format: this.state.format, text: this.state.text, format: this.state.entry })
         if(this.state.checkedA === true && this.state.competitorONEObject.name && this.state.competitorTWOObject.name) {
             this.props.SocketIO.visualizer({ competitorONEObject: this.state.competitorONEObject, competitorTWOObject: this.state.competitorTWOObject })
         } else {
@@ -127,11 +128,11 @@ class Competitors extends Component {
     roundButton = () => {
         const { round } = this.state
         this.setState({ status: 'isMessage' })
-        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Round ' + round, format: 'NULO', text: 'NULO' })
+        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Round ' + round, format: 'NULO', text: 'NULO', entry: this.state.entry })
     }
     replicaButton = () => {
         this.setState({ status: 'isMessage' })
-        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Replica', format: 'NULO', text: 'NULO' })
+        this.props.SocketIO.visualizer({ status: 'isMessage', message: 'Replica', format: 'NULO', text: 'NULO', entry: this.state.entry })
     }
     onTick = () => {
         this.setState({ seconds: this.state.seconds - 1 })
@@ -143,8 +144,8 @@ class Competitors extends Component {
         }
     }
     onComplete = () => {
-        this.setState({ status: '', seconds: '', format: 'NULO', text: 'NULO' })
-        this.props.SocketIO.visualizer({ status: '', seconds: '', format: 'NULO', text: 'NULO' })
+        this.setState({ status: '', seconds: '', format: 'NULO', text: 'NULO', entry: 'NULO' })
+        this.props.SocketIO.visualizer({ status: '', seconds: '', format: 'NULO', text: 'NULO', entry: 'NULO' })
     }
     render() {
         const { classes, SocketIO } = this.props
