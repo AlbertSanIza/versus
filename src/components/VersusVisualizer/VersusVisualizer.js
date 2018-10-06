@@ -12,21 +12,6 @@ import './glitch.css'
 const socket = io('http://' + window.location.hostname + ':12345')
 
 const styles = theme => ({
-    visualizer: {
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        top: 0,
-        left: 0,
-        background: '#1a1a1a',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        overflow: 'hidden',
-        fontFamily: 'Caveat Brush',
-        textShadow: '3px 3px 50px #cccc00',
-        color: 'white'
-    },
     background: {
         backgroundImage:'url(' + window.location.origin + '/assets/patterns/yellow.jpg)',
         position: 'absolute',
@@ -36,10 +21,6 @@ const styles = theme => ({
         left: 0,
         opacity: 0.4,
         filter: 'blur(4px)'
-    },
-    logoTop: {
-        maxHeight: '100%',
-        zIndex: 1
     }
 })
 
@@ -114,7 +95,7 @@ class VersusVisualizer extends Component {
         const { classes } = this.props
         const { status, seconds, format, text, message, competitorONEObject, competitorTWOObject, competitorONEPhoto, competitorTWOPhoto } = this.state
         return (
-            <div className={ classes.visualizer }>
+            <div className="visualizer">
                 <div className={ classes.background }/>
                 <div id="particles-js" className="particles"/>
                 { (() => {
@@ -131,7 +112,7 @@ class VersusVisualizer extends Component {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className="logoTopHolder">
-                                    <img className={ classes.logoTop } src={ bdm_gold_logo } alt="BDM Logo"/>
+                                    <img className="logoTop" src={ bdm_gold_logo } alt="BDM Logo"/>
                                 </div>
                             </Fade>
                         )
