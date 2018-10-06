@@ -50,9 +50,9 @@
 }
 .format {
     position: absolute;
-    bottom: 9vh;
+    bottom: 10vh;
     max-width: 60%;
-    font-size: 6vh;
+    font-size: 8vh;
     z-index: 1;
     text-align: 'center';
 }
@@ -74,5 +74,5 @@
     width: 32%;
     font-size: 10vh;
     text-align: center;
-    text-shadow: 3px 3px 50px #cccc00;
+    text-shadow: 4px 4px 30px gray;
 }
