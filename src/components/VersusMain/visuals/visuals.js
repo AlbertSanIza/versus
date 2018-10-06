@@ -223,7 +223,6 @@ class Competitors extends Component {
                                 value={ this.state.entry }
                                 SelectProps={{ native: true }}
                                 onChange={ this.inputEntryHandleChange }
-                                disabled={ this.state.status === 'isMessage' }
                                 select fullWidth>
                                 <option value="NULO">Ninguno</option>
                                 <option>1 Entrada</option>
@@ -382,7 +381,7 @@ class Competitors extends Component {
                                             <Button variant="contained" color="primary" onClick={ this.resetButton } fullWidth>Cancelar</Button>
                                         </Grid>
                                         <Grid item xs={ 6 }>
-                                            <Button variant="contained" color="secondary" className={ classes.button } onClick={ this.setButton } disabled={ !this.state.seconds || this.state.seconds < 5 } fullWidth>Mostrar</Button>
+                                            <Button variant="contained" color="secondary" className={ classes.button } onClick={ this.setButton } fullWidth>Mostrar</Button>
                                         </Grid>
                                     </React.Fragment>
                                 )
