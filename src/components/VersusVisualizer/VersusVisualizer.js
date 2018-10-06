@@ -42,6 +42,7 @@ class VersusVisualizer extends Component {
         this.state = {
             status: '',
             seconds: '',
+            entry: '',
             format: '',
             text: '',
             message: '',
@@ -94,7 +95,7 @@ class VersusVisualizer extends Component {
     }
     render() {
         const { classes } = this.props
-        const { status, seconds, format, text, message, competitorONEObject, competitorTWOObject, competitorONEPhoto, competitorTWOPhoto } = this.state
+        const { status, seconds, format, entry, text, message, competitorONEObject, competitorTWOObject, competitorONEPhoto, competitorTWOPhoto } = this.state
         return (
             <div className="visualizer">
                 <div className={ classes.background }/>
@@ -133,6 +134,15 @@ class VersusVisualizer extends Component {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
                                 <div className="glitch" data-text={ seconds } style={{ fontSize: '50vh', marginTop: '12%' }}>{ seconds }</div>
+                            </Fade>
+                        )
+                    }
+                })() }
+                { (() => {
+                    if((status === 'isSet' || status === 'isStart') && seconds === '' && (entry !== 'NULO' && entry !== '')) {
+                        return (
+                            <Fade in={ true } timeout={ 1000 }>
+                                <div className="glitch" data-text={ seconds } style={{ fontSize: '16vh', marginTop: '12%' }}>{ entry }</div>
                             </Fade>
                         )
                     }
