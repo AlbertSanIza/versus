@@ -212,7 +212,33 @@ class Competitors extends Component {
                                 )) }
                             </TextField>
                         </Grid>
-                        <Grid item xs={ 6 }>
+                        <Grid item xs={ 2 }>
+                            <TextField
+                                label="Entradas"
+                                variant="outlined"
+                                value={ this.state.round }
+                                SelectProps={{ native: true }}
+                                onChange={ this.inputRoundHandleChange }
+                                disabled={ this.state.status === 'isMessage' }
+                                select fullWidth>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </TextField>
+                        </Grid>
+                        <Grid item xs={ 2 }>
+                            <Button
+                                size="large"
+                                color="primary"
+                                variant="contained"
+                                style={{ marginTop: 7 }}
+                                onClick={ this.roundButton }
+                                disabled={ this.state.status === 'isMessage' }
+                                fullWidth>
+                                Entradas
+                            </Button>
+                        </Grid>
+                        <Grid item xs={ 2 }>
                             <TextField
                                 label="Round"
                                 variant="outlined"
@@ -226,7 +252,7 @@ class Competitors extends Component {
                                 <option>3</option>
                             </TextField>
                         </Grid>
-                        <Grid item xs={ 3 }>
+                        <Grid item xs={ 2 }>
                             <Button
                                 size="large"
                                 color="primary"
@@ -238,7 +264,7 @@ class Competitors extends Component {
                                 Round
                             </Button>
                         </Grid>
-                        <Grid item xs={ 3 }>
+                        <Grid item xs={ 2 }>
                             <Button
                                 size="large"
                                 color="primary"
