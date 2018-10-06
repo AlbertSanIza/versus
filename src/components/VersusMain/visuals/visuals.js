@@ -198,6 +198,13 @@ class Competitors extends Component {
                                         { option.name }
                                     </option>
                                 )) }
+                                <option>1 Entrada</option>
+                                <option>2 Entradas</option>
+                                <option>3 Entradas</option>
+                                <option>4 Entradas</option>
+                                <option>5 Entradas</option>
+                                <option>6 Entradas</option>
+                                <option>7 Entradas</option>
                             </TextField>
                         </Grid>
                         <Grid item xs={ 4 }>
