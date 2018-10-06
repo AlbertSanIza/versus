@@ -13,14 +13,15 @@ const socket = io('http://' + window.location.hostname + ':12345')
 
 const styles = theme => ({
     background: {
-        backgroundImage:'url(' + window.location.origin + '/assets/patterns/yellow.jpg)',
+        backgroundImage:'url(' + window.location.origin + '/assets/patterns/fondo.jpg)',
         position: 'absolute',
         width: '100%',
         height: '100%',
         top: 0,
         left: 0,
-        opacity: 0.4,
-        filter: 'blur(4px)'
+        opacity: 0.9,
+        filter: 'blur(1px)',
+        backgroundSize: 'cover'
     }
 })
 
