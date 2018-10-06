@@ -28,7 +28,7 @@ const styles = theme => ({
         color: 'white'
     },
     background: {
-        backgroundImage:'url(' + window.location.origin + '/assets/patterns/head.jpg)',
+        backgroundImage:'url(' + window.location.origin + '/assets/patterns/yellow.jpg)',
         position: 'absolute',
         width: '100%',
         height: '100%',
