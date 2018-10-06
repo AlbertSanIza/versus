@@ -331,7 +331,7 @@ class Competitors extends Component {
                                 case '':
                                 return (
                                     <Grid item xs={ 12 }>
-                                        <Button variant="contained" color="secondary" className={ classes.button } onClick={ this.setButton } disabled={ !this.state.seconds || this.state.seconds < 5 } fullWidth>Mostrar</Button>
+                                        <Button variant="contained" color="secondary" className={ classes.button } onClick={ this.setButton } fullWidth>Mostrar</Button>
                                     </Grid>
                                 )
                                 case 'isSet':
