@@ -52,39 +52,40 @@ class VersusVisualizer extends Component {
             competitorTWOPhoto: null
         }
         socket.on('visualizer', msg => {
-            if(msg.competitorONEObject && msg.competitorTWOObject) {
-                if((JSON.stringify(this.state.competitorONEObject) !== JSON.stringify(msg.competitorONEObject)) && (JSON.stringify(this.state.competitorTWOObject) !== JSON.stringify(msg.competitorTWOObject))) {
-                    if(msg.competitorONEObject.photo && msg.competitorTWOObject.photo) {
-                        axios({
-                            method:'get',
-                            url:`http://${ window.location.hostname }:12345/img/${ msg.competitorONEObject.photo }`,
-                            responseType:'blob'
-                        }).then(response => {
-                            setTimeout(() => {
-                                this.setState({ competitorONEPhoto: window.URL.createObjectURL(response.data) })
-                            }, 500)
-                        }).catch(error => {
-                            this.setState({ competitorONEPhoto: null })
-                        })
-                        axios({
-                            method:'get',
-                            url:`http://${ window.location.hostname }:12345/img/${ msg.competitorTWOObject.photo }`,
-                            responseType:'blob'
-                        }).then(response => {
-                            setTimeout(() => {
-                                this.setState({ competitorTWOPhoto: window.URL.createObjectURL(response.data) })
-                            }, 500)
-                        }).catch(error => {
-                            this.setState({ competitorTWOPhoto: null })
-                        })
-                        this.setState(msg)
-                    } else {
-                        this.setState({ competitorONEObject: {}, competitorTWOObject: {}, competitorONEPhoto: null, competitorTWOPhoto: null })
-                    }
-                }
-            } else {
-                this.setState(msg)
-            }
+            // if(msg.competitorONEObject && msg.competitorTWOObject) {
+            //     if((JSON.stringify(this.state.competitorONEObject) !== JSON.stringify(msg.competitorONEObject)) && (JSON.stringify(this.state.competitorTWOObject) !== JSON.stringify(msg.competitorTWOObject))) {
+            //         if(msg.competitorONEObject.photo && msg.competitorTWOObject.photo) {
+            //             axios({
+            //                 method:'get',
+            //                 url:`http://${ window.location.hostname }:12345/img/${ msg.competitorONEObject.photo }`,
+            //                 responseType:'blob'
+            //             }).then(response => {
+            //                 setTimeout(() => {
+            //                     this.setState({ competitorONEPhoto: window.URL.createObjectURL(response.data) })
+            //                 }, 200)
+            //             }).catch(error => {
+            //                 this.setState({ competitorONEPhoto: null })
+            //             })
+            //             axios({
+            //                 method:'get',
+            //                 url:`http://${ window.location.hostname }:12345/img/${ msg.competitorTWOObject.photo }`,
+            //                 responseType:'blob'
+            //             }).then(response => {
+            //                 setTimeout(() => {
+            //                     this.setState({ competitorTWOPhoto: window.URL.createObjectURL(response.data) })
+            //                 }, 200)
+            //             }).catch(error => {
+            //                 this.setState({ competitorTWOPhoto: null })
+            //             })
+            //             this.setState(msg)
+            //         } else {
+            //             this.setState({ competitorONEObject: {}, competitorTWOObject: {}, competitorONEPhoto: null, competitorTWOPhoto: null })
+            //         }
+            //     }
+            //     this.setState(msg)
+            // } else {
+            // }
+            this.setState(msg)
         })
     }
     componentDidMount() {
@@ -133,7 +134,7 @@ class VersusVisualizer extends Component {
                     if(status === 'isSet' || status === 'isStart') {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className="glitch" data-text={ seconds } style={{ fontSize: '50vh', marginTop: '12%' }}>{ seconds }</div>
+                                <div className="glitch" data-text={ seconds } style={{ fontSize: '50vh', marginTop: '14%' }}>{ seconds }</div>
                             </Fade>
                         )
                     }
@@ -142,7 +143,7 @@ class VersusVisualizer extends Component {
                     if((status === 'isSet' || status === 'isStart') && seconds === '' && (entry !== 'NULO' && entry !== '')) {
                         return (
                             <Fade in={ true } timeout={ 1000 }>
-                                <div className="glitch" data-text={ seconds } style={{ fontSize: '16vh', marginTop: '12%' }}>{ entry }</div>
+                                <div className="glitch" data-text={ seconds } style={{ fontSize: '16vh', marginTop: '14%' }}>{ entry }</div>
                             </Fade>
                         )
                     }
@@ -166,40 +167,40 @@ class VersusVisualizer extends Component {
                     }
                 })() }
                 { (() => {
-                    if((status === 'isSet' || status === 'isStart') && competitorONEObject.name && competitorONEPhoto !== null && competitorTWOPhoto !== null) {
+                    if((status === 'isSet' || status === 'isStart') && competitorONEObject.name) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
                                 <div className="competitor competitorLeft">
-                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(${ competitorONEPhoto }` }) }/>
+                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${ window.location.hostname }:12345/img/${ competitorONEObject.photo })` }) }/>
                                 </div>
                             </Fade>
                         )
                     }
                 })() }
                 { (() => {
-                    if((status === 'isSet' || status === 'isStart') && competitorTWOObject.name && competitorTWOPhoto !== null && competitorONEPhoto !== null) {
+                    if((status === 'isSet' || status === 'isStart') && competitorTWOObject.name) {
                         return (
                             <Fade in={ true } timeout={ 2000 }>
                                 <div className="competitor competitorRight">
-                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(${ competitorTWOPhoto })` }) }/>
+                                    <div style={ Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${ window.location.hostname }:12345/img/${ competitorTWOObject.photo })` }) }/>
                                 </div>
                             </Fade>
                         )
                     }
                 })() }
                 { (() => {
-                    if((status === 'isSet' || status === 'isStart') && competitorONEObject.name && competitorONEPhoto !== null && competitorTWOPhoto !== null) {
+                    if((status === 'isSet' || status === 'isStart') && competitorONEObject.name) {
                         return (
-                            <Fade in={ true } timeout={ 2000 }>
+                            <Fade in={ true } timeout={ 1000 }>
                                 <div className="competitorName competitorLeft">{ competitorONEObject.name }</div>
                             </Fade>
                         )
                     }
                 })() }
                 { (() => {
-                    if((status === 'isSet' || status === 'isStart') && competitorTWOObject.name && competitorTWOPhoto !== null && competitorONEPhoto !== null) {
+                    if((status === 'isSet' || status === 'isStart') && competitorTWOObject.name) {
                         return (
-                            <Fade in={ true } timeout={ 2000 }>
+                            <Fade in={ true } timeout={ 1000 }>
                                 <div className="competitorName competitorRight">{ competitorTWOObject.name }</div>
                             </Fade>
                         )
