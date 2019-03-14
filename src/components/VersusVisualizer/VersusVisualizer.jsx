@@ -1,0 +1,187 @@
+import React, { Component } from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Fade from '@material-ui/core/Fade';
+import io from 'socket.io-client';
+import PropTypes from 'prop-types';
+import 'particles.js/particles';
+
+import bdmGoldLogo from './bdmgold-min.png';
+import './VersusVisualizer.css';
+import './glitch.css';
+
+const socket = io(`http://${window.location.hostname}:12345`);
+
+const styles = theme => ({
+  background: {
+    backgroundImage: `url(${window.location.origin}/assets/patterns/fondo.jpg)`,
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    left: 0,
+    opacity: 0.8,
+    filter: 'blur(1px)',
+    backgroundSize: 'cover',
+  },
+});
+
+const style = {
+  competitorImage: {
+    position: 'relative',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    width: '100%',
+    height: '100%',
+  },
+};
+
+class VersusVisualizer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: '',
+      seconds: '',
+      entry: '',
+      format: '',
+      text: '',
+      message: '',
+      competitorONEObject: {},
+      competitorTWOObject: {},
+    };
+    socket.on('visualizer', msg => {
+      this.setState(msg);
+    });
+  }
+
+  componentDidMount() {
+    const param = window.location.href.split('?');
+    if (param.length < 2) {
+      window.particlesJS.load('particles-js', './assets/particles-config.json');
+    }
+  }
+
+  render() {
+    const { classes } = this.props;
+    const {
+      status, seconds, format, entry, text, message, competitorONEObject, competitorTWOObject,
+    } = this.state;
+    return (
+      <div className="visualizer">
+        <div className={classes.background} />
+        <div id="particles-js" className="particles" />
+        { (() => {
+          if (status === '' || status === 'isPaused') {
+            return (
+              <Fade in timeout={1000}>
+                <img className="logoCenter" src={bdmGoldLogo} alt="LOGO" />
+              </Fade>
+            );
+          }
+        })() }
+        { (() => {
+          if ((status !== '' && status !== 'isPaused') || status === 'isMessage') {
+            return (
+              <Fade in timeout={1000}>
+                <div className="logoTopHolder">
+                  <img className="logoTop" src={bdmGoldLogo} alt="BDM Logo" />
+                </div>
+              </Fade>
+            );
+          }
+        })() }
+        { (() => {
+          if (status === 'isMessage') {
+            return (
+              <Fade in timeout={1000}>
+                <div className="glitch" data-text={message} style={{ fontSize: '40vh' }}>{ message }</div>
+              </Fade>
+            );
+          }
+        })() }
+        { (() => {
+          if (status === 'isSet' || status === 'isStart') {
+            return (
+              <Fade in timeout={1000}>
+                <div className="glitch" data-text={seconds} style={{ fontSize: '50vh', marginTop: '14%' }}>{ seconds }</div>
+              </Fade>
+            );
+          }
+        })() }
+        { (() => {
+          if ((status === 'isSet' || status === 'isStart') && seconds === '' && (entry !== 'NULO' && entry !== '')) {
+            return (
+              <Fade in timeout={1000}>
+                <div className="glitch" data-text={seconds} style={{ fontSize: '16vh', marginTop: '14%' }}>{ entry }</div>
+              </Fade>
+            );
+          }
+        })() }
+        { (() => {
+          if (status !== '' && status !== 'isPaused' && format !== '' && format !== 'NULO') {
+            return (
+              <Fade in timeout={1000}>
+                <div className="format">{ format }</div>
+              </Fade>
+            );
+          }
+        })() }
+        { (() => {
+          if (status !== '' && status !== 'isPaused' && text !== '' && text !== 'NULO') {
+            return (
+              <Fade in timeout={1000}>
+                <div className="thematic">{ text }</div>
+              </Fade>
+            );
+          }
+        })() }
+        { (() => {
+          if ((status === 'isSet' || status === 'isStart') && competitorONEObject.name) {
+            return (
+              <Fade in timeout={2000}>
+                <div className="competitor competitorLeft">
+                  <div style={Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorONEObject.photo})` })} />
+                </div>
+              </Fade>
+            );
+          }
+        })() }
+        { (() => {
+          if ((status === 'isSet' || status === 'isStart') && competitorTWOObject.name) {
+            return (
+              <Fade in timeout={2000}>
+                <div className="competitor competitorRight">
+                  <div style={Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorTWOObject.photo})` })} />
+                </div>
+              </Fade>
+            );
+          }
+        })() }
+        { (() => {
+          if ((status === 'isSet' || status === 'isStart') && competitorONEObject.name) {
+            return (
+              <Fade in timeout={1000}>
+                <div className="competitorName competitorLeft">{ competitorONEObject.name }</div>
+              </Fade>
+            );
+          }
+        })() }
+        { (() => {
+          if ((status === 'isSet' || status === 'isStart') && competitorTWOObject.name) {
+            return (
+              <Fade in timeout={1000}>
+                <div className="competitorName competitorRight">{ competitorTWOObject.name }</div>
+              </Fade>
+            );
+          }
+        })() }
+      </div>
+    );
+  }
+}
+
+VersusVisualizer.propTypes = {
+  classes: PropTypes.shape().isRequired,
+};
+
+export default withStyles(styles)(VersusVisualizer);

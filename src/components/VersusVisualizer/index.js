@@ -1,2 +1,3 @@
-import VersusVisualizer from './VersusVisualizer'
-export { VersusVisualizer as default }
+import VersusVisualizer from './VersusVisualizer';
+
+export { VersusVisualizer as default };
