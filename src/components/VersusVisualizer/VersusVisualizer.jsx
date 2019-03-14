@@ -70,111 +70,69 @@ class VersusVisualizer extends Component {
       <div className="visualizer">
         <div className={classes.background} />
         <div id="particles-js" className="particles" />
-        { (() => {
-          if (status === '' || status === 'isPaused') {
-            return (
-              <Fade in timeout={1000}>
-                <img className="logoCenter" src={bdmGoldLogo} alt="LOGO" />
-              </Fade>
-            );
+        { status === '' || status === 'isPaused' ? (
+          <Fade in timeout={1000}>
+            <img className="logoCenter" src={bdmGoldLogo} alt="LOGO" />
+          </Fade>
+        ) : (<div />) }
+        { (status !== '' && status !== 'isPaused') || status === 'isMessage' ? (
+          <Fade in timeout={1000}>
+            <div className="logoTopHolder">
+              <img className="logoTop" src={bdmGoldLogo} alt="BDM Logo" />
+            </div>
+          </Fade>
+        ) : (<div />) }
+        { status === 'isMessage' ? (
+          <Fade in timeout={1000}>
+            <div className="glitch" data-text={message} style={{ fontSize: '40vh' }}>{ message }</div>
+          </Fade>
+        ) : (<div />) }
+        { status === 'isSet' || status === 'isStart' ? (
+          <Fade in timeout={1000}>
+            <div className="glitch" data-text={seconds} style={{ fontSize: '50vh', marginTop: '14%' }}>{ seconds }</div>
+          </Fade>
+        ) : (<div />) }
+        { (status === 'isSet' || status === 'isStart') && seconds === '' && (entry !== 'NULO' && entry !== '') ? (
+          <Fade in timeout={1000}>
+            <div className="glitch" data-text={seconds} style={{ fontSize: '16vh', marginTop: '14%' }}>{ entry }</div>
+          </Fade>
+        ) : (<div />) }
+        { status !== '' && status !== 'isPaused' && format !== '' && format !== 'NULO' ? (
+          <Fade in timeout={1000}>
+            <div className="format">{ format }</div>
+          </Fade>
+        ) : (<div />)
           }
-        })() }
-        { (() => {
-          if ((status !== '' && status !== 'isPaused') || status === 'isMessage') {
-            return (
-              <Fade in timeout={1000}>
-                <div className="logoTopHolder">
-                  <img className="logoTop" src={bdmGoldLogo} alt="BDM Logo" />
-                </div>
-              </Fade>
-            );
-          }
-        })() }
-        { (() => {
-          if (status === 'isMessage') {
-            return (
-              <Fade in timeout={1000}>
-                <div className="glitch" data-text={message} style={{ fontSize: '40vh' }}>{ message }</div>
-              </Fade>
-            );
-          }
-        })() }
-        { (() => {
-          if (status === 'isSet' || status === 'isStart') {
-            return (
-              <Fade in timeout={1000}>
-                <div className="glitch" data-text={seconds} style={{ fontSize: '50vh', marginTop: '14%' }}>{ seconds }</div>
-              </Fade>
-            );
-          }
-        })() }
-        { (() => {
-          if ((status === 'isSet' || status === 'isStart') && seconds === '' && (entry !== 'NULO' && entry !== '')) {
-            return (
-              <Fade in timeout={1000}>
-                <div className="glitch" data-text={seconds} style={{ fontSize: '16vh', marginTop: '14%' }}>{ entry }</div>
-              </Fade>
-            );
-          }
-        })() }
-        { (() => {
-          if (status !== '' && status !== 'isPaused' && format !== '' && format !== 'NULO') {
-            return (
-              <Fade in timeout={1000}>
-                <div className="format">{ format }</div>
-              </Fade>
-            );
-          }
-        })() }
-        { (() => {
-          if (status !== '' && status !== 'isPaused' && text !== '' && text !== 'NULO') {
-            return (
-              <Fade in timeout={1000}>
-                <div className="thematic">{ text }</div>
-              </Fade>
-            );
-          }
-        })() }
-        { (() => {
-          if ((status === 'isSet' || status === 'isStart') && competitorONEObject.name) {
-            return (
-              <Fade in timeout={2000}>
-                <div className="competitor competitorLeft">
-                  <div style={Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorONEObject.photo})` })} />
-                </div>
-              </Fade>
-            );
-          }
-        })() }
-        { (() => {
-          if ((status === 'isSet' || status === 'isStart') && competitorTWOObject.name) {
-            return (
-              <Fade in timeout={2000}>
-                <div className="competitor competitorRight">
-                  <div style={Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorTWOObject.photo})` })} />
-                </div>
-              </Fade>
-            );
-          }
-        })() }
-        { (() => {
-          if ((status === 'isSet' || status === 'isStart') && competitorONEObject.name) {
-            return (
-              <Fade in timeout={1000}>
-                <div className="competitorName competitorLeft">{ competitorONEObject.name }</div>
-              </Fade>
-            );
-          }
-        })() }
-        { (() => {
-          if ((status === 'isSet' || status === 'isStart') && competitorTWOObject.name) {
-            return (
-              <Fade in timeout={1000}>
-                <div className="competitorName competitorRight">{ competitorTWOObject.name }</div>
-              </Fade>
-            );
-          }
-        })() }
+        { status !== '' && status !== 'isPaused' && text !== '' && text !== 'NULO' ? (
+          <Fade in timeout={1000}>
+            <div className="thematic">{ text }</div>
+          </Fade>
+        ) : (<div />) }
+        { (status === 'isSet' || status === 'isStart') && competitorONEObject.name ? (
+          <Fade in timeout={2000}>
+            <div className="competitor competitorLeft">
+              <div style={Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorONEObject.photo})` })} />
+            </div>
+          </Fade>
+        ) : (<div />) }
+        { (status === 'isSet' || status === 'isStart') && competitorTWOObject.name ? (
+          <Fade in timeout={2000}>
+            <div className="competitor competitorRight">
+              <div style={Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorTWOObject.photo})` })} />
+            </div>
+          </Fade>
+        ) : (<div />) }
+        { (status === 'isSet' || status === 'isStart') && competitorONEObject.name ? (
+          <Fade in timeout={1000}>
+            <div className="competitorName competitorLeft">{ competitorONEObject.name }</div>
+          </Fade>
+        ) : (<div />) }
+
+        { (status === 'isSet' || status === 'isStart') && competitorTWOObject.name ? (
+          <Fade in timeout={1000}>
+            <div className="competitorName competitorRight">{ competitorTWOObject.name }</div>
+          </Fade>
+        ) : (<div />) }
       </div>
     );
   }
