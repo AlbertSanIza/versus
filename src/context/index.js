@@ -1,2 +1,2 @@
-export * from "./SocketIO"
-export * from "./Versus"
+export * from './SocketIO';
+export * from './Versus';

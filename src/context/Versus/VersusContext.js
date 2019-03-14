@@ -1,5 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const VersusContext = React.createContext()
+const VersusContext = React.createContext();
 
-export default VersusContext
+export default VersusContext;
