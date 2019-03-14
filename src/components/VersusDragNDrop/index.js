@@ -1,2 +1,3 @@
-import VersusDragNDrop from './VersusDragNDrop'
-export { VersusDragNDrop as default }
+import VersusDragNDrop from './VersusDragNDrop';
+
+export { VersusDragNDrop as default };

@@ -1,2 +1,3 @@
-import VersusUpload from './VersusUpload'
-export { VersusUpload as default }
+import VersusUpload from './VersusUpload';
+
+export { VersusUpload as default };

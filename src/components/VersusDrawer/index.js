@@ -1,2 +1,3 @@
-import VersusDrawer from './VersusDrawer'
-export { VersusDrawer as default }
+import VersusDrawer from './VersusDrawer';
+
+export { VersusDrawer as default };

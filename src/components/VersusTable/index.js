@@ -1,2 +1,3 @@
-import VersusTable from './VersusTable'
-export { VersusTable as default }
+import VersusTable from './VersusTable';
+
+export { VersusTable as default };
