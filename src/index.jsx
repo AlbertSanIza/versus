@@ -5,8 +5,8 @@ import Theme from './theme'
 import App from './App'
 
 ReactDOM.render(
-    <Theme>
-        <App/>
-    </Theme>,
-    document.getElementById('root')
+  <Theme>
+    <App/>
+  </Theme>,
+  document.getElementById('root')
 )
