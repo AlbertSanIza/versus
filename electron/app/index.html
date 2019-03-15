@@ -1,34 +1,34 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <title>Versus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <title>Versus</title>
 </head>
 <body style="-webkit-touch-callout: none; -webkit-user-select: none">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm text-center">
-                <h1>Versus</h1>
-                <div class="blockquote">
-                    <script>document.write(require('ip').address())</script>:3000
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm text-center">
+        <h1>Versus</h1>
+        <div class="blockquote">
+          <script>document.write(require('ip').address())</script>:3000
         </div>
-        <div class="row">
-            <div class="col-sm" style="padding-bottom: 7px">
-                <a id="controls" class="btn btn-dark btn-lg btn-block" href="http://1" target="_blank" rel="noopener noreferrer">Controles</a>
-            </div>
-            <div class="col-sm" style="padding-bottom: 7px">
-                <a id="visuals" class="btn btn-dark btn-lg btn-block" href="http://google.com" target="_blank" rel="noopener noreferrer">Visuales</a>
-            </div>
-            <div class="col-sm text-center">Albert Sanchez</div>
-        </div>
+      </div>
     </div>
-    <script type="text/javascript">
-    document.getElementById('controls').href = 'http://' + require('ip').address() + ':3000/#/main/visuals'
-    document.getElementById('visuals').href = 'http://' + require('ip').address() + ':3000'
-    </script>
+    <div class="row">
+      <div class="col-sm" style="padding-bottom: 7px">
+        <a id="controls" class="btn btn-dark btn-lg btn-block" href="http://1" target="_blank" rel="noopener noreferrer">Controles</a>
+      </div>
+      <div class="col-sm" style="padding-bottom: 7px">
+        <a id="visuals" class="btn btn-dark btn-lg btn-block" href="http://google.com" target="_blank" rel="noopener noreferrer">Visuales</a>
+      </div>
+      <div class="col-sm text-center">Albert Sanchez</div>
+    </div>
+  </div>
+  <script type="text/javascript">
+  document.getElementById('controls').href = 'http://' + require('ip').address() + ':3000/#/main/visuals'
+  document.getElementById('visuals').href = 'http://' + require('ip').address() + ':3000'
+  </script>
 </body>
 </html>
