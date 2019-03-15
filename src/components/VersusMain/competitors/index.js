@@ -1,2 +1,3 @@
-import Competitors from './competitors'
-export { Competitors as default }
+import Competitors from './competitors';
+
+export { Competitors as default };
