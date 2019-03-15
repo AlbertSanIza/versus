@@ -16,6 +16,7 @@ import Dialog from '@material-ui/core/Dialog';
 import Grid from '@material-ui/core/Grid';
 import Grow from '@material-ui/core/Grow';
 import Card from '@material-ui/core/Card';
+import Fab from '@material-ui/core/Fab';
 import PropTypes from 'prop-types';
 
 import { withSocketIO } from '../../../context';
@@ -143,9 +144,9 @@ class Event extends Component {
         </Grid>
         <MuiThemeProvider theme={theme}>
           <Grow in timeout={500}>
-            <Button variant="fab" className={classes.fab} onClick={this.handleOpenCreate} color="primary">
+            <Fab color="primary" className={classes.fab} onClick={() => this.handleOpenCreate()}>
               <CreateIcon />
-            </Button>
+            </Fab>
           </Grow>
           <Dialog open={openCreate} onClose={this.handleCloseCreate} scroll="paper">
             <DialogTitle>Nuevo Evento</DialogTitle>

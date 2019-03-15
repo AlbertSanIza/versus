@@ -15,6 +15,7 @@ import Dialog from '@material-ui/core/Dialog';
 import Paper from '@material-ui/core/Paper';
 import Grow from '@material-ui/core/Grow';
 import Grid from '@material-ui/core/Grid';
+import Fab from '@material-ui/core/Fab';
 import PropTypes from 'prop-types';
 
 import VersusDragNDrop from '../../VersusDragNDrop';
@@ -133,9 +134,9 @@ class Competitors extends Component {
         <br />
         <MuiThemeProvider theme={theme}>
           <Grow in timeout={500}>
-            <Button variant="fab" className={classes.fab} onClick={this.handleOpenCreate} color="primary">
+            <Fab color="primary" className={classes.fab} onClick={() => this.handleOpenCreate()}>
               <CreateIcon />
-            </Button>
+            </Fab>
           </Grow>
           <Dialog open={openCreate} onClose={this.handleCloseCreate} scroll="paper">
             <DialogTitle>Nuevo Competidor</DialogTitle>

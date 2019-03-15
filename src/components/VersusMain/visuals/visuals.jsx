@@ -12,6 +12,7 @@ import Timer from '@material-ui/icons/Timer';
 import Countdown from 'react-countdown-now';
 import Grid from '@material-ui/core/Grid';
 import Grow from '@material-ui/core/Grow';
+import Fab from '@material-ui/core/Fab';
 import PropTypes from 'prop-types';
 
 import { withSocketIO } from '../../../context';
@@ -450,9 +451,9 @@ class Visuals extends Component {
         <br />
         <Grow in timeout={500}>
           <a href="#/" target="_blank" rel="noopener noreferrer">
-            <Button variant="fab" className={classes.fab} color="primary">
+            <Fab color="primary" className={classes.fab}>
               <PlayArrowIcon />
-            </Button>
+            </Fab>
           </a>
         </Grow>
       </React.Fragment>

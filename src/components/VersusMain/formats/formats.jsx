@@ -14,6 +14,7 @@ import Dialog from '@material-ui/core/Dialog';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Grow from '@material-ui/core/Grow';
+import Fab from '@material-ui/core/Fab';
 import PropTypes from 'prop-types';
 
 import { withSocketIO } from '../../../context';
@@ -99,9 +100,9 @@ class Formats extends Component {
         </Grid>
         <MuiThemeProvider theme={theme}>
           <Grow in timeout={500}>
-            <Button variant="fab" className={classes.fab} onClick={this.handleOpenCreate} color="primary">
+            <Fab color="primary" className={classes.fab} onClick={() => this.handleOpenCreate()}>
               <CreateIcon />
-            </Button>
+            </Fab>
           </Grow>
           <Dialog open={openCreate} onClose={this.handleCloseCreate} scroll="paper">
             <DialogTitle>Nuevo Formato</DialogTitle>
