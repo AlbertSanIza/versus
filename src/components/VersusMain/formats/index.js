@@ -1,2 +1,3 @@
-import Formats from './formats'
-export { Formats as default }
+import Formats from './formats';
+
+export { Formats as default };

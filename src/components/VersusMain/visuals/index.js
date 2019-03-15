@@ -1,2 +1,3 @@
-import Visuals from './visuals'
-export { Visuals as default }
+import Visuals from './visuals';
+
+export { Visuals as default };
