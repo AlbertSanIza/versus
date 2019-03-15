@@ -1,2 +1,2 @@
-import VersusMain from './VersusMain'
-export { VersusMain as default }
+import VersusMain from './VersusMain';
+export { VersusMain as default };
