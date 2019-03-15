@@ -147,7 +147,7 @@ class Competitors extends Component {
               <VersusDragNDrop anySize showButton width="312px" height="250px" imagePicked={image => this.setState({ createImage: image })} />
             </DialogContent>
             <DialogActions>
-              <Button color="primary" onClick={this.handleCloseCreate}>Cancelar</Button>
+              <Button color="primary" onClick={() => this.handleCloseCreate()}>Cancelar</Button>
               <Button variant="contained" color="primary" onClick={this.handleCreate} disabled={!createName || !createImage.file}>Guardar</Button>
             </DialogActions>
           </Dialog>

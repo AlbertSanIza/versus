@@ -157,7 +157,7 @@ class Event extends Component {
               </FormControl>
             </DialogContent>
             <DialogActions>
-              <Button color="primary" onClick={this.handleCloseCreate}>Cancelar</Button>
+              <Button color="primary" onClick={() => this.handleCloseCreate()}>Cancelar</Button>
               <Button variant="contained" color="primary" onClick={this.handleCreate} disabled={!createName}>Guardar</Button>
             </DialogActions>
           </Dialog>
