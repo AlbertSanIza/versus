@@ -161,7 +161,7 @@ class Competitors extends Component {
             </DialogContent>
             <DialogActions>
               <Button color="primary" onClick={() => this.handleCloseEdit()}>Cancelar</Button>
-              <Button variant="contained" color="primary" onClick={this.handleEdit} disabled={!editName || !editImage.file}>Guardar</Button>
+              <Button variant="contained" color="primary" onClick={() => this.handleEdit()} disabled={!editName || !editImage.file}>Guardar</Button>
             </DialogActions>
           </Dialog>
         </MuiThemeProvider>
