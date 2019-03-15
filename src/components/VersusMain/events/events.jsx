@@ -56,7 +56,7 @@ class Event extends Component {
       editSelected: [],
       columns: [
         {
-          id: 'name', numeric: false, disablePadding: false, label: 'Nombre',
+          id: 'name', disablePadding: false, label: 'Nombre',
         }
       ],
     };
@@ -134,7 +134,7 @@ class Event extends Component {
               <Card>
                 <CardActionArea style={{ width: '100%' }} onClick={() => this.handleOpenEdit(event.name, event.description, event.selected)}>
                   <CardContent>
-                    <Typography gutterBottom variant="headline" component="h2">{ event.name }</Typography>
+                    <Typography gutterBottom variant="h5" component="h2">{ event.name }</Typography>
                     <Typography component="p">{ event.description }</Typography>
                   </CardContent>
                 </CardActionArea>
@@ -148,7 +148,7 @@ class Event extends Component {
               <CreateIcon />
             </Fab>
           </Grow>
-          <Dialog open={openCreate} onClose={this.handleCloseCreate} scroll="paper">
+          <Dialog open={openCreate} onClose={() => this.handleCloseCreate()} scroll="paper">
             <DialogTitle>Nuevo Evento</DialogTitle>
             <DialogContent style={{ width: 300 }}>
               <FormControl fullWidth>
@@ -158,10 +158,10 @@ class Event extends Component {
             </DialogContent>
             <DialogActions>
               <Button color="primary" onClick={() => this.handleCloseCreate()}>Cancelar</Button>
-              <Button variant="contained" color="primary" onClick={this.handleCreate} disabled={!createName}>Guardar</Button>
+              <Button variant="contained" color="primary" onClick={() => this.handleCreate()} disabled={!createName}>Guardar</Button>
             </DialogActions>
           </Dialog>
-          <Dialog open={openEdit} onClose={this.handleCloseEdit} scroll="paper">
+          <Dialog open={openEdit} onClose={() => this.handleCloseEdit()} scroll="paper">
             <DialogTitle>Editar Evento</DialogTitle>
             <DialogContent style={{ width: 400 }}>
               <FormControl fullWidth>
@@ -171,7 +171,7 @@ class Event extends Component {
               <VersusTable id="name" columns={columns} data={SocketIO.competitors.competitors} selected={editSelected} onSelect={this.handleEditSelect} multiSelect hover />
             </DialogContent>
             <DialogActions>
-              <Button color="primary" onClick={this.handleCloseEdit}>Cancelar</Button>
+              <Button color="primary" onClick={() => this.handleCloseEdit()}>Cancelar</Button>
               <Button variant="contained" color="primary" onClick={this.handleEdit} disabled={!editName}>Guardar</Button>
             </DialogActions>
           </Dialog>
