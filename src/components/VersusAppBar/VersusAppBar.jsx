@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 
 import { withVersus } from '../../context';
 
-const styles = theme => ({
+const styles = () => ({
   title: {
     flexGrow: 1,
     textAlign: 'center',
@@ -33,7 +33,7 @@ function VersusAppBar(props) {
           <IconButton className={classes.menuButton} color="inherit" onClick={() => Versus.handleDrawer()}>
             { (() => (Versus.drawer ? (<MoreVertIcon />) : (<MoreHorizIcon />)))() }
           </IconButton>
-          <Typography className={classes.title} variant="title" color="inherit">Versus</Typography>
+          <Typography className={classes.title} variant="h6" color="inherit">Versus</Typography>
         </Toolbar>
       </AppBar>
       <div className={classes.topPadding} />
