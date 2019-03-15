@@ -47,7 +47,6 @@ class VersusDragNDrop extends Component {
     return null;
   }
 
-
   onDragEnter() {
     this.setState({ over: true });
   }
@@ -82,10 +81,10 @@ class VersusDragNDrop extends Component {
     return (
       <React.Fragment>
         <div
-          onDrop={this.onDrop}
+          onDrop={e => this.onDrop(e)}
           onDragOver={onDragOver}
-          onDragLeave={this.onDragLeave}
-          onDragEnter={this.onDragEnter}
+          onDragLeave={() => this.onDragLeave()}
+          onDragEnter={() => this.onDragEnter()}
           style={Object.assign({ }, {
             width: width,
             height: height,
@@ -99,7 +98,7 @@ class VersusDragNDrop extends Component {
           <label htmlFor="imagesInput" style={{ cursor: 'pointer' }}>
 
                         Seleccionar Imagen
-            <input id="imagesInput" type="file" value="" accept="image/png; image/jpeg;" style={{ display: 'none' }} onChange={this.handleFile} />
+            <input id="imagesInput" type="file" value="" accept="image/png; image/jpeg;" style={{ display: 'none' }} onChange={e => this.handleFile(e)} />
           </label>
         </div>
       </React.Fragment>
