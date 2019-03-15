@@ -207,7 +207,7 @@ class Visuals extends Component {
                 return (
                   <Countdown
                     date={Date.now() + (this.state.seconds * 1000)}
-                    onTick={this.onTick}
+                    onTick={() => this.onTick()}
                     onComplete={this.onComplete}
                     renderer={props => <div className={classes.countdown}>{ props.total / 1000 }</div>}
                   />
@@ -224,7 +224,7 @@ class Visuals extends Component {
                 type="number"
                 label="Tiempo"
                 value={this.state.seconds}
-                onChange={this.inputHandleChange}
+                onChange={e => this.inputHandleChange(e)}
                 disabled={this.state.status !== '' && this.state.status !== 'isMessage'}
                 InputProps={{ startAdornment: (<InputAdornment position="start"><Timer /></InputAdornment>), endAdornment: (<InputAdornment position="end">Segundos</InputAdornment>) }}
                 fullWidth
@@ -235,7 +235,7 @@ class Visuals extends Component {
                 label="Formato"
                 variant="outlined"
                 value={this.state.format}
-                onChange={this.inputFormatHandleChange}
+                onChange={e => this.inputFormatHandleChange(e)}
                 SelectProps={{ native: true }}
                 select
                 fullWidth
@@ -260,7 +260,7 @@ class Visuals extends Component {
                 label="Tema"
                 variant="outlined"
                 value={this.state.text}
-                onChange={this.inputTextHandleChange}
+                onChange={e => this.inputTextHandleChange(e)}
                 SelectProps={{ native: true }}
                 select
                 fullWidth
@@ -279,7 +279,7 @@ class Visuals extends Component {
                 variant="outlined"
                 value={this.state.entry}
                 SelectProps={{ native: true }}
-                onChange={this.inputEntryHandleChange}
+                onChange={e => this.inputEntryHandleChange(e)}
                 select
                 fullWidth
               >
@@ -299,7 +299,7 @@ class Visuals extends Component {
                 variant="outlined"
                 value={this.state.round}
                 SelectProps={{ native: true }}
-                onChange={this.inputRoundHandleChange}
+                onChange={e => this.inputRoundHandleChange(e)}
                 disabled={this.state.status === 'isMessage'}
                 select
                 fullWidth
@@ -315,7 +315,7 @@ class Visuals extends Component {
                 color="primary"
                 variant="contained"
                 style={{ marginTop: 7 }}
-                onClick={this.roundButton}
+                onClick={() => this.roundButton()}
                 disabled={this.state.status === 'isMessage'}
                 fullWidth
               >
@@ -329,7 +329,7 @@ class Visuals extends Component {
                 color="primary"
                 variant="contained"
                 style={{ marginTop: 7 }}
-                onClick={this.replicaButton}
+                onClick={() => this.replicaButton()}
                 disabled={this.state.status === 'isMessage'}
                 fullWidth
               >
@@ -343,7 +343,7 @@ class Visuals extends Component {
                 variant="outlined"
                 value={this.state.event}
                 SelectProps={{ native: true }}
-                onChange={this.inputEventHandleChange}
+                onChange={e => this.inputEventHandleChange(e)}
                 select
                 fullWidth
               >
@@ -370,7 +370,7 @@ class Visuals extends Component {
                   SelectProps={{ native: true }}
                   value={this.state.competitorONE}
                   disabled={this.state.event === 'NULO'}
-                  onChange={this.inputCompetitorONEHandleChange}
+                  onChange={e => this.inputCompetitorONEHandleChange(e)}
                   select
                   fullWidth
                 >
@@ -391,7 +391,7 @@ class Visuals extends Component {
                   SelectProps={{ native: true }}
                   value={this.state.competitorTWO}
                   disabled={this.state.event === 'NULO'}
-                  onChange={this.inputCompetitorTWOHandleChange}
+                  onChange={e => this.inputCompetitorTWOHandleChange(e)}
                   select
                   fullWidth
                 >
@@ -409,7 +409,7 @@ class Visuals extends Component {
                 case '':
                   return (
                     <Grid item xs={12}>
-                      <Button variant="contained" color="secondary" className={classes.button} onClick={this.setButton} fullWidth>Mostrar</Button>
+                      <Button variant="contained" color="secondary" className={classes.button} onClick={() => this.setButton()} fullWidth>Mostrar</Button>
                     </Grid>
                   );
                 case 'isSet':
@@ -417,27 +417,27 @@ class Visuals extends Component {
                   return (
                     <React.Fragment>
                       <Grid item xs={6}>
-                        <Button variant="contained" color="primary" onClick={this.resetButton} fullWidth>Cancelar</Button>
+                        <Button variant="contained" color="primary" onClick={() => this.resetButton()} fullWidth>Cancelar</Button>
                       </Grid>
                       <Grid item xs={6}>
-                        <Button variant="contained" color="secondary" onClick={this.startButton} fullWidth>Iniciar</Button>
+                        <Button variant="contained" color="secondary" onClick={() => this.startButton()} fullWidth>Iniciar</Button>
                       </Grid>
                     </React.Fragment>
                   );
                 case 'isStart':
                   return (
                     <Grid item xs={12}>
-                      <Button variant="contained" color="primary" onClick={this.pauseButton} fullWidth>Puasar</Button>
+                      <Button variant="contained" color="primary" onClick={() => this.pauseButton()} fullWidth>Puasar</Button>
                     </Grid>
                   );
                 case 'isMessage':
                   return (
                     <React.Fragment>
                       <Grid item xs={6}>
-                        <Button variant="contained" color="primary" onClick={this.resetButton} fullWidth>Cancelar</Button>
+                        <Button variant="contained" color="primary" onClick={() => this.resetButton()} fullWidth>Cancelar</Button>
                       </Grid>
                       <Grid item xs={6}>
-                        <Button variant="contained" color="secondary" className={classes.button} onClick={this.setButton} fullWidth>Mostrar</Button>
+                        <Button variant="contained" color="secondary" className={classes.button} onClick={() => this.setButton()} fullWidth>Mostrar</Button>
                       </Grid>
                     </React.Fragment>
                   );
