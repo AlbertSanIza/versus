@@ -12,7 +12,8 @@ const http = require('http').Server(expressApp).listen(12345);
 const io = require('socket.io')(http);
 const storage = require('electron-json-storage');
 
-const tempDir = path.join(os.tmpdir(), '/versus');
+// const tempDir = path.join(os.tmpdir(), '/versus');
+const tempDir = path.join(__dirname, '/data');
 const tempImg = path.join(tempDir, '/img');
 storage.setDataPath(tempDir);
 
