@@ -68,7 +68,7 @@ class Main extends Component {
           <Button
             color="primary"
             variant="contained"
-            onClick={this.handleCreate}
+            onClick={() => this.handleCreate()}
             disabled={!createName || !createImage.file}
             fullWidth
           >
