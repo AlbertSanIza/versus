@@ -20,6 +20,9 @@ const styles = theme => ({
     height: 36,
     paddingBottom: 2,
   },
+  typography: {
+    useNextVariants: true,
+  },
 });
 
 function Settings(props) {

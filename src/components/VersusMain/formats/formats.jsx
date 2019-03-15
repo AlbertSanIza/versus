@@ -22,6 +22,9 @@ const theme = createMuiTheme({
   palette: {
     primary: red,
   },
+  typography: {
+    useNextVariants: true,
+  },
 });
 
 const styles = () => ({
