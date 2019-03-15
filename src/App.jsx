@@ -10,8 +10,10 @@ function App(props) {
       <React.Fragment>
         <VersusProvider>
           <SocketIOProvider>
-            <Route path="/main" component={VersusMain} />
-            <Route exact path="/upload" component={VersusUpload} />
+            <div>
+              <Route path="/main" component={VersusMain} />
+              <Route exact path="/upload" component={VersusUpload} />
+            </div>
           </SocketIOProvider>
         </VersusProvider>
         <Route exact path="/" component={VersusVisualizer} />
