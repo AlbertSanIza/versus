@@ -138,7 +138,7 @@ class Competitors extends Component {
               <CreateIcon />
             </Fab>
           </Grow>
-          <Dialog open={openCreate} onClose={this.handleCloseCreate} scroll="paper">
+          <Dialog open={openCreate} onClose={() => this.handleCloseCreate()} scroll="paper">
             <DialogTitle>Nuevo Competidor</DialogTitle>
             <DialogContent>
               <FormControl fullWidth>
@@ -148,10 +148,10 @@ class Competitors extends Component {
             </DialogContent>
             <DialogActions>
               <Button color="primary" onClick={() => this.handleCloseCreate()}>Cancelar</Button>
-              <Button variant="contained" color="primary" onClick={this.handleCreate} disabled={!createName || !createImage.file}>Guardar</Button>
+              <Button variant="contained" color="primary" onClick={() => this.handleCreate()} disabled={!createName || !createImage.file}>Guardar</Button>
             </DialogActions>
           </Dialog>
-          <Dialog open={openEdit} onClose={this.handleCloseEdit} scroll="paper">
+          <Dialog open={openEdit} onClose={() => this.handleCloseEdit()} scroll="paper">
             <DialogTitle>Editar Competidor</DialogTitle>
             <DialogContent>
               <FormControl fullWidth>
@@ -160,7 +160,7 @@ class Competitors extends Component {
               <VersusDragNDrop anySize showButton width="312px" height="250px" imagePicked={image => this.setState({ editImage: image })} imageDefault={`http://${window.location.hostname}:12345/img/${editPhoto}`} />
             </DialogContent>
             <DialogActions>
-              <Button color="primary" onClick={this.handleCloseEdit}>Cancelar</Button>
+              <Button color="primary" onClick={() => this.handleCloseEdit()}>Cancelar</Button>
               <Button variant="contained" color="primary" onClick={this.handleEdit} disabled={!editName || !editImage.file}>Guardar</Button>
             </DialogActions>
           </Dialog>
