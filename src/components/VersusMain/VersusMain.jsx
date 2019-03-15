@@ -15,12 +15,14 @@ function Main() {
     <React.Fragment>
       <VersusAppBar />
       <VersusDrawer>
-        <Route path="/main/visuals" component={VisualsView} />
-        <Route path="/main/events" component={EventsView} />
-        <Route path="/main/thematics" component={ThematicsView} />
-        <Route path="/main/formats" component={FormatsView} />
-        <Route path="/main/competitors" component={CompetitorsView} />
-        <Route path="/main/settings" component={SettingsView} />
+        <div>
+          <Route path="/main/visuals" component={VisualsView} />
+          <Route path="/main/events" component={EventsView} />
+          <Route path="/main/thematics" component={ThematicsView} />
+          <Route path="/main/formats" component={FormatsView} />
+          <Route path="/main/competitors" component={CompetitorsView} />
+          <Route path="/main/settings" component={SettingsView} />
+        </div>
       </VersusDrawer>
     </React.Fragment>
   );
