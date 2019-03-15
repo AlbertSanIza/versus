@@ -168,11 +168,11 @@ class Event extends Component {
                 <TextField label="Nombre" margin="normal" variant="outlined" value={editName} disabled />
                 <TextField id="Descripcion" label="Descripcion" margin="normal" variant="outlined" rowsMax="4" value={editDescription} onChange={e => this.editDescriptionChanged(e.target.value)} multiline />
               </FormControl>
-              <VersusTable id="name" columns={columns} data={SocketIO.competitors.competitors} selected={editSelected} onSelect={this.handleEditSelect} multiSelect hover />
+              <VersusTable id="name" columns={columns} data={SocketIO.competitors.competitors} selected={editSelected} onSelect={selected => this.handleEditSelect(selected)} multiSelect hover />
             </DialogContent>
             <DialogActions>
               <Button color="primary" onClick={() => this.handleCloseEdit()}>Cancelar</Button>
-              <Button variant="contained" color="primary" onClick={this.handleEdit} disabled={!editName}>Guardar</Button>
+              <Button variant="contained" color="primary" onClick={() => this.handleEdit()} disabled={!editName}>Guardar</Button>
             </DialogActions>
           </Dialog>
         </MuiThemeProvider>
