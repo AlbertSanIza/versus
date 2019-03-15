@@ -1,2 +1,3 @@
-import Thematics from './thematics'
-export { Thematics as default }
+import Thematics from './thematics';
+
+export { Thematics as default };
