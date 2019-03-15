@@ -121,9 +121,9 @@ class Event extends Component {
     } = this.state;
     return (
       <React.Fragment>
-        <Typography variant="display2">Eventos</Typography>
+        <Typography variant="h3">Eventos</Typography>
         <Grid container spacing={16}>
-          <Grid item sm={12}>
+          <Grid item xs={12}>
             <FormControl fullWidth>
               <TextField id="Busqueda" label="Busqueda" margin="normal" variant="outlined" value={SocketIO.events.searchTerm} onChange={e => SocketIO.events.search(e.target.value)} />
             </FormControl>

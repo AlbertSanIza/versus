@@ -80,9 +80,9 @@ class Thematics extends Component {
     const { openCreate, showSnackbar, createName } = this.state;
     return (
       <React.Fragment>
-        <Typography variant="display2">Tematicas</Typography>
+        <Typography variant="h3">Tematicas</Typography>
         <Grid container spacing={16}>
-          <Grid item sm={12}>
+          <Grid item xs={12}>
             <FormControl fullWidth>
               <TextField id="Busqueda" label="Busqueda" margin="normal" variant="outlined" value={SocketIO.thematics.searchTerm} onChange={e => SocketIO.thematics.search(e.target.value)} />
             </FormControl>

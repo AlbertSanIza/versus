@@ -197,7 +197,7 @@ class Visuals extends Component {
           <iframe src="#/?animation" frameBorder="0" title="visualizer" className={classes.visualsIframe} />
         </div>
         <br />
-        <Typography variant="title">
+        <Typography variant="h6">
 
                     Controles
           {(() => {

@@ -80,9 +80,9 @@ class Formats extends Component {
     const { openCreate, showSnackbar, createName } = this.state;
     return (
       <React.Fragment>
-        <Typography variant="display2">Formatos</Typography>
+        <Typography variant="h3">Formatos</Typography>
         <Grid container spacing={16}>
-          <Grid item sm={12}>
+          <Grid item xs={12}>
             <FormControl fullWidth>
               <TextField id="Busqueda" label="Busqueda" margin="normal" variant="outlined" value={SocketIO.formats.searchTerm} onChange={e => SocketIO.formats.search(e.target.value)} />
             </FormControl>

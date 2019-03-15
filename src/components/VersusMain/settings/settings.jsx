@@ -29,14 +29,14 @@ function Settings(props) {
   const { SocketIO, classes } = props;
   return (
     <React.Fragment>
-      <Typography variant="display2" gutterBottom>Ajustes</Typography>
+      <Typography variant="h3" gutterBottom>Ajustes</Typography>
       <Grid container spacing={16}>
-        <Grid item sm={12}>
+        <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField label="Carpeta Temporal" margin="normal" variant="outlined" value={SocketIO.settings.tempDir} disabled />
           </FormControl>
         </Grid>
-        <Grid sm={12} style={{ textAlign: 'right' }} item>
+        <Grid xs={12} style={{ textAlign: 'right' }} item>
           <Button variant="contained" color="primary" onClick={() => SocketIO.settings.openTempDir()}>Mostrar</Button>
         </Grid>
       </Grid>

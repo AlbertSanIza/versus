@@ -106,9 +106,9 @@ class Competitors extends Component {
     } = this.state;
     return (
       <React.Fragment>
-        <Typography variant="display2">Competidores</Typography>
+        <Typography variant="h3">Competidores</Typography>
         <Grid container spacing={16}>
-          <Grid item sm={12}>
+          <Grid item xs={12}>
             <FormControl fullWidth>
               <TextField id="Busqueda" label="Busqueda" margin="normal" variant="outlined" value={SocketIO.competitors.searchTerm} onChange={e => SocketIO.competitors.search(e.target.value)} />
             </FormControl>
