@@ -104,7 +104,7 @@ class Thematics extends Component {
               <CreateIcon />
             </Fab>
           </Grow>
-          <Dialog open={openCreate} onClose={this.handleCloseCreate} scroll="paper">
+          <Dialog open={openCreate} onClose={() => this.handleCloseCreate()} scroll="paper">
             <DialogTitle>Nueva Tematica</DialogTitle>
             <DialogContent style={{ width: 300 }}>
               <FormControl fullWidth>
@@ -113,7 +113,7 @@ class Thematics extends Component {
             </DialogContent>
             <DialogActions>
               <Button color="primary" onClick={() => this.handleCloseCreate()}>Cancelar</Button>
-              <Button variant="contained" color="primary" onClick={this.handleCreate} disabled={!createName}>Guardar</Button>
+              <Button variant="contained" color="primary" onClick={() => this.handleCreate()} disabled={!createName}>Guardar</Button>
             </DialogActions>
           </Dialog>
         </MuiThemeProvider>
