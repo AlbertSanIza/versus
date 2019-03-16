@@ -208,7 +208,7 @@ class Visuals extends Component {
                   <Countdown
                     date={Date.now() + (this.state.seconds * 1000)}
                     onTick={() => this.onTick()}
-                    onComplete={this.onComplete}
+                    onComplete={() => this.onComplete()}
                     renderer={props => <div className={classes.countdown}>{ props.total / 1000 }</div>}
                   />
                 );
