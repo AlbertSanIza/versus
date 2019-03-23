@@ -375,8 +375,8 @@ class Visuals extends Component {
                   fullWidth
                 >
                   <option value="NULO">Ninguno</option>
-                  { SocketIO.events.events.filter(event => event.name === this.state.event)[0].selected.filter(name => name !== this.state.competitorTWO).map((option, index) => (
-                    <option key={option.name} value={option}>
+                  { SocketIO.events.events.filter(event => event.name === this.state.event)[0].selected.filter(name => name !== this.state.competitorTWO).map(option => (
+                    <option key={option} value={option}>
                       { option }
                     </option>
                   )) }
@@ -396,8 +396,8 @@ class Visuals extends Component {
                   fullWidth
                 >
                   <option value="NULO">Ninguno</option>
-                  { SocketIO.events.events.filter(event => event.name === this.state.event)[0].selected.filter(name => name !== this.state.competitorONE).map((option, index) => (
-                    <option key={option.name} value={option}>
+                  { SocketIO.events.events.filter(event => event.name === this.state.event)[0].selected.filter(name => name !== this.state.competitorONE).map(option => (
+                    <option key={option} value={option}>
                       { option }
                     </option>
                   )) }
