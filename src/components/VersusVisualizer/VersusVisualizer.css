@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    font-family: 'Bebas Neue';
+    font-family: 'Tofino';
     color: white;
 }
 .particles {
@@ -22,7 +22,7 @@
     overflow: hidden;
 }
 .logoCenter {
-    width: 50%;
+    width: 70%;
     height: 100%;
     z-index: 1;
 }
@@ -37,7 +37,7 @@
     z-index: 1;
 }
 .logoTop {
-    width: 22%;
+    width: 28%;
     height: 100%;
     z-index: 1;
 }
