@@ -13,7 +13,7 @@ const socket = io(`http://${window.location.hostname}:12345`);
 
 const styles = theme => ({
   background: {
-    backgroundImage: `url(${window.location.origin}/assets/patterns/fondo.jpg)`,
+    backgroundImage: `url(${window.location.origin}/assets/patterns/fondoPangea.jpg)`,
     position: 'absolute',
     width: '100%',
     height: '100%',
