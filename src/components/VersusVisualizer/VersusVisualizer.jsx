@@ -69,13 +69,16 @@ class VersusVisualizer extends Component {
       status, seconds, format, entry, text, message, competitorONEObject, competitorTWOObject,
     } = this.state;
     let newSecondsNumber = 0;
-    let newSecondsString = '0';
+    let newSecondsString = '';
     if (!isNaN(seconds)) {
       newSecondsNumber = Number(seconds);
       if (newSecondsNumber > 180) {
         newSecondsString = `${Math.floor(newSecondsNumber / 60)}.${newSecondsNumber - (Math.floor(newSecondsNumber / 60) * 60)}`;
       } else {
         newSecondsString = `${newSecondsNumber}`;
+        if (newSecondsNumber === 0) {
+          newSecondsString = '';
+        }
       }
     }
     return (
