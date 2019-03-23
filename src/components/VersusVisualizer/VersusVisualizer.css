@@ -76,10 +76,10 @@
     /* -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 71%); */
 }
 .competitorLeft {
-    left: calc(0px + 2%);
+    left: calc(0px + 5%);
 }
 .competitorRight {
-    right: calc(0px + 2%);
+    right: calc(0px + 5%);
 }
 .competitorName {
     position: absolute;
