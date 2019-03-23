@@ -13,6 +13,16 @@
     font-weight: bold;
     color: #000000;
 }
+#background-video {
+    background-image: url("http://localhost:3000/assets/patterns/videoPangea.mp4");
+    height: 100%;
+    width: 100%;
+    float: left;
+    top: 0;
+    padding: none;
+    position: fixed;
+    background-color: red;
+}
 .particles {
     position: absolute;
     width: 100%;

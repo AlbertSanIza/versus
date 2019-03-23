@@ -70,6 +70,10 @@ class VersusVisualizer extends Component {
     return (
       <div className="visualizer">
         <div className={classes.background} />
+        <video autoPlay muted loop id="background-video">
+          <track kind="captions" />
+          <source src={`${window.location.origin}/assets/patterns/videoPangea.mp4`} type="video/ogg" />
+        </video>
         <div id="particles-js" className="particles" />
         { status === '' || status === 'isPaused' ? (
           <Fade in timeout={1000}>
