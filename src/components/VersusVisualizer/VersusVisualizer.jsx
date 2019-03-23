@@ -19,9 +19,10 @@ const styles = theme => ({
     height: '100%',
     top: 0,
     left: 0,
-    opacity: 0.8,
-    filter: 'blur(1px)',
-    backgroundSize: 'cover',
+    opacity: 1,
+    filter: 'blur(0px)',
+    backgroundSize: '100% 100%',
+    backgroundRepeat: 'no-repeat',
   },
 });
 
