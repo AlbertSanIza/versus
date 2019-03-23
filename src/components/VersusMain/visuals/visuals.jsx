@@ -318,8 +318,7 @@ class Visuals extends Component {
                 disabled={this.state.status === 'isMessage'}
                 fullWidth
               >
-
-                                Round
+              Round
               </Button>
             </Grid>
             <Grid item xs={3}>
@@ -332,8 +331,7 @@ class Visuals extends Component {
                 disabled={this.state.status === 'isMessage'}
                 fullWidth
               >
-
-                                Replica
+                Replica
               </Button>
             </Grid>
             <Grid item xs={8}>
