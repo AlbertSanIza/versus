@@ -33,9 +33,10 @@
     overflow: hidden;
 }
 .logoCenter {
-    width: 70%;
-    height: 60%;
+    width: 80%;
+    height: 68%;
     z-index: 1;
+    margin-top: -6%;
 }
 .logoTopHolder {
     position: absolute;
