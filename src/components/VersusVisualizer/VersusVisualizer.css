@@ -55,17 +55,17 @@
 }
 .thematic {
     position: absolute;
-    bottom: 1%;
+    bottom: 10%;
     max-width: 60%;
-    font-size: 8vh;
+    font-size: 12vh;
     z-index: 1;
     text-align: center;
 }
 .format {
     position: absolute;
-    bottom: 10vh;
+    bottom: 20%;
     max-width: 60%;
-    font-size: 8vh;
+    font-size: 14vh;
     z-index: 1;
     text-align: 'center';
 }
