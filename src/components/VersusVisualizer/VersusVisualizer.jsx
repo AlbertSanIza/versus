@@ -90,7 +90,7 @@ class VersusVisualizer extends Component {
         ) : (<div />) }
         { status === 'isSet' || status === 'isStart' ? (
           <Fade in timeout={1000}>
-            <div className="glitch" data-text={seconds} style={{ fontSize: '50vh', marginTop: '14%' }}>{ seconds }</div>
+            <div className="glitch" data-text={seconds} style={{ fontSize: '46vh', marginTop: '10%' }}>{ seconds }</div>
           </Fade>
         ) : (<div />) }
         { (status === 'isSet' || status === 'isStart') && seconds === '' && (entry !== 'NULO' && entry !== '') ? (
