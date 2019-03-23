@@ -9,8 +9,8 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    color: white;
     font-family: 'Tofino Cond';
+    color: #000000;
 }
 .particles {
     position: absolute;
