@@ -125,7 +125,7 @@ class Visuals extends Component {
     const { round } = this.state;
     this.setState({ status: 'isMessage' });
     this.props.SocketIO.visualizer({
-      status: 'isMessage', message: `Round ${round}`, format: 'NULO', text: 'NULO', entry: this.state.entry,
+      status: 'isMessage', message: `ROUND ${round}`, format: 'NULO', text: 'NULO', entry: this.state.entry,
     });
   }
 
@@ -186,7 +186,7 @@ class Visuals extends Component {
   replicaButton() {
     this.setState({ status: 'isMessage' });
     this.props.SocketIO.visualizer({
-      status: 'isMessage', message: 'Replica', format: 'NULO', text: 'NULO', entry: this.state.entry,
+      status: 'isMessage', message: 'REPLICA', format: 'NULO', text: 'NULO', entry: this.state.entry,
     });
   }
 
