@@ -128,7 +128,6 @@ class VersusVisualizer extends Component {
             <div className="competitorName competitorLeft">{ competitorONEObject.name }</div>
           </Fade>
         ) : (<div />) }
-
         { (status === 'isSet' || status === 'isStart') && competitorTWOObject.name ? (
           <Fade in timeout={1000}>
             <div className="competitorName competitorRight">{ competitorTWOObject.name }</div>
