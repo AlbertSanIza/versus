@@ -129,7 +129,6 @@ class Visuals extends Component {
     });
   }
 
-
   resetButton() {
     this.setState({
       status: '', seconds: '', format: 'NULO', text: 'NULO', entry: 'NULO',
