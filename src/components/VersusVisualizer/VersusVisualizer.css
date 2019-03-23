@@ -10,6 +10,7 @@
     justify-content: center;
     overflow: hidden;
     font-family: 'Tofino Cond';
+    font-weight: bold;
     color: #000000;
 }
 .particles {
