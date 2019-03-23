@@ -1,3 +1,4 @@
+/* eslint no-restricted-globals: ["off"] */
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Fade from '@material-ui/core/Fade';
