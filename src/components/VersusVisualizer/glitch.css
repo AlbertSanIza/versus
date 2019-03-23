@@ -71,10 +71,10 @@
 .glitch:after {
     content: attr(data-text);
     position: absolute;
-    left: 5px;
-    text-shadow: -5px 0 #006847;
+    left: 10px;
+    text-shadow: -5px 0 #ffff00;
     top: 0;
-    color: white;
+    color: #1a1a1a;
     background: transparent;
     overflow: hidden;
     clip: rect(0, 9999px, 0, 0);
@@ -149,10 +149,10 @@
 .glitch:before {
     content: attr(data-text);
     position: absolute;
-    left: -5px;
+    left: -10px;
     text-shadow: 5px 0 #CE1126;
     top: 0;
-    color: white;
+    color: #1a1a1a;
     background: transparent;
     overflow: hidden;
     clip: rect(0, 9999px, 0, 0);
