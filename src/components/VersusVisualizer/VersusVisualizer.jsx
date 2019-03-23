@@ -5,7 +5,7 @@ import io from 'socket.io-client';
 import PropTypes from 'prop-types';
 import 'particles.js/particles';
 
-import bdmGoldLogo from './bdmgold-min.png';
+import mainLogo from './pangea_2vs2_logo.png';
 import './VersusVisualizer.css';
 import './glitch.css';
 
@@ -72,13 +72,13 @@ class VersusVisualizer extends Component {
         <div id="particles-js" className="particles" />
         { status === '' || status === 'isPaused' ? (
           <Fade in timeout={1000}>
-            <img className="logoCenter" src={bdmGoldLogo} alt="LOGO" />
+            <img className="logoCenter" src={mainLogo} alt="LOGO" />
           </Fade>
         ) : (<div />) }
         { (status !== '' && status !== 'isPaused') || status === 'isMessage' ? (
           <Fade in timeout={1000}>
             <div className="logoTopHolder">
-              <img className="logoTop" src={bdmGoldLogo} alt="BDM Logo" />
+              <img className="logoTop" src={mainLogo} alt="BDM Logo" />
             </div>
           </Fade>
         ) : (<div />) }
