@@ -72,7 +72,7 @@ class VersusVisualizer extends Component {
     let newSecondsString = '';
     if (!isNaN(seconds)) {
       newSecondsNumber = Number(seconds);
-      if (newSecondsNumber > 180) {
+      if (newSecondsNumber > 120) {
         newSecondsString = `${Math.floor(newSecondsNumber / 60)}:${newSecondsNumber - (Math.floor(newSecondsNumber / 60) * 60)}`;
       } else {
         newSecondsString = `${newSecondsNumber}`;
