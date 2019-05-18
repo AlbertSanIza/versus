@@ -1,91 +1,109 @@
 .visualizer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    background: #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    font-family: 'Tofino Cond';
-    font-weight: bold;
-    color: #000000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: 'Tofino Cond';
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: -20px 0 20px black, 0 20px 20px black, 0px 0 20px black, 0 20px 20px black;
 }
 #background-video {
-    background-image: url("http://localhost:3000/assets/patterns/videoPangea.mp4");
-    height: 100%;
-    width: 100%;
-    float: left;
-    top: 0;
-    padding: none;
-    position: fixed;
-    background-color: red;
+  background-image: url("http://localhost:3000/assets/patterns/videoPangea.mp4");
+  height: 100%;
+  width: 100%;
+  float: left;
+  top: 0;
+  padding: none;
+  position: fixed;
+  background-color: red;
 }
 .particles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 0px;
-    overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0px;
+  overflow: hidden;
 }
 .logoCenter {
-    width: 80%;
-    height: 68%;
-    z-index: 1;
-    margin-top: -6%;
+  width: 46%;
+  height: 70%;
+  z-index: 1;
+  margin-top: -2%;
 }
 .logoTopHolder {
-    position: absolute;
-    top: 2%;
-    width: 100%;
-    height: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+  position: absolute;
+  top: 6%;
+  width: 80%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 .logoTop {
-    width: 33%;
-    height: 100%;
-    z-index: 1;
+  width: 33%;
+  height: 100%;
+  z-index: 1;
 }
 .thematic {
-    position: absolute;
-    bottom: 8%;
-    max-width: 60%;
-    font-size: 11vh;
-    z-index: 1;
-    text-align: center;
+  position: absolute;
+  bottom: 8%;
+  max-width: 60%;
+  font-size: 16vh;
+  z-index: 1;
+  text-align: center;
 }
 .format {
-    position: absolute;
-    bottom: 20%;
-    max-width: 60%;
-    font-size: 14vh;
-    z-index: 1;
-    text-align: 'center';
+  position: absolute;
+  bottom: 20%;
+  max-width: 60%;
+  font-size: 14vh;
+  z-index: 1;
+  text-align: 'center';
 }
 .competitor {
-    position: absolute;
-    width: 30%;
-    height: 70%;
-    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 71%);
+  position: absolute;
+  width: 30%;
+  height: 70%;
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 71%);
 }
 .competitorLeft {
-    left: calc(0px + 5%);
+  left: calc(0px + 5%);
 }
 .competitorRight {
-    right: calc(0px + 5%);
+  right: calc(0px + 5%);
 }
 .competitorName {
-    position: absolute;
-    bottom: 10%;
-    width: 32%;
-    font-size: 10vh;
-    text-align: center;
-    text-shadow: 4px 4px 30px gray;
+  position: absolute;
+  bottom: 10%;
+  width: 32%;
+  font-size: 10vh;
+  text-align: center;
+  text-shadow: 4px 4px 30px gray;
+}
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
 }

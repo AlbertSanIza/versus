@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Fade from '@material-ui/core/Fade';
-import io from 'socket.io-client';
 import PropTypes from 'prop-types';
+import io from 'socket.io-client';
 import 'particles.js/particles';
 
-import mainLogo from './pangea_2vs2_logo.png';
+import mainLogo from './god_level.png';
 import './VersusVisualizer.css';
 import './glitch.css';
 
@@ -14,7 +14,7 @@ const socket = io(`http://${window.location.hostname}:12345`);
 
 const styles = theme => ({
   background: {
-    backgroundImage: `url(${window.location.origin}/assets/patterns/fondoPangea.jpg)`,
+    backgroundImage: `url(${window.location.origin}/assets/patterns/Fondo0.jpg)`,
     position: 'absolute',
     width: '100%',
     height: '100%',
@@ -24,6 +24,7 @@ const styles = theme => ({
     filter: 'blur(0px)',
     backgroundSize: '100% 100%',
     backgroundRepeat: 'no-repeat',
+    animation: 'breathing 20s infinite normal',
   },
 });
 
@@ -84,17 +85,19 @@ class VersusVisualizer extends Component {
     return (
       <div className="visualizer">
         <div className={classes.background} />
-        <video autoPlay muted loop id="background-video">
+        { /*
+          <video autoPlay muted loop id="background-video">
           <track kind="captions" />
           <source src={`${window.location.origin}/assets/patterns/videoPangea.mp4`} type="video/ogg" />
-        </video>
+          </video>
+          */ }
         <div id="particles-js" className="particles" />
         { status === '' || status === 'isPaused' ? (
           <Fade in timeout={1000}>
             <img className="logoCenter" src={mainLogo} alt="LOGO" />
           </Fade>
         ) : (<div />) }
-        { (status !== '' && status !== 'isPaused') || status === 'isMessage' ? (
+        { status === 'isMessage' ? (
           <Fade in timeout={1000}>
             <div className="logoTopHolder">
               <img className="logoTop" src={mainLogo} alt="BDM Logo" />
@@ -103,12 +106,14 @@ class VersusVisualizer extends Component {
         ) : (<div />) }
         { status === 'isMessage' ? (
           <Fade in timeout={1000}>
-            <div className="glitch" data-text={message} style={{ fontSize: '40vh' }}>{ message }</div>
+            <div style={{ paddingTop: '16%' }}>
+              <div className="glitch" data-text={message} style={{ fontSize: '36vh' }}>{ message }</div>
+            </div>
           </Fade>
         ) : (<div />) }
         { status === 'isSet' || status === 'isStart' ? (
           <Fade in timeout={1000}>
-            <div className="glitch" data-text={newSecondsString} style={{ fontSize: '44vh', marginTop: '-4%', fontFamily: 'Tofino' }}>{ newSecondsString }</div>
+            <div className="glitch" data-text={newSecondsString} style={{ fontSize: '60vh', marginTop: '-10%', fontFamily: 'Tofino' }}>{ newSecondsString }</div>
           </Fade>
         ) : (<div />) }
         { (status === 'isSet' || status === 'isStart') && seconds === '' && (entry !== 'NULO' && entry !== '') ? (
@@ -120,8 +125,7 @@ class VersusVisualizer extends Component {
           <Fade in timeout={1000}>
             <div className="format">{ format }</div>
           </Fade>
-        ) : (<div />)
-          }
+        ) : (<div />) }
         { status !== '' && status !== 'isPaused' && text !== '' && text !== 'NULO' ? (
           <Fade in timeout={1000}>
             <div className="thematic">{ text }</div>
@@ -142,17 +146,17 @@ class VersusVisualizer extends Component {
           </Fade>
         ) : (<div />) }
         {/*
-        { (status === 'isSet' || status === 'isStart') && competitorONEObject.name ? (
-          <Fade in timeout={1000}>
+            { (status === 'isSet' || status === 'isStart') && competitorONEObject.name ? (
+            <Fade in timeout={1000}>
             <div className="competitorName competitorLeft">{ competitorONEObject.name }</div>
-          </Fade>
-        ) : (<div />) }
-        { (status === 'isSet' || status === 'isStart') && competitorTWOObject.name ? (
-          <Fade in timeout={1000}>
+            </Fade>
+            ) : (<div />) }
+            { (status === 'isSet' || status === 'isStart') && competitorTWOObject.name ? (
+            <Fade in timeout={1000}>
             <div className="competitorName competitorRight">{ competitorTWOObject.name }</div>
-          </Fade>
-        ) : (<div />) }
-        */}
+            </Fade>
+            ) : (<div />) }
+            */}
       </div>
     );
   }
