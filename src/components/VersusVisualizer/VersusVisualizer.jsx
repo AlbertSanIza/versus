@@ -61,6 +61,7 @@ class VersusVisualizer extends Component {
     const param = window.location.href.split('?');
     if (param.length < 2) {
       window.particlesJS.load('particles-js', './assets/particles-config.json');
+      window.particlesJS.load('particles-js2', './assets/particles-config2.json');
     }
   }
 
@@ -73,7 +74,7 @@ class VersusVisualizer extends Component {
     let newSecondsString = '';
     if (!isNaN(seconds)) {
       newSecondsNumber = Number(seconds);
-      if (newSecondsNumber > 120) {
+      if (newSecondsNumber > 1000) {
         newSecondsString = `${Math.floor(newSecondsNumber / 60)}:${newSecondsNumber - (Math.floor(newSecondsNumber / 60) * 60)}`;
       } else {
         newSecondsString = `${newSecondsNumber}`;
@@ -91,7 +92,8 @@ class VersusVisualizer extends Component {
           <source src={`${window.location.origin}/assets/patterns/videoPangea.mp4`} type="video/ogg" />
           </video>
           */ }
-        <div id="particles-js" className="particles" />
+        <div id="particles-js" className="particles2" />
+        <div id="particles-js2" className="particles22" />
         { status === '' || status === 'isPaused' ? (
           <Fade in timeout={1000}>
             <img className="logoCenter" src={mainLogo} alt="LOGO" />
@@ -113,7 +115,7 @@ class VersusVisualizer extends Component {
         ) : (<div />) }
         { status === 'isSet' || status === 'isStart' ? (
           <Fade in timeout={1000}>
-            <div className="glitch" data-text={newSecondsString} style={{ fontSize: '60vh', marginTop: '-10%', fontFamily: 'Tofino' }}>{ newSecondsString }</div>
+            <div className="glitch" data-text={newSecondsString} style={{ fontSize: '66vh', marginTop: '-20%', fontFamily: 'Tofino' }}>{ newSecondsString }</div>
           </Fade>
         ) : (<div />) }
         { (status === 'isSet' || status === 'isStart') && seconds === '' && (entry !== 'NULO' && entry !== '') ? (
