@@ -199,7 +199,7 @@ class Visuals extends Component {
         <br />
         <Typography variant="h6">
 
-                    Controles
+          Controles
           {(() => {
             switch (this.state.status) {
               case 'isStart':
@@ -290,6 +290,10 @@ class Visuals extends Component {
                 <option>5 Entradas</option>
                 <option>6 Entradas</option>
                 <option>7 Entradas</option>
+                <option>SOLER</option>
+                <option>OMEGA CTM</option>
+                <option>SONICKO</option>
+                <option>MISIONERO</option>
               </TextField>
             </Grid>
             <Grid item xs={3}>
@@ -318,7 +322,7 @@ class Visuals extends Component {
                 disabled={this.state.status === 'isMessage'}
                 fullWidth
               >
-              Round
+                Round
               </Button>
             </Grid>
             <Grid item xs={3}>
