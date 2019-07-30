@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import io from 'socket.io-client';
 import 'particles.js/particles';
 
-import mainLogo from './god_level.png';
+import mainLogo from './jam.png';
 import './VersusVisualizer.css';
 import './glitch.css';
 
