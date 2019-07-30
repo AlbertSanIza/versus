@@ -94,30 +94,30 @@ class VersusVisualizer extends Component {
           */ }
         <div id="particles-js" className="particles" />
         { /* <div id="particles-js2" className="particles22" /> */ }
-        { status === '' || status === 'isPaused' ? (
-          <Fade in timeout={1000}>
-            <img className="logoCenter" src={mainLogo} alt="LOGO" />
-          </Fade>
-        ) : (<div />) }
-        { status === 'isMessage' ? (
-          <Fade in timeout={1000}>
-            <div className="logoTopHolder">
-              <img className="logoTop" src={mainLogo} alt="Main Logo" />
-            </div>
-          </Fade>
-        ) : (<div />) }
-        { status === 'isMessage' ? (
-          <Fade in timeout={1000}>
-            <div style={{ paddingTop: '16%' }}>
-              <div className="glitch" data-text={message} style={{ fontSize: '36vh' }}>{ message }</div>
-            </div>
-          </Fade>
-        ) : (<div />) }
-        { status === 'isSet' || status === 'isStart' ? (
-          <Fade in timeout={1000}>
-            <div className="glitch" data-text={newSecondsString} style={{ fontSize: '66vh', marginTop: '-20%', fontFamily: 'Tofino' }}>{ newSecondsString }</div>
-          </Fade>
-        ) : (<div />) }
+        { (status === '' || status === 'isPaused') && (
+        <Fade in timeout={1000}>
+          <img className="logoCenter" src={mainLogo} alt="LOGO" />
+        </Fade>
+        ) }
+        { status === 'isMessage' && (
+        <Fade in timeout={1000}>
+          <div className="logoTopHolder">
+            <img className="logoTop" src={mainLogo} alt="Main Logo" />
+          </div>
+        </Fade>
+        ) }
+        { status === 'isMessage' && (
+        <Fade in timeout={1000}>
+          <div style={{ paddingTop: '16%' }}>
+            <div className="glitch" data-text={message} style={{ fontSize: '36vh' }}>{ message }</div>
+          </div>
+        </Fade>
+        ) }
+        { (status === 'isSet' || status === 'isStart') && (
+        <Fade in timeout={1000}>
+          <div className="glitch" data-text={newSecondsString} style={{ fontSize: '66vh', marginTop: '-20%', fontFamily: 'Tofino' }}>{ newSecondsString }</div>
+        </Fade>
+        ) }
         { (status === 'isSet' || status === 'isStart') && seconds === '' && (entry !== 'NULO' && entry !== '') ? (
           <Fade in timeout={1000}>
             <div className="glitch" style={{ fontSize: '32vh', marginTop: '0%' }}>{ entry }</div>
