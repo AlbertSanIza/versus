@@ -92,8 +92,8 @@ class VersusVisualizer extends Component {
           <source src={`${window.location.origin}/assets/patterns/videoPangea.mp4`} type="video/ogg" />
           </video>
           */ }
-        <div id="particles-js" className="particles2" />
-        <div id="particles-js2" className="particles22" />
+        <div id="particles-js" className="particles" />
+        { /* <div id="particles-js2" className="particles22" /> */ }
         { status === '' || status === 'isPaused' ? (
           <Fade in timeout={1000}>
             <img className="logoCenter" src={mainLogo} alt="LOGO" />
