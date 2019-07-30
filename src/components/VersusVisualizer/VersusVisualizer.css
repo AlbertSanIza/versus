@@ -54,9 +54,9 @@
 }
 .logoCenter {
   width: 70%;
-  height: 80%;
+  height: 70%;
   z-index: 1;
-  margin-top: 0%;
+  margin-top: 2%;
 }
 .logoTopHolder {
   position: absolute;
