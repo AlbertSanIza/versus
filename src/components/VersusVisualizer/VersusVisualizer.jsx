@@ -14,7 +14,7 @@ const socket = io(`http://${window.location.hostname}:12345`);
 
 const styles = theme => ({
   background: {
-    backgroundImage: `url(${window.location.origin}/assets/patterns/Fondo0.jpg)`,
+    backgroundImage: `url(${window.location.origin}/assets/patterns/jamFondo.jpeg)`,
     position: 'absolute',
     width: '100%',
     height: '100%',
@@ -61,7 +61,7 @@ class VersusVisualizer extends Component {
     const param = window.location.href.split('?');
     if (param.length < 2) {
       window.particlesJS.load('particles-js', './assets/particles-config.json');
-      window.particlesJS.load('particles-js2', './assets/particles-config2.json');
+      // window.particlesJS.load('particles-js2', './assets/particles-config2.json');
     }
   }
 
