@@ -21,7 +21,7 @@ const styles = theme => ({
     top: 0,
     left: 0,
     opacity: 1,
-    filter: 'blur(0px)',
+    filter: 'blur(2px)',
     backgroundSize: '100% 100%',
     backgroundRepeat: 'no-repeat',
     animation: 'breathing 20s infinite normal',
@@ -102,7 +102,7 @@ class VersusVisualizer extends Component {
         { status === 'isMessage' ? (
           <Fade in timeout={1000}>
             <div className="logoTopHolder">
-              <img className="logoTop" src={mainLogo} alt="BDM Logo" />
+              <img className="logoTop" src={mainLogo} alt="Main Logo" />
             </div>
           </Fade>
         ) : (<div />) }
