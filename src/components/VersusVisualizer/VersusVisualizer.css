@@ -91,15 +91,17 @@
 }
 .competitor {
   position: absolute;
-  width: 30%;
-  height: 70%;
-  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 71%);
+  width: 40%;
+  height: 100%;
+  top: -6%;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 71%);
 }
 .competitorLeft {
-  left: calc(0px + 5%);
+  left: calc(0px - 3%);
 }
 .competitorRight {
-  right: calc(0px + 5%);
+  right: calc(0px - 3%);
 }
 .competitorName {
   position: absolute;

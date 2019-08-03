@@ -99,7 +99,7 @@ class VersusVisualizer extends Component {
           <img className="logoCenter" src={mainLogo} alt="LOGO" />
         </Fade>
         ) }
-        { status === 'isMessage' && (
+        { (status === 'isMessage' || status === 'isStart') && (
         <Fade in timeout={1000}>
           <div className="logoTopHolder">
             <img className="logoTop" src={mainLogo} alt="Main Logo" />
@@ -113,33 +113,28 @@ class VersusVisualizer extends Component {
           </div>
         </Fade>
         ) }
-        { (status === 'isSet' || status === 'isStart') && (
-        <Fade in timeout={1000}>
-          <div className="glitch" data-text={newSecondsString} style={{ fontSize: '66vh', marginTop: '-20%', fontFamily: 'Tofino' }}>{ newSecondsString }</div>
-        </Fade>
-        ) }
         { (status === 'isSet' || status === 'isStart') && seconds === '' && (entry !== 'NULO' && entry !== '') ? (
           <Fade in timeout={1000}>
             <div className="glitch" style={{ fontSize: '32vh', marginTop: '0%' }}>{ entry }</div>
           </Fade>
         ) : (<div />) }
-        { status !== '' && status !== 'isPaused' && format !== '' && format !== 'NULO' ? (
-          <Fade in timeout={1000}>
-            <div className="format">{ format }</div>
-          </Fade>
-        ) : (<div />) }
+        { status !== '' && status !== 'isPaused' && format !== '' && format !== 'NULO' && (
+        <Fade in timeout={1000}>
+          <div className="format">{ format }</div>
+        </Fade>
+        ) }
         { status !== '' && status !== 'isPaused' && text !== '' && text !== 'NULO' ? (
           <Fade in timeout={1000}>
             <div className="thematic">{ text }</div>
           </Fade>
         ) : (<div />) }
-        { (status === 'isSet' || status === 'isStart') && competitorONEObject.name ? (
-          <Fade in timeout={2000}>
-            <div className="competitor competitorLeft">
-              <div style={Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorONEObject.photo})` })} />
-            </div>
-          </Fade>
-        ) : (<div />) }
+        { (status === 'isSet' || status === 'isStart') && competitorONEObject.name && (
+        <Fade in timeout={2000}>
+          <div className="competitor competitorLeft">
+            <div style={Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorONEObject.photo})` })} />
+          </div>
+        </Fade>
+        ) }
         { (status === 'isSet' || status === 'isStart') && competitorTWOObject.name ? (
           <Fade in timeout={2000}>
             <div className="competitor competitorRight">
@@ -147,6 +142,11 @@ class VersusVisualizer extends Component {
             </div>
           </Fade>
         ) : (<div />) }
+        { (status === 'isSet' || status === 'isStart') && (
+        <Fade in timeout={1000}>
+          <div className="glitch" data-text={newSecondsString} style={{ fontSize: '46vh', marginTop: '20%' }}>{ newSecondsString }</div>
+        </Fade>
+        ) }
         {/*
             { (status === 'isSet' || status === 'isStart') && competitorONEObject.name ? (
             <Fade in timeout={1000}>
