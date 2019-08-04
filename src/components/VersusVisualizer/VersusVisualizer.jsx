@@ -99,17 +99,17 @@ class VersusVisualizer extends Component {
           <img className="logoCenter" src={mainLogo} alt="LOGO" />
         </Fade>
         ) }
-        { (status === 'isMessage' || status === 'isStart') && (
+        {/* (status === 'isMessage' || status === 'isStart') && (
         <Fade in timeout={1000}>
           <div className="logoTopHolder">
             <img className="logoTop" src={mainLogo} alt="Main Logo" />
           </div>
         </Fade>
-        ) }
+      ) */}
         { status === 'isMessage' && (
         <Fade in timeout={1000}>
-          <div style={{ paddingTop: '16%' }}>
-            <div className="glitch" data-text={message} style={{ fontSize: '36vh' }}>{ message }</div>
+          <div style={{ position: 'absolute', top: '20%' }}>
+            <div className="glitch" data-text={message} style={{ fontSize: '22vh' }}>{ message }</div>
           </div>
         </Fade>
         ) }
@@ -144,7 +144,7 @@ class VersusVisualizer extends Component {
         ) : (<div />) }
         { (status === 'isSet' || status === 'isStart') && (
         <Fade in timeout={1000}>
-          <div className="glitch" data-text={newSecondsString} style={{ fontSize: '46vh', marginTop: '20%' }}>{ newSecondsString }</div>
+          <div className="glitch" data-text={newSecondsString} style={{ position: 'absolute', fontSize: '30vh', top: '10%' }}>{ newSecondsString }</div>
         </Fade>
         ) }
         {/*

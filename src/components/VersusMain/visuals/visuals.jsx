@@ -42,8 +42,8 @@ const styles = () => ({
     background: 'black',
   },
   visualsIframe: {
-    width: '44vw',
-    height: '25vw',
+    width: '34vw',
+    height: '16vw',
     padding: 0,
     margin: 0,
     background: '#1a1a1a',

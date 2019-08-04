@@ -70,21 +70,21 @@
 }
 .logoTop {
   width: 40%;
-  height: 100%;
+  height: 70%;
   z-index: 1;
 }
 .thematic {
   position: absolute;
-  bottom: 7%;
-  max-width: 60%;
+  bottom: 30%;
+  max-width: 90%;
   font-size: 15vh;
   z-index: 1;
   text-align: center;
 }
 .format {
   position: absolute;
-  bottom: 20%;
-  max-width: 60%;
+  bottom: 42%;
+  max-width: 90%;
   font-size: 14vh;
   z-index: 1;
   text-align: 'center';
@@ -92,16 +92,16 @@
 .competitor {
   position: absolute;
   width: 40%;
-  height: 100%;
-  top: -6%;
+  height: 180%;
+  top: -36%;
   background-color: rgba(0, 0, 0, 0.7);
-  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 71%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 71%);
 }
 .competitorLeft {
-  left: calc(0px - 3%);
+  left: calc(0px - 8%);
 }
 .competitorRight {
-  right: calc(0px - 3%);
+  right: calc(0px + 7%);
 }
 .competitorName {
   position: absolute;
