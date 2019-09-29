@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import io from 'socket.io-client';
 import 'particles.js/particles';
 
-import mainLogo from './jam.png';
+import mainLogo from './bdmgold-min.png';
 import './VersusVisualizer.css';
 import './glitch.css';
 
@@ -14,7 +14,7 @@ const socket = io(`http://${window.location.hostname}:12345`);
 
 const styles = theme => ({
   background: {
-    backgroundImage: `url(${window.location.origin}/assets/patterns/jamFondo.jpeg)`,
+    backgroundImage: `url(${window.location.origin}/assets/patterns/fondo.jpg)`,
     position: 'absolute',
     width: '100%',
     height: '100%',
@@ -100,12 +100,12 @@ class VersusVisualizer extends Component {
         </Fade>
         ) }
         {/* (status === 'isMessage' || status === 'isStart') && (
-        <Fade in timeout={1000}>
-          <div className="logoTopHolder">
+            <Fade in timeout={1000}>
+            <div className="logoTopHolder">
             <img className="logoTop" src={mainLogo} alt="Main Logo" />
-          </div>
-        </Fade>
-      ) */}
+            </div>
+            </Fade>
+            ) */}
         { status === 'isMessage' && (
         <Fade in timeout={1000}>
           <div style={{ position: 'absolute', top: '20%' }}>
@@ -144,21 +144,21 @@ class VersusVisualizer extends Component {
         ) : (<div />) }
         { (status === 'isSet' || status === 'isStart') && (
         <Fade in timeout={1000}>
-          <div className="glitch" data-text={newSecondsString} style={{ position: 'absolute', fontSize: '30vh', top: '10%' }}>{ newSecondsString }</div>
+          <div className="glitch" data-text={newSecondsString} style={{ position: 'absolute', fontSize: '60vh', top: '-10%' }}>{ newSecondsString }</div>
         </Fade>
         ) }
         {/*
-            { (status === 'isSet' || status === 'isStart') && competitorONEObject.name ? (
-            <Fade in timeout={1000}>
-            <div className="competitorName competitorLeft">{ competitorONEObject.name }</div>
-            </Fade>
-            ) : (<div />) }
-            { (status === 'isSet' || status === 'isStart') && competitorTWOObject.name ? (
-            <Fade in timeout={1000}>
-            <div className="competitorName competitorRight">{ competitorTWOObject.name }</div>
-            </Fade>
-            ) : (<div />) }
-            */}
+              { (status === 'isSet' || status === 'isStart') && competitorONEObject.name ? (
+              <Fade in timeout={1000}>
+              <div className="competitorName competitorLeft">{ competitorONEObject.name }</div>
+              </Fade>
+              ) : (<div />) }
+              { (status === 'isSet' || status === 'isStart') && competitorTWOObject.name ? (
+              <Fade in timeout={1000}>
+              <div className="competitorName competitorRight">{ competitorTWOObject.name }</div>
+              </Fade>
+              ) : (<div />) }
+              */}
       </div>
     );
   }

@@ -54,9 +54,9 @@
 }
 .logoCenter {
   width: 70%;
-  height: 70%;
+  height: 100%;
   z-index: 1;
-  margin-top: 2%;
+  margin-top: -1%;
 }
 .logoTopHolder {
   position: absolute;
@@ -75,17 +75,17 @@
 }
 .thematic {
   position: absolute;
-  bottom: 30%;
+  bottom: 16%;
   max-width: 90%;
-  font-size: 15vh;
+  font-size: 22vh;
   z-index: 1;
   text-align: center;
 }
 .format {
   position: absolute;
-  bottom: 42%;
+  bottom: 6%;
   max-width: 90%;
-  font-size: 14vh;
+  font-size: 6vh;
   z-index: 1;
   text-align: 'center';
 }

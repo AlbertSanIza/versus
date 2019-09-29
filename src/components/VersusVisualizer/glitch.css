@@ -72,9 +72,9 @@
   content: attr(data-text);
   position: absolute;
   left: 10px;
-  text-shadow: -5px 0 #009900;
+  text-shadow: -5px 0 #00000;
   top: 0;
-  color: #cc3fb5;
+  color: #FFD700;
   background: transparent;
   overflow: hidden;
   clip: rect(0, 9999px, 0, 0);
