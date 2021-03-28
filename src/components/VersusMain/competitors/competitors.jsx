@@ -157,7 +157,14 @@ class Competitors extends Component {
               <FormControl fullWidth>
                 <TextField label="Nombre" margin="normal" variant="outlined" value={editName} disabled />
               </FormControl>
-              <VersusDragNDrop anySize showButton width="312px" height="250px" imagePicked={image => this.setState({ editImage: image })} imageDefault={`http://${window.location.hostname}:12345/img/${editPhoto}`} />
+              <VersusDragNDrop
+                width="312px"
+                height="250px"
+                imagePicked={image => this.setState({ editImage: image })}
+                imageDefault={`http://${window.location.hostname}:12345/img/${editPhoto}`}
+                showButton
+                anySize
+              />
             </DialogContent>
             <DialogActions>
               <Button color="primary" onClick={() => this.handleCloseEdit()}>Cancelar</Button>
@@ -165,7 +172,13 @@ class Competitors extends Component {
             </DialogActions>
           </Dialog>
         </MuiThemeProvider>
-        <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={showSnackbar} onClose={() => this.setState({ showSnackbar: false })} autoHideDuration={3000} message={`Competidor: ${createName} ya existe`} />
+        <Snackbar
+          open={showSnackbar}
+          autoHideDuration={3000}
+          message={`Competidor: ${createName} ya existe`}
+          onClose={() => this.setState({ showSnackbar: false })}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        />
       </>
     );
   }
