@@ -26,7 +26,7 @@ class Viewer extends Component {
   }
 
   render() {
-    const { status, seconds } = this.state;
+    const { status, seconds, format } = this.state;
     return (
       <div className="root">
         <div id="particles-js" className="particles" />
