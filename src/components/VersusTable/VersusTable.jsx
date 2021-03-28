@@ -138,7 +138,7 @@ VersusTable.propTypes = {
   customToolbar: PropTypes.func,
   data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   columns: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-  selected: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  selected: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 VersusTable.defaultProps = {
   hover: false,
