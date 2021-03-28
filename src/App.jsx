@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import Viewer from './pages/viewer/Viewer';
 import Controls from './Controls';
-import Viewer from './Viewer';
 
 function App(props) {
   return (
