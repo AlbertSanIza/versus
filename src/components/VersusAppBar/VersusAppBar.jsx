@@ -27,7 +27,7 @@ const styles = () => ({
 function VersusAppBar(props) {
   const { classes, Versus } = props;
   return (
-    <React.Fragment>
+    <>
       <AppBar>
         <Toolbar color="inherit" variant="dense">
           <IconButton className={classes.menuButton} color="inherit" onClick={() => Versus.handleDrawer()}>
@@ -37,7 +37,7 @@ function VersusAppBar(props) {
         </Toolbar>
       </AppBar>
       <div className={classes.topPadding} />
-    </React.Fragment>
+    </>
   );
 }
 
