@@ -45,14 +45,13 @@
 .thematic {
   position: absolute;
   font-size: 22vh;
-  bottom: 16%;
+  bottom: 0%;
   z-index: 1;
 }
 
 .format {
   position: absolute;
-  text-align: 'center';
   font-size: 6vh;
-  bottom: 6%;
+  bottom: 23%;
   z-index: 1;
 }
