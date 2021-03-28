@@ -47,12 +47,17 @@ class VersusDragNDrop extends Component {
     return null;
   }
 
-  onDragEnter() {
-    this.setState({ over: true });
+  handleFile(e) {
+    const file = e.target.files[0];
+    if (file.type === 'image/png' || file.type === 'image/jpeg') {
+      const image = URL.createObjectURL(file);
+      this.setState({ image: image });
+      this.props.imagePicked({ file: file, image: image });
+    }
   }
 
-  onDragLeave() {
-    this.setState({ over: false });
+  onDragEnter() {
+    this.setState({ over: true });
   }
 
   onDrop(e) {
@@ -66,43 +71,39 @@ class VersusDragNDrop extends Component {
     this.setState({ over: false });
   }
 
-  handleFile(e) {
-    const file = e.target.files[0];
-    if (file.type === 'image/png' || file.type === 'image/jpeg') {
-      const image = URL.createObjectURL(file);
-      this.setState({ image: image });
-      this.props.imagePicked({ file: file, image: image });
-    }
+  onDragLeave() {
+    this.setState({ over: false });
   }
 
   render() {
     const { image, over } = this.state;
     const { width, height } = this.props;
     return (
-      <React.Fragment>
+      <>
         <div
           onDrop={e => this.onDrop(e)}
           onDragOver={onDragOver}
           onDragLeave={() => this.onDragLeave()}
           onDragEnter={() => this.onDragEnter()}
-          style={Object.assign({ }, {
+          style={({
             width: width,
             height: height,
             backgroundImage: `url(${image || ''})`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-          }, style.frame, over ? style.enter : style.leave)}
+            ...style.frame,
+            ...(over ? style.enter : style.leave),
+          })}
         />
         <div style={style.picker}>
           <label htmlFor="imagesInput" style={{ cursor: 'pointer' }}>
 
-                        Seleccionar Imagen
+            Seleccionar Imagen
             <input id="imagesInput" type="file" value="" accept="image/png; image/jpeg;" style={{ display: 'none' }} onChange={e => this.handleFile(e)} />
           </label>
         </div>
-      </React.Fragment>
-
+      </>
     );
   }
 }
