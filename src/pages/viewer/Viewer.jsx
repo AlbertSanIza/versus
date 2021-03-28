@@ -26,7 +26,9 @@ class Viewer extends Component {
   }
 
   render() {
-    const { status, seconds, format } = this.state;
+    const {
+      status, seconds, format, text,
+    } = this.state;
     return (
       <div className="root">
         <div id="particles-js" className="particles" />
@@ -44,6 +46,13 @@ class Viewer extends Component {
           <Fade in timeout={1000}>
             <div className="format">
               { format }
+            </div>
+          </Fade>
+        ) }
+        { (status !== '' && status !== 'isPaused' && text !== '' && text !== 'NULO') && (
+          <Fade in timeout={1000}>
+            <div className="thematic">
+              { text }
             </div>
           </Fade>
         ) }
