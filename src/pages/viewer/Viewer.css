@@ -19,9 +19,11 @@
   top: 0px;
   left: 0px;
   overflow: hidden;
+  z-index: 0;
 }
 
 .logo {
   width: 50%;
   height: 50%;
+  z-index: 1;
 }
