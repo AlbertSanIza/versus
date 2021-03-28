@@ -70,7 +70,7 @@ class VersusTable extends Component {
     } = this.props;
     const { order, orderBy } = this.state;
     return (
-      <React.Fragment>
+      <>
         { (() => {
           if (multiSelect) {
             return (
@@ -127,7 +127,7 @@ class VersusTable extends Component {
             }) }
           </TableBody>
         </Table>
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -70,28 +70,14 @@ class Event extends Component {
     this.setState({ openCreate: false, createName: '', createDescription: '' });
   }
 
-  createNameChanged(input) {
-    this.setState({ createName: input });
+  handleEdit() {
+    const { editName, editDescription, editSelected } = this.state;
+    this.props.SocketIO.events.create({ name: editName, description: editDescription, selected: editSelected });
+    this.handleCloseEdit();
   }
 
-  createDescriptionChanged(input) {
-    this.setState({ createDescription: input });
-  }
-
-  editDescriptionChanged(input) {
-    this.setState({ editDescription: input });
-  }
-
-  handleOpenEdit(editName, editDescription, editSelected) {
-    this.setState({
-      openEdit: true, editName: editName, editDescription: editDescription, editSelected: editSelected,
-    });
-  }
-
-  handleCloseEdit() {
-    this.setState({
-      openEdit: false, editName: '', editDescription: '', editSelected: [],
-    });
+  handleEditSelect({ selected }) {
+    this.setState({ editSelected: selected });
   }
 
   handleCreate() {
@@ -105,14 +91,28 @@ class Event extends Component {
     }
   }
 
-  handleEditSelect({ selected }) {
-    this.setState({ editSelected: selected });
+  handleCloseEdit() {
+    this.setState({
+      openEdit: false, editName: '', editDescription: '', editSelected: [],
+    });
   }
 
-  handleEdit() {
-    const { editName, editDescription, editSelected } = this.state;
-    this.props.SocketIO.events.create({ name: editName, description: editDescription, selected: editSelected });
-    this.handleCloseEdit();
+  handleOpenEdit(editName, editDescription, editSelected) {
+    this.setState({
+      openEdit: true, editName: editName, editDescription: editDescription, editSelected: editSelected,
+    });
+  }
+
+  editDescriptionChanged(input) {
+    this.setState({ editDescription: input });
+  }
+
+  createDescriptionChanged(input) {
+    this.setState({ createDescription: input });
+  }
+
+  createNameChanged(input) {
+    this.setState({ createName: input });
   }
 
   render() {
@@ -121,7 +121,7 @@ class Event extends Component {
       openCreate, openEdit, showSnackbar, createName, createDescription, editName, editDescription, editSelected, columns,
     } = this.state;
     return (
-      <React.Fragment>
+      <>
         <Typography variant="h3">Eventos</Typography>
         <Grid container spacing={16}>
           <Grid item xs={12}>
@@ -177,7 +177,7 @@ class Event extends Component {
           </Dialog>
         </MuiThemeProvider>
         <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={showSnackbar} onClose={() => this.setState({ showSnackbar: false })} autoHideDuration={3000} message={`Evento: "${createName}" ya existe`} />
-      </React.Fragment>
+      </>
     );
   }
 }

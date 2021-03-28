@@ -28,7 +28,7 @@ const styles = theme => ({
 function Settings(props) {
   const { SocketIO, classes } = props;
   return (
-    <React.Fragment>
+    <>
       <Typography variant="h3" gutterBottom>Ajustes</Typography>
       <Grid container spacing={16}>
         <Grid item xs={12}>
@@ -52,7 +52,7 @@ function Settings(props) {
           <img className={classes.settingsGithubLogo} src={githubLogo} alt="" />
         </a>
       </Typography>
-    </React.Fragment>
+    </>
   );
 }
 

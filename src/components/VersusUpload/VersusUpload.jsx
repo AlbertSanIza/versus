@@ -72,7 +72,7 @@ class Main extends Component {
             disabled={!createName || !createImage.file}
             fullWidth
           >
-          Guardar
+            Guardar
           </Button>
         </div>
       </div>

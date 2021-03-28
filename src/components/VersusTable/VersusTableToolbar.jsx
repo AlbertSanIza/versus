@@ -34,7 +34,7 @@ class VersusTableToolbar extends Component {
             <Typography color="inherit">
               { selected.length }
               {' '}
-Competidores Seleccionados
+              Competidores Seleccionados
             </Typography>
           </div>
         )}

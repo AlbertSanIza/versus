@@ -72,10 +72,6 @@ class Competitors extends Component {
     this.setState({ openCreate: false, createName: '', createImage: { } });
   }
 
-  createTermChanged(input) {
-    this.setState({ createName: input });
-  }
-
   handleOpenEdit(editName, editPhoto) {
     this.setState({ openEdit: true, editName: editName, editPhoto: editPhoto });
   }
@@ -100,13 +96,17 @@ class Competitors extends Component {
     this.handleCloseEdit();
   }
 
+  createTermChanged(input) {
+    this.setState({ createName: input });
+  }
+
   render() {
     const { SocketIO, classes } = this.props;
     const {
       openCreate, openEdit, showSnackbar, createName, createImage, editName, editPhoto, editImage,
     } = this.state;
     return (
-      <React.Fragment>
+      <>
         <Typography variant="h3">Competidores</Typography>
         <Grid container spacing={16}>
           <Grid item xs={12}>
@@ -166,7 +166,7 @@ class Competitors extends Component {
           </Dialog>
         </MuiThemeProvider>
         <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={showSnackbar} onClose={() => this.setState({ showSnackbar: false })} autoHideDuration={3000} message={`Competidor: ${createName} ya existe`} />
-      </React.Fragment>
+      </>
     );
   }
 }

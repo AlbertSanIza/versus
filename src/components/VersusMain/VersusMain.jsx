@@ -12,7 +12,7 @@ import EventsView from './events';
 
 function Main() {
   return (
-    <React.Fragment>
+    <>
       <VersusAppBar />
       <VersusDrawer>
         <div>
@@ -24,7 +24,7 @@ function Main() {
           <Route path="/main/settings" component={SettingsView} />
         </div>
       </VersusDrawer>
-    </React.Fragment>
+    </>
   );
 }
 

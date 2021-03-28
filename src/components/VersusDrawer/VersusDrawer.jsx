@@ -65,7 +65,7 @@ const style = {
 function VersusDrawer(props) {
   const { Versus, classes } = props;
   return (
-    <React.Fragment>
+    <>
       <div className={classes.root}>
         <Drawer variant="permanent" classes={{ paper: Versus.drawer ? classes.drawerPaperClose : classes.drawerPaper }}>
           <NavLink to="/main/visuals" style={style.style} activeStyle={style.activeStyle}>
@@ -124,7 +124,7 @@ function VersusDrawer(props) {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 }
 

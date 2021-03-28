@@ -131,14 +131,14 @@ class VersusVisualizer extends Component {
         { (status === 'isSet' || status === 'isStart') && competitorONEObject.name && (
         <Fade in timeout={2000}>
           <div className="competitor competitorLeft">
-            <div style={Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorONEObject.photo})` })} />
+            <div style={({ ...style.competitorImage, backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorONEObject.photo})` })} />
           </div>
         </Fade>
         ) }
         { (status === 'isSet' || status === 'isStart') && competitorTWOObject.name ? (
           <Fade in timeout={2000}>
             <div className="competitor competitorRight">
-              <div style={Object.assign({}, style.competitorImage, { backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorTWOObject.photo})` })} />
+              <div style={({ ...style.competitorImage, backgroundImage: `url(http://${window.location.hostname}:12345/img/${competitorTWOObject.photo})` })} />
             </div>
           </Fade>
         ) : (<div />) }
