@@ -136,13 +136,13 @@ VersusTable.propTypes = {
   id: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired,
   selected: PropTypes.bool.isRequired,
+  data: PropTypes.arrayOf().isRequired,
+  columns: PropTypes.arrayOf().isRequired,
   customToolbar: PropTypes.func.isRequired,
-  data: PropTypes.array.isRequired.isRequired,
-  columns: PropTypes.array.isRequired.isRequired,
 };
 VersusTable.defaultProps = {
-  multiSelect: false,
   hover: false,
+  multiSelect: false,
 };
 
 export default VersusTable;
