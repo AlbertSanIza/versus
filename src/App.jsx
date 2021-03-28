@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Controls, Viewer } from './components';
+import Controls from './Controls';
+import Viewer from './Viewer';
 
 function App(props) {
   return (
