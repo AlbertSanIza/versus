@@ -1,9 +1,16 @@
 import React from 'react';
 
+import { VersusProvider, SocketIOProvider } from './context';
+import { VersusMain } from './components';
+
 function Controls(props) {
   return (
     <div>
-      controls
+      <VersusProvider>
+        <SocketIOProvider>
+          <VersusMain />
+        </SocketIOProvider>
+      </VersusProvider>
     </div>
   );
 }
