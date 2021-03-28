@@ -40,12 +40,12 @@ class VersusDragNDrop extends Component {
     };
   }
 
-  static getDerivedStateFromProps(props, state) {
-    if (!state.image && props.imageDefault) {
-      return { image: props.imageDefault };
-    }
-    return null;
-  }
+  // static getDerivedStateFromProps(props, state) {
+  //   if (!state.image && props.imageDefault) {
+  //     return { image: props.imageDefault };
+  //   }
+  //   return null;
+  // }
 
   handleFile(e) {
     const file = e.target.files[0];
