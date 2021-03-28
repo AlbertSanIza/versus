@@ -9,7 +9,13 @@ import PropTypes from 'prop-types';
 import VersusTableToolbar from './VersusTableToolbar';
 import VersusTableHead from './VersusTableHead';
 
-const desc = (a, b, orderBy) => (b[orderBy] < a[orderBy] ? -1 : (b[orderBy] > a[orderBy] ? 1 : 0));
+function desc(a, b, orderBy) {
+  if (b[orderBy] < a[orderBy]) {
+    return -1;
+  }
+  return b[orderBy] > a[orderBy] ? 1 : 0;
+}
+
 const getSorting = (order, orderBy) => (order === 'desc' ? (a, b) => desc(a, b, orderBy) : (a, b) => -desc(a, b, orderBy));
 
 function stableSort(array, cmp) {
