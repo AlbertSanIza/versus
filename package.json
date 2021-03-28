@@ -7,9 +7,12 @@
   "author": "Albert Sanchez",
   "private": true,
   "scripts": {
+    "start": "concurrently \"npm run socket\" \"npm run react\" \"npm run electron\"",
+    "socket": "nodemon ./scripts/socket.js",
     "react": "react-scripts start",
     "electron": "electron .",
-    "web": "concurrently \"npm run react\" \"npm run electron\""
+    "web": "concurrently \"npm run react\" \"npm run electron\"",
+    "node": "concurrently \"npm run socket\""
   },
   "dependencies": {
     "@ionic/react": "^5.6.3",
