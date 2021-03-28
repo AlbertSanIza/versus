@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------------
-const io = require('socket.io')(12345, { cors: { origin: '*' } });
+const io = require('socket.io')(3001, { cors: { origin: '*' } });
 const storage = require('electron-json-storage');
 const path = require('path');
 const fs = require('fs');
