@@ -23,6 +23,6 @@ expressApp.get('/img/:path*', (req, res) => {
   res.sendFile(`${tempImg}/${req.params.path}${req.params[0]}`);
 });
 expressApp.listen(3002, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Example app listening at http://localhost:${3002}`);
 });
 // ----------------------------------------------------------------------------
