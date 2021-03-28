@@ -7,8 +7,9 @@
   "author": "Albert Sanchez",
   "private": true,
   "scripts": {
-    "start": "concurrently \"npm run socket\" \"npm run react\" \"npm run electron\"",
+    "start": "concurrently \"npm run socket\" \"npm run express\" \"npm run react\" \"npm run electron\"",
     "socket": "nodemon ./scripts/socket.js",
+    "express": "nodemon ./scripts/express.js",
     "react": "react-scripts start",
     "electron": "electron .",
     "web": "concurrently \"npm run react\" \"npm run electron\"",
