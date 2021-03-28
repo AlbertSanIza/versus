@@ -9,10 +9,25 @@
   "scripts": {
     "react": "react-scripts start",
     "electron": "electron .",
-    "web": "concurrently \"npm run react\" \"npm run electron\"",
+    "web": "concurrently \"npm run react\" \"npm run electron\""
   },
   "dependencies": {
-    "nodemon": "^2.0.7"
+    "concurrently": "^6.0.0",
+    "electron": "^12.0.2",
+    "electron-json-storage": "^4.4.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "ip": "^1.1.5",
+    "nodemon": "^2.0.7",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "socket.io": "^4.0.0",
+    "socket.io-client": "^4.0.0"
   },
   "eslintConfig": {
     "extends": [
