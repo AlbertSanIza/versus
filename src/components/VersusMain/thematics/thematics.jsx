@@ -117,7 +117,13 @@ class Thematics extends Component {
             </DialogActions>
           </Dialog>
         </MuiThemeProvider>
-        <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={showSnackbar} onClose={() => this.setState({ showSnackbar: false })} autoHideDuration={3000} message={`Tematica: "${createName}" ya existe`} />
+        <Snackbar
+          open={showSnackbar}
+          autoHideDuration={3000}
+          message={`Tematica: "${createName}" ya existe`}
+          onClose={() => this.setState({ showSnackbar: false })}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        />
       </>
     );
   }
