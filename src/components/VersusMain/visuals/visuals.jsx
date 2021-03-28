@@ -177,7 +177,6 @@ class Visuals extends Component {
     });
   }
 
-
   inputEntryHandleChange(e) {
     this.setState({ entry: e.target.value });
   }
@@ -192,9 +191,9 @@ class Visuals extends Component {
   render() {
     const { SocketIO, classes } = this.props;
     return (
-      <React.Fragment>
+      <>
         <div className={classes.visualsIframeHolder}>
-          <iframe src="#/?animation" frameBorder="0" title="visualizer" className={classes.visualsIframe} />
+          <iframe src="/viewer" frameBorder="0" title="visualizer" className={classes.visualsIframe} />
         </div>
         <br />
         <Typography variant="h6">
@@ -290,10 +289,6 @@ class Visuals extends Component {
                 <option>5 Entradas</option>
                 <option>6 Entradas</option>
                 <option>7 Entradas</option>
-                <option>SOLER</option>
-                <option>OMEGA CTM</option>
-                <option>SONICKO</option>
-                <option>MISIONERO</option>
               </TextField>
             </Grid>
             <Grid item xs={3}>
@@ -416,14 +411,14 @@ class Visuals extends Component {
                 case 'isSet':
                 case 'isPaused':
                   return (
-                    <React.Fragment>
+                    <>
                       <Grid item xs={6}>
                         <Button variant="contained" color="primary" onClick={() => this.resetButton()} fullWidth>Cancelar</Button>
                       </Grid>
                       <Grid item xs={6}>
                         <Button variant="contained" color="secondary" onClick={() => this.startButton()} fullWidth>Iniciar</Button>
                       </Grid>
-                    </React.Fragment>
+                    </>
                   );
                 case 'isStart':
                   return (
@@ -433,14 +428,14 @@ class Visuals extends Component {
                   );
                 case 'isMessage':
                   return (
-                    <React.Fragment>
+                    <>
                       <Grid item xs={6}>
                         <Button variant="contained" color="primary" onClick={() => this.resetButton()} fullWidth>Cancelar</Button>
                       </Grid>
                       <Grid item xs={6}>
                         <Button variant="contained" color="secondary" className={classes.button} onClick={() => this.setButton()} fullWidth>Mostrar</Button>
                       </Grid>
-                    </React.Fragment>
+                    </>
                   );
                 default:
                   return null;
@@ -451,13 +446,13 @@ class Visuals extends Component {
         <br />
         <br />
         <Grow in timeout={500}>
-          <a href="#/" target="_blank" rel="noopener noreferrer">
+          <a href="/viewer" target="_blank" rel="noopener noreferrer">
             <Fab color="primary" className={classes.fab}>
               <PlayArrowIcon />
             </Fab>
           </a>
         </Grow>
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -5,9 +5,7 @@
     "node": true,
     "jest": true
   },
-  "plugins": ["reactintl"],
   "rules": {
-    "reactintl/contains-hardcoded-copy": [2],
     "prefer-destructuring": [
       "off",
       {
@@ -17,7 +15,18 @@
     ],
     "linebreak-style": 0,
     "operator-linebreak": 0,
-    "react/destructuring-assignment": ["off", "never"],
+    "react/destructuring-assignment": [
+      "off",
+      "never"
+    ],
+    "react/prop-types": [
+      "error",
+      {
+        "ignore": [
+          "row"
+        ]
+      }
+    ],
     "no-plusplus": "off",
     "no-unused-vars": [
       "error",
@@ -36,16 +45,52 @@
         "functions": "ignore"
       }
     ],
-    "arrow-parens": [2, "as-needed"],
+    "arrow-parens": [
+      2,
+      "as-needed"
+    ],
     "implicit-arrow-linebreak": "off",
-    "no-unused-expressions": ["error", { "allowTernary": true }],
-    "camelcase": ["warn"],
-    "object-shorthand": ["error", "never"],
-    "react/no-array-index-key": ["warn"],
-    "no-shadow": ["warn"],
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowTernary": true
+      }
+    ],
+    "camelcase": [
+      "warn"
+    ],
+    "object-shorthand": [
+      "error",
+      "never"
+    ],
+    "react/no-array-index-key": [
+      "warn"
+    ],
+    "no-shadow": [
+      "warn"
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 200
+      }
+    ],
     "jsx-a11y/no-autofocus": "off",
     "react/no-did-update-set-state": "warn",
-    "max-len": "warn",
-    "no-prototype-builtins": "off"
+    "no-prototype-builtins": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ],
+    "react/jsx-props-no-spreading": [
+      2,
+      {
+        "custom": "ignore"
+      }
+    ]
   }
 }

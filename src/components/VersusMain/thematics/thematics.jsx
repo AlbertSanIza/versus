@@ -61,10 +61,6 @@ class Thematics extends Component {
     this.setState({ openCreate: false, createName: '' });
   }
 
-  createTermChanged(input) {
-    this.setState({ createName: input });
-  }
-
   handleCreate() {
     const { createName } = this.state;
     const canCreate = this.props.SocketIO.thematics.thematics.every(z => z.name.toLowerCase() !== createName.toLowerCase());
@@ -76,11 +72,15 @@ class Thematics extends Component {
     }
   }
 
+  createTermChanged(input) {
+    this.setState({ createName: input });
+  }
+
   render() {
     const { SocketIO, classes } = this.props;
     const { openCreate, showSnackbar, createName } = this.state;
     return (
-      <React.Fragment>
+      <>
         <Typography variant="h3">Tematicas</Typography>
         <Grid container spacing={16}>
           <Grid item xs={12}>
@@ -117,8 +117,14 @@ class Thematics extends Component {
             </DialogActions>
           </Dialog>
         </MuiThemeProvider>
-        <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={showSnackbar} onClose={() => this.setState({ showSnackbar: false })} autoHideDuration={3000} message={`Tematica: "${createName}" ya existe`} />
-      </React.Fragment>
+        <Snackbar
+          open={showSnackbar}
+          autoHideDuration={3000}
+          message={`Tematica: "${createName}" ya existe`}
+          onClose={() => this.setState({ showSnackbar: false })}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        />
+      </>
     );
   }
 }

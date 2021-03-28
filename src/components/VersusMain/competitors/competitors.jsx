@@ -72,10 +72,6 @@ class Competitors extends Component {
     this.setState({ openCreate: false, createName: '', createImage: { } });
   }
 
-  createTermChanged(input) {
-    this.setState({ createName: input });
-  }
-
   handleOpenEdit(editName, editPhoto) {
     this.setState({ openEdit: true, editName: editName, editPhoto: editPhoto });
   }
@@ -87,7 +83,11 @@ class Competitors extends Component {
   handleCreate() {
     const { createName, createImage } = this.state;
     if (this.props.SocketIO.competitors.competitors.every(z => z.name.toLowerCase() !== createName.toLowerCase())) {
-      this.props.SocketIO.competitors.create({ name: createName, photo: `${createName.toLowerCase().replace(/[\W_]+/g, '_') + Date.now()}.${createImage.file.type.split('/').pop()}`, file: createImage.file });
+      this.props.SocketIO.competitors.create({
+        name: createName,
+        photo: `${createName.toLowerCase().replace(/[\W_]+/g, '_') + Date.now()}.${createImage.file.type.split('/').pop()}`,
+        file: createImage.file,
+      });
       this.handleCloseCreate();
     } else {
       this.setState({ showSnackbar: true });
@@ -100,13 +100,17 @@ class Competitors extends Component {
     this.handleCloseEdit();
   }
 
+  createTermChanged(input) {
+    this.setState({ createName: input });
+  }
+
   render() {
     const { SocketIO, classes } = this.props;
     const {
       openCreate, openEdit, showSnackbar, createName, createImage, editName, editPhoto, editImage,
     } = this.state;
     return (
-      <React.Fragment>
+      <>
         <Typography variant="h3">Competidores</Typography>
         <Grid container spacing={16}>
           <Grid item xs={12}>
@@ -120,8 +124,8 @@ class Competitors extends Component {
                 <CardMedia
                   title={competitor.name}
                   className={classes.media}
-                  image={`http://${window.location.hostname}:12345/img/${competitor.photo}`}
                   onClick={() => this.handleOpenEdit(competitor.name, competitor.photo)}
+                  image={`http://${window.location.hostname}:3002/img/${competitor.photo}`}
                 />
                 <div className={classes.paperContent}>
                   <Typography noWrap>{ competitor.name }</Typography>
@@ -157,7 +161,14 @@ class Competitors extends Component {
               <FormControl fullWidth>
                 <TextField label="Nombre" margin="normal" variant="outlined" value={editName} disabled />
               </FormControl>
-              <VersusDragNDrop anySize showButton width="312px" height="250px" imagePicked={image => this.setState({ editImage: image })} imageDefault={`http://${window.location.hostname}:12345/img/${editPhoto}`} />
+              <VersusDragNDrop
+                width="312px"
+                height="250px"
+                imagePicked={image => this.setState({ editImage: image })}
+                imageDefault={`http://${window.location.hostname}:3002/img/${editPhoto}`}
+                showButton
+                anySize
+              />
             </DialogContent>
             <DialogActions>
               <Button color="primary" onClick={() => this.handleCloseEdit()}>Cancelar</Button>
@@ -165,8 +176,14 @@ class Competitors extends Component {
             </DialogActions>
           </Dialog>
         </MuiThemeProvider>
-        <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={showSnackbar} onClose={() => this.setState({ showSnackbar: false })} autoHideDuration={3000} message={`Competidor: ${createName} ya existe`} />
-      </React.Fragment>
+        <Snackbar
+          open={showSnackbar}
+          autoHideDuration={3000}
+          message={`Competidor: ${createName} ya existe`}
+          onClose={() => this.setState({ showSnackbar: false })}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        />
+      </>
     );
   }
 }

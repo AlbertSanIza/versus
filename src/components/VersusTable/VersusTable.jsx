@@ -9,29 +9,31 @@ import PropTypes from 'prop-types';
 import VersusTableToolbar from './VersusTableToolbar';
 import VersusTableHead from './VersusTableHead';
 
-const desc = (a, b, orderBy) => (b[orderBy] < a[orderBy] ? -1 : (b[orderBy] > a[orderBy] ? 1 : 0));
+function desc(a, b, orderBy) {
+  if (b[orderBy] < a[orderBy]) {
+    return -1;
+  }
+  return b[orderBy] > a[orderBy] ? 1 : 0;
+}
+
 const getSorting = (order, orderBy) => (order === 'desc' ? (a, b) => desc(a, b, orderBy) : (a, b) => -desc(a, b, orderBy));
 
+function stableSort(array, cmp) {
+  const stabilizedThis = array.map((el, index) => [el, index]);
+  stabilizedThis.sort((a, b) => {
+    const order = cmp(a[0], b[0]);
+    return order !== 0 ? order : a[1] - b[1];
+  });
+  return stabilizedThis.map(el => el[0]);
+}
+
 class VersusTable extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       order: 'asc',
       orderBy: '',
     };
-  }
-
-  stableSort(array, cmp) {
-    const stabilizedThis = array.map((el, index) => [el, index]);
-    stabilizedThis.sort((a, b) => {
-      const order = cmp(a[0], b[0]);
-      return order !== 0 ? order : a[1] - b[1];
-    });
-    return stabilizedThis.map(el => el[0]);
-  }
-
-  isSelected(id) {
-    return this.props.selected.indexOf(id) !== -1;
   }
 
   handleSelectAll(event) {
@@ -39,7 +41,7 @@ class VersusTable extends Component {
   }
 
   handleOnSort(orderBy) {
-    this.setState({ order: this.state.orderBy === orderBy && this.state.order === 'desc' ? 'asc' : 'desc', orderBy: orderBy });
+    this.setState(prevState => ({ order: prevState.orderBy === orderBy && prevState.order === 'desc' ? 'asc' : 'desc', orderBy: orderBy }));
   }
 
   handleClick(key) {
@@ -64,36 +66,36 @@ class VersusTable extends Component {
     }
   }
 
+  isSelected(id) {
+    return this.props.selected.indexOf(id) !== -1;
+  }
+
   render() {
     const {
       id, columns, data, customToolbar, selected, multiSelect, hover,
     } = this.props;
     const { order, orderBy } = this.state;
     return (
-      <React.Fragment>
-        { (() => {
-          if (multiSelect) {
-            return (
-              <VersusTableToolbar
-                selected={selected}
-                customToolbar={customToolbar}
-              />
-            );
-          }
-        })() }
+      <>
+        { multiSelect && (
+          <VersusTableToolbar
+            selected={selected}
+            customToolbar={customToolbar}
+          />
+        ) }
         <Table>
           <VersusTableHead
-            columns={columns}
-            rowCount={data.length}
-            selected={selected.length}
-            onSelectAll={this.handleSelectAll}
-            onSort={this.handleOnSort}
             order={order}
+            columns={columns}
             orderBy={orderBy}
+            rowCount={data.length}
             multiSelect={multiSelect}
+            selected={selected.length}
+            onSort={_orderBy => this.handleOnSort(_orderBy)}
+            onSelectAll={event => this.handleSelectAll(event)}
           />
           <TableBody>
-            { this.stableSort(data, getSorting(order, orderBy)).map(row => {
+            { stableSort(data, getSorting(order, orderBy)).map(row => {
               const isSelected = this.isSelected(row[id]);
               return (
                 <TableRow
@@ -105,18 +107,14 @@ class VersusTable extends Component {
                   selected={isSelected}
                   hover={hover}
                 >
-                  { (() => {
-                    if (multiSelect) {
-                      return (
-                        <TableCell padding="checkbox">
-                          <Checkbox checked={isSelected} />
-                        </TableCell>
-                      );
-                    }
-                  })() }
-                  { columns.map((column, i) => (
+                  { multiSelect && (
+                    <TableCell padding="checkbox">
+                      <Checkbox checked={isSelected} />
+                    </TableCell>
+                  ) }
+                  { columns.map((column, index) => (
                     <TableCell
-                      key={i}
+                      key={String(index)}
                       numeric={column.numeric}
                     >
                       { column.customCell ? column.customCell({ id: id, row: row }) : row[column.id] }
@@ -127,23 +125,25 @@ class VersusTable extends Component {
             }) }
           </TableBody>
         </Table>
-      </React.Fragment>
+      </>
     );
   }
 }
 
 VersusTable.propTypes = {
-  id: PropTypes.string.isRequired,
-  columns: PropTypes.array.isRequired,
-  data: PropTypes.array.isRequired,
-  onSelect: PropTypes.func.isRequired,
-  customToolbar: PropTypes.func,
-  multiSelect: PropTypes.bool,
   hover: PropTypes.bool,
+  multiSelect: PropTypes.bool,
+  customToolbar: PropTypes.func,
+  id: PropTypes.string.isRequired,
+  onSelect: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  columns: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  selected: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 VersusTable.defaultProps = {
-  multiSelect: false,
   hover: false,
+  multiSelect: false,
+  customToolbar: null,
 };
 
 export default VersusTable;

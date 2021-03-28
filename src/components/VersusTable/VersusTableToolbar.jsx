@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -24,28 +24,31 @@ const styles = theme => ({
   },
 });
 
-class VersusTableToolbar extends Component {
-  render() {
-    const { selected, customToolbar, classes } = this.props;
-    return (
-      <Toolbar variant="dense" className={selected.length > 0 ? classes.highlight : classes.normal}>
-        { customToolbar ? customToolbar({ selected: selected, classes: classes }) : (
-          <div className={classes.title}>
-            <Typography color="inherit">
-              { selected.length }
-              {' '}
-Competidores Seleccionados
-            </Typography>
-          </div>
-        )}
-      </Toolbar>
-    );
-  }
+function VersusTableToolbar(props) {
+  const { selected, customToolbar, classes } = props;
+  return (
+    <Toolbar variant="dense" className={selected.length > 0 ? classes.highlight : classes.normal}>
+      { customToolbar ? customToolbar({ selected: selected, classes: classes }) : (
+        <div className={classes.title}>
+          <Typography color="inherit">
+            { selected.length }
+            {' '}
+            Competidores Seleccionados
+          </Typography>
+        </div>
+      )}
+    </Toolbar>
+  );
 }
 
 VersusTableToolbar.propTypes = {
-  selected: PropTypes.array.isRequired,
   customToolbar: PropTypes.func,
+  classes: PropTypes.shape().isRequired,
+  selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+VersusTableToolbar.defaultProps = {
+  customToolbar: null,
 };
 
 export default withStyles(styles)(VersusTableToolbar);

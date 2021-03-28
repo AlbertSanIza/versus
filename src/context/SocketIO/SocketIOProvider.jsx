@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 
 import SocketIOContext from './SocketIOContext';
 
-const socket = io(`http://${window.location.hostname}:12345`);
+const socket = io(`http://${window.location.hostname}:3001`);
 
 class SocketIOProvider extends Component {
   constructor() {

@@ -2,14 +2,12 @@ import React from 'react';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import SettingsIcon from '@material-ui/icons/Settings';
 import { withStyles } from '@material-ui/core/styles';
 import SchoolIcon from '@material-ui/icons/School';
 import PeopleIcon from '@material-ui/icons/People';
 import ListItem from '@material-ui/core/ListItem';
 import EventIcon from '@material-ui/icons/Event';
 import ImageIcon from '@material-ui/icons/Image';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -65,66 +63,55 @@ const style = {
 function VersusDrawer(props) {
   const { Versus, classes } = props;
   return (
-    <React.Fragment>
-      <div className={classes.root}>
-        <Drawer variant="permanent" classes={{ paper: Versus.drawer ? classes.drawerPaperClose : classes.drawerPaper }}>
-          <NavLink to="/main/visuals" style={style.style} activeStyle={style.activeStyle}>
-            <ListItem button>
-              <ListItemIcon>
-                <ImageIcon />
-              </ListItemIcon>
-              <ListItemText primary="Visuales" />
-            </ListItem>
-          </NavLink>
-          <NavLink to="/main/events" style={style.style} activeStyle={style.activeStyle}>
-            <ListItem button>
-              <ListItemIcon>
-                <EventIcon />
-              </ListItemIcon>
-              <ListItemText primary="Eventos" />
-            </ListItem>
-          </NavLink>
-          <NavLink to="/main/thematics" style={style.style} activeStyle={style.activeStyle}>
-            <ListItem button>
-              <ListItemIcon>
-                <SchoolIcon />
-              </ListItemIcon>
-              <ListItemText primary="Tematicas" />
-            </ListItem>
-          </NavLink>
-          <NavLink to="/main/formats" style={style.style} activeStyle={style.activeStyle}>
-            <ListItem button>
-              <ListItemIcon>
-                <AssignmentIcon />
-              </ListItemIcon>
-              <ListItemText primary="Formatos" />
-            </ListItem>
-          </NavLink>
-          <NavLink to="/main/competitors" style={style.style} activeStyle={style.activeStyle}>
-            <ListItem button>
-              <ListItemIcon>
-                <PeopleIcon />
-              </ListItemIcon>
-              <ListItemText primary="Competidores" />
-            </ListItem>
-          </NavLink>
-          <Divider />
-          <NavLink to="/main/settings" style={style.style} activeStyle={style.activeStyle}>
-            <ListItem button>
-              <ListItemIcon>
-                <SettingsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Ajustes" />
-            </ListItem>
-          </NavLink>
-        </Drawer>
-        <div className={classes.content}>
-          <div className={classes.scrollContent}>
-            { props.children }
-          </div>
+    <div className={classes.root}>
+      <Drawer variant="permanent" classes={{ paper: Versus.drawer ? classes.drawerPaperClose : classes.drawerPaper }}>
+        <NavLink to="/visuals" style={style.style} activeStyle={style.activeStyle}>
+          <ListItem button>
+            <ListItemIcon>
+              <ImageIcon />
+            </ListItemIcon>
+            <ListItemText primary="Visuales" />
+          </ListItem>
+        </NavLink>
+        <NavLink to="/events" style={style.style} activeStyle={style.activeStyle}>
+          <ListItem button>
+            <ListItemIcon>
+              <EventIcon />
+            </ListItemIcon>
+            <ListItemText primary="Eventos" />
+          </ListItem>
+        </NavLink>
+        <NavLink to="/thematics" style={style.style} activeStyle={style.activeStyle}>
+          <ListItem button>
+            <ListItemIcon>
+              <SchoolIcon />
+            </ListItemIcon>
+            <ListItemText primary="Tematicas" />
+          </ListItem>
+        </NavLink>
+        <NavLink to="/formats" style={style.style} activeStyle={style.activeStyle}>
+          <ListItem button>
+            <ListItemIcon>
+              <AssignmentIcon />
+            </ListItemIcon>
+            <ListItemText primary="Formatos" />
+          </ListItem>
+        </NavLink>
+        <NavLink to="/competitors" style={style.style} activeStyle={style.activeStyle}>
+          <ListItem button>
+            <ListItemIcon>
+              <PeopleIcon />
+            </ListItemIcon>
+            <ListItemText primary="Competidores" />
+          </ListItem>
+        </NavLink>
+      </Drawer>
+      <div className={classes.content}>
+        <div className={classes.scrollContent}>
+          { props.children }
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 
