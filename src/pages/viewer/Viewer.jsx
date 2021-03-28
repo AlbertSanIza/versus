@@ -35,6 +35,11 @@ class Viewer extends Component {
             <img className="logo" alt="theLogo" src={mainLogo} />
           </Fade>
         ) }
+        { (status !== '' && status !== 'isPaused') && (
+          <Fade in timeout={1000}>
+            <img className="logo-small" alt="theLogo" src={mainLogo} />
+          </Fade>
+        ) }
         { (status === 'isSet' || status === 'isStart') && (
           <Fade in timeout={1000}>
             <div className="glitch seconds" data-text={seconds}>
