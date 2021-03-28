@@ -11,3 +11,17 @@
   overflow: hidden;
   color: white;
 }
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.logo {
+  width: 50%;
+  height: 50%;
+}
