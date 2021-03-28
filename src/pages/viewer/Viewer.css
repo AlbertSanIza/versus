@@ -76,3 +76,16 @@
 .competitor-name-right {
   right: 10%;
 }
+
+.competitor-img {
+  position: absolute;
+  z-index: 1;
+}
+
+.competitor-img-left {
+  left: 0%;
+}
+
+.competitor-img-right {
+  right: 0%;
+}
