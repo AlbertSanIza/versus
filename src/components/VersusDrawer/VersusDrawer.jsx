@@ -63,57 +63,55 @@ const style = {
 function VersusDrawer(props) {
   const { Versus, classes } = props;
   return (
-    <>
-      <div className={classes.root}>
-        <Drawer variant="permanent" classes={{ paper: Versus.drawer ? classes.drawerPaperClose : classes.drawerPaper }}>
-          <NavLink to="/visuals" style={style.style} activeStyle={style.activeStyle}>
-            <ListItem button>
-              <ListItemIcon>
-                <ImageIcon />
-              </ListItemIcon>
-              <ListItemText primary="Visuales" />
-            </ListItem>
-          </NavLink>
-          <NavLink to="/events" style={style.style} activeStyle={style.activeStyle}>
-            <ListItem button>
-              <ListItemIcon>
-                <EventIcon />
-              </ListItemIcon>
-              <ListItemText primary="Eventos" />
-            </ListItem>
-          </NavLink>
-          <NavLink to="/thematics" style={style.style} activeStyle={style.activeStyle}>
-            <ListItem button>
-              <ListItemIcon>
-                <SchoolIcon />
-              </ListItemIcon>
-              <ListItemText primary="Tematicas" />
-            </ListItem>
-          </NavLink>
-          <NavLink to="/formats" style={style.style} activeStyle={style.activeStyle}>
-            <ListItem button>
-              <ListItemIcon>
-                <AssignmentIcon />
-              </ListItemIcon>
-              <ListItemText primary="Formatos" />
-            </ListItem>
-          </NavLink>
-          <NavLink to="/competitors" style={style.style} activeStyle={style.activeStyle}>
-            <ListItem button>
-              <ListItemIcon>
-                <PeopleIcon />
-              </ListItemIcon>
-              <ListItemText primary="Competidores" />
-            </ListItem>
-          </NavLink>
-        </Drawer>
-        <div className={classes.content}>
-          <div className={classes.scrollContent}>
-            { props.children }
-          </div>
+    <div className={classes.root}>
+      <Drawer variant="permanent" classes={{ paper: Versus.drawer ? classes.drawerPaperClose : classes.drawerPaper }}>
+        <NavLink to="/visuals" style={style.style} activeStyle={style.activeStyle}>
+          <ListItem button>
+            <ListItemIcon>
+              <ImageIcon />
+            </ListItemIcon>
+            <ListItemText primary="Visuales" />
+          </ListItem>
+        </NavLink>
+        <NavLink to="/events" style={style.style} activeStyle={style.activeStyle}>
+          <ListItem button>
+            <ListItemIcon>
+              <EventIcon />
+            </ListItemIcon>
+            <ListItemText primary="Eventos" />
+          </ListItem>
+        </NavLink>
+        <NavLink to="/thematics" style={style.style} activeStyle={style.activeStyle}>
+          <ListItem button>
+            <ListItemIcon>
+              <SchoolIcon />
+            </ListItemIcon>
+            <ListItemText primary="Tematicas" />
+          </ListItem>
+        </NavLink>
+        <NavLink to="/formats" style={style.style} activeStyle={style.activeStyle}>
+          <ListItem button>
+            <ListItemIcon>
+              <AssignmentIcon />
+            </ListItemIcon>
+            <ListItemText primary="Formatos" />
+          </ListItem>
+        </NavLink>
+        <NavLink to="/competitors" style={style.style} activeStyle={style.activeStyle}>
+          <ListItem button>
+            <ListItemIcon>
+              <PeopleIcon />
+            </ListItemIcon>
+            <ListItemText primary="Competidores" />
+          </ListItem>
+        </NavLink>
+      </Drawer>
+      <div className={classes.content}>
+        <div className={classes.scrollContent}>
+          { props.children }
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
