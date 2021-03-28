@@ -30,10 +30,16 @@ class Viewer extends Component {
     return (
       <div className="root">
         <div id="particles-js" className="particles" />
-        { seconds }
         { (status === '' || status === 'isPaused') && (
           <Fade in timeout={1000}>
             <img className="logo" alt="theLogo" src={mainLogo} />
+          </Fade>
+        ) }
+        { (status === 'isSet' || status === 'isStart') && (
+          <Fade in timeout={1000}>
+            <div className="glitch seconds" data-text={seconds}>
+              { seconds }
+            </div>
           </Fade>
         ) }
       </div>
