@@ -15,6 +15,11 @@ class Viewer extends Component {
     this.state = {
       status: '',
       seconds: '',
+      format: '',
+      text: '',
+      message: '',
+      competitorONEObject: {},
+      competitorTWOObject: {},
     };
   }
 
