@@ -28,8 +28,8 @@ function stableSort(array, cmp) {
 }
 
 class VersusTable extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       order: 'asc',
       orderBy: '',
@@ -37,7 +37,9 @@ class VersusTable extends Component {
   }
 
   handleSelectAll(event) {
-    this.props.onSelect({ selected: event.target.checked ? this.props.data.map(row => row[this.props.id]) : [] });
+    if (this.props.onSelect) {
+      this.props.onSelect({ selected: event.target.checked ? this.props.data.map(row => row[this.props.id]) : [] });
+    }
   }
 
   handleOnSort(orderBy) {
@@ -133,9 +135,9 @@ class VersusTable extends Component {
 VersusTable.propTypes = {
   hover: PropTypes.bool,
   multiSelect: PropTypes.bool,
+  customToolbar: PropTypes.func,
   id: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired,
-  customToolbar: PropTypes.func,
   data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   columns: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   selected: PropTypes.arrayOf(PropTypes.string).isRequired,
