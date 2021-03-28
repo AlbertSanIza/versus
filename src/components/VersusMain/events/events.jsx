@@ -153,7 +153,16 @@ class Event extends Component {
             <DialogContent style={{ width: 300 }}>
               <FormControl fullWidth>
                 <TextField id="Nombre" label="Nombre" margin="normal" variant="outlined" value={createName} onChange={e => this.createNameChanged(e.target.value)} />
-                <TextField id="Descripcion" label="Descripcion" margin="normal" variant="outlined" rowsMax="4" value={createDescription} onChange={e => this.createDescriptionChanged(e.target.value)} multiline />
+                <TextField
+                  rowsMax="4"
+                  margin="normal"
+                  id="Descripcion"
+                  variant="outlined"
+                  label="Descripcion"
+                  value={createDescription}
+                  onChange={e => this.createDescriptionChanged(e.target.value)}
+                  multiline
+                />
               </FormControl>
             </DialogContent>
             <DialogActions>
@@ -166,7 +175,16 @@ class Event extends Component {
             <DialogContent style={{ width: 400 }}>
               <FormControl fullWidth>
                 <TextField label="Nombre" margin="normal" variant="outlined" value={editName} disabled />
-                <TextField id="Descripcion" label="Descripcion" margin="normal" variant="outlined" rowsMax="4" value={editDescription} onChange={e => this.editDescriptionChanged(e.target.value)} multiline />
+                <TextField
+                  rowsMax="4"
+                  margin="normal"
+                  id="Descripcion"
+                  variant="outlined"
+                  label="Descripcion"
+                  value={editDescription}
+                  onChange={e => this.editDescriptionChanged(e.target.value)}
+                  multiline
+                />
               </FormControl>
               <VersusTable id="name" columns={columns} data={SocketIO.competitors.competitors} selected={editSelected} onSelect={selected => this.handleEditSelect(selected)} multiSelect hover />
             </DialogContent>
@@ -176,7 +194,13 @@ class Event extends Component {
             </DialogActions>
           </Dialog>
         </MuiThemeProvider>
-        <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={showSnackbar} onClose={() => this.setState({ showSnackbar: false })} autoHideDuration={3000} message={`Evento: "${createName}" ya existe`} />
+        <Snackbar
+          open={showSnackbar}
+          autoHideDuration={3000}
+          message={`Evento: "${createName}" ya existe`}
+          onClose={() => this.setState({ showSnackbar: false })}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        />
       </>
     );
   }
