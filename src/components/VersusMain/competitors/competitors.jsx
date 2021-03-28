@@ -124,8 +124,8 @@ class Competitors extends Component {
                 <CardMedia
                   title={competitor.name}
                   className={classes.media}
-                  image={`http://${window.location.hostname}:3002/img/${competitor.photo}`}
                   onClick={() => this.handleOpenEdit(competitor.name, competitor.photo)}
+                  image={`http://${window.location.hostname}:3002/img/${competitor.photo}`}
                 />
                 <div className={classes.paperContent}>
                   <Typography noWrap>{ competitor.name }</Typography>
@@ -165,7 +165,7 @@ class Competitors extends Component {
                 width="312px"
                 height="250px"
                 imagePicked={image => this.setState({ editImage: image })}
-                imageDefault={`http://${window.location.hostname}:12345/img/${editPhoto}`}
+                imageDefault={`http://${window.location.hostname}:3002/img/${editPhoto}`}
                 showButton
                 anySize
               />
