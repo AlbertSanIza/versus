@@ -83,7 +83,11 @@ class Competitors extends Component {
   handleCreate() {
     const { createName, createImage } = this.state;
     if (this.props.SocketIO.competitors.competitors.every(z => z.name.toLowerCase() !== createName.toLowerCase())) {
-      this.props.SocketIO.competitors.create({ name: createName, photo: `${createName.toLowerCase().replace(/[\W_]+/g, '_') + Date.now()}.${createImage.file.type.split('/').pop()}`, file: createImage.file });
+      this.props.SocketIO.competitors.create({
+        name: createName,
+        photo: `${createName.toLowerCase().replace(/[\W_]+/g, '_') + Date.now()}.${createImage.file.type.split('/').pop()}`,
+        file: createImage.file,
+      });
       this.handleCloseCreate();
     } else {
       this.setState({ showSnackbar: true });
