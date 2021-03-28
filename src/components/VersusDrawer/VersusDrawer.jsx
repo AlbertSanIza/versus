@@ -66,7 +66,7 @@ function VersusDrawer(props) {
     <>
       <div className={classes.root}>
         <Drawer variant="permanent" classes={{ paper: Versus.drawer ? classes.drawerPaperClose : classes.drawerPaper }}>
-          <NavLink to="/main/visuals" style={style.style} activeStyle={style.activeStyle}>
+          <NavLink to="/visuals" style={style.style} activeStyle={style.activeStyle}>
             <ListItem button>
               <ListItemIcon>
                 <ImageIcon />
@@ -74,7 +74,7 @@ function VersusDrawer(props) {
               <ListItemText primary="Visuales" />
             </ListItem>
           </NavLink>
-          <NavLink to="/main/events" style={style.style} activeStyle={style.activeStyle}>
+          <NavLink to="/events" style={style.style} activeStyle={style.activeStyle}>
             <ListItem button>
               <ListItemIcon>
                 <EventIcon />
@@ -82,7 +82,7 @@ function VersusDrawer(props) {
               <ListItemText primary="Eventos" />
             </ListItem>
           </NavLink>
-          <NavLink to="/main/thematics" style={style.style} activeStyle={style.activeStyle}>
+          <NavLink to="/thematics" style={style.style} activeStyle={style.activeStyle}>
             <ListItem button>
               <ListItemIcon>
                 <SchoolIcon />
@@ -90,7 +90,7 @@ function VersusDrawer(props) {
               <ListItemText primary="Tematicas" />
             </ListItem>
           </NavLink>
-          <NavLink to="/main/formats" style={style.style} activeStyle={style.activeStyle}>
+          <NavLink to="/formats" style={style.style} activeStyle={style.activeStyle}>
             <ListItem button>
               <ListItemIcon>
                 <AssignmentIcon />
@@ -98,7 +98,7 @@ function VersusDrawer(props) {
               <ListItemText primary="Formatos" />
             </ListItem>
           </NavLink>
-          <NavLink to="/main/competitors" style={style.style} activeStyle={style.activeStyle}>
+          <NavLink to="/competitors" style={style.style} activeStyle={style.activeStyle}>
             <ListItem button>
               <ListItemIcon>
                 <PeopleIcon />

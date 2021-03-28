@@ -15,11 +15,11 @@ function Main() {
       <VersusAppBar />
       <VersusDrawer>
         <div>
-          <Route path="/main/visuals" component={VisualsView} />
-          <Route path="/main/events" component={EventsView} />
-          <Route path="/main/thematics" component={ThematicsView} />
-          <Route path="/main/formats" component={FormatsView} />
-          <Route path="/main/competitors" component={CompetitorsView} />
+          <Route path="/visuals" component={VisualsView} />
+          <Route path="/events" component={EventsView} />
+          <Route path="/thematics" component={ThematicsView} />
+          <Route path="/formats" component={FormatsView} />
+          <Route path="/competitors" component={CompetitorsView} />
         </div>
       </VersusDrawer>
     </>
