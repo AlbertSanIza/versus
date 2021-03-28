@@ -37,9 +37,7 @@ class VersusTable extends Component {
   }
 
   handleSelectAll(event) {
-    if (this.props.onSelect) {
-      this.props.onSelect({ selected: event.target.checked ? this.props.data.map(row => row[this.props.id]) : [] });
-    }
+    this.props.onSelect({ selected: event.target.checked ? this.props.data.map(row => row[this.props.id]) : [] });
   }
 
   handleOnSort(orderBy) {
@@ -87,14 +85,14 @@ class VersusTable extends Component {
         ) }
         <Table>
           <VersusTableHead
-            columns={columns}
-            rowCount={data.length}
-            selected={selected.length}
-            onSelectAll={this.handleSelectAll}
-            onSort={this.handleOnSort}
             order={order}
+            columns={columns}
             orderBy={orderBy}
+            rowCount={data.length}
             multiSelect={multiSelect}
+            selected={selected.length}
+            onSort={_orderBy => this.handleOnSort(_orderBy)}
+            onSelectAll={event => this.handleSelectAll(event)}
           />
           <TableBody>
             { stableSort(data, getSorting(order, orderBy)).map(row => {
