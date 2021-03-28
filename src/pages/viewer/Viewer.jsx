@@ -89,6 +89,20 @@ class Viewer extends Component {
             </div>
           </Fade>
         ) }
+        { (status === 'isSet' || status === 'isStart') && competitorONEObject.name && (
+          <Fade in timeout={2000}>
+            <div className="competitor-img competitor-img-left">
+              <img alt="theCompetitor" className="the-competitor" src={`http://${window.location.hostname}:3002/img/${competitorONEObject.photo}`} />
+            </div>
+          </Fade>
+        ) }
+        { (status === 'isSet' || status === 'isStart') && competitorTWOObject.name && (
+          <Fade in timeout={2000}>
+            <div className="competitor-img competitor-img-right">
+              <img alt="theCompetitor" className="the-competitor" src={`http://${window.location.hostname}:3002/img/${competitorTWOObject.photo}`} />
+            </div>
+          </Fade>
+        ) }
       </div>
     );
   }
