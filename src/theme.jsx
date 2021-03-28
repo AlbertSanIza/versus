@@ -29,6 +29,7 @@ const styles = () => ({
       'user-select': 'none',
       display: 'block',
       margin: 0,
+      padding: 0,
     },
     img: {
       '-webkit-user-drag': 'none',
