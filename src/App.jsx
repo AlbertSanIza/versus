@@ -9,13 +9,10 @@ function App(props) {
     <Router>
       <div>
         <Switch>
-          <Route path="/controls">
-            <Controls />
-          </Route>
-          <Route path="/viewer">
+          <Route exact path="/viewer">
             <Viewer />
           </Route>
-          <Route path="/">
+          <Route path="">
             <Controls />
           </Route>
         </Switch>
