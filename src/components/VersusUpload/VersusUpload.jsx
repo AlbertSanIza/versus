@@ -32,14 +32,14 @@ class Main extends Component {
     };
   }
 
-  createTermChanged(input) {
-    this.setState({ createName: input });
-  }
-
   handleCreate() {
     const { createName, createImage } = this.state;
     this.props.SocketIO.competitors.create({ name: createName, photo: `${createName.toLowerCase().replace(/[\W_]+/g, '_') + Date.now()}.${createImage.file.type.split('/').pop()}`, file: createImage.file });
     this.setState({ createName: '', createImage: {} });
+  }
+
+  createTermChanged(input) {
+    this.setState({ createName: input });
   }
 
   render() {
