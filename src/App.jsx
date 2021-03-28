@@ -12,7 +12,7 @@ function App(props) {
           <Route exact path="/viewer">
             <Viewer />
           </Route>
-          <Route path="">
+          <Route path="/">
             <Controls />
           </Route>
         </Switch>
