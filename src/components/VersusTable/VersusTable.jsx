@@ -112,9 +112,9 @@ class VersusTable extends Component {
                       <Checkbox checked={isSelected} />
                     </TableCell>
                   ) }
-                  { columns.map((column, i) => (
+                  { columns.map((column, index) => (
                     <TableCell
-                      key={i}
+                      key={String(index)}
                       numeric={column.numeric}
                     >
                       { column.customCell ? column.customCell({ id: id, row: row }) : row[column.id] }
