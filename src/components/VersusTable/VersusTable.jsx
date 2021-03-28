@@ -30,16 +30,12 @@ class VersusTable extends Component {
     };
   }
 
-  isSelected(id) {
-    return this.props.selected.indexOf(id) !== -1;
-  }
-
   handleSelectAll(event) {
     this.props.onSelect({ selected: event.target.checked ? this.props.data.map(row => row[this.props.id]) : [] });
   }
 
   handleOnSort(orderBy) {
-    this.setState({ order: this.state.orderBy === orderBy && this.state.order === 'desc' ? 'asc' : 'desc', orderBy: orderBy });
+    this.setState(prevState => ({ order: prevState.orderBy === orderBy && prevState.order === 'desc' ? 'asc' : 'desc', orderBy: orderBy }));
   }
 
   handleClick(key) {
@@ -64,6 +60,10 @@ class VersusTable extends Component {
     }
   }
 
+  isSelected(id) {
+    return this.props.selected.indexOf(id) !== -1;
+  }
+
   render() {
     const {
       id, columns, data, customToolbar, selected, multiSelect, hover,
@@ -71,16 +71,12 @@ class VersusTable extends Component {
     const { order, orderBy } = this.state;
     return (
       <>
-        { (() => {
-          if (multiSelect) {
-            return (
-              <VersusTableToolbar
-                selected={selected}
-                customToolbar={customToolbar}
-              />
-            );
-          }
-        })() }
+        { multiSelect && (
+          <VersusTableToolbar
+            selected={selected}
+            customToolbar={customToolbar}
+          />
+        ) }
         <Table>
           <VersusTableHead
             columns={columns}
@@ -105,15 +101,11 @@ class VersusTable extends Component {
                   selected={isSelected}
                   hover={hover}
                 >
-                  { (() => {
-                    if (multiSelect) {
-                      return (
-                        <TableCell padding="checkbox">
-                          <Checkbox checked={isSelected} />
-                        </TableCell>
-                      );
-                    }
-                  })() }
+                  { multiSelect && (
+                    <TableCell padding="checkbox">
+                      <Checkbox checked={isSelected} />
+                    </TableCell>
+                  ) }
                   { columns.map((column, i) => (
                     <TableCell
                       key={i}
@@ -134,6 +126,7 @@ class VersusTable extends Component {
 
 VersusTable.propTypes = {
   hover: PropTypes.bool,
+  selected: PropTypes.bool,
   multiSelect: PropTypes.bool,
   customToolbar: PropTypes.func,
   id: PropTypes.string.isRequired,
