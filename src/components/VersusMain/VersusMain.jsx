@@ -20,6 +20,7 @@ function Main() {
           <Route path="/thematics" component={ThematicsView} />
           <Route path="/formats" component={FormatsView} />
           <Route path="/competitors" component={CompetitorsView} />
+          <Route path="/" component={VisualsView} />
         </div>
       </VersusDrawer>
     </>
