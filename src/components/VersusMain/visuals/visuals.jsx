@@ -177,7 +177,6 @@ class Visuals extends Component {
     });
   }
 
-
   inputEntryHandleChange(e) {
     this.setState({ entry: e.target.value });
   }
@@ -192,7 +191,7 @@ class Visuals extends Component {
   render() {
     const { SocketIO, classes } = this.props;
     return (
-      <React.Fragment>
+      <>
         <div className={classes.visualsIframeHolder}>
           <iframe src="#/?animation" frameBorder="0" title="visualizer" className={classes.visualsIframe} />
         </div>
@@ -416,14 +415,14 @@ class Visuals extends Component {
                 case 'isSet':
                 case 'isPaused':
                   return (
-                    <React.Fragment>
+                    <>
                       <Grid item xs={6}>
                         <Button variant="contained" color="primary" onClick={() => this.resetButton()} fullWidth>Cancelar</Button>
                       </Grid>
                       <Grid item xs={6}>
                         <Button variant="contained" color="secondary" onClick={() => this.startButton()} fullWidth>Iniciar</Button>
                       </Grid>
-                    </React.Fragment>
+                    </>
                   );
                 case 'isStart':
                   return (
@@ -433,14 +432,14 @@ class Visuals extends Component {
                   );
                 case 'isMessage':
                   return (
-                    <React.Fragment>
+                    <>
                       <Grid item xs={6}>
                         <Button variant="contained" color="primary" onClick={() => this.resetButton()} fullWidth>Cancelar</Button>
                       </Grid>
                       <Grid item xs={6}>
                         <Button variant="contained" color="secondary" className={classes.button} onClick={() => this.setButton()} fullWidth>Mostrar</Button>
                       </Grid>
-                    </React.Fragment>
+                    </>
                   );
                 default:
                   return null;
@@ -457,7 +456,7 @@ class Visuals extends Component {
             </Fab>
           </a>
         </Grow>
-      </React.Fragment>
+      </>
     );
   }
 }
