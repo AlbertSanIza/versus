@@ -12,6 +12,15 @@ import VersusTableHead from './VersusTableHead';
 const desc = (a, b, orderBy) => (b[orderBy] < a[orderBy] ? -1 : (b[orderBy] > a[orderBy] ? 1 : 0));
 const getSorting = (order, orderBy) => (order === 'desc' ? (a, b) => desc(a, b, orderBy) : (a, b) => -desc(a, b, orderBy));
 
+function stableSort(array, cmp) {
+  const stabilizedThis = array.map((el, index) => [el, index]);
+  stabilizedThis.sort((a, b) => {
+    const order = cmp(a[0], b[0]);
+    return order !== 0 ? order : a[1] - b[1];
+  });
+  return stabilizedThis.map(el => el[0]);
+}
+
 class VersusTable extends Component {
   constructor() {
     super();
@@ -19,15 +28,6 @@ class VersusTable extends Component {
       order: 'asc',
       orderBy: '',
     };
-  }
-
-  stableSort(array, cmp) {
-    const stabilizedThis = array.map((el, index) => [el, index]);
-    stabilizedThis.sort((a, b) => {
-      const order = cmp(a[0], b[0]);
-      return order !== 0 ? order : a[1] - b[1];
-    });
-    return stabilizedThis.map(el => el[0]);
   }
 
   isSelected(id) {
@@ -93,7 +93,7 @@ class VersusTable extends Component {
             multiSelect={multiSelect}
           />
           <TableBody>
-            { this.stableSort(data, getSorting(order, orderBy)).map(row => {
+            { stableSort(data, getSorting(order, orderBy)).map(row => {
               const isSelected = this.isSelected(row[id]);
               return (
                 <TableRow
@@ -133,13 +133,13 @@ class VersusTable extends Component {
 }
 
 VersusTable.propTypes = {
-  id: PropTypes.string.isRequired,
-  columns: PropTypes.array.isRequired,
-  data: PropTypes.array.isRequired,
-  onSelect: PropTypes.func.isRequired,
-  customToolbar: PropTypes.func,
-  multiSelect: PropTypes.bool,
   hover: PropTypes.bool,
+  multiSelect: PropTypes.bool,
+  customToolbar: PropTypes.func,
+  id: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
+  columns: PropTypes.array.isRequired,
+  onSelect: PropTypes.func.isRequired,
 };
 VersusTable.defaultProps = {
   multiSelect: false,
