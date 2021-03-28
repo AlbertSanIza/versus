@@ -53,7 +53,7 @@ VersusTableHead.propTypes = {
   rowCount: PropTypes.number.isRequired,
   selected: PropTypes.number.isRequired,
   onSelectAll: PropTypes.func.isRequired,
-  columns: PropTypes.arrayOf().isRequired,
+  columns: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 VersusTableHead.defaultProps = {
   multiSelect: false,
