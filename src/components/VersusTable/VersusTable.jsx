@@ -132,13 +132,13 @@ class VersusTable extends Component {
 
 VersusTable.propTypes = {
   hover: PropTypes.bool,
-  selected: PropTypes.bool,
   multiSelect: PropTypes.bool,
-  customToolbar: PropTypes.func,
   id: PropTypes.string.isRequired,
-  data: PropTypes.array.isRequired,
-  columns: PropTypes.array.isRequired,
   onSelect: PropTypes.func.isRequired,
+  selected: PropTypes.bool.isRequired,
+  customToolbar: PropTypes.func.isRequired,
+  data: PropTypes.array.isRequired.isRequired,
+  columns: PropTypes.array.isRequired.isRequired,
 };
 VersusTable.defaultProps = {
   multiSelect: false,
