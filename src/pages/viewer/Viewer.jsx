@@ -32,7 +32,7 @@ class Viewer extends Component {
 
   render() {
     const {
-      status, seconds, format, text, message,
+      status, seconds, format, text, message, competitorONEObject, competitorTWOObject,
     } = this.state;
     return (
       <div className="root">
