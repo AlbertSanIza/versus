@@ -450,7 +450,7 @@ class Visuals extends Component {
         <br />
         <br />
         <Grow in timeout={500}>
-          <a href="#/" target="_blank" rel="noopener noreferrer">
+          <a href="/viewer" target="_blank" rel="noopener noreferrer">
             <Fab color="primary" className={classes.fab}>
               <PlayArrowIcon />
             </Fab>
