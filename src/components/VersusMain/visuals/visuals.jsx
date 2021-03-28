@@ -289,10 +289,6 @@ class Visuals extends Component {
                 <option>5 Entradas</option>
                 <option>6 Entradas</option>
                 <option>7 Entradas</option>
-                <option>SOLER</option>
-                <option>OMEGA CTM</option>
-                <option>SONICKO</option>
-                <option>MISIONERO</option>
               </TextField>
             </Grid>
             <Grid item xs={3}>
