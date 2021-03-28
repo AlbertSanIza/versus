@@ -1,24 +1,25 @@
 import React from 'react';
-import { HashRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { VersusMain, VersusUpload, VersusVisualizer } from './components';
-import { VersusProvider, SocketIOProvider } from './context';
+import { Controls, Viewer } from './components';
 
 function App(props) {
   return (
-    <HashRouter>
-      <>
-        <VersusProvider>
-          <SocketIOProvider>
-            <div>
-              <Route path="/main" component={VersusMain} />
-              <Route exact path="/upload" component={VersusUpload} />
-            </div>
-          </SocketIOProvider>
-        </VersusProvider>
-        <Route exact path="/" component={VersusVisualizer} />
-      </>
-    </HashRouter>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/controls">
+            <Controls />
+          </Route>
+          <Route path="/viewer">
+            <Viewer />
+          </Route>
+          <Route path="/">
+            <Controls />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
