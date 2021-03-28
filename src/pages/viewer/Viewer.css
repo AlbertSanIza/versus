@@ -61,3 +61,18 @@
   font-size: 40vh;
   z-index: 1;
 }
+
+.competitor-name {
+  position: absolute;
+  font-size: 20vh;
+  bottom: 0%;
+  z-index: 1;
+}
+
+.competitor-name-left {
+  left: 10%;
+}
+
+.competitor-name-right {
+  right: 10%;
+}
