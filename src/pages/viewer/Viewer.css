@@ -36,12 +36,6 @@
   z-index: 1;
 }
 
-.seconds {
-  position: absolute;
-  font-size: 40vh;
-  z-index: 1;
-}
-
 .thematic {
   position: absolute;
   font-size: 22vh;
@@ -53,5 +47,17 @@
   position: absolute;
   font-size: 6vh;
   bottom: 23%;
+  z-index: 1;
+}
+
+.message {
+  position: absolute;
+  font-size: 20vh;
+  z-index: 1;
+}
+
+.seconds {
+  position: absolute;
+  font-size: 40vh;
   z-index: 1;
 }

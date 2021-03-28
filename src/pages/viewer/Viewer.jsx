@@ -27,7 +27,7 @@ class Viewer extends Component {
 
   render() {
     const {
-      status, seconds, format, text,
+      status, seconds, format, text, message,
     } = this.state;
     return (
       <div className="root">
@@ -53,6 +53,13 @@ class Viewer extends Component {
           <Fade in timeout={1000}>
             <div className="thematic">
               { text }
+            </div>
+          </Fade>
+        ) }
+        { status === 'isMessage' && (
+          <Fade in timeout={1000}>
+            <div className="glitch message" data-text={message}>
+              { message }
             </div>
           </Fade>
         ) }
