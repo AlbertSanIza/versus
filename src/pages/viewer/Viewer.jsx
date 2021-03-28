@@ -75,6 +75,20 @@ class Viewer extends Component {
             </div>
           </Fade>
         ) }
+        { (status === 'isSet' || status === 'isStart') && competitorONEObject.name && (
+          <Fade in timeout={1000}>
+            <div className="competitor-name competitor-name-left" data-text={competitorONEObject.name}>
+              { competitorONEObject.name }
+            </div>
+          </Fade>
+        ) }
+        { (status === 'isSet' || status === 'isStart') && competitorTWOObject.name && (
+          <Fade in timeout={1000}>
+            <div className="competitor-name competitor-name-right" data-text={competitorTWOObject.name}>
+              { competitorTWOObject.name }
+            </div>
+          </Fade>
+        ) }
       </div>
     );
   }
