@@ -42,9 +42,13 @@ function VersusTableToolbar(props) {
 }
 
 VersusTableToolbar.propTypes = {
+  customToolbar: PropTypes.func,
   classes: PropTypes.shape().isRequired,
-  customToolbar: PropTypes.func.isRequired,
   selected: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+};
+
+VersusTableToolbar.defaultProps = {
+  customToolbar: null,
 };
 
 export default withStyles(styles)(VersusTableToolbar);
