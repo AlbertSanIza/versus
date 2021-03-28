@@ -34,7 +34,11 @@ class Main extends Component {
 
   handleCreate() {
     const { createName, createImage } = this.state;
-    this.props.SocketIO.competitors.create({ name: createName, photo: `${createName.toLowerCase().replace(/[\W_]+/g, '_') + Date.now()}.${createImage.file.type.split('/').pop()}`, file: createImage.file });
+    this.props.SocketIO.competitors.create({
+      name: createName,
+      photo: `${createName.toLowerCase().replace(/[\W_]+/g, '_') + Date.now()}.${createImage.file.type.split('/').pop()}`,
+      file: createImage.file,
+    });
     this.setState({ createName: '', createImage: {} });
   }
 
