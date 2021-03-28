@@ -7,7 +7,7 @@ import mainLogo from './logo.png';
 import './Viewer.css';
 import './glitch.css';
 
-const socket = io(`http://${window.location.hostname}:12345`);
+const socket = io(`http://${window.location.hostname}:3001`);
 
 class Viewer extends Component {
   constructor(props) {
